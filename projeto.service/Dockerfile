@@ -10,15 +10,17 @@ RUN adduser -u 5678 --disabled-password --gecos "" appuser && chown -R appuser /
 USER appuser
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
+ARG configuration=Release
 WORKDIR /src
-COPY ["projeto.service/projeto.service.csproj", "projeto.service/"]
-RUN dotnet restore "projeto.service/projeto.service.csproj"
+COPY ["projeto.service.csproj", "./"]
+RUN dotnet restore "projeto.service.csproj"
 COPY . .
-WORKDIR "/src/projeto.service"
-RUN dotnet build "projeto.service.csproj" -c Release -o /app/build
+WORKDIR "/src/."
+RUN dotnet build "projeto.service.csproj" -c $configuration -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "projeto.service.csproj" -c Release -o /app/publish /p:UseAppHost=false
+ARG configuration=Release
+RUN dotnet publish "projeto.service.csproj" -c $configuration -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
