@@ -79,6 +79,7 @@ namespace projeto.service.AsyncComm
 
             if (_channel.MessageCount("produtos.disponiveis") != 0) consumirProdutosDisponiveis(_channel);
             if (_channel.MessageCount("produtos.disponiveis.atualizados") != 0) consumirProdutosAtualizados(_channel);
+            if (_channel.MessageCount("produtos.disponiveis.deletados") != 0) consumirProdutosDeletados(_channel);
         }
 
         private void consumirProdutosDisponiveis(IModel channel)
