@@ -42,11 +42,11 @@ jobs:
       uses: docker/setup-buildx-action@v2
     
     - name: Build image 
-      run: docker build . --file Dockerfile --tag ${{ secrets.DOCKERHUB_USERNAME }}/estoque:v0.1
-      working-directory: ./estoque.service
+      run: docker build . --file Dockerfile --tag ${{ secrets.DOCKERHUB_USERNAME }}/projeto:v0.1
+      working-directory: ./projeto.service
     
     - name: Pushing image on docker hub 
-      run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/estoque:v0.1
+      run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/projeto:v0.1
     
     - name: Deploy
       uses: garygrossgarten/github-action-ssh@release
