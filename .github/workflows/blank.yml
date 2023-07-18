@@ -51,7 +51,7 @@ jobs:
     - name: Deploy
       uses: garygrossgarten/github-action-ssh@release
       with:
-        command: cd icarus.estoque && docker stop container-estoque && docker rm container-estoque && docker rmi k4im/estoque:v0.1 && docker-compose up -d 
+        command: cd icarus.projetos && docker stop container-projetos && docker rm container-projetos && docker rmi ${{ secrets.DOCKERHUB_USERNAME }}/projeto:v0.1 && docker-compose up -d 
         host: ${{ secrets.HOST }}
         username: ${{ secrets.HOSTNAME }}
         port: ${{ secrets.PORT }}
