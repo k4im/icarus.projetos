@@ -7,6 +7,8 @@ var serverVersion = new MySqlServerVersion(new Version(8, 0, 29));
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
+
+/*Realizado configurações do Swagger, para que seja possivel estar authorizando via webtoken*/
 #region swagger config
 builder.Services.AddSwaggerGen(option =>
 {
@@ -41,9 +43,19 @@ builder.Services.AddSwaggerGen(option =>
 });
 builder.Services.AddSwaggerExamplesFromAssemblies(Assembly.GetEntryAssembly());
 #endregion
-builder.Services.AddSingleton<GrayLogger>();
+
+/*Realizado injeção de dependencia dos dados necessários*/
+#region DI (Injecao de dependencia)
+builder.Services.AddScoped<IRepoProjetos, RepoProjetos>();
+builder.Services.AddScoped<IRepoProdutosDisponiveis, RepoProdutosDisponiveis>();
+builder.Services.AddScoped<IMessageBusService, MessageBusService>();
+builder.Services.AddScoped<IMessageConsumer, MessageConsumer>();
+#endregion
+
+/*Adicionado o worker no backend*/
 builder.Services.AddHostedService<RabbitConsumer>();
 
+/*Configurações referentes ao Json Web Token*/
 #region  configurando jwt
 builder.Services.AddAuthentication(
     opt =>
@@ -68,6 +80,7 @@ builder.Services.AddAuthentication(
     };
 });
 #endregion
+
 builder.Services.AddCors();
 builder.Services.AddHealthChecks();
 
