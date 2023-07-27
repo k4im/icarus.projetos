@@ -1,5 +1,6 @@
-namespace projeto.service.Models
+namespace projeto.domain
 {
+
     public class Response<T>
     {
         public Response(List<T> data, int paginaAtual, int totalDePaginas)

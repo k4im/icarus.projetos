@@ -1,4 +1,4 @@
-namespace projeto.service.Models
+namespace projeto.domain
 {
     public class ProjetoDTO
     {

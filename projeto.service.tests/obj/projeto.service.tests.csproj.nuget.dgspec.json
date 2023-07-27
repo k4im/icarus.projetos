@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/k4im/github/gestao/app/Services/projeto/projeto.service.tests/projeto.service.tests.csproj": {}
+    "/home/oem/github/icarus-sistema/icarus.projetos/projeto.service.tests/projeto.service.tests.csproj": {}
   },
   "projects": {
-    "/home/k4im/github/gestao/app/Services/projeto/projeto.service.tests/projeto.service.tests.csproj": {
+    "/home/oem/github/icarus-sistema/icarus.projetos/projeto.service.tests/projeto.service.tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/k4im/github/gestao/app/Services/projeto/projeto.service.tests/projeto.service.tests.csproj",
+        "projectUniqueName": "/home/oem/github/icarus-sistema/icarus.projetos/projeto.service.tests/projeto.service.tests.csproj",
         "projectName": "projeto.service.tests",
-        "projectPath": "/home/k4im/github/gestao/app/Services/projeto/projeto.service.tests/projeto.service.tests.csproj",
-        "packagesPath": "/home/k4im/.nuget/packages/",
-        "outputPath": "/home/k4im/github/gestao/app/Services/projeto/projeto.service.tests/obj/",
+        "projectPath": "/home/oem/github/icarus-sistema/icarus.projetos/projeto.service.tests/projeto.service.tests.csproj",
+        "packagesPath": "/home/oem/.nuget/packages/",
+        "outputPath": "/home/oem/github/icarus-sistema/icarus.projetos/projeto.service.tests/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/k4im/.nuget/NuGet/NuGet.Config"
+          "/home/oem/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -26,8 +26,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "/home/k4im/github/gestao/app/Services/projeto/projeto.service/projeto.service.csproj": {
-                "projectPath": "/home/k4im/github/gestao/app/Services/projeto/projeto.service/projeto.service.csproj"
+              "/home/oem/github/icarus-sistema/icarus.projetos/projeto.service/projeto.service.csproj": {
+                "projectPath": "/home/oem/github/icarus-sistema/icarus.projetos/projeto.service/projeto.service.csproj"
               }
             }
           }
@@ -110,32 +110,26 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[7.0.7, 7.0.7]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.107/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.109/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/k4im/github/gestao/app/Services/projeto/projeto.service/projeto.service.csproj": {
+    "/home/oem/github/icarus-sistema/icarus.projetos/projeto.service/projeto.service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/k4im/github/gestao/app/Services/projeto/projeto.service/projeto.service.csproj",
+        "projectUniqueName": "/home/oem/github/icarus-sistema/icarus.projetos/projeto.service/projeto.service.csproj",
         "projectName": "projeto.service",
-        "projectPath": "/home/k4im/github/gestao/app/Services/projeto/projeto.service/projeto.service.csproj",
-        "packagesPath": "/home/k4im/.nuget/packages/",
-        "outputPath": "/home/k4im/github/gestao/app/Services/projeto/projeto.service/obj/",
+        "projectPath": "/home/oem/github/icarus-sistema/icarus.projetos/projeto.service/projeto.service.csproj",
+        "packagesPath": "/home/oem/.nuget/packages/",
+        "outputPath": "/home/oem/github/icarus-sistema/icarus.projetos/projeto.service/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/k4im/.nuget/NuGet/NuGet.Config"
+          "/home/oem/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -253,12 +247,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[7.0.7, 7.0.7]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -267,7 +255,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.107/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.109/RuntimeIdentifierGraph.json"
         }
       }
     }

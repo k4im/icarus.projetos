@@ -1,5 +1,4 @@
-
-namespace projeto.service.Models.ValueObjects
+namespace projeto.domain.ValueObjects
 {
     public class StatusProjeto
     {
