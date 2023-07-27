@@ -1,10 +1,6 @@
 global using Microsoft.EntityFrameworkCore;
-global using projeto.service.Models;
 global using projeto.service.Repository;
 global using projeto.service.Data;
-global using projeto.service.Models.ValueObjects;
-global using System.Text.RegularExpressions;
-global using System.ComponentModel.DataAnnotations;
 global using System.Text;
 global using RabbitMQ.Client;
 global using Newtonsoft.Json;
@@ -21,4 +17,5 @@ global using Serilog;
 global using Serilog.Sinks.Graylog;
 global using projeto.service.Logger;
 global using System.Security.Claims;
-
+global using projeto.domain;
+global using projeto.domain.ValueObjects;

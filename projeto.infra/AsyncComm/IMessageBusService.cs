@@ -1,4 +1,4 @@
-namespace projeto.service.AsyncComm
+namespace projeto.infra.AsyncComm
 {
     public interface IMessageBusService
     {

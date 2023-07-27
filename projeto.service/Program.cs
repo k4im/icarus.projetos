@@ -41,13 +41,7 @@ builder.Services.AddSwaggerGen(option =>
 });
 builder.Services.AddSwaggerExamplesFromAssemblies(Assembly.GetEntryAssembly());
 #endregion
-// builder.Services.AddDbContext<DataContext>(opt => opt.UseMySql(builder.Configuration.GetConnectionString("docker"), serverVersion));
-builder.Services.AddScoped<IRepoProjetos, RepoProjetos>();
-builder.Services.AddScoped<IRepoProdutosDisponiveis, RepoProdutosDisponiveis>();
 builder.Services.AddSingleton<GrayLogger>();
-builder.Services.AddScoped<IMessageBusService, MessageBusService>();
-builder.Services.AddScoped<IMessageConsumer, MessageConsumer>();
-builder.Services.AddAutoMapper(typeof(Program).Assembly);
 builder.Services.AddHostedService<RabbitConsumer>();
 
 #region  configurando jwt

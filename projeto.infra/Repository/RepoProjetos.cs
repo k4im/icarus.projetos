@@ -1,5 +1,6 @@
-namespace projeto.service.Repository
+namespace projeto.infra.Repository
 {
+
     public class RepoProjetos : IRepoProjetos
     {
         //Delegates e Eventos a serem disparados
@@ -7,7 +8,6 @@ namespace projeto.service.Repository
         public delegate void aoRealizarOperacaoEventHandler(string message);
         public event aoRealizarOperacaoEventHandler aoRealizarOperacao;
         public event aoCriarProjetoEventHandler aocriarProjeto;
-
         IMessageBusService _messageBroker;
 
         public RepoProjetos(IMessageBusService messageBroker)

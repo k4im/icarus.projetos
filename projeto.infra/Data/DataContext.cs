@@ -1,4 +1,4 @@
-namespace projeto.service.Data
+namespace projeto.infra.Data
 {
     public class DataContext : DbContext
     {

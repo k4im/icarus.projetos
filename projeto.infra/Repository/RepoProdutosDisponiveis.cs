@@ -1,4 +1,4 @@
-namespace projeto.service.Repository
+namespace projeto.infra.Repository
 {
     public class RepoProdutosDisponiveis : IRepoProdutosDisponiveis
     {

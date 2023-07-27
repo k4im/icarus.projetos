@@ -1,6 +1,6 @@
-
-namespace projeto.service.Repository
+namespace projeto.infra.Repository
 {
+
     public interface IRepoProjetos
     {
         Task<Response<Projeto>> BuscarProdutos(int pagina, float resultadoPorPagina);
