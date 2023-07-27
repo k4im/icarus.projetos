@@ -1,8 +1,7 @@
-using RabbitMQ.Client.Events;
-
-namespace projeto.service.AsyncComm
+namespace projeto.infra.AsyncComm
 {
-    public class MessageConsumer : IMessageConsumer
+
+    public class MessageConsumer : MessageConsumerExtension, IMessageConsumer
     {
         private readonly IConfiguration _config;
         private readonly IConnection _connection;
@@ -24,49 +23,8 @@ namespace projeto.service.AsyncComm
             {
                 _connection = factory.CreateConnection();
                 _channel = _connection.CreateModel();
-
-                // Declarando a fila para eventos que foram adicionados
-                _channel.QueueDeclare(queue: "produtos.disponiveis",
-                    durable: true,
-                    exclusive: false,
-                    autoDelete: false);
-
-
-                // Declarando a fila para eventos que foram deletados
-                _channel.QueueDeclare(queue: "produtos.disponiveis.deletados",
-                    durable: true,
-                    exclusive: false,
-                    autoDelete: false);
-
-                // Declarando a fila para eventos que foram atualizados
-                _channel.QueueDeclare(queue: "produtos.disponiveis.atualizados",
-                    durable: true,
-                    exclusive: false,
-                    autoDelete: false);
-
-                // Definindo o balanceamento da fila para uma mensagem por vez.
-                _channel.BasicQos(prefetchSize: 0, prefetchCount: 1, global: false);
-
-                // Linkando a fila de eventos adicionados ao exchange 
-                _channel.QueueBind(queue: "produtos.disponiveis",
-                    exchange: "produtos/api.estoque",
-                    routingKey: "produtos.disponiveis.produto.adicionado");
-
-                // Linkando a fila de eventos deletados ao exchange 
-                _channel.QueueBind(queue: "produtos.disponiveis.deletados",
-                    exchange: "produtos/api.estoque",
-                    routingKey: "produtos.disponiveis.produto.deletado");
-
-                // Linkando a fila de eventos atualizados ao exchange 
-                _channel.QueueBind(queue: "produtos.disponiveis.atualizados",
-                    exchange: "produtos/api.estoque",
-                    routingKey: "produtos.disponiveis.produto.atualizado");
-
-
-
+                criarFilas(_channel);
                 _connection.ConnectionShutdown += RabbitMQFailed;
-
-                Console.WriteLine("--> Conectado ao Message Bus");
             }
             catch (Exception e)
             {

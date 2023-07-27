@@ -1,12 +1,12 @@
-namespace projeto.service.AsyncComm
+namespace projeto.infra.AsyncComm
 {
-    public class MessageBusService : IMessageBusService
+    public class MessageBusService : MessageBusServiceExtension, IMessageBusService
     {
         private readonly IConfiguration _config;
         private IConnection _connection;
         private IModel _channel;
-        IMapper _mapper;
-        public MessageBusService(IConfiguration config, IMapper mapper)
+
+        public MessageBusService(IConfiguration config)
         {
             _config = config;
 
@@ -26,33 +26,13 @@ namespace projeto.service.AsyncComm
 
                 // Criando o modelo da conexão
                 _channel = _connection.CreateModel();
-
-                // Definindo a fila no RabbitMQ
-                _channel.QueueDeclare(queue: "atualizar.estoque", durable: true,
-                    exclusive: false,
-                    autoDelete: false);
-
-                // Definindo o Exchange no RabbitMQ
-                _channel.ExchangeDeclare(exchange: "projeto.adicionado/api.projetos",
-                type: ExchangeType.Topic,
-                durable: true,
-                autoDelete: false);
-
-                // Linkando a fila ao exchange
-                _channel.QueueBind(queue: "atualizar.estoque",
-                    exchange: "projeto.adicionado/api.projetos",
-                    routingKey: "projeto.atualizar.estoque");
-
-
+                criarFilas(_channel);
                 _connection.ConnectionShutdown += RabbitMQFailed;
-
-                Console.WriteLine("--> Conectado ao Message Bus");
             }
             catch (Exception e)
             {
                 Console.WriteLine($"--> Não foi possivel se conectar com o Message Bus: {e.Message}");
             }
-            _mapper = mapper;
         }
 
         // Metodo de publicação de um novo projeto contendo todos os dados do projeto
@@ -60,7 +40,7 @@ namespace projeto.service.AsyncComm
         {
             // Realizando apontamento para outra variavel e
             // convertendo o objeto em JSON
-            var projetoModel = _mapper.Map<Projeto, ProjetoDTO>(evento);
+            var projetoModel = new ProjetoDTO { ProdutoUtilizado = evento.ProdutoUtilizado, QuantidadeUtilizado = evento.QuantidadeUtilizado };
             var message = JsonConvert.SerializeObject(projetoModel);
             if (_connection.IsOpen)
             {

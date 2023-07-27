@@ -1,5 +1,12 @@
-﻿global using projeto.domain;
+﻿global using projeto.infra.AsyncComm.Extensions;
+global using projeto.domain;
 global using projeto.domain.ValueObjects;
 global using projeto.infra.Data;
 global using Microsoft.EntityFrameworkCore;
 global using projeto.infra.AsyncComm;
+global using Microsoft.Extensions.Configuration;
+global using projeto.infra.Repository;
+global using RabbitMQ.Client;
+global using System.Text;
+global using Newtonsoft.Json;
+global using RabbitMQ.Client.Events;
