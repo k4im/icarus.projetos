@@ -1,6 +1,3 @@
-using projeto.service.Models;
-using projeto.service.Models.ValueObjects;
-
 namespace projeto.service.tests.Helpers
 {
     public class FakeProjeto
