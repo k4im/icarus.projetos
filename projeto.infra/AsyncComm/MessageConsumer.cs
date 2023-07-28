@@ -37,7 +37,7 @@ namespace projeto.infra.AsyncComm
 
         void consumirFila(IModel channel)
         {
-            var filaComMensagens = verificarFilas();
+            var filaComMensagens = verificarFilaComMensagens();
             // Definindo um consumidor
             var consumer = new EventingBasicConsumer(channel);
 
@@ -80,7 +80,7 @@ namespace projeto.infra.AsyncComm
             }
             Console.WriteLine("Fila se encontra vazia");
         }
-        string verificarFilas()
+        string verificarFilaComMensagens()
         {
             if (_channel.MessageCount(filaConsumerDisponiveis) != 0) return filaConsumerDisponiveis;
             if (_channel.MessageCount(filaConsumerAtualizados) != 0) return filaConsumerAtualizados;
