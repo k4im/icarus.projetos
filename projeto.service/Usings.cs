@@ -12,3 +12,6 @@ global using projeto.domain;
 global using projeto.domain.ValueObjects;
 global using projeto.infra.AsyncComm;
 global using projeto.infra.Repository;
+global using projeto.service.Extensions;
+global using projeto.service.Worker;
+global using Microsoft.Extensions.Configuration;

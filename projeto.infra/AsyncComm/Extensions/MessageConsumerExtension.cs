@@ -43,8 +43,6 @@ namespace projeto.infra.AsyncComm.Extensions
                 exchange: exchangeConsumer,
                 routingKey: routingKeyConsumerAtualizado);
 
-
-
         }
     }
 }

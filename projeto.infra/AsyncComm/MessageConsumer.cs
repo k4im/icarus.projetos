@@ -33,99 +33,11 @@ namespace projeto.infra.AsyncComm
         }
 
         public void verificarFila()
+            => consumirFila(_channel);
+
+        void consumirFila(IModel channel)
         {
-
-            if (_channel.MessageCount(filaConsumerDisponiveis) != 0) consumirProdutosDisponiveis(_channel);
-            if (_channel.MessageCount(filaConsumerAtualizados) != 0) consumirProdutosAtualizados(_channel);
-            if (_channel.MessageCount(filaConsumerDeletados) != 0) consumirProdutosDeletados(_channel);
-        }
-
-        void consumirProdutosDisponiveis(IModel channel)
-        {
-            // Definindo um consumidor
-            var consumer = new EventingBasicConsumer(channel);
-
-            // seta o EventSlim
-            // var msgsRecievedGate = new ManualResetEventSlim(false);
-
-            // Definindo o que o consumidor recebe
-            consumer.Received += async (model, ea) =>
-            {
-                try
-                {
-                    // transformando o body em um array
-                    byte[] body = ea.Body.ToArray();
-
-                    // transformando o body em string
-                    var message = Encoding.UTF8.GetString(body);
-                    var projeto = JsonConvert.DeserializeObject<ProdutosDisponiveis>(message);
-
-                    // Estará realizando a operação de adicição dos projetos no banco de dados
-                    for (int i = 0; i <= channel.MessageCount(filaConsumerDisponiveis); i++)
-                    {
-                        await _repo.adicionarProdutos(projeto);
-                    }
-
-                    Console.WriteLine("--> Consumido mensagem vindo da fila [produtos.disponiveis]");
-                    Console.WriteLine(message);
-                    channel.BasicAck(deliveryTag: ea.DeliveryTag, multiple: false);
-
-                }
-                catch (Exception e)
-                {
-                    channel.BasicNack(ea.DeliveryTag,
-                    multiple: false,
-                    requeue: true);
-                    Console.WriteLine(e);
-                }
-            };
-            // Consome o evento
-            channel.BasicConsume(queue: filaConsumerDisponiveis,
-                         autoAck: false,
-             consumer: consumer);
-        }
-        void consumirProdutosDeletados(IModel channel)
-        {
-            // Definindo um consumidor
-            var consumer = new EventingBasicConsumer(channel);
-
-            // Definindo o que o consumidor recebe
-            consumer.Received += (model, ea) =>
-            {
-                try
-                {
-                    // transformando o body em um array
-                    byte[] body = ea.Body.ToArray();
-
-                    // transformando o body em string
-                    var message = Encoding.UTF8.GetString(body);
-                    var produto = JsonConvert.DeserializeObject<ProdutosDisponiveis>(message);
-
-                    // Estará realizando a operação de adicição dos projetos no banco de dados
-                    for (int i = 0; i <= channel.MessageCount(filaConsumerDeletados); i++)
-                    {
-                        _repo.removerProdutos(produto.Id);
-                    }
-                    Console.WriteLine("--> Consumido mensagem vindo da fila [produtos.disponiveis.deletados]");
-                    channel.BasicAck(deliveryTag: ea.DeliveryTag, multiple: false);
-
-                }
-                catch (Exception e)
-                {
-                    channel.BasicNack(ea.DeliveryTag,
-                    multiple: false,
-                    requeue: true);
-                    Console.WriteLine(e);
-                }
-            };
-            // Consome o evento
-            channel.BasicConsume(queue: filaConsumerDeletados,
-                         autoAck: false,
-             consumer: consumer);
-        }
-
-        void consumirProdutosAtualizados(IModel channel)
-        {
+            var filaComMensagens = verificarFilas();
             // Definindo um consumidor
             var consumer = new EventingBasicConsumer(channel);
 
@@ -142,14 +54,16 @@ namespace projeto.infra.AsyncComm
                     var produto = JsonConvert.DeserializeObject<ProdutosDisponiveis>(message);
 
                     // Estará realizando a operação de adicição dos projetos no banco de dados
-                    for (int i = 0; i <= channel.MessageCount(filaConsumerAtualizados); i++)
+                    if (filaComMensagens != "vazia")
                     {
-                        await _repo.atualizarProdutos(produto.Id, produto);
+                        for (int i = 0; i <= channel.MessageCount(filaComMensagens); i++)
+                        {
+                            await logicaDeFilas(produto, filaComMensagens);
+                        }
+                        Console.WriteLine($"--> Consumido mensagem vindo da fila [{filaComMensagens}]");
+                        Console.WriteLine(message);
                     }
-                    Console.WriteLine("--> Consumido mensagem vindo da fila [produtos.disponiveis.atualizados]");
-                    Console.WriteLine(message);
                     channel.BasicAck(deliveryTag: ea.DeliveryTag, multiple: false);
-
                 }
                 catch (Exception e)
                 {
@@ -160,16 +74,38 @@ namespace projeto.infra.AsyncComm
                 }
             };
             // Consome o evento
-            channel.BasicConsume(queue: filaConsumerAtualizados,
+            channel.BasicConsume(queue: filaComMensagens,
                          autoAck: false,
              consumer: consumer);
+        }
+        string verificarFilas()
+        {
+            if (_channel.MessageCount(filaConsumerDisponiveis) != 0) return filaConsumerDisponiveis;
+            if (_channel.MessageCount(filaConsumerAtualizados) != 0) return filaConsumerAtualizados;
+            if (_channel.MessageCount(filaConsumerDeletados) != 0) return filaConsumerDeletados;
+            return "vazia";
+        }
+        async Task logicaDeFilas(ProdutosDisponiveis model, string fila)
+        {
+            switch (fila)
+            {
+                case "produtos.disponiveis":
+                    await _repo.adicionarProdutos(model);
+                    break;
+                case "produtos.disponiveis.atualizados":
+                    await _repo.atualizarProdutos(model.Id, model);
+                    break;
+                case "produtos.disponiveis.deletados":
+                    await _repo.removerProdutos(model.Id);
+                    break;
+                default:
+                    Console.WriteLine("Fila está vazia");
+                    break;
+            }
         }
 
         void RabbitMQFailed(object sender, ShutdownEventArgs e)
-        {
-            Console.WriteLine($"--> Não foi possivel se conectar ao Message Bus: {e}");
-        }
-
+            => Console.WriteLine($"--> Não foi possivel se conectar ao Message Bus: {e}");
     }
 
 }
