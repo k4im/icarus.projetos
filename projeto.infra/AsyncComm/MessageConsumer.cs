@@ -41,42 +41,44 @@ namespace projeto.infra.AsyncComm
             // Definindo um consumidor
             var consumer = new EventingBasicConsumer(channel);
 
-            // Definindo o que o consumidor recebe
-            consumer.Received += async (model, ea) =>
+            if (filaComMensagens != "vazia")
             {
-                try
+                // Definindo o que o consumidor recebe
+                consumer.Received += async (model, ea) =>
                 {
-                    // transformando o body em um array
-                    byte[] body = ea.Body.ToArray();
-
-                    // transformando o body em string
-                    var message = Encoding.UTF8.GetString(body);
-                    var produto = JsonConvert.DeserializeObject<ProdutosDisponiveis>(message);
-
-                    // Estará realizando a operação de adicição dos projetos no banco de dados
-                    if (filaComMensagens != "vazia")
+                    try
                     {
+                        // transformando o body em um array
+                        byte[] body = ea.Body.ToArray();
+
+                        // transformando o body em string
+                        var message = Encoding.UTF8.GetString(body);
+                        var produto = JsonConvert.DeserializeObject<ProdutosDisponiveis>(message);
+
+                        // Estará realizando a operação de adicição dos projetos no banco de dados
                         for (int i = 0; i <= channel.MessageCount(filaComMensagens); i++)
                         {
                             await logicaDeFilas(produto, filaComMensagens);
                         }
                         Console.WriteLine($"--> Consumido mensagem vindo da fila [{filaComMensagens}]");
                         Console.WriteLine(message);
+
+                        channel.BasicAck(deliveryTag: ea.DeliveryTag, multiple: false);
                     }
-                    channel.BasicAck(deliveryTag: ea.DeliveryTag, multiple: false);
-                }
-                catch (Exception e)
-                {
-                    channel.BasicNack(ea.DeliveryTag,
-                    multiple: false,
-                    requeue: true);
-                    Console.WriteLine(e);
-                }
-            };
-            // Consome o evento
-            channel.BasicConsume(queue: filaComMensagens,
-                         autoAck: false,
-             consumer: consumer);
+                    catch (Exception e)
+                    {
+                        channel.BasicNack(ea.DeliveryTag,
+                        multiple: false,
+                        requeue: true);
+                        Console.WriteLine(e);
+                    }
+                };
+                // Consome o evento
+                channel.BasicConsume(queue: filaComMensagens,
+                             autoAck: false,
+                 consumer: consumer);
+            }
+            Console.WriteLine("Fila se encontra vazia");
         }
         string verificarFilas()
         {
@@ -99,7 +101,6 @@ namespace projeto.infra.AsyncComm
                     await _repo.removerProdutos(model.Id);
                     break;
                 default:
-                    Console.WriteLine("Fila está vazia");
                     break;
             }
         }
