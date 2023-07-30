@@ -6,7 +6,7 @@ namespace projeto.infra.Repository
         {
             try
             {
-                using (var db = new DataContext(new DbContextOptionsBuilder().UseInMemoryDatabase("Data").Options))
+                using (var db = new DataContext())
                 {
                     db.ProdutosEmEstoque.Add(model);
                     await db.SaveChangesAsync();
@@ -33,7 +33,7 @@ namespace projeto.infra.Repository
         {
             try
             {
-                using (var db = new DataContext(new DbContextOptionsBuilder().UseInMemoryDatabase("Data").Options))
+                using (var db = new DataContext())
                 {
                     var produto = await db.ProdutosEmEstoque.FirstOrDefaultAsync(x => x.Id == id);
                     produto.Nome = model.Nome;
@@ -57,7 +57,7 @@ namespace projeto.infra.Repository
 
         public async Task<List<ProdutosDisponiveis>> buscarTodosProdutos()
         {
-            using (var db = new DataContext(new DbContextOptionsBuilder().UseInMemoryDatabase("Data").Options))
+            using (var db = new DataContext())
             {
                 return await db.ProdutosEmEstoque.ToListAsync();
             };
@@ -67,7 +67,7 @@ namespace projeto.infra.Repository
         {
             try
             {
-                using (var db = new DataContext(new DbContextOptionsBuilder().UseInMemoryDatabase("Data").Options))
+                using (var db = new DataContext())
                 {
                     var item = await db.ProdutosEmEstoque.FirstOrDefaultAsync(x => x.Id == id);
                     db.ProdutosEmEstoque.Remove(item);
@@ -90,7 +90,7 @@ namespace projeto.infra.Repository
 
         public static async Task atualizarTabelaProdutosDisponiveis(Projeto model)
         {
-            using (var db = new DataContext(new DbContextOptionsBuilder().UseInMemoryDatabase("Data").Options))
+            using (var db = new DataContext())
             {
                 var produto = await db.ProdutosEmEstoque.FirstOrDefaultAsync(x => x.Id == model.ProdutoUtilizado);
                 produto.Quantidade -= model.QuantidadeUtilizado;

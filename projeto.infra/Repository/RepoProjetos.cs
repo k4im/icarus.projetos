@@ -5,8 +5,6 @@ namespace projeto.infra.Repository
     {
         //Delegates e Eventos a serem disparados
         public delegate void aoCriarProjetoEventHandler(Projeto model);
-        public delegate void aoRealizarOperacaoEventHandler(string message);
-        public event aoRealizarOperacaoEventHandler aoRealizarOperacao;
         public event aoCriarProjetoEventHandler aocriarProjeto;
         IMessageBusService _messageBroker;
 
@@ -21,7 +19,7 @@ namespace projeto.infra.Repository
         {
             try
             {
-                using (var db = new DataContext(new DbContextOptionsBuilder().UseInMemoryDatabase("Data").Options))
+                using (var db = new DataContext())
                 {
                     var projeto = await db.Projetos.FirstOrDefaultAsync(x => x.Id == id);
                     projeto.AtualizarStatus(model);
@@ -44,7 +42,7 @@ namespace projeto.infra.Repository
 
         public async Task<Projeto> BuscarPorId(int? id)
         {
-            using (var db = new DataContext(new DbContextOptionsBuilder().UseInMemoryDatabase("Data").Options))
+            using (var db = new DataContext())
             {
                 var item = await db.Projetos.FirstOrDefaultAsync(x => x.Id == id);
                 return item;
@@ -54,7 +52,7 @@ namespace projeto.infra.Repository
 
         public async Task<Response<Projeto>> BuscarProdutos(int pagina, float resultadoPorPagina)
         {
-            using (var db = new DataContext(new DbContextOptionsBuilder().UseInMemoryDatabase("Data").Options))
+            using (var db = new DataContext())
             {
                 var ResultadoPorPagina = resultadoPorPagina;
                 var projetos = await db.Projetos.ToListAsync();
@@ -69,7 +67,7 @@ namespace projeto.infra.Repository
         {
             try
             {
-                using (var db = new DataContext(new DbContextOptionsBuilder().UseInMemoryDatabase("Data").Options))
+                using (var db = new DataContext())
                 {
                     if (await db.ProdutosEmEstoque.FirstOrDefaultAsync(x => x.Id == model.ProdutoUtilizado) == null)
                     {
@@ -98,7 +96,7 @@ namespace projeto.infra.Repository
         {
             try
             {
-                using (var db = new DataContext(new DbContextOptionsBuilder().UseInMemoryDatabase("Data").Options))
+                using (var db = new DataContext())
                 {
                     var item = await BuscarPorId(id);
                     db.Projetos.Remove(item);

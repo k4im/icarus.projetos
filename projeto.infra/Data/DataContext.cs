@@ -2,7 +2,7 @@ namespace projeto.infra.Data
 {
     public class DataContext : DbContext
     {
-        public DataContext(DbContextOptions options) : base(options)
+        public DataContext() : base(new DbContextOptionsBuilder().UseInMemoryDatabase("Data").Options)
         { }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
