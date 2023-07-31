@@ -1,121 +1,119 @@
-namespace projeto.infra.Repository
+namespace projeto.infra.Repository;
+
+
+public class RepoProjetos : IRepoProjetos
 {
+    //Delegates e Eventos a serem disparados
+    public delegate void aoCriarProjetoEventHandler(Projeto model);
+    public event aoCriarProjetoEventHandler aocriarProjeto;
+    IMessageBusService _messageBroker;
 
-    public class RepoProjetos : IRepoProjetos
+    public RepoProjetos(IMessageBusService messageBroker)
     {
-        //Delegates e Eventos a serem disparados
-        public delegate void aoCriarProjetoEventHandler(Projeto model);
-        public event aoCriarProjetoEventHandler aocriarProjeto;
-        IMessageBusService _messageBroker;
+        _messageBroker = messageBroker;
+        aocriarProjeto += async (Projeto model) => { await RepoProdutosDisponiveis.atualizarTabelaProdutosDisponiveis(model); };
+        aocriarProjeto += messageBroker.enviarProjeto;
+    }
 
-        public RepoProjetos(IMessageBusService messageBroker)
-        {
-            _messageBroker = messageBroker;
-            aocriarProjeto += async (Projeto model) => { await RepoProdutosDisponiveis.atualizarTabelaProdutosDisponiveis(model); };
-            aocriarProjeto += messageBroker.enviarProjeto;
-        }
-
-        public async Task<bool> AtualizarStatus(StatusProjeto model, int? id)
-        {
-            try
-            {
-                using (var db = new DataContext())
-                {
-                    var projeto = await db.Projetos.FirstOrDefaultAsync(x => x.Id == id);
-                    projeto.AtualizarStatus(model);
-                    await db.SaveChangesAsync();
-                    return true;
-                }
-
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                Console.WriteLine("Não foi possivel estar realizando a operação, a mesma já foi realizada por um outro usuario!");
-                return false;
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine($"Não foi possivel estar realizando a operação: {e.Message}");
-                return false;
-            }
-        }
-
-        public async Task<Projeto> BuscarPorId(int? id)
+    public async Task<bool> AtualizarStatus(StatusProjeto model, int? id)
+    {
+        try
         {
             using (var db = new DataContext())
             {
-                var item = await db.Projetos.FirstOrDefaultAsync(x => x.Id == id);
-                return item;
+                var projeto = await db.Projetos.FirstOrDefaultAsync(x => x.Id == id);
+                projeto.AtualizarStatus(model);
+                await db.SaveChangesAsync();
+                return true;
             }
 
         }
+        catch (DbUpdateConcurrencyException)
+        {
+            Console.WriteLine("Não foi possivel estar realizando a operação, a mesma já foi realizada por um outro usuario!");
+            return false;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine($"Não foi possivel estar realizando a operação: {e.Message}");
+            return false;
+        }
+    }
 
-        public async Task<Response<Projeto>> BuscarProdutos(int pagina, float resultadoPorPagina)
+    public async Task<Projeto> BuscarPorId(int? id)
+    {
+        using (var db = new DataContext())
+        {
+            var item = await db.Projetos.FirstOrDefaultAsync(x => x.Id == id);
+            return item;
+        }
+
+    }
+
+    public async Task<Response<Projeto>> BuscarProdutos(int pagina, float resultadoPorPagina)
+    {
+        using (var db = new DataContext())
+        {
+            var ResultadoPorPagina = resultadoPorPagina;
+            var projetos = await db.Projetos.ToListAsync();
+            var TotalDePaginas = Math.Ceiling(projetos.Count() / ResultadoPorPagina);
+            var projetosPaginados = projetos.Skip((pagina - 1) * (int)ResultadoPorPagina).Take((int)ResultadoPorPagina).ToList();
+
+            return new Response<Projeto>(projetosPaginados, pagina, (int)TotalDePaginas);
+        }
+    }
+
+    public async Task<bool> CriarProjeto(Projeto model)
+    {
+        try
         {
             using (var db = new DataContext())
             {
-                var ResultadoPorPagina = resultadoPorPagina;
-                var projetos = await db.Projetos.ToListAsync();
-                var TotalDePaginas = Math.Ceiling(projetos.Count() / ResultadoPorPagina);
-                var projetosPaginados = projetos.Skip((pagina - 1) * (int)ResultadoPorPagina).Take((int)ResultadoPorPagina).ToList();
-
-                return new Response<Projeto>(projetosPaginados, pagina, (int)TotalDePaginas);
-            }
-        }
-
-        public async Task<bool> CriarProjeto(Projeto model)
-        {
-            try
-            {
-                using (var db = new DataContext())
+                if (await db.ProdutosEmEstoque.FirstOrDefaultAsync(x => x.Id == model.ProdutoUtilizado) == null)
                 {
-                    if (await db.ProdutosEmEstoque.FirstOrDefaultAsync(x => x.Id == model.ProdutoUtilizado) == null)
-                    {
-                        throw new Exception($"Enterrompido criação do projeto pois produto com [id] - [{model.ProdutoUtilizado}] não existe!");
-                    }
-                    db.Projetos.Add(model);
-                    await db.SaveChangesAsync();
-                    aocriarProjeto(model);
-                    return true;
+                    throw new Exception($"Enterrompido criação do projeto pois produto com [id] - [{model.ProdutoUtilizado}] não existe!");
                 }
+                db.Projetos.Add(model);
+                await db.SaveChangesAsync();
+                aocriarProjeto(model);
+                return true;
+            }
 
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                Console.WriteLine("Não foi possivel realizar a operação, a mesma já foi realizado por um outro usuario!");
-                return false;
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine($"Não foi possivel realizar a operação: {e.Message}");
-                return false;
-            }
         }
-
-        public async Task<bool> DeletarProjeto(int? id)
+        catch (DbUpdateConcurrencyException)
         {
-            try
-            {
-                using (var db = new DataContext())
-                {
-                    var item = await BuscarPorId(id);
-                    db.Projetos.Remove(item);
-                    await db.SaveChangesAsync();
-                    return true;
-                }
-
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                Console.WriteLine("Não foi possivel realizar a operação, a mesma já foi realizado por um outro usuario!");
-                return false;
-            }
-            catch (Exception e)
-            {
-                Console.Write($"Não foi possivel realizar a operação: {e.Message}");
-                return false;
-            }
+            Console.WriteLine("Não foi possivel realizar a operação, a mesma já foi realizado por um outro usuario!");
+            return false;
         }
+        catch (Exception e)
+        {
+            Console.WriteLine($"Não foi possivel realizar a operação: {e.Message}");
+            return false;
+        }
+    }
 
+    public async Task<bool> DeletarProjeto(int? id)
+    {
+        try
+        {
+            using (var db = new DataContext())
+            {
+                var item = await BuscarPorId(id);
+                db.Projetos.Remove(item);
+                await db.SaveChangesAsync();
+                return true;
+            }
+
+        }
+        catch (DbUpdateConcurrencyException)
+        {
+            Console.WriteLine("Não foi possivel realizar a operação, a mesma já foi realizado por um outro usuario!");
+            return false;
+        }
+        catch (Exception e)
+        {
+            Console.Write($"Não foi possivel realizar a operação: {e.Message}");
+            return false;
+        }
     }
 }
