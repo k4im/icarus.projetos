@@ -9,6 +9,15 @@ namespace projeto.service.tests.Helpers
         }
 
         static StatusProjeto factoryProjetoStatus() => new StatusProjeto("Rodando");
-
+        public static List<Projeto> factoryListaProjetos()
+        {
+            return new List<Projeto>{
+                factoryProjeto(),
+                factoryProjeto(),
+                factoryProjeto(),
+                factoryProjeto(),
+                factoryProjeto()
+            };
+        }
     }
 }

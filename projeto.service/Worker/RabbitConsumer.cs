@@ -5,10 +5,7 @@ namespace projeto.service.Worker
         IServiceProvider _provider;
 
         public RabbitConsumer(IServiceProvider provider)
-        {
-            _provider = provider;
-        }
-
+            => _provider = provider;
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
             while (!stoppingToken.IsCancellationRequested)

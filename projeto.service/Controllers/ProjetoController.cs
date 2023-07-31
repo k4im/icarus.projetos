@@ -21,10 +21,7 @@ namespace projeto.service.Controllers
         {
             var currentUser = HttpContext.User.FindFirstValue(ClaimTypes.Name);
             var projetos = await _repo.BuscarProdutos(pagina, resultadoPorPagina);
-            if (projetos == null)
-            {
-                return StatusCode(404);
-            }
+            if (projetos == null) return StatusCode(404);
             return Ok(projetos);
         }
 
@@ -39,10 +36,7 @@ namespace projeto.service.Controllers
         {
             var currentUser = HttpContext.User.FindFirstValue(ClaimTypes.Name);
             var item = await _repo.BuscarPorId(id);
-            if (item == null)
-            {
-                return NotFound();
-            }
+            if (item == null) return StatusCode(404);
             return Ok(item);
         }
 
@@ -72,10 +66,7 @@ namespace projeto.service.Controllers
         public async Task<IActionResult> adicionarProjeto(Projeto model)
         {
             var currentUser = HttpContext.User.FindFirstValue(ClaimTypes.Name);
-            if (!ModelState.IsValid)
-            {
-                return StatusCode(400, ModelState);
-            }
+            if (!ModelState.IsValid) return StatusCode(400, ModelState);
             try
             {
                 var result = await _repo.CriarProjeto(model);
@@ -99,10 +90,7 @@ namespace projeto.service.Controllers
         {
             var currentUser = HttpContext.User.FindFirstValue(ClaimTypes.Name);
             if (!ModelState.IsValid) return BadRequest(ModelState);
-            if (id == null)
-            {
-                return NotFound();
-            }
+            if (id == null) return StatusCode(404);
             try
             {
                 await _repo.AtualizarStatus(model, id);
@@ -125,10 +113,7 @@ namespace projeto.service.Controllers
         public async Task<IActionResult> removerProjeto(int? id)
         {
             var currentUser = HttpContext.User.FindFirstValue(ClaimTypes.Name);
-            if (id == null)
-            {
-                return NotFound();
-            }
+            if (id == null) return StatusCode(404);
             try
             {
                 await _repo.DeletarProjeto(id);

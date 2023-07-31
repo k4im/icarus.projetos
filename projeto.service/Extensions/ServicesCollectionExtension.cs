@@ -7,7 +7,7 @@ namespace projeto.service.Extensions
         {
             services.AddSwaggerGen(option =>
             {
-                option.SwaggerDoc("v1", new OpenApiInfo { Title = "Pessoas & usuarios API", Version = "v1" });
+                option.SwaggerDoc("v1", new OpenApiInfo { Title = "Api para projetos", Version = "v1" });
                 option.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
                 {
                     In = ParameterLocation.Header,
