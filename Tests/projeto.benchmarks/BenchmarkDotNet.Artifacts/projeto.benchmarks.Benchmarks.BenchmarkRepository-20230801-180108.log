@@ -1,0 +1,128 @@
+// Validating benchmarks:
+//    * No exporters defined, results will not be persisted.
+
+// ***** BenchmarkRunner: Start   *****
+// ***** Found 18 benchmark(s) in total *****
+// ***** Building 2 exe(s) in Parallel: Start   *****
+// ***** Done, took 00:00:00 (0.08 sec)   *****
+// Found 18 benchmarks:
+//   BenchmarkRepository.buscarProdutos: Job-OTODZI(Toolchain=InProcessEmitToolchain) [numerosDeInteracao=10]
+//   BenchmarkRepository.atualizarProdutosPadrao: Job-OTODZI(Toolchain=InProcessEmitToolchain) [numerosDeInteracao=10]
+//   BenchmarkRepository.atualizarProdutosOtimizado: Job-OTODZI(Toolchain=InProcessEmitToolchain) [numerosDeInteracao=10]
+//   BenchmarkRepository.buscarProdutos: ShortRun(IterationCount=3, LaunchCount=1, WarmupCount=3) [numerosDeInteracao=10]
+//   BenchmarkRepository.atualizarProdutosPadrao: ShortRun(IterationCount=3, LaunchCount=1, WarmupCount=3) [numerosDeInteracao=10]
+//   BenchmarkRepository.atualizarProdutosOtimizado: ShortRun(IterationCount=3, LaunchCount=1, WarmupCount=3) [numerosDeInteracao=10]
+//   BenchmarkRepository.buscarProdutos: Job-OTODZI(Toolchain=InProcessEmitToolchain) [numerosDeInteracao=150]
+//   BenchmarkRepository.atualizarProdutosPadrao: Job-OTODZI(Toolchain=InProcessEmitToolchain) [numerosDeInteracao=150]
+//   BenchmarkRepository.atualizarProdutosOtimizado: Job-OTODZI(Toolchain=InProcessEmitToolchain) [numerosDeInteracao=150]
+//   BenchmarkRepository.buscarProdutos: ShortRun(IterationCount=3, LaunchCount=1, WarmupCount=3) [numerosDeInteracao=150]
+//   BenchmarkRepository.atualizarProdutosPadrao: ShortRun(IterationCount=3, LaunchCount=1, WarmupCount=3) [numerosDeInteracao=150]
+//   BenchmarkRepository.atualizarProdutosOtimizado: ShortRun(IterationCount=3, LaunchCount=1, WarmupCount=3) [numerosDeInteracao=150]
+//   BenchmarkRepository.buscarProdutos: Job-OTODZI(Toolchain=InProcessEmitToolchain) [numerosDeInteracao=2000]
+//   BenchmarkRepository.atualizarProdutosPadrao: Job-OTODZI(Toolchain=InProcessEmitToolchain) [numerosDeInteracao=2000]
+//   BenchmarkRepository.atualizarProdutosOtimizado: Job-OTODZI(Toolchain=InProcessEmitToolchain) [numerosDeInteracao=2000]
+//   BenchmarkRepository.buscarProdutos: ShortRun(IterationCount=3, LaunchCount=1, WarmupCount=3) [numerosDeInteracao=2000]
+//   BenchmarkRepository.atualizarProdutosPadrao: ShortRun(IterationCount=3, LaunchCount=1, WarmupCount=3) [numerosDeInteracao=2000]
+//   BenchmarkRepository.atualizarProdutosOtimizado: ShortRun(IterationCount=3, LaunchCount=1, WarmupCount=3) [numerosDeInteracao=2000]
+
+// **************************
+// Benchmark: BenchmarkRepository.buscarProdutos: Job-OTODZI(Toolchain=InProcessEmitToolchain) [numerosDeInteracao=10]
+// *** Execute ***
+// Launch: 1 / 1
+// ! Failed to set up priority High for process System.Diagnostics.Process (projeto.benchmarks). Make sure you have the right permissions. Message: Permission denied
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.13.6
+// Runtime=.NET 7.0.9 (7.0.923.32301), X64 RyuJIT AVX
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX,PCLMUL,POPCNT VectorSize=128
+// Job: Job-OTODZI(Toolchain=InProcessEmitToolchain)
+
+OverheadJitting  1: 1 op, 401051.00 ns, 401.0510 us/op
+WorkloadJitting  1: 1 op, 239812207.00 ns, 239.8122 ms/op
+
+WorkloadPilot    1: 2 op, 1145839.00 ns, 572.9195 us/op
+WorkloadPilot    2: 3 op, 211269.00 ns, 70.4230 us/op
+WorkloadPilot    3: 4 op, 269346.00 ns, 67.3365 us/op
+WorkloadPilot    4: 5 op, 267632.00 ns, 53.5264 us/op
+WorkloadPilot    5: 6 op, 257969.00 ns, 42.9948 us/op
+WorkloadPilot    6: 7 op, 316125.00 ns, 45.1607 us/op
+WorkloadPilot    7: 8 op, 326378.00 ns, 40.7972 us/op
+WorkloadPilot    8: 9 op, 370846.00 ns, 41.2051 us/op
+WorkloadPilot    9: 10 op, 375754.00 ns, 37.5754 us/op
+WorkloadPilot   10: 11 op, 539607.00 ns, 49.0552 us/op
+WorkloadPilot   11: 12 op, 683033.00 ns, 56.9194 us/op
+WorkloadPilot   12: 13 op, 725627.00 ns, 55.8175 us/op
+WorkloadPilot   13: 14 op, 761696.00 ns, 54.4069 us/op
+WorkloadPilot   14: 15 op, 801155.00 ns, 53.4103 us/op
+WorkloadPilot   15: 16 op, 4006297.00 ns, 250.3936 us/op
+WorkloadPilot   16: 32 op, 2373032.00 ns, 74.1573 us/op
+WorkloadPilot   17: 64 op, 1939589.00 ns, 30.3061 us/op
+WorkloadPilot   18: 128 op, 6319785.00 ns, 49.3733 us/op
+WorkloadPilot   19: 256 op, 12058368.00 ns, 47.1030 us/op
+WorkloadPilot   20: 512 op, 23622254.00 ns, 46.1372 us/op
+WorkloadPilot   21: 1024 op, 47163936.00 ns, 46.0585 us/op
+WorkloadPilot   22: 2048 op, 89466209.00 ns, 43.6847 us/op
+WorkloadPilot   23: 4096 op, 98480127.00 ns, 24.0430 us/op
+WorkloadPilot   24: 8192 op, 225566873.00 ns, 27.5350 us/op
+WorkloadPilot   25: 16384 op, 221732658.00 ns, 13.5335 us/op
+WorkloadPilot   26: 32768 op, 419882193.00 ns, 12.8138 us/op
+WorkloadPilot   27: 65536 op, 833142309.00 ns, 12.7127 us/op
+
+WorkloadWarmup   1: 65536 op, 823568164.00 ns, 12.5667 us/op
+WorkloadWarmup   2: 65536 op, 843557837.00 ns, 12.8717 us/op
+WorkloadWarmup   3: 65536 op, 840151116.00 ns, 12.8197 us/op
+WorkloadWarmup   4: 65536 op, 840691429.00 ns, 12.8279 us/op
+WorkloadWarmup   5: 65536 op, 877246488.00 ns, 13.3857 us/op
+WorkloadWarmup   6: 65536 op, 1061296498.00 ns, 16.1941 us/op
+WorkloadWarmup   7: 65536 op, 949171828.00 ns, 14.4832 us/op
+
+WorkloadActual   1: 65536 op, 958496661.00 ns, 14.6255 us/op
+WorkloadActual   2: 65536 op, 954406880.00 ns, 14.5631 us/op
+WorkloadActual   3: 65536 op, 902657668.00 ns, 13.7735 us/op
+WorkloadActual   4: 65536 op, 925206199.00 ns, 14.1175 us/op
+WorkloadActual   5: 65536 op, 919120496.00 ns, 14.0247 us/op
+WorkloadActual   6: 65536 op, 952101785.00 ns, 14.5279 us/op
+WorkloadActual   7: 65536 op, 944488077.00 ns, 14.4117 us/op
+WorkloadActual   8: 65536 op, 937188347.00 ns, 14.3004 us/op
+WorkloadActual   9: 65536 op, 917890916.00 ns, 14.0059 us/op
+WorkloadActual  10: 65536 op, 912419789.00 ns, 13.9224 us/op
+WorkloadActual  11: 65536 op, 915327088.00 ns, 13.9668 us/op
+WorkloadActual  12: 65536 op, 901143766.00 ns, 13.7504 us/op
+WorkloadActual  13: 65536 op, 896701048.00 ns, 13.6826 us/op
+WorkloadActual  14: 65536 op, 894362627.00 ns, 13.6469 us/op
+WorkloadActual  15: 65536 op, 894237034.00 ns, 13.6450 us/op
+WorkloadActual  16: 65536 op, 888511460.00 ns, 13.5576 us/op
+WorkloadActual  17: 65536 op, 920631220.00 ns, 14.0477 us/op
+WorkloadActual  18: 65536 op, 914082808.00 ns, 13.9478 us/op
+WorkloadActual  19: 65536 op, 893396568.00 ns, 13.6321 us/op
+WorkloadActual  20: 65536 op, 922177782.00 ns, 14.0713 us/op
+WorkloadActual  21: 65536 op, 821662187.00 ns, 12.5376 us/op
+WorkloadActual  22: 65536 op, 826047558.00 ns, 12.6045 us/op
+WorkloadActual  23: 65536 op, 827895635.00 ns, 12.6327 us/op
+WorkloadActual  24: 65536 op, 820699665.00 ns, 12.5229 us/op
+WorkloadActual  25: 65536 op, 814205506.00 ns, 12.4238 us/op
+WorkloadActual  26: 65536 op, 819000741.00 ns, 12.4970 us/op
+WorkloadActual  27: 65536 op, 836733975.00 ns, 12.7675 us/op
+WorkloadActual  28: 65536 op, 824352053.00 ns, 12.5786 us/op
+WorkloadActual  29: 65536 op, 819912524.00 ns, 12.5109 us/op
+WorkloadActual  30: 65536 op, 816584573.00 ns, 12.4601 us/op
+WorkloadActual  31: 65536 op, 813617594.00 ns, 12.4148 us/op
+WorkloadActual  32: 65536 op, 820184721.00 ns, 12.5150 us/op
+WorkloadActual  33: 65536 op, 821347098.00 ns, 12.5328 us/op
+WorkloadActual  34: 65536 op, 856792787.00 ns, 13.0736 us/op
+WorkloadActual  35: 65536 op, 829339624.00 ns, 12.6547 us/op
+WorkloadActual  36: 65536 op, 827297238.00 ns, 12.6236 us/op
+WorkloadActual  37: 65536 op, 913101350.00 ns, 13.9328 us/op
+WorkloadActual  38: 65536 op, 919456781.00 ns, 14.0298 us/op
+WorkloadActual  39: 65536 op, 1146130815.00 ns, 17.4886 us/op
+WorkloadActual  40: 65536 op, 1289132444.00 ns, 19.6706 us/op
+WorkloadActual  41: 65536 op, 1212048431.00 ns, 18.4944 us/op
+WorkloadActual  42: 65536 op, 1235649070.00 ns, 18.8545 us/op
+WorkloadActual  43: 65536 op, 1389688350.00 ns, 21.2050 us/op
+WorkloadActual  44: 65536 op, 1057289831.00 ns, 16.1330 us/op
+WorkloadActual  45: 65536 op, 1323604522.00 ns, 20.1966 us/op
+WorkloadActual  46: 65536 op, 933842370.00 ns, 14.2493 us/op
+WorkloadActual  47: 65536 op, 873387925.00 ns, 13.3268 us/op
+WorkloadActual  48: 65536 op, 1005638026.00 ns, 15.3448 us/op
+WorkloadActual  49: 65536 op, 106682

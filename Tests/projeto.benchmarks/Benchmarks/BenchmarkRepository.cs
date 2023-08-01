@@ -8,7 +8,7 @@ public class BenchmarkRepository
     public int numerosDeInteracao;
 
     [GlobalSetup]
-    public async void Setup()
+    public void Setup()
     {
         _context = new DataContext(new DbContextOptionsBuilder().UseInMemoryDatabase("Data").Options);
         for (int i = 0; i < numerosDeInteracao; i++)
@@ -27,5 +27,23 @@ public class BenchmarkRepository
         return new Response<Projeto>(projetosPaginados, pagina, (int)TotalDePaginas);
     }
 
+    [Benchmark]
+    public async Task atualizarProdutosPadrao()
+    {
+        _context.Projetos.Add(FakeProjeto.factoryProjeto());
+        await _context.SaveChangesAsync();
+        var produto = await _context.Projetos.FirstOrDefaultAsync(x => x.Id == 1);
+        produto.AtualizarStatus(new StatusProjeto("Teste"));
+        await _context.SaveChangesAsync();
+    }
+
+    [Benchmark]
+    public async void atualizarProdutosOtimizado()
+    {
+        _context.Projetos.Add(FakeProjeto.factoryProjeto());
+        await _context.SaveChangesAsync();
+        _context.Projetos.Where(x => x.Id == 1)
+        .ExecuteUpdate(setter => setter.SetProperty(projeto => projeto.Status, new StatusProjeto("teste")));
+    }
 
 }
