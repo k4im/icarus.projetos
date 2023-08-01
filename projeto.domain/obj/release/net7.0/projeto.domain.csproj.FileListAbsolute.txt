@@ -1,0 +1,12 @@
+C:\Users\santo\github\icarus-sistema\icarus.projetos\projeto.domain\bin\release\net7.0\projeto.domain.deps.json
+C:\Users\santo\github\icarus-sistema\icarus.projetos\projeto.domain\bin\release\net7.0\projeto.domain.dll
+C:\Users\santo\github\icarus-sistema\icarus.projetos\projeto.domain\bin\release\net7.0\projeto.domain.pdb
+C:\Users\santo\github\icarus-sistema\icarus.projetos\projeto.domain\obj\release\net7.0\projeto.domain.csproj.AssemblyReference.cache
+C:\Users\santo\github\icarus-sistema\icarus.projetos\projeto.domain\obj\release\net7.0\projeto.domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\santo\github\icarus-sistema\icarus.projetos\projeto.domain\obj\release\net7.0\projeto.domain.AssemblyInfoInputs.cache
+C:\Users\santo\github\icarus-sistema\icarus.projetos\projeto.domain\obj\release\net7.0\projeto.domain.AssemblyInfo.cs
+C:\Users\santo\github\icarus-sistema\icarus.projetos\projeto.domain\obj\release\net7.0\projeto.domain.csproj.CoreCompileInputs.cache
+C:\Users\santo\github\icarus-sistema\icarus.projetos\projeto.domain\obj\release\net7.0\projeto.domain.dll
+C:\Users\santo\github\icarus-sistema\icarus.projetos\projeto.domain\obj\release\net7.0\refint\projeto.domain.dll
+C:\Users\santo\github\icarus-sistema\icarus.projetos\projeto.domain\obj\release\net7.0\projeto.domain.pdb
+C:\Users\santo\github\icarus-sistema\icarus.projetos\projeto.domain\obj\release\net7.0\ref\projeto.domain.dll
