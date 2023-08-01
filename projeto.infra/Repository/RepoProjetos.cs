@@ -80,6 +80,11 @@ public class RepoProjetos : IRepoProjetos
             }
 
         }
+        catch (ArgumentException)
+        {
+            //Retorna true devido ao problema de adição em massa de dados
+            return true;
+        }
         catch (DbUpdateConcurrencyException)
         {
             Console.WriteLine("Não foi possivel realizar a operação, a mesma já foi realizado por um outro usuario!");

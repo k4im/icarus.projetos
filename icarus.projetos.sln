@@ -13,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{13A63430
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "projeto.service.tests", "Tests\projeto.service.tests\projeto.service.tests.csproj", "{662F6969-CB33-4735-8C50-AC4B6A24C1D7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "projeto.benchmarks", "Tests\projeto.benchmarks\projeto.benchmarks.csproj", "{2DC48B72-B8CC-4807-A153-D44CD5E6EE27}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,8 +40,13 @@ Global
 		{662F6969-CB33-4735-8C50-AC4B6A24C1D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{662F6969-CB33-4735-8C50-AC4B6A24C1D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{662F6969-CB33-4735-8C50-AC4B6A24C1D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DC48B72-B8CC-4807-A153-D44CD5E6EE27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DC48B72-B8CC-4807-A153-D44CD5E6EE27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DC48B72-B8CC-4807-A153-D44CD5E6EE27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DC48B72-B8CC-4807-A153-D44CD5E6EE27}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{662F6969-CB33-4735-8C50-AC4B6A24C1D7} = {13A63430-C642-4ED6-AE6C-8D80BA641B2D}
+		{2DC48B72-B8CC-4807-A153-D44CD5E6EE27} = {13A63430-C642-4ED6-AE6C-8D80BA641B2D}
 	EndGlobalSection
 EndGlobal
