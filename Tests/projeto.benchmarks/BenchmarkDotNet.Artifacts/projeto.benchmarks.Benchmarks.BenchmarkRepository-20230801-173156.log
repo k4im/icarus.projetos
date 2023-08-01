@@ -1,0 +1,145 @@
+// Validating benchmarks:
+// ***** BenchmarkRunner: Start   *****
+// ***** Found 3 benchmark(s) in total *****
+// ***** Building 1 exe(s) in Parallel: Start   *****
+// start dotnet  restore /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 /p:Deterministic=true /p:Optimize=true in /home/oem/github/icarus-sistema/icarus.projetos/Tests/projeto.benchmarks/bin/release/net7.0/8fb1314c-7a95-4baf-9943-efa39405ae1a
+// command took 3.79 sec and exited with 0
+// start dotnet  build -c Release --no-restore /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 /p:Deterministic=true /p:Optimize=true in /home/oem/github/icarus-sistema/icarus.projetos/Tests/projeto.benchmarks/bin/release/net7.0/8fb1314c-7a95-4baf-9943-efa39405ae1a
+// command took 14.44 sec and exited with 0
+// ***** Done, took 00:00:18 (18.46 sec)   *****
+// Found 3 benchmarks:
+//   BenchmarkRepository.buscarProdutos: ShortRun(IterationCount=3, LaunchCount=1, WarmupCount=3) [numerosDeInteracao=10]
+//   BenchmarkRepository.buscarProdutos: ShortRun(IterationCount=3, LaunchCount=1, WarmupCount=3) [numerosDeInteracao=150]
+//   BenchmarkRepository.buscarProdutos: ShortRun(IterationCount=3, LaunchCount=1, WarmupCount=3) [numerosDeInteracao=250000]
+
+// **************************
+// Benchmark: BenchmarkRepository.buscarProdutos: ShortRun(IterationCount=3, LaunchCount=1, WarmupCount=3) [numerosDeInteracao=10]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet 8fb1314c-7a95-4baf-9943-efa39405ae1a.dll --anonymousPipes 116 123 --benchmarkName "projeto.benchmarks.Benchmarks.BenchmarkRepository.buscarProdutos(numerosDeInteracao: 10)" --job ShortRun --benchmarkId 0 in /home/oem/github/icarus-sistema/icarus.projetos/Tests/projeto.benchmarks/bin/release/net7.0/8fb1314c-7a95-4baf-9943-efa39405ae1a/bin/Release/net7.0
+Failed to set up high priority. Make sure you have the right permissions. Message: Permission denied
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.13.6
+// Runtime=.NET 7.0.9 (7.0.923.32301), X64 RyuJIT AVX
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX,PCLMUL,POPCNT VectorSize=128
+// Job: ShortRun(IterationCount=3, LaunchCount=1, WarmupCount=3)
+
+OverheadJitting  1: 1 op, 532359.00 ns, 532.3590 us/op
+WorkloadJitting  1: 1 op, 211948527.00 ns, 211.9485 ms/op
+
+WorkloadPilot    1: 2 op, 1471780.00 ns, 735.8900 us/op
+WorkloadPilot    2: 3 op, 202477.00 ns, 67.4923 us/op
+WorkloadPilot    3: 4 op, 196898.00 ns, 49.2245 us/op
+WorkloadPilot    4: 5 op, 221568.00 ns, 44.3136 us/op
+WorkloadPilot    5: 6 op, 271249.00 ns, 45.2082 us/op
+WorkloadPilot    6: 7 op, 348816.00 ns, 49.8309 us/op
+WorkloadPilot    7: 8 op, 296943.00 ns, 37.1179 us/op
+WorkloadPilot    8: 9 op, 342061.00 ns, 38.0068 us/op
+WorkloadPilot    9: 10 op, 449513.00 ns, 44.9513 us/op
+WorkloadPilot   10: 11 op, 370693.00 ns, 33.6994 us/op
+WorkloadPilot   11: 12 op, 367535.00 ns, 30.6279 us/op
+WorkloadPilot   12: 13 op, 454967.00 ns, 34.9975 us/op
+WorkloadPilot   13: 14 op, 437386.00 ns, 31.2419 us/op
+WorkloadPilot   14: 15 op, 473680.00 ns, 31.5787 us/op
+WorkloadPilot   15: 16 op, 474942.00 ns, 29.6839 us/op
+WorkloadPilot   16: 32 op, 951557.00 ns, 29.7362 us/op
+WorkloadPilot   17: 64 op, 1847024.00 ns, 28.8597 us/op
+WorkloadPilot   18: 128 op, 3344500.00 ns, 26.1289 us/op
+WorkloadPilot   19: 256 op, 6589458.00 ns, 25.7401 us/op
+WorkloadPilot   20: 512 op, 12926483.00 ns, 25.2470 us/op
+WorkloadPilot   21: 1024 op, 24894828.00 ns, 24.3114 us/op
+WorkloadPilot   22: 2048 op, 55506927.00 ns, 27.1030 us/op
+WorkloadPilot   23: 4096 op, 63027640.00 ns, 15.3876 us/op
+WorkloadPilot   24: 8192 op, 105400003.00 ns, 12.8662 us/op
+WorkloadPilot   25: 16384 op, 192456843.00 ns, 11.7466 us/op
+WorkloadPilot   26: 32768 op, 386277832.00 ns, 11.7883 us/op
+WorkloadPilot   27: 65536 op, 777286486.00 ns, 11.8605 us/op
+
+WorkloadWarmup   1: 65536 op, 781395807.00 ns, 11.9232 us/op
+WorkloadWarmup   2: 65536 op, 779808903.00 ns, 11.8989 us/op
+WorkloadWarmup   3: 65536 op, 776694862.00 ns, 11.8514 us/op
+
+// BeforeActualRun
+WorkloadActual   1: 65536 op, 776663771.00 ns, 11.8509 us/op
+WorkloadActual   2: 65536 op, 772053005.00 ns, 11.7806 us/op
+WorkloadActual   3: 65536 op, 774409758.00 ns, 11.8166 us/op
+
+// AfterActualRun
+WorkloadResult   1: 65536 op, 776663771.00 ns, 11.8509 us/op
+WorkloadResult   2: 65536 op, 772053005.00 ns, 11.7806 us/op
+WorkloadResult   3: 65536 op, 774409758.00 ns, 11.8166 us/op
+// GC:  157 0 0 246940776 65536
+// Threading:  0 0 65536
+
+// AfterAll
+// Benchmark Process 58719 has exited with code 0.
+
+Mean = 11.816 μs, StdErr = 0.020 μs (0.17%), N = 3, StdDev = 0.035 μs
+Min = 11.781 μs, Q1 = 11.799 μs, Median = 11.817 μs, Q3 = 11.834 μs, Max = 11.851 μs
+IQR = 0.035 μs, LowerFence = 11.746 μs, UpperFence = 11.887 μs
+ConfidenceInterval = [11.174 μs; 12.458 μs] (CI 99.9%), Margin = 0.642 μs (5.43% of Mean)
+Skewness = -0.01, Kurtosis = 0.67, MValue = 2
+
+// ** Remained 2 (66.7%) benchmark(s) to run. Estimated finish 2023-08-01 17:32 (0h 0m from now) **
+// **************************
+// Benchmark: BenchmarkRepository.buscarProdutos: ShortRun(IterationCount=3, LaunchCount=1, WarmupCount=3) [numerosDeInteracao=150]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet 8fb1314c-7a95-4baf-9943-efa39405ae1a.dll --anonymousPipes 124 125 --benchmarkName "projeto.benchmarks.Benchmarks.BenchmarkRepository.buscarProdutos(numerosDeInteracao: 150)" --job ShortRun --benchmarkId 1 in /home/oem/github/icarus-sistema/icarus.projetos/Tests/projeto.benchmarks/bin/release/net7.0/8fb1314c-7a95-4baf-9943-efa39405ae1a/bin/Release/net7.0
+Failed to set up high priority. Make sure you have the right permissions. Message: Permission denied
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.13.6
+// Runtime=.NET 7.0.9 (7.0.923.32301), X64 RyuJIT AVX
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX,PCLMUL,POPCNT VectorSize=128
+// Job: ShortRun(IterationCount=3, LaunchCount=1, WarmupCount=3)
+
+OverheadJitting  1: 1 op, 504720.00 ns, 504.7200 us/op
+WorkloadJitting  1: 1 op, 207526454.00 ns, 207.5265 ms/op
+
+WorkloadPilot    1: 2 op, 1175404.00 ns, 587.7020 us/op
+WorkloadPilot    2: 3 op, 187736.00 ns, 62.5787 us/op
+WorkloadPilot    3: 4 op, 219944.00 ns, 54.9860 us/op
+WorkloadPilot    4: 5 op, 276890.00 ns, 55.3780 us/op
+WorkloadPilot    5: 6 op, 256358.00 ns, 42.7263 us/op
+WorkloadPilot    6: 7 op, 297587.00 ns, 42.5124 us/op
+WorkloadPilot    7: 8 op, 346279.00 ns, 43.2849 us/op
+WorkloadPilot    8: 9 op, 344978.00 ns, 38.3309 us/op
+WorkloadPilot    9: 10 op, 377716.00 ns, 37.7716 us/op
+WorkloadPilot   10: 11 op, 427918.00 ns, 38.9016 us/op
+WorkloadPilot   11: 12 op, 410848.00 ns, 34.2373 us/op
+WorkloadPilot   12: 13 op, 463255.00 ns, 35.6350 us/op
+WorkloadPilot   13: 14 op, 458134.00 ns, 32.7239 us/op
+WorkloadPilot   14: 15 op, 510611.00 ns, 34.0407 us/op
+WorkloadPilot   15: 16 op, 504737.00 ns, 31.5461 us/op
+WorkloadPilot   16: 32 op, 9653294.00 ns, 301.6654 us/op
+WorkloadPilot   17: 64 op, 2062387.00 ns, 32.2248 us/op
+WorkloadPilot   18: 128 op, 4651438.00 ns, 36.3394 us/op
+WorkloadPilot   19: 256 op, 7448319.00 ns, 29.0950 us/op
+WorkloadPilot   20: 512 op, 13112779.00 ns, 25.6109 us/op
+WorkloadPilot   21: 1024 op, 37563901.00 ns, 36.6835 us/op
+WorkloadPilot   22: 2048 op, 33227560.00 ns, 16.2244 us/op
+WorkloadPilot   23: 4096 op, 87976904.00 ns, 21.4787 us/op
+WorkloadPilot   24: 8192 op, 99453334.00 ns, 12.1403 us/op
+WorkloadPilot   25: 16384 op, 193933918.00 ns, 11.8368 us/op
+WorkloadPilot   26: 32768 op, 388278902.00 ns, 11.8493 us/op
+WorkloadPilot   27: 65536 op, 778146685.00 ns, 11.8736 us/op
+
+WorkloadWarmup   1: 65536 op, 778528101.00 ns, 11.8794 us/op
+WorkloadWarmup   2: 65536 op, 777577952.00 ns, 11.8649 us/op
+WorkloadWarmup   3: 65536 op, 774099821.00 ns, 11.8118 us/op
+
+// BeforeActualRun
+WorkloadActual   1: 65536 op, 775629216.00 ns, 11.8352 us/op
+WorkloadActual   2: 65536 op, 776546181.00 ns, 11.8492 us/op
+WorkloadActual   3: 65536 op, 779657175.00 ns, 11.8966 us/op
+
+// AfterActualRun
+WorkloadResult   1: 65536 op, 775629216.00 ns, 11.8352 us/op
+WorkloadResult   2: 65536 op, 776546181.00 ns, 11.8492 us/op
+WorkloadResult   3: 65536 op, 77965

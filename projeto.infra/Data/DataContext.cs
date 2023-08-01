@@ -4,6 +4,10 @@ namespace projeto.infra.Data
     {
         public DataContext() : base(new DbContextOptionsBuilder().UseInMemoryDatabase("Data").Options)
         { }
+
+        public DataContext(DbContextOptions options) : base(options)
+        { }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             // Fluent API for specifying concurrency token
