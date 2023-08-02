@@ -35,6 +35,6 @@ public class BenchmarkRepository
 
     [Benchmark]
     public async Task<List<Projeto>> buscarProdutosPaginadosSql()
-    => await _context.Projetos.FromSql($"SELECT * FROM Projetos LIMIT 5,10")
+    => await _context.Projetos.FromSql($"SELECT * FROM Projetos LIMIT 10 OFFSET 0")
     .ToListAsync();
 }
