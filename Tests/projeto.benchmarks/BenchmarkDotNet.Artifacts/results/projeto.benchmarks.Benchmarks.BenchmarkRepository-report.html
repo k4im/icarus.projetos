@@ -2,7 +2,7 @@
 <html lang='en'>
 <head>
 <meta charset='utf-8' />
-<title>projeto.benchmarks.Benchmarks.BenchmarkRepository-20230801-175840</title>
+<title>projeto.benchmarks.Benchmarks.BenchmarkRepository-20230802-172433</title>
 
 <style type="text/css">
 	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
@@ -16,16 +16,20 @@
 BenchmarkDotNet v0.13.6, Linux Mint 21.1 (Vera)
 Intel Core i3-3240 CPU 3.40GHz (Ivy Bridge), 1 CPU, 4 logical and 2 physical cores
 .NET SDK 7.0.109
-  [Host] : .NET 7.0.9 (7.0.923.32301), X64 RyuJIT AVX
+  [Host]   : .NET 7.0.9 (7.0.923.32301), X64 RyuJIT AVX
+  ShortRun : .NET 7.0.9 (7.0.923.32301), X64 RyuJIT AVX
 </code></pre>
 <pre><code>Job=ShortRun  IterationCount=3  LaunchCount=1  
 WarmupCount=3  
 </code></pre>
 
 <table>
-<thead><tr><th>  Method</th><th>numerosDeInteracao</th><th>Mean</th><th>Error</th><th>Rank</th>
+<thead><tr><th>              Method</th><th>numerosDeInteracao</th><th>Mean</th><th>Error</th><th>Rank</th>
 </tr>
-</thead><tbody><tr><td>buscarProdutos</td><td>10</td><td>NA</td><td>NA</td><td>?</td>
+</thead><tbody><tr><td>buscarProdutosPaginados</td><td>1000</td><td>NA</td><td>NA</td><td>?</td>
+</tr><tr><td>buscarProdutosPaginadosSql</td><td>1000</td><td>NA</td><td>NA</td><td>?</td>
+</tr><tr><td>buscarProdutosPaginados</td><td>2000</td><td>NA</td><td>NA</td><td>?</td>
+</tr><tr><td>buscarProdutosPaginadosSql</td><td>2000</td><td>NA</td><td>NA</td><td>?</td>
 </tr></tbody></table>
 </body>
 </html>

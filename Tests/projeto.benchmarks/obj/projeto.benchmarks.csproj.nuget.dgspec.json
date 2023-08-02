@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/oem/github/icarus-sistema/icarus.projetos/Tests/projeto.benchmarks/projeto.benchmarks.csproj": {}
+    "/home/oem/github/icarus/icarus.projetos/Tests/projeto.benchmarks/projeto.benchmarks.csproj": {}
   },
   "projects": {
-    "/home/oem/github/icarus-sistema/icarus.projetos/Tests/projeto.benchmarks/projeto.benchmarks.csproj": {
+    "/home/oem/github/icarus/icarus.projetos/Tests/projeto.benchmarks/projeto.benchmarks.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/oem/github/icarus-sistema/icarus.projetos/Tests/projeto.benchmarks/projeto.benchmarks.csproj",
+        "projectUniqueName": "/home/oem/github/icarus/icarus.projetos/Tests/projeto.benchmarks/projeto.benchmarks.csproj",
         "projectName": "projeto.benchmarks",
-        "projectPath": "/home/oem/github/icarus-sistema/icarus.projetos/Tests/projeto.benchmarks/projeto.benchmarks.csproj",
+        "projectPath": "/home/oem/github/icarus/icarus.projetos/Tests/projeto.benchmarks/projeto.benchmarks.csproj",
         "packagesPath": "/home/oem/.nuget/packages/",
-        "outputPath": "/home/oem/github/icarus-sistema/icarus.projetos/Tests/projeto.benchmarks/obj/",
+        "outputPath": "/home/oem/github/icarus/icarus.projetos/Tests/projeto.benchmarks/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/oem/.nuget/NuGet/NuGet.Config"
@@ -26,14 +26,14 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "/home/oem/github/icarus-sistema/icarus.projetos/projeto.domain/projeto.domain.csproj": {
-                "projectPath": "/home/oem/github/icarus-sistema/icarus.projetos/projeto.domain/projeto.domain.csproj"
+              "/home/oem/github/icarus/icarus.projetos/projeto.domain/projeto.domain.csproj": {
+                "projectPath": "/home/oem/github/icarus/icarus.projetos/projeto.domain/projeto.domain.csproj"
               },
-              "/home/oem/github/icarus-sistema/icarus.projetos/projeto.infra/projeto.infra.csproj": {
-                "projectPath": "/home/oem/github/icarus-sistema/icarus.projetos/projeto.infra/projeto.infra.csproj"
+              "/home/oem/github/icarus/icarus.projetos/projeto.infra/projeto.infra.csproj": {
+                "projectPath": "/home/oem/github/icarus/icarus.projetos/projeto.infra/projeto.infra.csproj"
               },
-              "/home/oem/github/icarus-sistema/icarus.projetos/projeto.service/projeto.service.csproj": {
-                "projectPath": "/home/oem/github/icarus-sistema/icarus.projetos/projeto.service/projeto.service.csproj"
+              "/home/oem/github/icarus/icarus.projetos/projeto.service/projeto.service.csproj": {
+                "projectPath": "/home/oem/github/icarus/icarus.projetos/projeto.service/projeto.service.csproj"
               }
             }
           }
@@ -51,6 +51,10 @@
             "BenchmarkDotNet": {
               "target": "Package",
               "version": "[0.13.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[7.0.9, )"
             },
             "Moq": {
               "target": "Package",
@@ -77,14 +81,14 @@
         }
       }
     },
-    "/home/oem/github/icarus-sistema/icarus.projetos/projeto.domain/projeto.domain.csproj": {
+    "/home/oem/github/icarus/icarus.projetos/projeto.domain/projeto.domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/oem/github/icarus-sistema/icarus.projetos/projeto.domain/projeto.domain.csproj",
+        "projectUniqueName": "/home/oem/github/icarus/icarus.projetos/projeto.domain/projeto.domain.csproj",
         "projectName": "projeto.domain",
-        "projectPath": "/home/oem/github/icarus-sistema/icarus.projetos/projeto.domain/projeto.domain.csproj",
+        "projectPath": "/home/oem/github/icarus/icarus.projetos/projeto.domain/projeto.domain.csproj",
         "packagesPath": "/home/oem/.nuget/packages/",
-        "outputPath": "/home/oem/github/icarus-sistema/icarus.projetos/projeto.domain/obj/",
+        "outputPath": "/home/oem/github/icarus/icarus.projetos/projeto.domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/oem/.nuget/NuGet/NuGet.Config"
@@ -130,14 +134,14 @@
         }
       }
     },
-    "/home/oem/github/icarus-sistema/icarus.projetos/projeto.infra/projeto.infra.csproj": {
+    "/home/oem/github/icarus/icarus.projetos/projeto.infra/projeto.infra.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/oem/github/icarus-sistema/icarus.projetos/projeto.infra/projeto.infra.csproj",
+        "projectUniqueName": "/home/oem/github/icarus/icarus.projetos/projeto.infra/projeto.infra.csproj",
         "projectName": "projeto.infra",
-        "projectPath": "/home/oem/github/icarus-sistema/icarus.projetos/projeto.infra/projeto.infra.csproj",
+        "projectPath": "/home/oem/github/icarus/icarus.projetos/projeto.infra/projeto.infra.csproj",
         "packagesPath": "/home/oem/.nuget/packages/",
-        "outputPath": "/home/oem/github/icarus-sistema/icarus.projetos/projeto.infra/obj/",
+        "outputPath": "/home/oem/github/icarus/icarus.projetos/projeto.infra/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/oem/.nuget/NuGet/NuGet.Config"
@@ -152,8 +156,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "/home/oem/github/icarus-sistema/icarus.projetos/projeto.domain/projeto.domain.csproj": {
-                "projectPath": "/home/oem/github/icarus-sistema/icarus.projetos/projeto.domain/projeto.domain.csproj"
+              "/home/oem/github/icarus/icarus.projetos/projeto.domain/projeto.domain.csproj": {
+                "projectPath": "/home/oem/github/icarus/icarus.projetos/projeto.domain/projeto.domain.csproj"
               }
             }
           }
@@ -177,6 +181,10 @@
               "version": "[7.0.9, )"
             },
             "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[7.0.9, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
               "version": "[7.0.9, )"
             },
@@ -213,14 +221,14 @@
         }
       }
     },
-    "/home/oem/github/icarus-sistema/icarus.projetos/projeto.service/projeto.service.csproj": {
+    "/home/oem/github/icarus/icarus.projetos/projeto.service/projeto.service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/oem/github/icarus-sistema/icarus.projetos/projeto.service/projeto.service.csproj",
+        "projectUniqueName": "/home/oem/github/icarus/icarus.projetos/projeto.service/projeto.service.csproj",
         "projectName": "projeto.service",
-        "projectPath": "/home/oem/github/icarus-sistema/icarus.projetos/projeto.service/projeto.service.csproj",
+        "projectPath": "/home/oem/github/icarus/icarus.projetos/projeto.service/projeto.service.csproj",
         "packagesPath": "/home/oem/.nuget/packages/",
-        "outputPath": "/home/oem/github/icarus-sistema/icarus.projetos/projeto.service/obj/",
+        "outputPath": "/home/oem/github/icarus/icarus.projetos/projeto.service/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/oem/.nuget/NuGet/NuGet.Config"
@@ -235,11 +243,11 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "/home/oem/github/icarus-sistema/icarus.projetos/projeto.domain/projeto.domain.csproj": {
-                "projectPath": "/home/oem/github/icarus-sistema/icarus.projetos/projeto.domain/projeto.domain.csproj"
+              "/home/oem/github/icarus/icarus.projetos/projeto.domain/projeto.domain.csproj": {
+                "projectPath": "/home/oem/github/icarus/icarus.projetos/projeto.domain/projeto.domain.csproj"
               },
-              "/home/oem/github/icarus-sistema/icarus.projetos/projeto.infra/projeto.infra.csproj": {
-                "projectPath": "/home/oem/github/icarus-sistema/icarus.projetos/projeto.infra/projeto.infra.csproj"
+              "/home/oem/github/icarus/icarus.projetos/projeto.infra/projeto.infra.csproj": {
+                "projectPath": "/home/oem/github/icarus/icarus.projetos/projeto.infra/projeto.infra.csproj"
               }
             }
           }

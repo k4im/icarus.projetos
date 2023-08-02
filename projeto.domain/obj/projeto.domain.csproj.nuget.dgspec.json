@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/oem/github/icarus-sistema/icarus.projetos/projeto.domain/projeto.domain.csproj": {}
+    "/home/oem/github/icarus/icarus.projetos/projeto.domain/projeto.domain.csproj": {}
   },
   "projects": {
-    "/home/oem/github/icarus-sistema/icarus.projetos/projeto.domain/projeto.domain.csproj": {
+    "/home/oem/github/icarus/icarus.projetos/projeto.domain/projeto.domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/oem/github/icarus-sistema/icarus.projetos/projeto.domain/projeto.domain.csproj",
+        "projectUniqueName": "/home/oem/github/icarus/icarus.projetos/projeto.domain/projeto.domain.csproj",
         "projectName": "projeto.domain",
-        "projectPath": "/home/oem/github/icarus-sistema/icarus.projetos/projeto.domain/projeto.domain.csproj",
+        "projectPath": "/home/oem/github/icarus/icarus.projetos/projeto.domain/projeto.domain.csproj",
         "packagesPath": "/home/oem/.nuget/packages/",
-        "outputPath": "/home/oem/github/icarus-sistema/icarus.projetos/projeto.domain/obj/",
+        "outputPath": "/home/oem/github/icarus/icarus.projetos/projeto.domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/oem/.nuget/NuGet/NuGet.Config"

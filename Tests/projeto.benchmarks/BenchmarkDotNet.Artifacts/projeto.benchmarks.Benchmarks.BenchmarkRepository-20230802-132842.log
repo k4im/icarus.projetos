@@ -1,0 +1,1106 @@
+// Validating benchmarks:
+//    * No exporters defined, results will not be persisted.
+
+// ***** BenchmarkRunner: Start   *****
+// ***** Found 12 benchmark(s) in total *****
+// ***** Building 2 exe(s) in Parallel: Start   *****
+// ***** Done, took 00:00:18 (18.19 sec)   *****
+// Found 12 benchmarks:
+//   BenchmarkRepository.buscarProdutos: Job-PKWIYK(Toolchain=InProcessEmitToolchain) [numerosDeInteracao=125]
+//   BenchmarkRepository.atualizarProdutosPadrao: Job-PKWIYK(Toolchain=InProcessEmitToolchain) [numerosDeInteracao=125]
+//   BenchmarkRepository.buscarProdutos: ShortRun(IterationCount=3, LaunchCount=1, WarmupCount=3) [numerosDeInteracao=125]
+//   BenchmarkRepository.atualizarProdutosPadrao: ShortRun(IterationCount=3, LaunchCount=1, WarmupCount=3) [numerosDeInteracao=125]
+//   BenchmarkRepository.buscarProdutos: Job-PKWIYK(Toolchain=InProcessEmitToolchain) [numerosDeInteracao=250]
+//   BenchmarkRepository.atualizarProdutosPadrao: Job-PKWIYK(Toolchain=InProcessEmitToolchain) [numerosDeInteracao=250]
+//   BenchmarkRepository.buscarProdutos: ShortRun(IterationCount=3, LaunchCount=1, WarmupCount=3) [numerosDeInteracao=250]
+//   BenchmarkRepository.atualizarProdutosPadrao: ShortRun(IterationCount=3, LaunchCount=1, WarmupCount=3) [numerosDeInteracao=250]
+//   BenchmarkRepository.buscarProdutos: Job-PKWIYK(Toolchain=InProcessEmitToolchain) [numerosDeInteracao=500]
+//   BenchmarkRepository.atualizarProdutosPadrao: Job-PKWIYK(Toolchain=InProcessEmitToolchain) [numerosDeInteracao=500]
+//   BenchmarkRepository.buscarProdutos: ShortRun(IterationCount=3, LaunchCount=1, WarmupCount=3) [numerosDeInteracao=500]
+//   BenchmarkRepository.atualizarProdutosPadrao: ShortRun(IterationCount=3, LaunchCount=1, WarmupCount=3) [numerosDeInteracao=500]
+
+// **************************
+// Benchmark: BenchmarkRepository.buscarProdutos: Job-PKWIYK(Toolchain=InProcessEmitToolchain) [numerosDeInteracao=125]
+// *** Execute ***
+// Launch: 1 / 1
+// ! Failed to set up priority High for process System.Diagnostics.Process (projeto.benchmarks). Make sure you have the right permissions. Message: Permission denied
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.13.6
+// Runtime=.NET 7.0.9 (7.0.923.32301), X64 RyuJIT AVX
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX,PCLMUL,POPCNT VectorSize=128
+// Job: Job-PKWIYK(Toolchain=InProcessEmitToolchain)
+
+OverheadJitting  1: 1 op, 443064.00 ns, 443.0640 us/op
+WorkloadJitting  1: 1 op, 229342968.00 ns, 229.3430 ms/op
+
+WorkloadPilot    1: 2 op, 23201530.00 ns, 11.6008 ms/op
+WorkloadPilot    2: 3 op, 28270359.00 ns, 9.4235 ms/op
+WorkloadPilot    3: 4 op, 27858292.00 ns, 6.9646 ms/op
+WorkloadPilot    4: 5 op, 35062549.00 ns, 7.0125 ms/op
+WorkloadPilot    5: 6 op, 43101310.00 ns, 7.1836 ms/op
+WorkloadPilot    6: 7 op, 70151494.00 ns, 10.0216 ms/op
+WorkloadPilot    7: 8 op, 55205158.00 ns, 6.9006 ms/op
+WorkloadPilot    8: 9 op, 64268058.00 ns, 7.1409 ms/op
+WorkloadPilot    9: 10 op, 68115569.00 ns, 6.8116 ms/op
+WorkloadPilot   10: 11 op, 73390330.00 ns, 6.6718 ms/op
+WorkloadPilot   11: 12 op, 100189484.00 ns, 8.3491 ms/op
+WorkloadPilot   12: 13 op, 169532863.00 ns, 13.0410 ms/op
+WorkloadPilot   13: 14 op, 81156309.00 ns, 5.7969 ms/op
+WorkloadPilot   14: 15 op, 73124393.00 ns, 4.8750 ms/op
+WorkloadPilot   15: 16 op, 71993962.00 ns, 4.4996 ms/op
+WorkloadPilot   16: 32 op, 143467381.00 ns, 4.4834 ms/op
+WorkloadPilot   17: 64 op, 287885738.00 ns, 4.4982 ms/op
+WorkloadPilot   18: 128 op, 577434055.00 ns, 4.5112 ms/op
+
+WorkloadWarmup   1: 128 op, 579741097.00 ns, 4.5292 ms/op
+WorkloadWarmup   2: 128 op, 579257522.00 ns, 4.5254 ms/op
+WorkloadWarmup   3: 128 op, 576008243.00 ns, 4.5001 ms/op
+WorkloadWarmup   4: 128 op, 577764691.00 ns, 4.5138 ms/op
+WorkloadWarmup   5: 128 op, 577459410.00 ns, 4.5114 ms/op
+WorkloadWarmup   6: 128 op, 578284682.00 ns, 4.5178 ms/op
+WorkloadWarmup   7: 128 op, 579384926.00 ns, 4.5264 ms/op
+WorkloadWarmup   8: 128 op, 575473699.00 ns, 4.4959 ms/op
+
+WorkloadActual   1: 128 op, 578925765.00 ns, 4.5229 ms/op
+WorkloadActual   2: 128 op, 576860148.00 ns, 4.5067 ms/op
+WorkloadActual   3: 128 op, 593243253.00 ns, 4.6347 ms/op
+WorkloadActual   4: 128 op, 572747934.00 ns, 4.4746 ms/op
+WorkloadActual   5: 128 op, 576585233.00 ns, 4.5046 ms/op
+WorkloadActual   6: 128 op, 579552526.00 ns, 4.5278 ms/op
+WorkloadActual   7: 128 op, 574276403.00 ns, 4.4865 ms/op
+WorkloadActual   8: 128 op, 577553005.00 ns, 4.5121 ms/op
+WorkloadActual   9: 128 op, 582059458.00 ns, 4.5473 ms/op
+WorkloadActual  10: 128 op, 580177820.00 ns, 4.5326 ms/op
+WorkloadActual  11: 128 op, 577355522.00 ns, 4.5106 ms/op
+WorkloadActual  12: 128 op, 577919242.00 ns, 4.5150 ms/op
+WorkloadActual  13: 128 op, 574140839.00 ns, 4.4855 ms/op
+WorkloadActual  14: 128 op, 572509943.00 ns, 4.4727 ms/op
+WorkloadActual  15: 128 op, 574483761.00 ns, 4.4882 ms/op
+
+WorkloadResult   1: 128 op, 578925765.00 ns, 4.5229 ms/op
+WorkloadResult   2: 128 op, 576860148.00 ns, 4.5067 ms/op
+WorkloadResult   3: 128 op, 572747934.00 ns, 4.4746 ms/op
+WorkloadResult   4: 128 op, 576585233.00 ns, 4.5046 ms/op
+WorkloadResult   5: 128 op, 579552526.00 ns, 4.5278 ms/op
+WorkloadResult   6: 128 op, 574276403.00 ns, 4.4865 ms/op
+WorkloadResult   7: 128 op, 577553005.00 ns, 4.5121 ms/op
+WorkloadResult   8: 128 op, 582059458.00 ns, 4.5473 ms/op
+WorkloadResult   9: 128 op, 580177820.00 ns, 4.5326 ms/op
+WorkloadResult  10: 128 op, 577355522.00 ns, 4.5106 ms/op
+WorkloadResult  11: 128 op, 577919242.00 ns, 4.5150 ms/op
+WorkloadResult  12: 128 op, 574140839.00 ns, 4.4855 ms/op
+WorkloadResult  13: 128 op, 572509943.00 ns, 4.4727 ms/op
+WorkloadResult  14: 128 op, 574483761.00 ns, 4.4882 ms/op
+// GC:  66 64 0 408745344 128
+// Threading:  0 0 128
+
+
+Mean = 4.506 ms, StdErr = 0.006 ms (0.13%), N = 14, StdDev = 0.022 ms
+Min = 4.473 ms, Q1 = 4.487 ms, Median = 4.509 ms, Q3 = 4.521 ms, Max = 4.547 ms
+IQR = 0.034 ms, LowerFence = 4.436 ms, UpperFence = 4.572 ms
+ConfidenceInterval = [4.481 ms; 4.532 ms] (CI 99.9%), Margin = 0.025 ms (0.56% of Mean)
+Skewness = 0.08, Kurtosis = 1.8, MValue = 2
+
+// ** Remained 11 (91.7%) benchmark(s) to run. Estimated finish 2023-08-02 13:32 (0h 3m from now) **
+// **************************
+// Benchmark: BenchmarkRepository.atualizarProdutosPadrao: Job-PKWIYK(Toolchain=InProcessEmitToolchain) [numerosDeInteracao=125]
+// *** Execute ***
+// Launch: 1 / 1
+// ! Failed to set up priority High for process System.Diagnostics.Process (projeto.benchmarks). Make sure you have the right permissions. Message: Permission denied
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.13.6
+// Runtime=.NET 7.0.9 (7.0.923.32301), X64 RyuJIT AVX
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX,PCLMUL,POPCNT VectorSize=128
+// Job: Job-PKWIYK(Toolchain=InProcessEmitToolchain)
+
+OverheadJitting  1: 1 op, 377500.00 ns, 377.5000 us/op
+WorkloadJitting  1: 1 op, 80722487.00 ns, 80.7225 ms/op
+
+WorkloadPilot    1: 2 op, 41423615.00 ns, 20.7118 ms/op
+WorkloadPilot    2: 3 op, 54487539.00 ns, 18.1625 ms/op
+WorkloadPilot    3: 4 op, 64697740.00 ns, 16.1744 ms/op
+WorkloadPilot    4: 5 op, 73292272.00 ns, 14.6585 ms/op
+WorkloadPilot    5: 6 op, 88745583.00 ns, 14.7909 ms/op
+WorkloadPilot    6: 7 op, 95106794.00 ns, 13.5867 ms/op
+WorkloadPilot    7: 8 op, 107401987.00 ns, 13.4252 ms/op
+WorkloadPilot    8: 9 op, 121466092.00 ns, 13.4962 ms/op
+WorkloadPilot    9: 10 op, 131193003.00 ns, 13.1193 ms/op
+WorkloadPilot   10: 11 op, 143833975.00 ns, 13.0758 ms/op
+WorkloadPilot   11: 12 op, 162504106.00 ns, 13.5420 ms/op
+WorkloadPilot   12: 13 op, 168167643.00 ns, 12.9360 ms/op
+WorkloadPilot   13: 14 op, 181558234.00 ns, 12.9684 ms/op
+WorkloadPilot   14: 15 op, 208891713.00 ns, 13.9261 ms/op
+WorkloadPilot   15: 16 op, 208675073.00 ns, 13.0422 ms/op
+WorkloadPilot   16: 32 op, 416724893.00 ns, 13.0227 ms/op
+WorkloadPilot   17: 64 op, 825444718.00 ns, 12.8976 ms/op
+
+WorkloadWarmup   1: 64 op, 833609758.00 ns, 13.0252 ms/op
+WorkloadWarmup   2: 64 op, 852370891.00 ns, 13.3183 ms/op
+WorkloadWarmup   3: 64 op, 819926774.00 ns, 12.8114 ms/op
+WorkloadWarmup   4: 64 op, 827276810.00 ns, 12.9262 ms/op
+WorkloadWarmup   5: 64 op, 828398226.00 ns, 12.9437 ms/op
+WorkloadWarmup   6: 64 op, 849378818.00 ns, 13.2715 ms/op
+WorkloadWarmup   7: 64 op, 823370151.00 ns, 12.8652 ms/op
+
+WorkloadActual   1: 64 op, 835505720.00 ns, 13.0548 ms/op
+WorkloadActual   2: 64 op, 825606516.00 ns, 12.9001 ms/op
+WorkloadActual   3: 64 op, 837909805.00 ns, 13.0923 ms/op
+WorkloadActual   4: 64 op, 825617571.00 ns, 12.9003 ms/op
+WorkloadActual   5: 64 op, 830758241.00 ns, 12.9806 ms/op
+WorkloadActual   6: 64 op, 837252845.00 ns, 13.0821 ms/op
+WorkloadActual   7: 64 op, 841098848.00 ns, 13.1422 ms/op
+WorkloadActual   8: 64 op, 828614639.00 ns, 12.9471 ms/op
+WorkloadActual   9: 64 op, 822036441.00 ns, 12.8443 ms/op
+WorkloadActual  10: 64 op, 825774375.00 ns, 12.9027 ms/op
+WorkloadActual  11: 64 op, 848295521.00 ns, 13.2546 ms/op
+WorkloadActual  12: 64 op, 817708793.00 ns, 12.7767 ms/op
+WorkloadActual  13: 64 op, 830591088.00 ns, 12.9780 ms/op
+WorkloadActual  14: 64 op, 830605558.00 ns, 12.9782 ms/op
+WorkloadActual  15: 64 op, 831918921.00 ns, 12.9987 ms/op
+
+WorkloadResult   1: 64 op, 835505720.00 ns, 13.0548 ms/op
+WorkloadResult   2: 64 op, 825606516.00 ns, 12.9001 ms/op
+WorkloadResult   3: 64 op, 837909805.00 ns, 13.0923 ms/op
+WorkloadResult   4: 64 op, 825617571.00 ns, 12.9003 ms/op
+WorkloadResult   5: 64 op, 830758241.00 ns, 12.9806 ms/op
+WorkloadResult   6: 64 op, 837252845.00 ns, 13.0821 ms/op
+WorkloadResult   7: 64 op, 841098848.00 ns, 13.1422 ms/op
+WorkloadResult   8: 64 op, 828614639.00 ns, 12.9471 ms/op
+WorkloadResult   9: 64 op, 822036441.00 ns, 12.8443 ms/op
+WorkloadResult  10: 64 op, 825774375.00 ns, 12.9027 ms/op
+WorkloadResult  11: 64 op, 848295521.00 ns, 13.2546 ms/op
+WorkloadResult  12: 64 op, 817708793.00 ns, 12.7767 ms/op
+WorkloadResult  13: 64 op, 830591088.00 ns, 12.9780 ms/op
+WorkloadResult  14: 64 op, 830605558.00 ns, 12.9782 ms/op
+WorkloadResult  15: 64 op, 831918921.00 ns, 12.9987 ms/op
+// GC:  98 38 0 335887184 64
+// Threading:  0 0 64
+
+
+Mean = 12.989 ms, StdErr = 0.032 ms (0.24%), N = 15, StdDev = 0.122 ms
+Min = 12.777 ms, Q1 = 12.901 ms, Median = 12.978 ms, Q3 = 13.068 ms, Max = 13.255 ms
+IQR = 0.167 ms, LowerFence = 12.651 ms, UpperFence = 13.319 ms
+ConfidenceInterval = [12.858 ms; 13.119 ms] (CI 99.9%), Margin = 0.131 ms (1.01% of Mean)
+Skewness = 0.36, Kurtosis = 2.51, MValue = 2
+
+// ** Remained 10 (83.3%) benchmark(s) to run. Estimated finish 2023-08-02 13:33 (0h 3m from now) **
+// **************************
+// Benchmark: BenchmarkRepository.buscarProdutos: ShortRun(IterationCount=3, LaunchCount=1, WarmupCount=3) [numerosDeInteracao=125]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet ShortRun.dll --anonymousPipes 164 165 --benchmarkName "projeto.benchmarks.Benchmarks.BenchmarkRepository.buscarProdutos(numerosDeInteracao: 125)" --job ShortRun --benchmarkId 0 in /home/oem/github/icarus/icarus.projetos/Tests/projeto.benchmarks/bin/release/net7.0/ShortRun/bin/Release/net7.0
+Failed to set up high priority. Make sure you have the right permissions. Message: Permission denied
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.13.6
+// Runtime=.NET 7.0.9 (7.0.923.32301), X64 RyuJIT AVX
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX,PCLMUL,POPCNT VectorSize=128
+// Job: ShortRun(IterationCount=3, LaunchCount=1, WarmupCount=3)
+
+OverheadJitting  1: 1 op, 784566.00 ns, 784.5660 us/op
+WorkloadJitting  1: 1 op, 226240488.00 ns, 226.2405 ms/op
+
+WorkloadPilot    1: 2 op, 23545162.00 ns, 11.7726 ms/op
+WorkloadPilot    2: 3 op, 30090309.00 ns, 10.0301 ms/op
+WorkloadPilot    3: 4 op, 28052351.00 ns, 7.0131 ms/op
+WorkloadPilot    4: 5 op, 34111852.00 ns, 6.8224 ms/op
+WorkloadPilot    5: 6 op, 57432320.00 ns, 9.5721 ms/op
+WorkloadPilot    6: 7 op, 40735499.00 ns, 5.8194 ms/op
+WorkloadPilot    7: 8 op, 41038442.00 ns, 5.1298 ms/op
+WorkloadPilot    8: 9 op, 47929341.00 ns, 5.3255 ms/op
+WorkloadPilot    9: 10 op, 48044469.00 ns, 4.8044 ms/op
+WorkloadPilot   10: 11 op, 56299429.00 ns, 5.1181 ms/op
+WorkloadPilot   11: 12 op, 54587180.00 ns, 4.5489 ms/op
+WorkloadPilot   12: 13 op, 58681264.00 ns, 4.5139 ms/op
+WorkloadPilot   13: 14 op, 67628887.00 ns, 4.8306 ms/op
+WorkloadPilot   14: 15 op, 69288188.00 ns, 4.6192 ms/op
+WorkloadPilot   15: 16 op, 71554009.00 ns, 4.4721 ms/op
+WorkloadPilot   16: 32 op, 142055384.00 ns, 4.4392 ms/op
+WorkloadPilot   17: 64 op, 283569179.00 ns, 4.4308 ms/op
+WorkloadPilot   18: 128 op, 567070598.00 ns, 4.4302 ms/op
+
+WorkloadWarmup   1: 128 op, 577922530.00 ns, 4.5150 ms/op
+WorkloadWarmup   2: 128 op, 668772136.00 ns, 5.2248 ms/op
+WorkloadWarmup   3: 128 op, 598067287.00 ns, 4.6724 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 128 op, 581565827.00 ns, 4.5435 ms/op
+WorkloadActual   2: 128 op, 584238931.00 ns, 4.5644 ms/op
+WorkloadActual   3: 128 op, 631138885.00 ns, 4.9308 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 128 op, 581565827.00 ns, 4.5435 ms/op
+WorkloadResult   2: 128 op, 584238931.00 ns, 4.5644 ms/op
+WorkloadResult   3: 128 op, 631138885.00 ns, 4.9308 ms/op
+// GC:  67 63 0 408745064 128
+// Threading:  0 0 128
+
+// AfterAll
+// Benchmark Process 22583 has exited with code 0.
+
+Mean = 4.680 ms, StdErr = 0.126 ms (2.69%), N = 3, StdDev = 0.218 ms
+Min = 4.543 ms, Q1 = 4.554 ms, Median = 4.564 ms, Q3 = 4.748 ms, Max = 4.931 ms
+IQR = 0.194 ms, LowerFence = 4.263 ms, UpperFence = 5.038 ms
+ConfidenceInterval = [0.706 ms; 8.653 ms] (CI 99.9%), Margin = 3.974 ms (84.92% of Mean)
+Skewness = 0.38, Kurtosis = 0.67, MValue = 2
+
+// ** Remained 9 (75.0%) benchmark(s) to run. Estimated finish 2023-08-02 13:32 (0h 2m from now) **
+// **************************
+// Benchmark: BenchmarkRepository.atualizarProdutosPadrao: ShortRun(IterationCount=3, LaunchCount=1, WarmupCount=3) [numerosDeInteracao=125]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet ShortRun.dll --anonymousPipes 164 165 --benchmarkName "projeto.benchmarks.Benchmarks.BenchmarkRepository.atualizarProdutosPadrao(numerosDeInteracao: 125)" --job ShortRun --benchmarkId 1 in /home/oem/github/icarus/icarus.projetos/Tests/projeto.benchmarks/bin/release/net7.0/ShortRun/bin/Release/net7.0
+Failed to set up high priority. Make sure you have the right permissions. Message: Permission denied
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.13.6
+// Runtime=.NET 7.0.9 (7.0.923.32301), X64 RyuJIT AVX
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX,PCLMUL,POPCNT VectorSize=128
+// Job: ShortRun(IterationCount=3, LaunchCount=1, WarmupCount=3)
+
+OverheadJitting  1: 1 op, 568257.00 ns, 568.2570 us/op
+WorkloadJitting  1: 1 op, 278241322.00 ns, 278.2413 ms/op
+
+WorkloadPilot    1: 2 op, 67232263.00 ns, 33.6161 ms/op
+WorkloadPilot    2: 3 op, 84418167.00 ns, 28.1394 ms/op
+WorkloadPilot    3: 4 op, 107325419.00 ns, 26.8314 ms/op
+WorkloadPilot    4: 5 op, 123762184.00 ns, 24.7524 ms/op
+WorkloadPilot    5: 6 op, 70511014.00 ns, 11.7518 ms/op
+WorkloadPilot    6: 7 op, 86046222.00 ns, 12.2923 ms/op
+WorkloadPilot    7: 8 op, 122482588.00 ns, 15.3103 ms/op
+WorkloadPilot    8: 9 op, 132458592.00 ns, 14.7176 ms/op
+WorkloadPilot    9: 10 op, 144002355.00 ns, 14.4002 ms/op
+WorkloadPilot   10: 11 op, 126403350.00 ns, 11.4912 ms/op
+WorkloadPilot   11: 12 op, 131245038.00 ns, 10.9371 ms/op
+WorkloadPilot   12: 13 op, 144097444.00 ns, 11.0844 ms/op
+WorkloadPilot   13: 14 op, 156301195.00 ns, 11.1644 ms/op
+WorkloadPilot   14: 15 op, 206706335.00 ns, 13.7804 ms/op
+WorkloadPilot   15: 16 op, 175246223.00 ns, 10.9529 ms/op
+WorkloadPilot   16: 32 op, 349140457.00 ns, 10.9106 ms/op
+WorkloadPilot   17: 64 op, 697543267.00 ns, 10.8991 ms/op
+
+WorkloadWarmup   1: 64 op, 711638130.00 ns, 11.1193 ms/op
+WorkloadWarmup   2: 64 op, 708316940.00 ns, 11.0675 ms/op
+WorkloadWarmup   3: 64 op, 706196878.00 ns, 11.0343 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 64 op, 709187759.00 ns, 11.0811 ms/op
+WorkloadActual   2: 64 op, 706741154.00 ns, 11.0428 ms/op
+WorkloadActual   3: 64 op, 709340954.00 ns, 11.0835 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 64 op, 709187759.00 ns, 11.0811 ms/op
+WorkloadResult   2: 64 op, 706741154.00 ns, 11.0428 ms/op
+WorkloadResult   3: 64 op, 709340954.00 ns, 11.0835 ms/op
+// GC:  107 26 0 279429792 64
+// Threading:  0 0 64
+
+// AfterAll
+// Benchmark Process 22604 has exited with code 0.
+
+Mean = 11.069 ms, StdErr = 0.013 ms (0.12%), N = 3, StdDev = 0.023 ms
+Min = 11.043 ms, Q1 = 11.062 ms, Median = 11.081 ms, Q3 = 11.082 ms, Max = 11.083 ms
+IQR = 0.020 ms, LowerFence = 11.031 ms, UpperFence = 11.113 ms
+ConfidenceInterval = [10.653 ms; 11.485 ms] (CI 99.9%), Margin = 0.416 ms (3.76% of Mean)
+Skewness = -0.38, Kurtosis = 0.67, MValue = 2
+
+// ** Remained 8 (66.7%) benchmark(s) to run. Estimated finish 2023-08-02 13:31 (0h 1m from now) **
+// **************************
+// Benchmark: BenchmarkRepository.buscarProdutos: Job-PKWIYK(Toolchain=InProcessEmitToolchain) [numerosDeInteracao=250]
+// *** Execute ***
+// Launch: 1 / 1
+// ! Failed to set up priority High for process System.Diagnostics.Process (projeto.benchmarks). Make sure you have the right permissions. Message: Permission denied
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.13.6
+// Runtime=.NET 7.0.9 (7.0.923.32301), X64 RyuJIT AVX
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX,PCLMUL,POPCNT VectorSize=128
+// Job: Job-PKWIYK(Toolchain=InProcessEmitToolchain)
+
+OverheadJitting  1: 1 op, 539340.00 ns, 539.3400 us/op
+WorkloadJitting  1: 1 op, 111145096.00 ns, 111.1451 ms/op
+
+WorkloadPilot    1: 2 op, 53339150.00 ns, 26.6696 ms/op
+WorkloadPilot    2: 3 op, 75069047.00 ns, 25.0230 ms/op
+WorkloadPilot    3: 4 op, 98392659.00 ns, 24.5982 ms/op
+WorkloadPilot    4: 5 op, 131066282.00 ns, 26.2133 ms/op
+WorkloadPilot    5: 6 op, 153039694.00 ns, 25.5066 ms/op
+WorkloadPilot    6: 7 op, 181415357.00 ns, 25.9165 ms/op
+WorkloadPilot    7: 8 op, 201428188.00 ns, 25.1785 ms/op
+WorkloadPilot    8: 9 op, 238739301.00 ns, 26.5266 ms/op
+WorkloadPilot    9: 10 op, 281201518.00 ns, 28.1202 ms/op
+WorkloadPilot   10: 11 op, 291756717.00 ns, 26.5233 ms/op
+WorkloadPilot   11: 12 op, 331465178.00 ns, 27.6221 ms/op
+WorkloadPilot   12: 13 op, 342553764.00 ns, 26.3503 ms/op
+WorkloadPilot   13: 14 op, 380192323.00 ns, 27.1566 ms/op
+WorkloadPilot   14: 15 op, 410182744.00 ns, 27.3455 ms/op
+WorkloadPilot   15: 16 op, 444784218.00 ns, 27.7990 ms/op
+WorkloadPilot   16: 32 op, 875667310.00 ns, 27.3646 ms/op
+
+WorkloadWarmup   1: 32 op, 883518614.00 ns, 27.6100 ms/op
+WorkloadWarmup   2: 32 op, 868031717.00 ns, 27.1260 ms/op
+WorkloadWarmup   3: 32 op, 860005552.00 ns, 26.8752 ms/op
+WorkloadWarmup   4: 32 op, 876282818.00 ns, 27.3838 ms/op
+WorkloadWarmup   5: 32 op, 859773787.00 ns, 26.8679 ms/op
+WorkloadWarmup   6: 32 op, 844704488.00 ns, 26.3970 ms/op
+WorkloadWarmup   7: 32 op, 855568743.00 ns, 26.7365 ms/op
+WorkloadWarmup   8: 32 op, 864704429.00 ns, 27.0220 ms/op
+WorkloadWarmup   9: 32 op, 874859547.00 ns, 27.3394 ms/op
+WorkloadWarmup  10: 32 op, 856784108.00 ns, 26.7745 ms/op
+
+WorkloadActual   1: 32 op, 869432800.00 ns, 27.1698 ms/op
+WorkloadActual   2: 32 op, 861506345.00 ns, 26.9221 ms/op
+WorkloadActual   3: 32 op, 864257767.00 ns, 27.0081 ms/op
+WorkloadActual   4: 32 op, 1050048239.00 ns, 32.8140 ms/op
+WorkloadActual   5: 32 op, 928148054.00 ns, 29.0046 ms/op
+WorkloadActual   6: 32 op, 882816426.00 ns, 27.5880 ms/op
+WorkloadActual   7: 32 op, 856370117.00 ns, 26.7616 ms/op
+WorkloadActual   8: 32 op, 875231144.00 ns, 27.3510 ms/op
+WorkloadActual   9: 32 op, 860589964.00 ns, 26.8934 ms/op
+WorkloadActual  10: 32 op, 881034733.00 ns, 27.5323 ms/op
+WorkloadActual  11: 32 op, 860939139.00 ns, 26.9043 ms/op
+WorkloadActual  12: 32 op, 841175206.00 ns, 26.2867 ms/op
+WorkloadActual  13: 32 op, 891287422.00 ns, 27.8527 ms/op
+WorkloadActual  14: 32 op, 861766224.00 ns, 26.9302 ms/op
+WorkloadActual  15: 32 op, 838202824.00 ns, 26.1938 ms/op
+WorkloadActual  16: 32 op, 842753062.00 ns, 26.3360 ms/op
+WorkloadActual  17: 32 op, 858549088.00 ns, 26.8297 ms/op
+
+WorkloadResult   1: 32 op, 869432800.00 ns, 27.1698 ms/op
+WorkloadResult   2: 32 op, 861506345.00 ns, 26.9221 ms/op
+WorkloadResult   3: 32 op, 864257767.00 ns, 27.0081 ms/op
+WorkloadResult   4: 32 op, 882816426.00 ns, 27.5880 ms/op
+WorkloadResult   5: 32 op, 856370117.00 ns, 26.7616 ms/op
+WorkloadResult   6: 32 op, 875231144.00 ns, 27.3510 ms/op
+WorkloadResult   7: 32 op, 860589964.00 ns, 26.8934 ms/op
+WorkloadResult   8: 32 op, 881034733.00 ns, 27.5323 ms/op
+WorkloadResult   9: 32 op, 860939139.00 ns, 26.9043 ms/op
+WorkloadResult  10: 32 op, 841175206.00 ns, 26.2867 ms/op
+WorkloadResult  11: 32 op, 891287422.00 ns, 27.8527 ms/op
+WorkloadResult  12: 32 op, 861766224.00 ns, 26.9302 ms/op
+WorkloadResult  13: 32 op, 838202824.00 ns, 26.1938 ms/op
+WorkloadResult  14: 32 op, 842753062.00 ns, 26.3360 ms/op
+WorkloadResult  15: 32 op, 858549088.00 ns, 26.8297 ms/op
+// GC:  77 29 5 408268560 32
+// Threading:  0 0 32
+
+
+Mean = 26.971 ms, StdErr = 0.124 ms (0.46%), N = 15, StdDev = 0.479 ms
+Min = 26.194 ms, Q1 = 26.796 ms, Median = 26.922 ms, Q3 = 27.260 ms, Max = 27.853 ms
+IQR = 0.465 ms, LowerFence = 26.098 ms, UpperFence = 27.958 ms
+ConfidenceInterval = [26.459 ms; 27.483 ms] (CI 99.9%), Margin = 0.512 ms (1.90% of Mean)
+Skewness = 0.06, Kurtosis = 2.05, MValue = 2
+
+// ** Remained 7 (58.3%) benchmark(s) to run. Estimated finish 2023-08-02 13:32 (0h 2m from now) **
+// **************************
+// Benchmark: BenchmarkRepository.atualizarProdutosPadrao: Job-PKWIYK(Toolchain=InProcessEmitToolchain) [numerosDeInteracao=250]
+// *** Execute ***
+// Launch: 1 / 1
+// ! Failed to set up priority High for process System.Diagnostics.Process (projeto.benchmarks). Make sure you have the right permissions. Message: Permission denied
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.13.6
+// Runtime=.NET 7.0.9 (7.0.923.32301), X64 RyuJIT AVX
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX,PCLMUL,POPCNT VectorSize=128
+// Job: Job-PKWIYK(Toolchain=InProcessEmitToolchain)
+
+OverheadJitting  1: 1 op, 411511.00 ns, 411.5110 us/op
+WorkloadJitting  1: 1 op, 39055303.00 ns, 39.0553 ms/op
+
+WorkloadPilot    1: 2 op, 72825561.00 ns, 36.4128 ms/op
+WorkloadPilot    2: 3 op, 110995541.00 ns, 36.9985 ms/op
+WorkloadPilot    3: 4 op, 147011389.00 ns, 36.7528 ms/op
+WorkloadPilot    4: 5 op, 197064281.00 ns, 39.4129 ms/op
+WorkloadPilot    5: 6 op, 235536194.00 ns, 39.2560 ms/op
+WorkloadPilot    6: 7 op, 282769301.00 ns, 40.3956 ms/op
+WorkloadPilot    7: 8 op, 305977320.00 ns, 38.2472 ms/op
+WorkloadPilot    8: 9 op, 372831733.00 ns, 41.4257 ms/op
+WorkloadPilot    9: 10 op, 420161312.00 ns, 42.0161 ms/op
+WorkloadPilot   10: 11 op, 461860897.00 ns, 41.9874 ms/op
+WorkloadPilot   11: 12 op, 463688287.00 ns, 38.6407 ms/op
+WorkloadPilot   12: 13 op, 515911625.00 ns, 39.6855 ms/op
+
+WorkloadWarmup   1: 13 op, 512838408.00 ns, 39.4491 ms/op
+WorkloadWarmup   2: 13 op, 492806734.00 ns, 37.9082 ms/op
+WorkloadWarmup   3: 13 op, 505582517.00 ns, 38.8910 ms/op
+WorkloadWarmup   4: 13 op, 519223593.00 ns, 39.9403 ms/op
+WorkloadWarmup   5: 13 op, 520536976.00 ns, 40.0413 ms/op
+WorkloadWarmup   6: 13 op, 508471462.00 ns, 39.1132 ms/op
+WorkloadWarmup   7: 13 op, 538226609.00 ns, 41.4020 ms/op
+WorkloadWarmup   8: 13 op, 525253648.00 ns, 40.4041 ms/op
+
+WorkloadActual   1: 13 op, 513458129.00 ns, 39.4968 ms/op
+WorkloadActual   2: 13 op, 531237817.00 ns, 40.8644 ms/op
+WorkloadActual   3: 13 op, 520484533.00 ns, 40.0373 ms/op
+WorkloadActual   4: 13 op, 498618228.00 ns, 38.3552 ms/op
+WorkloadActual   5: 13 op, 534557568.00 ns, 41.1198 ms/op
+WorkloadActual   6: 13 op, 512619116.00 ns, 39.4322 ms/op
+WorkloadActual   7: 13 op, 501580502.00 ns, 38.5831 ms/op
+WorkloadActual   8: 13 op, 684138361.00 ns, 52.6260 ms/op
+WorkloadActual   9: 13 op, 596175421.00 ns, 45.8596 ms/op
+WorkloadActual  10: 13 op, 514604550.00 ns, 39.5850 ms/op
+WorkloadActual  11: 13 op, 522887518.00 ns, 40.2221 ms/op
+WorkloadActual  12: 13 op, 515563241.00 ns, 39.6587 ms/op
+WorkloadActual  13: 13 op, 514594902.00 ns, 39.5842 ms/op
+WorkloadActual  14: 13 op, 532285406.00 ns, 40.9450 ms/op
+WorkloadActual  15: 13 op, 519740538.00 ns, 39.9800 ms/op
+WorkloadActual  16: 13 op, 515968694.00 ns, 39.6899 ms/op
+WorkloadActual  17: 13 op, 535044903.00 ns, 41.1573 ms/op
+WorkloadActual  18: 13 op, 518289289.00 ns, 39.8684 ms/op
+WorkloadActual  19: 13 op, 506467406.00 ns, 38.9590 ms/op
+WorkloadActual  20: 13 op, 529285201.00 ns, 40.7142 ms/op
+
+WorkloadResult   1: 13 op, 513458129.00 ns, 39.4968 ms/op
+WorkloadResult   2: 13 op, 531237817.00 ns, 40.8644 ms/op
+WorkloadResult   3: 13 op, 520484533.00 ns, 40.0373 ms/op
+WorkloadResult   4: 13 op, 498618228.00 ns, 38.3552 ms/op
+WorkloadResult   5: 13 op, 534557568.00 ns, 41.1198 ms/op
+WorkloadResult   6: 13 op, 512619116.00 ns, 39.4322 ms/op
+WorkloadResult   7: 13 op, 501580502.00 ns, 38.5831 ms/op
+WorkloadResult   8: 13 op, 514604550.00 ns, 39.5850 ms/op
+WorkloadResult   9: 13 op, 522887518.00 ns, 40.2221 ms/op
+WorkloadResult  10: 13 op, 515563241.00 ns, 39.6587 ms/op
+WorkloadResult  11: 13 op, 514594902.00 ns, 39.5842 ms/op
+WorkloadResult  12: 13 op, 532285406.00 ns, 40.9450 ms/op
+WorkloadResult  13: 13 op, 519740538.00 ns, 39.9800 ms/op
+WorkloadResult  14: 13 op, 515968694.00 ns, 39.6899 ms/op
+WorkloadResult  15: 13 op, 535044903.00 ns, 41.1573 ms/op
+WorkloadResult  16: 13 op, 518289289.00 ns, 39.8684 ms/op
+WorkloadResult  17: 13 op, 506467406.00 ns, 38.9590 ms/op
+WorkloadResult  18: 13 op, 529285201.00 ns, 40.7142 ms/op
+// GC:  29 12 3 154114832 13
+// Threading:  0 0 13
+
+
+Mean = 39.903 ms, StdErr = 0.194 ms (0.49%), N = 18, StdDev = 0.825 ms
+Min = 38.355 ms, Q1 = 39.519 ms, Median = 39.779 ms, Q3 = 40.591 ms, Max = 41.157 ms
+IQR = 1.073 ms, LowerFence = 37.910 ms, UpperFence = 42.200 ms
+ConfidenceInterval = [39.132 ms; 40.674 ms] (CI 99.9%), Margin = 0.771 ms (1.93% of Mean)
+Skewness = -0.07, Kurtosis = 2.02, MValue = 2
+
+// ** Remained 6 (50.0%) benchmark(s) to run. Estimated finish 2023-08-02 13:32 (0h 1m from now) **
+// **************************
+// Benchmark: BenchmarkRepository.buscarProdutos: ShortRun(IterationCount=3, LaunchCount=1, WarmupCount=3) [numerosDeInteracao=250]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet ShortRun.dll --anonymousPipes 164 165 --benchmarkName "projeto.benchmarks.Benchmarks.BenchmarkRepository.buscarProdutos(numerosDeInteracao: 250)" --job ShortRun --benchmarkId 2 in /home/oem/github/icarus/icarus.projetos/Tests/projeto.benchmarks/bin/release/net7.0/ShortRun/bin/Release/net7.0
+Failed to set up high priority. Make sure you have the right permissions. Message: Permission denied
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.13.6
+// Runtime=.NET 7.0.9 (7.0.923.32301), X64 RyuJIT AVX
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX,PCLMUL,POPCNT VectorSize=128
+// Job: ShortRun(IterationCount=3, LaunchCount=1, WarmupCount=3)
+
+OverheadJitting  1: 1 op, 566531.00 ns, 566.5310 us/op
+WorkloadJitting  1: 1 op, 240233155.00 ns, 240.2332 ms/op
+
+WorkloadPilot    1: 2 op, 72894272.00 ns, 36.4471 ms/op
+WorkloadPilot    2: 3 op, 46563308.00 ns, 15.5211 ms/op
+WorkloadPilot    3: 4 op, 57510140.00 ns, 14.3775 ms/op
+WorkloadPilot    4: 5 op, 73243515.00 ns, 14.6487 ms/op
+WorkloadPilot    5: 6 op, 86381790.00 ns, 14.3970 ms/op
+WorkloadPilot    6: 7 op, 101131775.00 ns, 14.4474 ms/op
+WorkloadPilot    7: 8 op, 216765515.00 ns, 27.0957 ms/op
+WorkloadPilot    8: 9 op, 148558896.00 ns, 16.5065 ms/op
+WorkloadPilot    9: 10 op, 131139325.00 ns, 13.1139 ms/op
+WorkloadPilot   10: 11 op, 121647292.00 ns, 11.0588 ms/op
+WorkloadPilot   11: 12 op, 130838183.00 ns, 10.9032 ms/op
+WorkloadPilot   12: 13 op, 141825638.00 ns, 10.9097 ms/op
+WorkloadPilot   13: 14 op, 148294362.00 ns, 10.5925 ms/op
+WorkloadPilot   14: 15 op, 155843290.00 ns, 10.3896 ms/op
+WorkloadPilot   15: 16 op, 159481057.00 ns, 9.9676 ms/op
+WorkloadPilot   16: 32 op, 328685779.00 ns, 10.2714 ms/op
+WorkloadPilot   17: 64 op, 678508560.00 ns, 10.6017 ms/op
+
+WorkloadWarmup   1: 64 op, 674256777.00 ns, 10.5353 ms/op
+WorkloadWarmup   2: 64 op, 684463913.00 ns, 10.6947 ms/op
+WorkloadWarmup   3: 64 op, 677952299.00 ns, 10.5930 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 64 op, 669269970.00 ns, 10.4573 ms/op
+WorkloadActual   2: 64 op, 649379007.00 ns, 10.1465 ms/op
+WorkloadActual   3: 64 op, 662172206.00 ns, 10.3464 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 64 op, 669269970.00 ns, 10.4573 ms/op
+WorkloadResult   2: 64 op, 649379007.00 ns, 10.1465 ms/op
+WorkloadResult   3: 64 op, 662172206.00 ns, 10.3464 ms/op
+// GC:  65 62 0 408419944 64
+// Threading:  0 0 64
+
+// AfterAll
+// Benchmark Process 22665 has exited with code 0.
+
+Mean = 10.317 ms, StdErr = 0.091 ms (0.88%), N = 3, StdDev = 0.158 ms
+Min = 10.147 ms, Q1 = 10.246 ms, Median = 10.346 ms, Q3 = 10.402 ms, Max = 10.457 ms
+IQR = 0.155 ms, LowerFence = 10.013 ms, UpperFence = 10.635 ms
+ConfidenceInterval = [7.443 ms; 13.190 ms] (CI 99.9%), Margin = 2.874 ms (27.85% of Mean)
+Skewness = -0.18, Kurtosis = 0.67, MValue = 2
+
+// ** Remained 5 (41.7%) benchmark(s) to run. Estimated finish 2023-08-02 13:32 (0h 1m from now) **
+// **************************
+// Benchmark: BenchmarkRepository.atualizarProdutosPadrao: ShortRun(IterationCount=3, LaunchCount=1, WarmupCount=3) [numerosDeInteracao=250]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet ShortRun.dll --anonymousPipes 164 165 --benchmarkName "projeto.benchmarks.Benchmarks.BenchmarkRepository.atualizarProdutosPadrao(numerosDeInteracao: 250)" --job ShortRun --benchmarkId 3 in /home/oem/github/icarus/icarus.projetos/Tests/projeto.benchmarks/bin/release/net7.0/ShortRun/bin/Release/net7.0
+Failed to set up high priority. Make sure you have the right permissions. Message: Permission denied
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.13.6
+// Runtime=.NET 7.0.9 (7.0.923.32301), X64 RyuJIT AVX
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX,PCLMUL,POPCNT VectorSize=128
+// Job: ShortRun(IterationCount=3, LaunchCount=1, WarmupCount=3)
+
+OverheadJitting  1: 1 op, 380550.00 ns, 380.5500 us/op
+WorkloadJitting  1: 1 op, 319907905.00 ns, 319.9079 ms/op
+
+WorkloadPilot    1: 2 op, 79320844.00 ns, 39.6604 ms/op
+WorkloadPilot    2: 3 op, 101722564.00 ns, 33.9075 ms/op
+WorkloadPilot    3: 4 op, 133174311.00 ns, 33.2936 ms/op
+WorkloadPilot    4: 5 op, 152229206.00 ns, 30.4458 ms/op
+WorkloadPilot    5: 6 op, 194174099.00 ns, 32.3623 ms/op
+WorkloadPilot    6: 7 op, 189914360.00 ns, 27.1306 ms/op
+WorkloadPilot    7: 8 op, 191897502.00 ns, 23.9872 ms/op
+WorkloadPilot    8: 9 op, 208296521.00 ns, 23.1441 ms/op
+WorkloadPilot    9: 10 op, 223807718.00 ns, 22.3808 ms/op
+WorkloadPilot   10: 11 op, 251438237.00 ns, 22.8580 ms/op
+WorkloadPilot   11: 12 op, 271137251.00 ns, 22.5948 ms/op
+WorkloadPilot   12: 13 op, 291466088.00 ns, 22.4205 ms/op
+WorkloadPilot   13: 14 op, 312191973.00 ns, 22.2994 ms/op
+WorkloadPilot   14: 15 op, 339835447.00 ns, 22.6557 ms/op
+WorkloadPilot   15: 16 op, 363201924.00 ns, 22.7001 ms/op
+WorkloadPilot   16: 32 op, 720052360.00 ns, 22.5016 ms/op
+
+WorkloadWarmup   1: 32 op, 727697191.00 ns, 22.7405 ms/op
+WorkloadWarmup   2: 32 op, 759979209.00 ns, 23.7494 ms/op
+WorkloadWarmup   3: 32 op, 737645087.00 ns, 23.0514 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 32 op, 742200500.00 ns, 23.1938 ms/op
+WorkloadActual   2: 32 op, 727571027.00 ns, 22.7366 ms/op
+WorkloadActual   3: 32 op, 736991713.00 ns, 23.0310 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 32 op, 742200500.00 ns, 23.1938 ms/op
+WorkloadResult   2: 32 op, 727571027.00 ns, 22.7366 ms/op
+WorkloadResult   3: 32 op, 736991713.00 ns, 23.0310 ms/op
+// GC:  82 30 0 279161192 32
+// Threading:  0 0 32
+
+// AfterAll
+// Benchmark Process 22683 has exited with code 0.
+
+Mean = 22.987 ms, StdErr = 0.134 ms (0.58%), N = 3, StdDev = 0.232 ms
+Min = 22.737 ms, Q1 = 22.884 ms, Median = 23.031 ms, Q3 = 23.112 ms, Max = 23.194 ms
+IQR = 0.229 ms, LowerFence = 22.541 ms, UpperFence = 23.455 ms
+ConfidenceInterval = [18.760 ms; 27.215 ms] (CI 99.9%), Margin = 4.227 ms (18.39% of Mean)
+Skewness = -0.18, Kurtosis = 0.67, MValue = 2
+
+// ** Remained 4 (33.3%) benchmark(s) to run. Estimated finish 2023-08-02 13:32 (0h 1m from now) **
+// **************************
+// Benchmark: BenchmarkRepository.buscarProdutos: Job-PKWIYK(Toolchain=InProcessEmitToolchain) [numerosDeInteracao=500]
+// *** Execute ***
+// Launch: 1 / 1
+// ! Failed to set up priority High for process System.Diagnostics.Process (projeto.benchmarks). Make sure you have the right permissions. Message: Permission denied
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.13.6
+// Runtime=.NET 7.0.9 (7.0.923.32301), X64 RyuJIT AVX
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX,PCLMUL,POPCNT VectorSize=128
+// Job: Job-PKWIYK(Toolchain=InProcessEmitToolchain)
+
+OverheadJitting  1: 1 op, 552649.00 ns, 552.6490 us/op
+WorkloadJitting  1: 1 op, 321481966.00 ns, 321.4820 ms/op
+
+WorkloadPilot    1: 2 op, 142355231.00 ns, 71.1776 ms/op
+WorkloadPilot    2: 3 op, 210270460.00 ns, 70.0902 ms/op
+WorkloadPilot    3: 4 op, 275298384.00 ns, 68.8246 ms/op
+WorkloadPilot    4: 5 op, 355160619.00 ns, 71.0321 ms/op
+WorkloadPilot    5: 6 op, 445874777.00 ns, 74.3125 ms/op
+WorkloadPilot    6: 7 op, 521554022.00 ns, 74.5077 ms/op
+
+WorkloadWarmup   1: 7 op, 514602379.00 ns, 73.5146 ms/op
+WorkloadWarmup   2: 7 op, 517265657.00 ns, 73.8951 ms/op
+WorkloadWarmup   3: 7 op, 516724000.00 ns, 73.8177 ms/op
+WorkloadWarmup   4: 7 op, 513966348.00 ns, 73.4238 ms/op
+WorkloadWarmup   5: 7 op, 516629667.00 ns, 73.8042 ms/op
+WorkloadWarmup   6: 7 op, 522115849.00 ns, 74.5880 ms/op
+WorkloadWarmup   7: 7 op, 526602450.00 ns, 75.2289 ms/op
+WorkloadWarmup   8: 7 op, 530982823.00 ns, 75.8547 ms/op
+WorkloadWarmup   9: 7 op, 545050775.00 ns, 77.8644 ms/op
+WorkloadWarmup  10: 7 op, 530833247.00 ns, 75.8333 ms/op
+
+WorkloadActual   1: 7 op, 541314713.00 ns, 77.3307 ms/op
+WorkloadActual   2: 7 op, 551346977.00 ns, 78.7639 ms/op
+WorkloadActual   3: 7 op, 546989287.00 ns, 78.1413 ms/op
+WorkloadActual   4: 7 op, 555378071.00 ns, 79.3397 ms/op
+WorkloadActual   5: 7 op, 551844921.00 ns, 78.8350 ms/op
+WorkloadActual   6: 7 op, 555814163.00 ns, 79.4020 ms/op
+WorkloadActual   7: 7 op, 543540330.00 ns, 77.6486 ms/op
+WorkloadActual   8: 7 op, 538181315.00 ns, 76.8830 ms/op
+WorkloadActual   9: 7 op, 523658076.00 ns, 74.8083 ms/op
+WorkloadActual  10: 7 op, 527979176.00 ns, 75.4256 ms/op
+WorkloadActual  11: 7 op, 519216653.00 ns, 74.1738 ms/op
+WorkloadActual  12: 7 op, 515026043.00 ns, 73.5751 ms/op
+WorkloadActual  13: 7 op, 516418207.00 ns, 73.7740 ms/op
+WorkloadActual  14: 7 op, 513239475.00 ns, 73.3199 ms/op
+WorkloadActual  15: 7 op, 515391235.00 ns, 73.6273 ms/op
+WorkloadActual  16: 7 op, 519183311.00 ns, 74.1690 ms/op
+WorkloadActual  17: 7 op, 514264810.00 ns, 73.4664 ms/op
+WorkloadActual  18: 7 op, 574093296.00 ns, 82.0133 ms/op
+WorkloadActual  19: 7 op, 509042485.00 ns, 72.7204 ms/op
+WorkloadActual  20: 7 op, 517234740.00 ns, 73.8907 ms/op
+WorkloadActual  21: 7 op, 511462522.00 ns, 73.0661 ms/op
+WorkloadActual  22: 7 op, 524057651.00 ns, 74.8654 ms/op
+WorkloadActual  23: 7 op, 512314171.00 ns, 73.1877 ms/op
+WorkloadActual  24: 7 op, 511036045.00 ns, 73.0051 ms/op
+WorkloadActual  25: 7 op, 513015066.00 ns, 73.2879 ms/op
+WorkloadActual  26: 7 op, 510508699.00 ns, 72.9298 ms/op
+WorkloadActual  27: 7 op, 507943333.00 ns, 72.5633 ms/op
+WorkloadActual  28: 7 op, 513248976.00 ns, 73.3213 ms/op
+WorkloadActual  29: 7 op, 513269471.00 ns, 73.3242 ms/op
+WorkloadActual  30: 7 op, 508561419.00 ns, 72.6516 ms/op
+WorkloadActual  31: 7 op, 513859219.00 ns, 73.4085 ms/op
+WorkloadActual  32: 7 op, 514210136.00 ns, 73.4586 ms/op
+WorkloadActual  33: 7 op, 515027341.00 ns, 73.5753 ms/op
+WorkloadActual  34: 7 op, 515776152.00 ns, 73.6823 ms/op
+WorkloadActual  35: 7 op, 516784441.00 ns, 73.8263 ms/op
+
+WorkloadResult   1: 7 op, 541314713.00 ns, 77.3307 ms/op
+WorkloadResult   2: 7 op, 551346977.00 ns, 78.7639 ms/op
+WorkloadResult   3: 7 op, 546989287.00 ns, 78.1413 ms/op
+WorkloadResult   4: 7 op, 555378071.00 ns, 79.3397 ms/op
+WorkloadResult   5: 7 op, 551844921.00 ns, 78.8350 ms/op
+WorkloadResult   6: 7 op, 555814163.00 ns, 79.4020 ms/op
+WorkloadResult   7: 7 op, 543540330.00 ns, 77.6486 ms/op
+WorkloadResult   8: 7 op, 538181315.00 ns, 76.8830 ms/op
+WorkloadResult   9: 7 op, 523658076.00 ns, 74.8083 ms/op
+WorkloadResult  10: 7 op, 527979176.00 ns, 75.4256 ms/op
+WorkloadResult  11: 7 op, 519216653.00 ns, 74.1738 ms/op
+WorkloadResult  12: 7 op, 515026043.00 ns, 73.5751 ms/op
+WorkloadResult  13: 7 op, 516418207.00 ns, 73.7740 ms/op
+WorkloadResult  14: 7 op, 513239475.00 ns, 73.3199 ms/op
+WorkloadResult  15: 7 op, 515391235.00 ns, 73.6273 ms/op
+WorkloadResult  16: 7 op, 519183311.00 ns, 74.1690 ms/op
+WorkloadResult  17: 7 op, 514264810.00 ns, 73.4664 ms/op
+WorkloadResult  18: 7 op, 509042485.00 ns, 72.7204 ms/op
+WorkloadResult  19: 7 op, 517234740.00 ns, 73.8907 ms/op
+WorkloadResult  20: 7 op, 511462522.00 ns, 73.0661 ms/op
+WorkloadResult  21: 7 op, 524057651.00 ns, 74.8654 ms/op
+WorkloadResult  22: 7 op, 512314171.00 ns, 73.1877 ms/op
+WorkloadResult  23: 7 op, 511036045.00 ns, 73.0051 ms/op
+WorkloadResult  24: 7 op, 513015066.00 ns, 73.2879 ms/op
+WorkloadResult  25: 7 op, 510508699.00 ns, 72.9298 ms/op
+WorkloadResult  26: 7 op, 507943333.00 ns, 72.5633 ms/op
+WorkloadResult  27: 7 op, 513248976.00 ns, 73.3213 ms/op
+WorkloadResult  28: 7 op, 513269471.00 ns, 73.3242 ms/op
+WorkloadResult  29: 7 op, 508561419.00 ns, 72.6516 ms/op
+WorkloadResult  30: 7 op, 513859219.00 ns, 73.4085 ms/op
+WorkloadResult  31: 7 op, 514210136.00 ns, 73.4586 ms/op
+WorkloadResult  32: 7 op, 515027341.00 ns, 73.5753 ms/op
+WorkloadResult  33: 7 op, 515776152.00 ns, 73.6823 ms/op
+WorkloadResult  34: 7 op, 516784441.00 ns, 73.8263 ms/op
+// GC:  83 11 1 219541400 7
+// Threading:  0 0 7
+
+
+Mean = 74.690 ms, StdErr = 0.370 ms (0.50%), N = 34, StdDev = 2.158 ms
+Min = 72.563 ms, Q1 = 73.320 ms, Median = 73.655 ms, Q3 = 75.286 ms, Max = 79.402 ms
+IQR = 1.965 ms, LowerFence = 70.372 ms, UpperFence = 78.233 ms
+ConfidenceInterval = [73.353 ms; 76.026 ms] (CI 99.9%), Margin = 1.336 ms (1.79% of Mean)
+Skewness = 1.09, Kurtosis = 2.62, MValue = 2
+
+// ** Remained 3 (25.0%) benchmark(s) to run. Estimated finish 2023-08-02 13:32 (0h 0m from now) **
+// **************************
+// Benchmark: BenchmarkRepository.atualizarProdutosPadrao: Job-PKWIYK(Toolchain=InProcessEmitToolchain) [numerosDeInteracao=500]
+// *** Execute ***
+// Launch: 1 / 1
+// ! Failed to set up priority High for process System.Diagnostics.Process (projeto.benchmarks). Make sure you have the right permissions. Message: Permission denied
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.13.6
+// Runtime=.NET 7.0.9 (7.0.923.32301), X64 RyuJIT AVX
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX,PCLMUL,POPCNT VectorSize=128
+// Job: Job-PKWIYK(Toolchain=InProcessEmitToolchain)
+
+OverheadJitting  1: 1 op, 405966.00 ns, 405.9660 us/op
+WorkloadJitting  1: 1 op, 86931715.00 ns, 86.9317 ms/op
+
+WorkloadPilot    1: 2 op, 181914960.00 ns, 90.9575 ms/op
+WorkloadPilot    2: 3 op, 274338253.00 ns, 91.4461 ms/op
+WorkloadPilot    3: 4 op, 384003562.00 ns, 96.0009 ms/op
+WorkloadPilot    4: 5 op, 477597468.00 ns, 95.5195 ms/op
+WorkloadPilot    5: 6 op, 584988786.00 ns, 97.4981 ms/op
+
+WorkloadWarmup   1: 6 op, 574252247.00 ns, 95.7087 ms/op
+WorkloadWarmup   2: 6 op, 578388305.00 ns, 96.3981 ms/op
+WorkloadWarmup   3: 6 op, 574206289.00 ns, 95.7010 ms/op
+WorkloadWarmup   4: 6 op, 578256464.00 ns, 96.3761 ms/op
+WorkloadWarmup   5: 6 op, 577065032.00 ns, 96.1775 ms/op
+WorkloadWarmup   6: 6 op, 580884764.00 ns, 96.8141 ms/op
+
+WorkloadActual   1: 6 op, 583615074.00 ns, 97.2692 ms/op
+WorkloadActual   2: 6 op, 586650281.00 ns, 97.7750 ms/op
+WorkloadActual   3: 6 op, 584094973.00 ns, 97.3492 ms/op
+WorkloadActual   4: 6 op, 583378601.00 ns, 97.2298 ms/op
+WorkloadActual   5: 6 op, 574533167.00 ns, 95.7555 ms/op
+WorkloadActual   6: 6 op, 568504794.00 ns, 94.7508 ms/op
+WorkloadActual   7: 6 op, 578205366.00 ns, 96.3676 ms/op
+WorkloadActual   8: 6 op, 578199996.00 ns, 96.3667 ms/op
+WorkloadActual   9: 6 op, 590467686.00 ns, 98.4113 ms/op
+WorkloadActual  10: 6 op, 586090924.00 ns, 97.6818 ms/op
+WorkloadActual  11: 6 op, 575034396.00 ns, 95.8391 ms/op
+WorkloadActual  12: 6 op, 581160489.00 ns, 96.8601 ms/op
+WorkloadActual  13: 6 op, 583298146.00 ns, 97.2164 ms/op
+WorkloadActual  14: 6 op, 571530981.00 ns, 95.2552 ms/op
+WorkloadActual  15: 6 op, 576657610.00 ns, 96.1096 ms/op
+
+WorkloadResult   1: 6 op, 583615074.00 ns, 97.2692 ms/op
+WorkloadResult   2: 6 op, 586650281.00 ns, 97.7750 ms/op
+WorkloadResult   3: 6 op, 584094973.00 ns, 97.3492 ms/op
+WorkloadResult   4: 6 op, 583378601.00 ns, 97.2298 ms/op
+WorkloadResult   5: 6 op, 574533167.00 ns, 95.7555 ms/op
+WorkloadResult   6: 6 op, 568504794.00 ns, 94.7508 ms/op
+WorkloadResult   7: 6 op, 578205366.00 ns, 96.3676 ms/op
+WorkloadResult   8: 6 op, 578199996.00 ns, 96.3667 ms/op
+WorkloadResult   9: 6 op, 590467686.00 ns, 98.4113 ms/op
+WorkloadResult  10: 6 op, 586090924.00 ns, 97.6818 ms/op
+WorkloadResult  11: 6 op, 575034396.00 ns, 95.8391 ms/op
+WorkloadResult  12: 6 op, 581160489.00 ns, 96.8601 ms/op
+WorkloadResult  13: 6 op, 583298146.00 ns, 97.2164 ms/op
+WorkloadResult  14: 6 op, 571530981.00 ns, 95.2552 ms/op
+WorkloadResult  15: 6 op, 576657610.00 ns, 96.1096 ms/op
+// GC:  38 9 2 159844528 6
+// Threading:  0 0 6
+
+
+Mean = 96.682 ms, StdErr = 0.262 ms (0.27%), N = 15, StdDev = 1.016 ms
+Min = 94.751 ms, Q1 = 95.974 ms, Median = 96.860 ms, Q3 = 97.309 ms, Max = 98.411 ms
+IQR = 1.335 ms, LowerFence = 93.972 ms, UpperFence = 99.311 ms
+ConfidenceInterval = [95.596 ms; 97.769 ms] (CI 99.9%), Margin = 1.086 ms (1.12% of Mean)
+Skewness = -0.22, Kurtosis = 1.96, MValue = 2
+
+// ** Remained 2 (16.7%) benchmark(s) to run. Estimated finish 2023-08-02 13:32 (0h 0m from now) **
+// **************************
+// Benchmark: BenchmarkRepository.buscarProdutos: ShortRun(IterationCount=3, LaunchCount=1, WarmupCount=3) [numerosDeInteracao=500]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet ShortRun.dll --anonymousPipes 164 165 --benchmarkName "projeto.benchmarks.Benchmarks.BenchmarkRepository.buscarProdutos(numerosDeInteracao: 500)" --job ShortRun --benchmarkId 4 in /home/oem/github/icarus/icarus.projetos/Tests/projeto.benchmarks/bin/release/net7.0/ShortRun/bin/Release/net7.0
+Failed to set up high priority. Make sure you have the right permissions. Message: Permission denied
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.13.6
+// Runtime=.NET 7.0.9 (7.0.923.32301), X64 RyuJIT AVX
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX,PCLMUL,POPCNT VectorSize=128
+// Job: ShortRun(IterationCount=3, LaunchCount=1, WarmupCount=3)
+
+OverheadJitting  1: 1 op, 569067.00 ns, 569.0670 us/op
+WorkloadJitting  1: 1 op, 292287521.00 ns, 292.2875 ms/op
+
+WorkloadPilot    1: 2 op, 63820677.00 ns, 31.9103 ms/op
+WorkloadPilot    2: 3 op, 83702474.00 ns, 27.9008 ms/op
+WorkloadPilot    3: 4 op, 180066593.00 ns, 45.0166 ms/op
+WorkloadPilot    4: 5 op, 149262793.00 ns, 29.8526 ms/op
+WorkloadPilot    5: 6 op, 160436235.00 ns, 26.7394 ms/op
+WorkloadPilot    6: 7 op, 170503499.00 ns, 24.3576 ms/op
+WorkloadPilot    7: 8 op, 205218805.00 ns, 25.6524 ms/op
+WorkloadPilot    8: 9 op, 268158053.00 ns, 29.7953 ms/op
+WorkloadPilot    9: 10 op, 254359248.00 ns, 25.4359 ms/op
+WorkloadPilot   10: 11 op, 274557347.00 ns, 24.9598 ms/op
+WorkloadPilot   11: 12 op, 311429897.00 ns, 25.9525 ms/op
+WorkloadPilot   12: 13 op, 326300345.00 ns, 25.1000 ms/op
+WorkloadPilot   13: 14 op, 356274539.00 ns, 25.4482 ms/op
+WorkloadPilot   14: 15 op, 392343182.00 ns, 26.1562 ms/op
+WorkloadPilot   15: 16 op, 421170363.00 ns, 26.3231 ms/op
+WorkloadPilot   16: 32 op, 841791637.00 ns, 26.3060 ms/op
+
+WorkloadWarmup   1: 32 op, 846511063.00 ns, 26.4535 ms/op
+WorkloadWarmup   2: 32 op, 807796499.00 ns, 25.2436 ms/op
+WorkloadWarmup   3: 32 op, 825027457.00 ns, 25.7821 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 32 op, 830448017.00 ns, 25.9515 ms/op
+WorkloadActual   2: 32 op, 814315077.00 ns, 25.4473 ms/op
+WorkloadActual   3: 32 op, 846067921.00 ns, 26.4396 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 32 op, 830448017.00 ns, 25.9515 ms/op
+WorkloadResult   2: 32 op, 814315077.00 ns, 25.4473 ms/op
+WorkloadResult   3: 32 op, 846067921.00 ns, 26.4396 ms/op
+// GC:  77 27 5 408261112 32
+// Threading:  0 0 32
+
+// AfterAll
+// Benchmark Process 22717 has exited with code 0.
+
+Mean = 25.946 ms, StdErr = 0.286 ms (1.10%), N = 3, StdDev = 0.496 ms
+Min = 25.447 ms, Q1 = 25.699 ms, Median = 25.952 ms, Q3 = 26.196 ms, Max = 26.440 ms
+IQR = 0.496 ms, LowerFence = 24.955 ms, UpperFence = 26.940 ms
+ConfidenceInterval = [16.894 ms; 34.998 ms] (CI 99.9%), Margin = 9.052 ms (34.89% of Mean)
+Skewness = -0.01, Kurtosis = 0.67, MValue = 2
+
+// ** Remained 1 (8.3%) benchmark(s) to run. Estimated finish 2023-08-02 13:32 (0h 0m from now) **
+// **************************
+// Benchmark: BenchmarkRepository.atualizarProdutosPadrao: ShortRun(IterationCount=3, LaunchCount=1, WarmupCount=3) [numerosDeInteracao=500]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet ShortRun.dll --anonymousPipes 164 165 --benchmarkName "projeto.benchmarks.Benchmarks.BenchmarkRepository.atualizarProdutosPadrao(numerosDeInteracao: 500)" --job ShortRun --benchmarkId 5 in /home/oem/github/icarus/icarus.projetos/Tests/projeto.benchmarks/bin/release/net7.0/ShortRun/bin/Release/net7.0
+Failed to set up high priority. Make sure you have the right permissions. Message: Permission denied
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.13.6
+// Runtime=.NET 7.0.9 (7.0.923.32301), X64 RyuJIT AVX
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX,PCLMUL,POPCNT VectorSize=128
+// Job: ShortRun(IterationCount=3, LaunchCount=1, WarmupCount=3)
+
+OverheadJitting  1: 1 op, 416069.00 ns, 416.0690 us/op
+WorkloadJitting  1: 1 op, 333168816.00 ns, 333.1688 ms/op
+
+WorkloadPilot    1: 2 op, 152524454.00 ns, 76.2622 ms/op
+WorkloadPilot    2: 3 op, 200602568.00 ns, 66.8675 ms/op
+WorkloadPilot    3: 4 op, 286073368.00 ns, 71.5183 ms/op
+WorkloadPilot    4: 5 op, 298964485.00 ns, 59.7929 ms/op
+WorkloadPilot    5: 6 op, 318940149.00 ns, 53.1567 ms/op
+WorkloadPilot    6: 7 op, 365820930.00 ns, 52.2601 ms/op
+WorkloadPilot    7: 8 op, 423884396.00 ns, 52.9855 ms/op
+WorkloadPilot    8: 9 op, 462787821.00 ns, 51.4209 ms/op
+WorkloadPilot    9: 10 op, 514699368.00 ns, 51.4699 ms/op
+
+WorkloadWarmup   1: 10 op, 513170790.00 ns, 51.3171 ms/op
+WorkloadWarmup   2: 10 op, 518013287.00 ns, 51.8013 ms/op
+WorkloadWarmup   3: 10 op, 518152688.00 ns, 51.8153 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 10 op, 521809146.00 ns, 52.1809 ms/op
+WorkloadActual   2: 10 op, 519574832.00 ns, 51.9575 ms/op
+WorkloadActual   3: 10 op, 512363960.00 ns, 51.2364 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 10 op, 521809146.00 ns, 52.1809 ms/op
+WorkloadResult   2: 10 op, 519574832.00 ns, 51.9575 ms/op
+WorkloadResult   3: 10 op, 512363960.00 ns, 51.2364 ms/op
+// GC:  51 12 2 174394120 10
+// Threading:  0 0 10
+
+// AfterAll
+// Benchmark Process 22740 has exited with code 0.
+
+Mean = 51.792 ms, StdErr = 0.285 ms (0.55%), N = 3, StdDev = 0.494 ms
+Min = 51.236 ms, Q1 = 51.597 ms, Median = 51.957 ms, Q3 = 52.069 ms, Max = 52.181 ms
+IQR = 0.472 ms, LowerFence = 50.889 ms, UpperFence = 52.778 ms
+ConfidenceInterval = [42.786 ms; 60.797 ms] (CI 99.9%), Margin = 9.006 ms (17.39% of Mean)
+Skewness = -0.3, Kurtosis = 0.67, MValue = 2
+
+// ** Remained 0 (0.0%) benchmark(s) to run. Estimated finish 2023-08-02 13:32 (0h 0m from now) **
+// ***** BenchmarkRunner: Finish  *****
+
+// * Export *
+
+// * Detailed results *
+BenchmarkRepository.buscarProdutos: Job-PKWIYK(Toolchain=InProcessEmitToolchain) [numerosDeInteracao=125]
+Runtime = ; GC = 
+Mean = 4.506 ms, StdErr = 0.006 ms (0.13%), N = 14, StdDev = 0.022 ms
+Min = 4.473 ms, Q1 = 4.487 ms, Median = 4.509 ms, Q3 = 4.521 ms, Max = 4.547 ms
+IQR = 0.034 ms, LowerFence = 4.436 ms, UpperFence = 4.572 ms
+ConfidenceInterval = [4.481 ms; 4.532 ms] (CI 99.9%), Margin = 0.025 ms (0.56% of Mean)
+Skewness = 0.08, Kurtosis = 1.8, MValue = 2
+-------------------- Histogram --------------------
+[4.471 ms ; 4.560 ms) | @@@@@@@@@@@@@@
+---------------------------------------------------
+
+BenchmarkRepository.atualizarProdutosPadrao: Job-PKWIYK(Toolchain=InProcessEmitToolchain) [numerosDeInteracao=125]
+Runtime = ; GC = 
+Mean = 12.989 ms, StdErr = 0.032 ms (0.24%), N = 15, StdDev = 0.122 ms
+Min = 12.777 ms, Q1 = 12.901 ms, Median = 12.978 ms, Q3 = 13.068 ms, Max = 13.255 ms
+IQR = 0.167 ms, LowerFence = 12.651 ms, UpperFence = 13.319 ms
+ConfidenceInterval = [12.858 ms; 13.119 ms] (CI 99.9%), Margin = 0.131 ms (1.01% of Mean)
+Skewness = 0.36, Kurtosis = 2.51, MValue = 2
+-------------------- Histogram --------------------
+[12.712 ms ; 13.320 ms) | @@@@@@@@@@@@@@@
+---------------------------------------------------
+
+BenchmarkRepository.buscarProdutos: ShortRun(IterationCount=3, LaunchCount=1, WarmupCount=3) [numerosDeInteracao=125]
+Runtime = .NET 7.0.9 (7.0.923.32301), X64 RyuJIT AVX; GC = Concurrent Workstation
+Mean = 4.680 ms, StdErr = 0.126 ms (2.69%), N = 3, StdDev = 0.218 ms
+Min = 4.543 ms, Q1 = 4.554 ms, Median = 4.564 ms, Q3 = 4.748 ms, Max = 4.931 ms
+IQR = 0.194 ms, LowerFence = 4.263 ms, UpperFence = 5.038 ms
+ConfidenceInterval = [0.706 ms; 8.653 ms] (CI 99.9%), Margin = 3.974 ms (84.92% of Mean)
+Skewness = 0.38, Kurtosis = 0.67, MValue = 2
+-------------------- Histogram --------------------
+[4.539 ms ; 4.935 ms) | @@@
+---------------------------------------------------
+
+BenchmarkRepository.atualizarProdutosPadrao: ShortRun(IterationCount=3, LaunchCount=1, WarmupCount=3) [numerosDeInteracao=125]
+Runtime = .NET 7.0.9 (7.0.923.32301), X64 RyuJIT AVX; GC = Concurrent Workstation
+Mean = 11.069 ms, StdErr = 0.013 ms (0.12%), N = 3, StdDev = 0.023 ms
+Min = 11.043 ms, Q1 = 11.062 ms, Median = 11.081 ms, Q3 = 11.082 ms, Max = 11.083 ms
+IQR = 0.020 ms, LowerFence = 11.031 ms, UpperFence = 11.113 ms
+ConfidenceInterval = [10.653 ms; 11.485 ms] (CI 99.9%), Margin = 0.416 ms (3.76% of Mean)
+Skewness = -0.38, Kurtosis = 0.67, MValue = 2
+-------------------- Histogram --------------------
+[11.042 ms ; 11.084 ms) | @@@
+---------------------------------------------------
+
+BenchmarkRepository.buscarProdutos: Job-PKWIYK(Toolchain=InProcessEmitToolchain) [numerosDeInteracao=250]
+Runtime = ; GC = 
+Mean = 26.971 ms, StdErr = 0.124 ms (0.46%), N = 15, StdDev = 0.479 ms
+Min = 26.194 ms, Q1 = 26.796 ms, Median = 26.922 ms, Q3 = 27.260 ms, Max = 27.853 ms
+IQR = 0.465 ms, LowerFence = 26.098 ms, UpperFence = 27.958 ms
+ConfidenceInterval = [26.459 ms; 27.483 ms] (CI 99.9%), Margin = 0.512 ms (1.90% of Mean)
+Skewness = 0.06, Kurtosis = 2.05, MValue = 2
+-------------------- Histogram --------------------
+[26.002 ms ; 26.696 ms) | @@@
+[26.696 ms ; 27.878 ms) | @@@@@@@@@@@@
+---------------------------------------------------
+
+BenchmarkRepository.atualizarProdutosPadrao: Job-PKWIYK(Toolchain=InProcessEmitToolchain) [numerosDeInteracao=250]
+Runtime = ; GC = 
+Mean = 39.903 ms, StdErr = 0.194 ms (0.49%), N = 18, StdDev = 0.825 ms
+Min = 38.355 ms, Q1 = 39.519 ms, Median = 39.779 ms, Q3 = 40.591 ms, Max = 41.157 ms
+IQR = 1.073 ms, LowerFence = 37.910 ms, UpperFence = 42.200 ms
+ConfidenceInterval = [39.132 ms; 40.674 ms] (CI 99.9%), Margin = 0.771 ms (1.93% of Mean)
+Skewness = -0.07, Kurtosis = 2.02, MValue = 2
+-------------------- Histogram --------------------
+[38.244 ms ; 39.414 ms) | @@@
+[39.414 ms ; 40.240 ms) | @@@@@@@@@@
+[40.240 ms ; 41.349 ms) | @@@@@
+---------------------------------------------------
+
+BenchmarkRepository.buscarProdutos: ShortRun(IterationCount=3, LaunchCount=1, WarmupCount=3) [numerosDeInteracao=250]
+Runtime = .NET 7.0.9 (7.0.923.32301), X64 RyuJIT AVX; GC = Concurrent Workstation
+Mean = 10.317 ms, StdErr = 0.091 ms (0.88%), N = 3, StdDev = 0.158 ms
+Min = 10.147 ms, Q1 = 10.246 ms, Median = 10.346 ms, Q3 = 10.402 ms, Max = 10.457 ms
+IQR = 0.155 ms, LowerFence = 10.013 ms, UpperFence = 10.635 ms
+ConfidenceInterval = [7.443 ms; 13.190 ms] (CI 99.9%), Margin = 2.874 ms (27.85% of Mean)
+Skewness = -0.18, Kurtosis = 0.67, MValue = 2
+-------------------- Histogram --------------------
+[10.003 ms ; 10.259 ms) | @
+[10.259 ms ; 10.601 ms) | @@
+---------------------------------------------------
+
+BenchmarkRepository.atualizarProdutosPadrao: ShortRun(IterationCount=3, LaunchCount=1, WarmupCount=3) [numerosDeInteracao=250]
+Runtime = .NET 7.0.9 (7.0.923.32301), X64 RyuJIT AVX; GC = Concurrent Workstation
+Mean = 22.987 ms, StdErr = 0.134 ms (0.58%), N = 3, StdDev = 0.232 ms
+Min = 22.737 ms, Q1 = 22.884 ms, Median = 23.031 ms, Q3 = 23.112 ms, Max = 23.194 ms
+IQR = 0.229 ms, LowerFence = 22.541 ms, UpperFence = 23.455 ms
+ConfidenceInterval = [18.760 ms; 27.215 ms] (CI 99.9%), Margin = 4.227 ms (18.39% of Mean)
+Skewness = -0.18, Kurtosis = 0.67, MValue = 2
+-------------------- Histogram --------------------
+[22.526 ms ; 23.344 ms) | @@@
+---------------------------------------------------
+
+BenchmarkRepository.buscarProdutos: Job-PKWIYK(Toolchain=InProcessEmitToolchain) [numerosDeInteracao=500]
+Runtime = ; GC = 
+Mean = 74.690 ms, StdErr = 0.370 ms (0.50%), N = 34, StdDev = 2.158 ms
+Min = 72.563 ms, Q1 = 73.320 ms, Median = 73.655 ms, Q3 = 75.286 ms, Max = 79.402 ms
+IQR = 1.965 ms, LowerFence = 70.372 ms, UpperFence = 78.233 ms
+ConfidenceInterval = [73.353 ms; 76.026 ms] (CI 99.9%), Margin = 1.336 ms (1.79% of Mean)
+Skewness = 1.09, Kurtosis = 2.62, MValue = 2
+-------------------- Histogram --------------------
+[72.494 ms ; 74.243 ms) | @@@@@@@@@@@@@@@@@@@@@@@
+[74.243 ms ; 75.991 ms) | @@@
+[75.991 ms ; 77.897 ms) | @@@
+[77.897 ms ; 79.646 ms) | @@@@@
+---------------------------------------------------
+
+BenchmarkRepository.atualizarProdutosPadrao: Job-PKWIYK(Toolchain=InProcessEmitToolchain) [numerosDeInteracao=500]
+Runtime = ; GC = 
+Mean = 96.682 ms, StdErr = 0.262 ms (0.27%), N = 15, StdDev = 1.016 ms
+Min = 94.751 ms, Q1 = 95.974 ms, Median = 96.860 ms, Q3 = 97.309 ms, Max = 98.411 ms
+IQR = 1.335 ms, LowerFence = 93.972 ms, UpperFence = 99.311 ms
+ConfidenceInterval = [95.596 ms; 97.769 ms] (CI 99.9%), Margin = 1.086 ms (1.12% of Mean)
+Skewness = -0.22, Kurtosis = 1.96, MValue = 2
+-------------------- Histogram --------------------
+[94.726 ms ; 98.952 ms) | @@@@@@@@@@@@@@@
+---------------------------------------------------
+
+BenchmarkRepository.buscarProdutos: ShortRun(IterationCount=3, LaunchCount=1, WarmupCount=3) [numerosDeInteracao=500]
+Runtime = .NET 7.0.9 (7.0.923.32301), X64 RyuJIT AVX; GC = Concurrent Workstation
+Mean = 25.946 ms, StdErr = 0.286 ms (1.10%), N = 3, StdDev = 0.496 ms
+Min = 25.447 ms, Q1 = 25.699 ms, Median = 25.952 ms, Q3 = 26.196 ms, Max = 26.440 ms
+IQR = 0.496 ms, LowerFence = 24.955 ms, UpperFence = 26.940 ms
+ConfidenceInterval = [16.894 ms; 34.998 ms] (CI 99.9%), Margin = 9.052 ms (34.89% of Mean)
+Skewness = -0.01, Kurtosis = 0.67, MValue = 2
+-------------------- Histogram --------------------
+[24.996 ms ; 25.744 ms) | @
+[25.744 ms ; 26.647 ms) | @@
+---------------------------------------------------
+
+BenchmarkRepository.atualizarProdutosPadrao: ShortRun(IterationCount=3, LaunchCount=1, WarmupCount=3) [numerosDeInteracao=500]
+Runtime = .NET 7.0.9 (7.0.923.32301), X64 RyuJIT AVX; GC = Concurrent Workstation
+Mean = 51.792 ms, StdErr = 0.285 ms (0.55%), N = 3, StdDev = 0.494 ms
+Min = 51.236 ms, Q1 = 51.597 ms, Median = 51.957 ms, Q3 = 52.069 ms, Max = 52.181 ms
+IQR = 0.472 ms, LowerFence = 50.889 ms, UpperFence = 52.778 ms
+ConfidenceInterval = [42.786 ms; 60.797 ms] (CI 99.9%), Margin = 9.006 ms (17.39% of Mean)
+Skewness = -0.3, Kurtosis = 0.67, MValue = 2
+-------------------- Histogram --------------------
+[50.787 ms ; 52.630 ms) | @@@
+---------------------------------------------------
+
+// * Summary *
+
+BenchmarkDotNet v0.13.6, Linux Mint 21.1 (Vera)
+Intel Core i3-3240 CPU 3.40GHz (Ivy Bridge), 1 CPU, 4 logical and 2 physical cores
+.NET SDK 7.0.109
+  [Host]   : .NET 7.0.9 (7.0.923.32301), X64 RyuJIT AVX
+  ShortRun : .NET 7.0.9 (7.0.923.32301), X64 RyuJIT AVX
+
+
+|                  Method |        Job |              Toolchain | IterationCount | LaunchCount | WarmupCount | numerosDeInteracao |      Mean |     Error |    StdDev |    Median | Rank |       Gen0 |      Gen1 |     Gen2 | Allocated |
+|------------------------ |----------- |----------------------- |--------------- |------------ |------------ |------------------- |----------:|----------:|----------:|----------:|-----:|-----------:|----------:|---------:|----------:|
+|          buscarProdutos | Job-PKWIYK | InProcessEmitToolchain |        Default |     Default |     Default |                125 |  4.506 ms | 0.0253 ms | 0.0224 ms |  4.509 ms |    1 |   515.6250 |  500.0000 |        - |   3.05 MB |
+| atualizarProdutosPadrao | Job-PKWIYK | InProcessEmitToolchain |        Default |     Default |     Default |                125 | 12.989 ms | 0.1306 ms | 0.1222 ms | 12.978 ms |    4 |  1531.2500 |  593.7500 |        - |   5.01 MB |
+|          buscarProdutos |   ShortRun |                Default |              3 |           1 |           3 |                125 |  4.680 ms | 3.9739 ms | 0.2178 ms |  4.564 ms |    1 |   523.4375 |  492.1875 |        - |   3.05 MB |
+| atualizarProdutosPadrao |   ShortRun |                Default |              3 |           1 |           3 |                125 | 11.069 ms | 0.4158 ms | 0.0228 ms | 11.081 ms |    3 |  1671.8750 |  406.2500 |        - |   4.16 MB |
+|          buscarProdutos | Job-PKWIYK | InProcessEmitToolchain |        Default |     Default |     Default |                250 | 26.971 ms | 0.5121 ms | 0.4790 ms | 26.922 ms |    7 |  2406.2500 |  906.2500 | 156.2500 |  12.17 MB |
+| atualizarProdutosPadrao | Job-PKWIYK | InProcessEmitToolchain |        Default |     Default |     Default |                250 | 39.903 ms | 0.7711 ms | 0.8251 ms | 39.779 ms |    8 |  2230.7692 |  923.0769 | 230.7692 |  11.31 MB |
+|          buscarProdutos |   ShortRun |                Default |              3 |           1 |           3 |                250 | 10.317 ms | 2.8735 ms | 0.1575 ms | 10.346 ms |    2 |  1015.6250 |  968.7500 |        - |   6.09 MB |
+| atualizarProdutosPadrao |   ShortRun |                Default |              3 |           1 |           3 |                250 | 22.987 ms | 4.2275 ms | 0.2317 ms | 23.031 ms |    5 |  2562.5000 |  937.5000 |        - |   8.32 MB |
+|          buscarProdutos | Job-PKWIYK | InProcessEmitToolchain |        Default |     Default |     Default |                500 | 74.690 ms | 1.3363 ms | 2.1578 ms | 73.655 ms |   10 | 11857.1429 | 1571.4286 | 142.8571 |  29.91 MB |
+| atualizarProdutosPadrao | Job-PKWIYK | InProcessEmitToolchain |        Default |     Default |     Default |                500 | 96.682 ms | 1.0862 ms | 1.0160 ms | 96.860 ms |   11 |  6333.3333 | 1500.0000 | 333.3333 |  25.41 MB |
+|          buscarProdutos |   ShortRun |                Default |              3 |           1 |           3 |                500 | 25.946 ms | 9.0518 ms | 0.4962 ms | 25.952 ms |    6 |  2406.2500 |  843.7500 | 156.2500 |  12.17 MB |
+| atualizarProdutosPadrao |   ShortRun |                Default |              3 |           1 |           3 |                500 | 51.792 ms | 9.0056 ms | 0.4936 ms | 51.957 ms |    9 |  5100.0000 | 1200.0000 | 200.0000 |  16.63 MB |
+
+// * Legends *
+  numerosDeInteracao : Value of the 'numerosDeInteracao' parameter
+  Mean               : Arithmetic mean of all measurements
+  Error              : Half of 99.9% confidence interval
+  StdDev             : Standard deviation of all measurements
+  Median             : Value separating the higher half of all measurements (50th percentile)
+  Rank               : Relative position of current benchmark mean among all benchmarks (Arabic style)
+  Gen0               : GC Generation 0 collects per 1000 operations
+  Gen1               : GC Generation 1 collects per 1000 operations
+  Gen2               : GC Generation 2 collects per 1000 operations
+  Allocated          : Allocated memory per single operation (managed only, inclusive, 1KB = 1024B)
+  1 ms               : 1 Millisecond (0.001 sec)
+
+// * Diagnostic Output - MemoryDiagnoser *
+
+
+// ***** BenchmarkRunner: End *****
+Run time: 00:03:23 (203.72 sec), executed benchmarks: 12
+
+Global total time: 00:03:42 (222.23 sec), executed benchmarks: 12
+// * Artifacts cleanup *
+Artifacts cleanup is finished
