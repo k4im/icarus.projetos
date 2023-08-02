@@ -1,3 +1,5 @@
+using Microsoft.Data.Sqlite;
+
 namespace projeto.benchmarks.Benchmarks;
 
 [MemoryDiagnoser, RankColumn, ShortRunJob]
@@ -10,8 +12,10 @@ public class BenchmarkRepository
     [GlobalSetup]
     public async void Setup()
     {
-        _context = new DataContext(new DbContextOptionsBuilder().UseSqlite("Data Source=mydb.db").Options);
-        _context.Database.Migrate();
+        var connection = new SqliteConnection("Data Source=:memory:");
+        await connection.OpenAsync();
+        _context = new DataContext(new DbContextOptionsBuilder().UseSqlite(connection).Options);
+        _context.Database.EnsureCreated();
         for (int i = 0; i < numerosDeInteracao; i++)
             _context.Projetos.AddRange(FakeProjeto.factoryProjeto());
         await _context.SaveChangesAsync();
@@ -31,6 +35,6 @@ public class BenchmarkRepository
 
     [Benchmark]
     public async Task<List<Projeto>> buscarProdutosPaginadosSql()
-    => await _context.Projetos.FromSql($"SELECT * FROM Data.Projetos LIMIT 5,10")
+    => await _context.Projetos.FromSql($"SELECT * FROM Projetos LIMIT 5,10")
     .ToListAsync();
 }
