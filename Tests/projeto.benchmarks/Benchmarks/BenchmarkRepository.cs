@@ -1,16 +1,14 @@
-using Dapper;
 using Microsoft.Data.Sqlite;
-
 namespace projeto.benchmarks.Benchmarks;
 
-[MemoryDiagnoser, RankColumn, LongRunJob]
+[MemoryDiagnoser, RankColumn, ShortRunJob]
 public class BenchmarkRepository
 {
 
     [Params(1_000, 2_000)]
     public int interation;
     [Benchmark]
-    public async Task<Response<Projeto>> BuscarProdutosPaginados()
+    public async Task<Response<Projeto>> BuscarProjetosPaginadosEF()
     {
         using var db = new DataContext();
         var pessoas = await db.Projetos.ToListAsync();
@@ -22,7 +20,7 @@ public class BenchmarkRepository
 
 
     [Benchmark]
-    public async Task<Response<Projeto>> BuscarProdutosPaginadosSql()
+    public async Task<Response<Projeto>> BuscarProjetosPaginadosSql()
     {
         using var context = new DataContext();
         var total = await context.Projetos.FromSql($"SELECT COUNT(*) FROM Projetos").CountAsync();
@@ -31,11 +29,11 @@ public class BenchmarkRepository
     }
 
     [Benchmark]
-    public async Task<Response<Projeto>> BuscarProdutosPaginadosSqlDapper()
+    public async Task<Response<Projeto>> BuscarProjetosPaginadosDapper()
     {
         using var context = new SqliteConnection("Data Source=teste.db;");
-        var total = context.ExecuteScalar<int>($"SELECT COUNT(*) FROM Projetos");
-        var query = $"SELECT * FROM Projetos LIMIT 10 OFFSET 0";
+        var total = context.ExecuteScalar<int>("SELECT COUNT(*) FROM Projetos");
+        var query = "SELECT * FROM Projetos LIMIT 10 OFFSET 0";
         var projetos = await context.QueryAsync<Projeto>(query);
         return new Response<Projeto>(projetos.ToList(), 1, total);
     }

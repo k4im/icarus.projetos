@@ -1,7 +1,6 @@
-namespace projeto.infra.AsyncComm
+namespace projeto.infra.AsyncComm;
+
+public interface IMessageConsumer
 {
-    public interface IMessageConsumer
-    {
-        void verificarFila();
-    }
+    void verificarFila();
 }

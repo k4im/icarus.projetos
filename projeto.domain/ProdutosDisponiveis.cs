@@ -1,10 +1,9 @@
-namespace projeto.domain
-{
-    public class ProdutosDisponiveis
-    {
+namespace projeto.domain;
 
-        public int Id { get; set; }
-        public string Nome { get; set; }
-        public int Quantidade { get; set; }
-    }
+public class ProdutosDisponiveis
+{
+
+    public int Id { get; set; }
+    public string Nome { get; set; }
+    public int Quantidade { get; set; }
 }
