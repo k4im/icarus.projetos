@@ -80,9 +80,7 @@ namespace projeto.domain
             return nome;
         }
 
-        // public void AtualizarStatus(StatusProjeto model)
-        // {
-        //     if (this.Status.Status != model.Status) this.Status.AtualizacaoDoStatus(model.Status);
-        // }
+        public void AtualizarStatus(string status)
+            => this.Status = status;
     }
 }

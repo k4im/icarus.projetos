@@ -86,7 +86,7 @@ namespace projeto.service.Controllers
         /// <response code="404"> Informa que não foi possivel encontrar um produto com este ID</response>
         [HttpPut("update/{id}")]
         // [Authorize(Roles = "ADMIN")]
-        public async Task<IActionResult> atualizarStatusProjeto(StatusProjeto model, int? id)
+        public async Task<IActionResult> atualizarStatusProjeto(string model, int? id)
         {
             var currentUser = HttpContext.User.FindFirstValue(ClaimTypes.Name);
             if (!ModelState.IsValid) return BadRequest(ModelState);
