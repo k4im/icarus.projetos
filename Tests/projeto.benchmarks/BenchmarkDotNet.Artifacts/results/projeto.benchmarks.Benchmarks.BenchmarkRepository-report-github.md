@@ -1,18 +1,18 @@
 ```
 
-BenchmarkDotNet v0.13.6, Linux Mint 21.1 (Vera)
-Intel Core i3-3240 CPU 3.40GHz (Ivy Bridge), 1 CPU, 4 logical and 2 physical cores
-.NET SDK 7.0.109
-  [Host]   : .NET 7.0.9 (7.0.923.32301), X64 RyuJIT AVX
-  ShortRun : .NET 7.0.9 (7.0.923.32301), X64 RyuJIT AVX
+BenchmarkDotNet v0.13.6, Windows 10 (10.0.19045.3208/22H2/2022Update)
+AMD Ryzen 5 4600G with Radeon Graphics, 1 CPU, 12 logical and 6 physical cores
+.NET SDK 7.0.306
+  [Host]   : .NET 7.0.9 (7.0.923.32018), X64 RyuJIT AVX2
+  ShortRun : .NET 7.0.9 (7.0.923.32018), X64 RyuJIT AVX2
 
 Job=ShortRun  IterationCount=3  LaunchCount=1  
 WarmupCount=3  
 
 ```
-|                     Method | numerosDeInteracao |       Mean |     Error |   StdDev | Rank |     Gen0 | Allocated |
-|--------------------------- |------------------- |-----------:|----------:|---------:|-----:|---------:|----------:|
-|    **buscarProdutosPaginados** |               **1000** | **1,960.9 μs** | **163.11 μs** |  **8.94 μs** |    **3** | **205.0781** | **316.53 KB** |
-| buscarProdutosPaginadosSql |               1000 |   121.5 μs |   9.82 μs |  0.54 μs |    2 |  10.7422 |  16.51 KB |
-|    **buscarProdutosPaginados** |               **2000** | **3,332.4 μs** | **692.43 μs** | **37.95 μs** |    **4** | **410.1563** | **629.43 KB** |
-| buscarProdutosPaginadosSql |               2000 |   118.8 μs |  25.10 μs |  1.38 μs |    1 |  10.7422 |  16.51 KB |
+|                     Method | numerosDeInteracao |        Mean |      Error |    StdDev | Rank |     Gen0 | Allocated |
+|--------------------------- |------------------- |------------:|-----------:|----------:|-----:|---------:|----------:|
+|    **BuscarProdutosPaginados** |               **1000** |   **714.20 μs** |  **63.348 μs** |  **3.472 μs** |    **3** | **154.2969** | **316.53 KB** |
+| BuscarProdutosPaginadosSql |               1000 |    93.82 μs |   5.697 μs |  0.312 μs |    1 |  12.5732 |  25.75 KB |
+|    **BuscarProdutosPaginados** |               **2000** | **1,525.46 μs** | **754.915 μs** | **41.379 μs** |    **4** | **306.6406** | **629.43 KB** |
+| BuscarProdutosPaginadosSql |               2000 |   101.93 μs |   1.626 μs |  0.089 μs |    2 |  12.5732 |  25.75 KB |

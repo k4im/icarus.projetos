@@ -2,7 +2,7 @@
 <html lang='en'>
 <head>
 <meta charset='utf-8' />
-<title>projeto.benchmarks.Benchmarks.BenchmarkRepository-20230802-175118</title>
+<title>projeto.benchmarks.Benchmarks.BenchmarkRepository-20230802-200758</title>
 
 <style type="text/css">
 	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
@@ -13,23 +13,23 @@
 </head>
 <body>
 <pre><code>
-BenchmarkDotNet v0.13.6, Linux Mint 21.1 (Vera)
-Intel Core i3-3240 CPU 3.40GHz (Ivy Bridge), 1 CPU, 4 logical and 2 physical cores
-.NET SDK 7.0.109
-  [Host]   : .NET 7.0.9 (7.0.923.32301), X64 RyuJIT AVX
-  ShortRun : .NET 7.0.9 (7.0.923.32301), X64 RyuJIT AVX
+BenchmarkDotNet v0.13.6, Windows 10 (10.0.19045.3208/22H2/2022Update)
+AMD Ryzen 5 4600G with Radeon Graphics, 1 CPU, 12 logical and 6 physical cores
+.NET SDK 7.0.306
+  [Host]   : .NET 7.0.9 (7.0.923.32018), X64 RyuJIT AVX2
+  ShortRun : .NET 7.0.9 (7.0.923.32018), X64 RyuJIT AVX2
 </code></pre>
 <pre><code>Job=ShortRun  IterationCount=3  LaunchCount=1  
 WarmupCount=3  
 </code></pre>
 
 <table>
-<thead><tr><th>              Method</th><th>numerosDeInteracao</th><th>Mean</th><th>Error</th><th>StdDev</th><th>Rank</th><th>Gen0</th><th>Allocated</th>
+<thead><tr><th>              Method</th><th>numerosDeInteracao</th><th> Mean</th><th>Error</th><th>StdDev</th><th>Rank</th><th>Gen0</th><th>Allocated</th>
 </tr>
-</thead><tbody><tr><td>buscarProdutosPaginados</td><td>1000</td><td>1,960.9 &mu;s</td><td>163.11 &mu;s</td><td>8.94 &mu;s</td><td>3</td><td>205.0781</td><td>316.53 KB</td>
-</tr><tr><td>buscarProdutosPaginadosSql</td><td>1000</td><td>121.5 &mu;s</td><td>9.82 &mu;s</td><td>0.54 &mu;s</td><td>2</td><td>10.7422</td><td>16.51 KB</td>
-</tr><tr><td>buscarProdutosPaginados</td><td>2000</td><td>3,332.4 &mu;s</td><td>692.43 &mu;s</td><td>37.95 &mu;s</td><td>4</td><td>410.1563</td><td>629.43 KB</td>
-</tr><tr><td>buscarProdutosPaginadosSql</td><td>2000</td><td>118.8 &mu;s</td><td>25.10 &mu;s</td><td>1.38 &mu;s</td><td>1</td><td>10.7422</td><td>16.51 KB</td>
+</thead><tbody><tr><td>BuscarProdutosPaginados</td><td>1000</td><td>714.20 &mu;s</td><td>63.348 &mu;s</td><td>3.472 &mu;s</td><td>3</td><td>154.2969</td><td>316.53 KB</td>
+</tr><tr><td>BuscarProdutosPaginadosSql</td><td>1000</td><td>93.82 &mu;s</td><td>5.697 &mu;s</td><td>0.312 &mu;s</td><td>1</td><td>12.5732</td><td>25.75 KB</td>
+</tr><tr><td>BuscarProdutosPaginados</td><td>2000</td><td>1,525.46 &mu;s</td><td>754.915 &mu;s</td><td>41.379 &mu;s</td><td>4</td><td>306.6406</td><td>629.43 KB</td>
+</tr><tr><td>BuscarProdutosPaginadosSql</td><td>2000</td><td>101.93 &mu;s</td><td>1.626 &mu;s</td><td>0.089 &mu;s</td><td>2</td><td>12.5732</td><td>25.75 KB</td>
 </tr></tbody></table>
 </body>
 </html>

@@ -16,7 +16,7 @@ namespace projeto.service.Controllers
         /// </summary>
         /// <response code="200">Retorna a lista com todos os projetos paginados</response>
         [HttpGet("projetos/{pagina?}/{resultadoPorPagina?}")]
-        [Authorize(Roles = "ADMIN,ATENDENTE")]
+        // [Authorize(Roles = "ADMIN,ATENDENTE")]
         public async Task<IActionResult> GetAllProjects(int pagina = 1, float resultadoPorPagina = 5)
         {
             var currentUser = HttpContext.User.FindFirstValue(ClaimTypes.Name);
@@ -31,7 +31,7 @@ namespace projeto.service.Controllers
         /// <response code="200"> Retorna o projeto</response>
         /// <response code="404"> Não existe um projeto com este ID</response>
         [HttpGet("projeto/{id?}")]
-        [Authorize(Roles = "ADMIN,ATENDENTE")]
+        // [Authorize(Roles = "ADMIN,ATENDENTE")]
         public async Task<IActionResult> GetById(int? id)
         {
             var currentUser = HttpContext.User.FindFirstValue(ClaimTypes.Name);
@@ -85,7 +85,7 @@ namespace projeto.service.Controllers
         /// <response code="409"> Informa que houve um erro de conflito</response>
         /// <response code="404"> Informa que não foi possivel encontrar um produto com este ID</response>
         [HttpPut("update/{id}")]
-        [Authorize(Roles = "ADMIN")]
+        // [Authorize(Roles = "ADMIN")]
         public async Task<IActionResult> atualizarStatusProjeto(StatusProjeto model, int? id)
         {
             var currentUser = HttpContext.User.FindFirstValue(ClaimTypes.Name);
@@ -109,7 +109,7 @@ namespace projeto.service.Controllers
         /// <response code="409"> Informa que houve um erro de conflito</response>
         /// <response code="404"> Informa que não foi possivel encontrar um produto com este ID</response>
         [HttpDelete("delete/{id}")]
-        [Authorize(Roles = "ADMIN")]
+        // [Authorize(Roles = "ADMIN")]
         public async Task<IActionResult> removerProjeto(int? id)
         {
             var currentUser = HttpContext.User.FindFirstValue(ClaimTypes.Name);

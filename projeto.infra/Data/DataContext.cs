@@ -2,11 +2,13 @@ namespace projeto.infra.Data
 {
     public class DataContext : DbContext
     {
-        public DataContext() : base(new DbContextOptionsBuilder().UseInMemoryDatabase("Data").Options)
-        { }
+        public DataContext() : base(new DbContextOptionsBuilder().UseSqlite("Data Source=teste.db;").Options)
+        { 
+            Database.EnsureCreated();
+        }
 
-        public DataContext(DbContextOptions options) : base(options)
-        { }
+        // public DataContext(DbContextOptions options) : base(options)
+        // { }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

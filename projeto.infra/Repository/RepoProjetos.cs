@@ -1,3 +1,5 @@
+using Microsoft.Data.Sqlite;
+
 namespace projeto.infra.Repository;
 
 
@@ -6,13 +8,13 @@ public class RepoProjetos : IRepoProjetos
     //Delegates e Eventos a serem disparados
     public delegate void aoCriarProjetoEventHandler(Projeto model);
     public event aoCriarProjetoEventHandler aocriarProjeto;
-    IMessageBusService _messageBroker;
+    // IMessageBusService _messageBroker;
 
     public RepoProjetos(IMessageBusService messageBroker)
     {
-        _messageBroker = messageBroker;
-        aocriarProjeto += async (Projeto model) => { await RepoProdutosDisponiveis.atualizarTabelaProdutosDisponiveis(model); };
-        aocriarProjeto += messageBroker.enviarProjeto;
+        // _messageBroker = messageBroker;
+        // aocriarProjeto += async (Projeto model) => { await RepoProdutosDisponiveis.atualizarTabelaProdutosDisponiveis(model); };
+        // aocriarProjeto += messageBroker.enviarProjeto;
     }
 
     public async Task<bool> AtualizarStatus(StatusProjeto model, int? id)
@@ -54,28 +56,24 @@ public class RepoProjetos : IRepoProjetos
     {
         using (var db = new DataContext())
         {
-            var ResultadoPorPagina = resultadoPorPagina;
-            var projetos = await db.Projetos.ToListAsync();
-            var TotalDePaginas = Math.Ceiling(projetos.Count() / ResultadoPorPagina);
-            var projetosPaginados = projetos.Skip((pagina - 1) * (int)ResultadoPorPagina).Take((int)ResultadoPorPagina).ToList();
-
-            return new Response<Projeto>(projetosPaginados, pagina, (int)TotalDePaginas);
+            var total = await db.Projetos.FromSql($"SELECT * FROM Projetos").CountAsync();
+            var projetosPaginados = await db.Projetos.FromSql($"SELECT * FROM Projetos LIMIT 10 OFFSET 0").ToListAsync();
+            return new Response<Projeto>(projetosPaginados, 1, total);
         }
     }
 
     public async Task<bool> CriarProjeto(Projeto model)
-    {
-        try
+    {        try
         {
             using (var db = new DataContext())
             {
-                if (await db.ProdutosEmEstoque.FirstOrDefaultAsync(x => x.Id == model.ProdutoUtilizado) == null)
-                {
-                    throw new Exception($"Enterrompido criação do projeto pois produto com [id] - [{model.ProdutoUtilizado}] não existe!");
-                }
+                // if (await db.ProdutosEmEstoque.FirstOrDefaultAsync(x => x.Id == model.ProdutoUtilizado) == null)
+                // {
+                //     throw new Exception($"Enterrompido criação do projeto pois produto com [id] - [{model.ProdutoUtilizado}] não existe!");
+                // }
                 db.Projetos.Add(model);
                 await db.SaveChangesAsync();
-                aocriarProjeto(model);
+                // aocriarProjeto(model);
                 return true;
             }
 

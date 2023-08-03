@@ -14,6 +14,7 @@
 /home/oem/github/icarus-sistema/icarus.projetos/projeto.infra/obj/Debug/net7.0/projeto.infra.pdb
 /home/oem/github/icarus-sistema/icarus.projetos/projeto.infra/obj/Debug/net7.0/ref/projeto.infra.dll
 C:\Users\santo\github\icarus-sistema\icarus.projetos\projeto.infra\bin\Debug\net7.0\projeto.infra.deps.json
+C:\Users\santo\github\icarus-sistema\icarus.projetos\projeto.infra\bin\Debug\net7.0\projeto.infra.runtimeconfig.json
 C:\Users\santo\github\icarus-sistema\icarus.projetos\projeto.infra\bin\Debug\net7.0\projeto.infra.dll
 C:\Users\santo\github\icarus-sistema\icarus.projetos\projeto.infra\bin\Debug\net7.0\projeto.infra.pdb
 C:\Users\santo\github\icarus-sistema\icarus.projetos\projeto.infra\bin\Debug\net7.0\projeto.domain.dll
@@ -27,4 +28,5 @@ C:\Users\santo\github\icarus-sistema\icarus.projetos\projeto.infra\obj\Debug\net
 C:\Users\santo\github\icarus-sistema\icarus.projetos\projeto.infra\obj\Debug\net7.0\projeto.infra.dll
 C:\Users\santo\github\icarus-sistema\icarus.projetos\projeto.infra\obj\Debug\net7.0\refint\projeto.infra.dll
 C:\Users\santo\github\icarus-sistema\icarus.projetos\projeto.infra\obj\Debug\net7.0\projeto.infra.pdb
+C:\Users\santo\github\icarus-sistema\icarus.projetos\projeto.infra\obj\Debug\net7.0\projeto.infra.genruntimeconfig.cache
 C:\Users\santo\github\icarus-sistema\icarus.projetos\projeto.infra\obj\Debug\net7.0\ref\projeto.infra.dll

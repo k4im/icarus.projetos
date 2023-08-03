@@ -22,7 +22,7 @@ public class BenchmarkRepository
     }
 
     [Benchmark]
-    public async Task<Response<Projeto>> buscarProdutosPaginados()
+    public async Task<Response<Projeto>> BuscarProdutosPaginados()
     {
         int pagina = 1;
         var ResultadoPorPagina = 5f;
@@ -33,8 +33,16 @@ public class BenchmarkRepository
         return new Response<Projeto>(projetosPaginados, pagina, (int)TotalDePaginas);
     }
 
+    // [Benchmark]
+    // public async Task<List<Projeto>> buscarProdutosPaginadosSql()
+    // => await _context.Projetos.FromSql($"SELECT * FROM Projetos LIMIT 10 OFFSET 0")
+    // .ToListAsync();
+
     [Benchmark]
-    public async Task<List<Projeto>> buscarProdutosPaginadosSql()
-    => await _context.Projetos.FromSql($"SELECT * FROM Projetos LIMIT 10 OFFSET 0")
-    .ToListAsync();
+    public async Task<Response<Projeto>> BuscarProdutosPaginadosSql()
+    {
+        var total = await _context.Projetos.FromSql($"SELECT COUNT(*) FROM Projetos").CountAsync();
+        var projetosPaginados = await _context.Projetos.FromSql($"SELECT * FROM Projetos LIMIT 10 OFFSET 0").ToListAsync();
+        return new Response<Projeto>(projetosPaginados, 1, total);
+    }
 }
