@@ -154,7 +154,6 @@ C:/Users/santo/github/icarus-sistema/icarus.projetos/projeto.service/obj/release
 /home/oem/github/icarus/icarus.projetos/projeto.service/bin/release/net7.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 /home/oem/github/icarus/icarus.projetos/projeto.service/bin/release/net7.0/Castle.Core.dll
 /home/oem/github/icarus/icarus.projetos/projeto.service/bin/release/net7.0/Dapper.dll
-/home/oem/github/icarus/icarus.projetos/projeto.service/bin/release/net7.0/Dapper.Contrib.dll
 /home/oem/github/icarus/icarus.projetos/projeto.service/bin/release/net7.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
 /home/oem/github/icarus/icarus.projetos/projeto.service/bin/release/net7.0/Microsoft.AspNetCore.OpenApi.dll
 /home/oem/github/icarus/icarus.projetos/projeto.service/bin/release/net7.0/Microsoft.EntityFrameworkCore.dll

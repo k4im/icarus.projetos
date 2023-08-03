@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Ov/qbE8NAXR1MdZdUdEhbDn/9zjdFYNNMEv2/nkS3Bo0d+4iAcfyPO58VHOoPorDapUPyxRTDhcgoJhMKyR42A==",
+  "dgSpecHash": "ebk/TQtgWf6wTy7qSy5tkqY6CuVLoSPQPwLv6vuFo+gmFMznlpnXHNhfwPemkazqOHc2vd7Qa3qTk1A6+eLnaQ==",
   "success": true,
   "projectFilePath": "/home/oem/github/icarus/icarus.projetos/Tests/projeto.benchmarks/projeto.benchmarks.csproj",
   "expectedPackageFiles": [
@@ -11,7 +11,6 @@
     "/home/oem/.nuget/packages/castle.core/5.1.1/castle.core.5.1.1.nupkg.sha512",
     "/home/oem/.nuget/packages/commandlineparser/2.9.1/commandlineparser.2.9.1.nupkg.sha512",
     "/home/oem/.nuget/packages/dapper/2.0.143/dapper.2.0.143.nupkg.sha512",
-    "/home/oem/.nuget/packages/dapper.contrib/2.0.78/dapper.contrib.2.0.78.nupkg.sha512",
     "/home/oem/.nuget/packages/gee.external.capstone/2.3.0/gee.external.capstone.2.3.0.nupkg.sha512",
     "/home/oem/.nuget/packages/iced/1.17.0/iced.1.17.0.nupkg.sha512",
     "/home/oem/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/7.0.5/microsoft.aspnetcore.authentication.jwtbearer.7.0.5.nupkg.sha512",

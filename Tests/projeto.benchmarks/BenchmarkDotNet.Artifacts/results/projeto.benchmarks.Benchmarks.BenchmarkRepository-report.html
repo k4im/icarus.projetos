@@ -2,7 +2,7 @@
 <html lang='en'>
 <head>
 <meta charset='utf-8' />
-<title>projeto.benchmarks.Benchmarks.BenchmarkRepository-20230803-121847</title>
+<title>projeto.benchmarks.Benchmarks.BenchmarkRepository-20230803-133811</title>
 
 <style type="text/css">
 	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
@@ -16,19 +16,22 @@
 BenchmarkDotNet v0.13.6, Linux Mint 21.1 (Vera)
 Intel Core i3-3240 CPU 3.40GHz (Ivy Bridge), 1 CPU, 4 logical and 2 physical cores
 .NET SDK 7.0.109
-  [Host]   : .NET 7.0.9 (7.0.923.32301), X64 RyuJIT AVX
-  ShortRun : .NET 7.0.9 (7.0.923.32301), X64 RyuJIT AVX
+  [Host]  : .NET 7.0.9 (7.0.923.32301), X64 RyuJIT AVX
+  LongRun : .NET 7.0.9 (7.0.923.32301), X64 RyuJIT AVX
 </code></pre>
-<pre><code>Job=ShortRun  IterationCount=3  LaunchCount=1  
-WarmupCount=3  
+<pre><code>Job=LongRun  IterationCount=100  LaunchCount=3  
+WarmupCount=15  
 </code></pre>
 
 <table>
-<thead><tr><th>                    Method</th><th>Mean</th><th>Error</th><th>StdDev</th><th>Rank</th><th>Gen0</th><th>Allocated</th>
+<thead><tr><th>                    Method</th><th>interation</th><th>Mean</th><th>Error</th><th>StdDev</th><th>Median</th><th>Rank</th><th>Gen0</th><th>Allocated</th>
 </tr>
-</thead><tbody><tr><td>BuscarProdutosPaginados</td><td>483.83 &mu;s</td><td>25.120 &mu;s</td><td>1.377 &mu;s</td><td>2</td><td>52.7344</td><td>81.23 KB</td>
-</tr><tr><td>BuscarProdutosPaginadosSql</td><td>739.73 &mu;s</td><td>473.192 &mu;s</td><td>25.937 &mu;s</td><td>3</td><td>66.4063</td><td>103.47 KB</td>
-</tr><tr><td>BuscarProdutosPaginadosSqlDapper</td><td>59.86 &mu;s</td><td>6.366 &mu;s</td><td>0.349 &mu;s</td><td>1</td><td>3.4180</td><td>5.38 KB</td>
+</thead><tbody><tr><td>BuscarProdutosPaginados</td><td>1000</td><td>442.37 &mu;s</td><td>1.181 &mu;s</td><td>5.854 &mu;s</td><td>441.06 &mu;s</td><td>3</td><td>52.7344</td><td>81.23 KB</td>
+</tr><tr><td>BuscarProdutosPaginadosSql</td><td>1000</td><td>585.17 &mu;s</td><td>1.702 &mu;s</td><td>8.514 &mu;s</td><td>583.53 &mu;s</td><td>4</td><td>64.4531</td><td>99.89 KB</td>
+</tr><tr><td>BuscarProdutosPaginadosSqlDapper</td><td>1000</td><td>54.75 &mu;s</td><td>0.100 &mu;s</td><td>0.499 &mu;s</td><td>54.76 &mu;s</td><td>1</td><td>3.1128</td><td>4.82 KB</td>
+</tr><tr><td>BuscarProdutosPaginados</td><td>2000</td><td>438.47 &mu;s</td><td>0.871 &mu;s</td><td>4.408 &mu;s</td><td>437.74 &mu;s</td><td>3</td><td>52.7344</td><td>81.23 KB</td>
+</tr><tr><td>BuscarProdutosPaginadosSql</td><td>2000</td><td>587.20 &mu;s</td><td>1.157 &mu;s</td><td>5.703 &mu;s</td><td>587.47 &mu;s</td><td>4</td><td>64.4531</td><td>99.89 KB</td>
+</tr><tr><td>BuscarProdutosPaginadosSqlDapper</td><td>2000</td><td>57.84 &mu;s</td><td>0.574 &mu;s</td><td>2.871 &mu;s</td><td>57.05 &mu;s</td><td>2</td><td>3.1128</td><td>4.82 KB</td>
 </tr></tbody></table>
 </body>
 </html>
