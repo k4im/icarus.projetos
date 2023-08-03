@@ -1,4 +1,5 @@
 using Microsoft.Data.Sqlite;
+using projeto.infra.Helpers;
 
 namespace projeto.infra.Repository;
 
@@ -57,7 +58,7 @@ public class RepoProjetos : IRepoProjetos
         using (var db = new DataContext())
         {
             var total = await db.Projetos.FromSql($"SELECT * FROM Projetos").CountAsync();
-            var projetosPaginados = await db.Projetos.FromSql($"SELECT * FROM Projetos LIMIT 10 OFFSET 0").ToListAsync();
+            var projetosPaginados = await db.Projetos.FromSql($"SELECT * FROM Projetos LIMIT {resultadoPorPagina} OFFSET {(pagina -1) * resultadoPorPagina}").ToListAsync();
             return new Response<Projeto>(projetosPaginados, 1, total);
         }
     }
@@ -71,7 +72,8 @@ public class RepoProjetos : IRepoProjetos
                 // {
                 //     throw new Exception($"Enterrompido criação do projeto pois produto com [id] - [{model.ProdutoUtilizado}] não existe!");
                 // }
-                db.Projetos.Add(model);
+                for (int i = 0; i < 1000; i++)
+                    db.Projetos.AddRange(FakeProjeto.factoryListaProjetos());
                 await db.SaveChangesAsync();
                 // aocriarProjeto(model);
                 return true;
