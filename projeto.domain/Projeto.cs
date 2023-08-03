@@ -16,8 +16,8 @@ public class Projeto
         DataEntrega = dataEntrega;
         ProdutoUtilizado = produtoUtilizado;
         QuantidadeUtilizado = VerificarQuantidade(quantidadeUtilizado);
-        Descricao = descricao;
-        Valor = valor;
+        Descricao = VerificarDescricao(descricao);
+        Valor = VerificarValor(valor);
     }
 
     [Key]
@@ -70,13 +70,13 @@ public class Projeto
     string VerificarDescricao(string desc)
     {
         if (string.IsNullOrEmpty(desc)) throw new Exception("Campo não pode ser nulo");
-        if (!Regex.IsMatch(desc, @"^[a-zA-Z ]+$", RegexOptions.Compiled)) throw new Exception("A rua não pode conter caracteres especiais");
+        if (!Regex.IsMatch(desc, @"^[a-zA-Z ]+$", RegexOptions.Compiled)) throw new Exception("A descrição não pode conter caracteres especiais");
         return desc;
     }
     string VerificarNome(string nome)
     {
         if (string.IsNullOrEmpty(nome)) throw new Exception("Campo não pode ser nulo");
-        if (!Regex.IsMatch(nome, @"^[a-zA-Z ]+$", RegexOptions.Compiled)) throw new Exception("A rua não pode conter caracteres especiais");
+        if (!Regex.IsMatch(nome, @"^[a-zA-Z ]+$", RegexOptions.Compiled)) throw new Exception("O nome não pode conter caracteres especiais");
         return nome;
     }
 

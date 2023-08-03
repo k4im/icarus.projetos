@@ -9,7 +9,6 @@ global using Microsoft.AspNetCore.Authorization;
 global using Microsoft.AspNetCore.Mvc;
 global using System.Security.Claims;
 global using projeto.domain;
-global using projeto.domain.ValueObjects;
 global using projeto.infra.AsyncComm;
 global using projeto.infra.Repository;
 global using projeto.service.Extensions;

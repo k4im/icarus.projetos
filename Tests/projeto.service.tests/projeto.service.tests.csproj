@@ -32,6 +32,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\projeto.infra\projeto.infra.csproj" />
     <ProjectReference Include="..\..\projeto.domain\projeto.domain.csproj" />
+    <ProjectReference Include="..\..\projeto.service\projeto.service.csproj" />
   </ItemGroup>
 
 </Project>
