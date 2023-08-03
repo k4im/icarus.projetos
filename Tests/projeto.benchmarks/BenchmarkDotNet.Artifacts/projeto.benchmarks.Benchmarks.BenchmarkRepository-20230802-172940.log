@@ -1,7 +1,0 @@
-// Validating benchmarks:
-// ***** BenchmarkRunner: Start   *****
-// ***** Found 4 benchmark(s) in total *****
-// ***** Building 1 exe(s) in Parallel: Start   *****
-// start dotnet  restore /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 /p:Deterministic=true /p:Optimize=true in /home/oem/github/icarus/icarus.projetos/Tests/projeto.benchmarks/bin/release/net7.0/df83ef6e-246a-4fbf-b89c-fe48e094e581
-// command took 4.11 sec and exited with 0
-// start dotnet  build -c Release --no-restore /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 /p:Deterministic=true /p:Optimize=true in /home/oem/github/icarus/icarus.projetos/Tests/projeto.benchmarks/bin/release/net7.0/df83ef6e-246a-4fbf-b89c-fe48e094e581

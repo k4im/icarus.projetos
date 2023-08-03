@@ -98,7 +98,7 @@
           }
         }
       },
-      "Dapper/2.0.123": {
+      "Dapper/2.0.143": {
         "type": "package",
         "compile": {
           "lib/net5.0/Dapper.dll": {
@@ -1973,15 +1973,15 @@
         "lib/netstandard2.0/CommandLine.xml"
       ]
     },
-    "Dapper/2.0.123": {
-      "sha512": "RDFF4rBLLmbpi6pwkY7q/M6UXHRJEOerplDGE5jwEkP/JGJnBauAClYavNKJPW1yOTWRPIyfj4is3EaJxQXILQ==",
+    "Dapper/2.0.143": {
+      "sha512": "Vh0U+Fins3IpS7APUlrzga3+1mswWngB5fZ0xj4w+FQR5JhJzA5uHV5rSepkahvmshNZUA0YcHtae9vFQpiVTw==",
       "type": "package",
-      "path": "dapper/2.0.123",
+      "path": "dapper/2.0.143",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Dapper.png",
-        "dapper.2.0.123.nupkg.sha512",
+        "dapper.2.0.143.nupkg.sha512",
         "dapper.nuspec",
         "lib/net461/Dapper.dll",
         "lib/net461/Dapper.xml",
@@ -4824,6 +4824,7 @@
   "projectFileDependencyGroups": {
     "net7.0": [
       "BenchmarkDotNet >= 0.13.6",
+      "Dapper >= 2.0.143",
       "Microsoft.EntityFrameworkCore.Sqlite >= 7.0.9",
       "Moq >= 4.18.4",
       "projeto.domain >= 1.0.0",
@@ -4832,40 +4833,38 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\santo\\.nuget\\packages\\": {}
+    "/home/oem/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\santo\\github\\icarus-sistema\\icarus.projetos\\Tests\\projeto.benchmarks\\projeto.benchmarks.csproj",
+      "projectUniqueName": "/home/oem/github/icarus/icarus.projetos/Tests/projeto.benchmarks/projeto.benchmarks.csproj",
       "projectName": "projeto.benchmarks",
-      "projectPath": "C:\\Users\\santo\\github\\icarus-sistema\\icarus.projetos\\Tests\\projeto.benchmarks\\projeto.benchmarks.csproj",
-      "packagesPath": "C:\\Users\\santo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\santo\\github\\icarus-sistema\\icarus.projetos\\Tests\\projeto.benchmarks\\obj\\",
+      "projectPath": "/home/oem/github/icarus/icarus.projetos/Tests/projeto.benchmarks/projeto.benchmarks.csproj",
+      "packagesPath": "/home/oem/.nuget/packages/",
+      "outputPath": "/home/oem/github/icarus/icarus.projetos/Tests/projeto.benchmarks/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\santo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/home/oem/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\santo\\github\\icarus-sistema\\icarus.projetos\\projeto.domain\\projeto.domain.csproj": {
-              "projectPath": "C:\\Users\\santo\\github\\icarus-sistema\\icarus.projetos\\projeto.domain\\projeto.domain.csproj"
+            "/home/oem/github/icarus/icarus.projetos/projeto.domain/projeto.domain.csproj": {
+              "projectPath": "/home/oem/github/icarus/icarus.projetos/projeto.domain/projeto.domain.csproj"
             },
-            "C:\\Users\\santo\\github\\icarus-sistema\\icarus.projetos\\projeto.infra\\projeto.infra.csproj": {
-              "projectPath": "C:\\Users\\santo\\github\\icarus-sistema\\icarus.projetos\\projeto.infra\\projeto.infra.csproj"
+            "/home/oem/github/icarus/icarus.projetos/projeto.infra/projeto.infra.csproj": {
+              "projectPath": "/home/oem/github/icarus/icarus.projetos/projeto.infra/projeto.infra.csproj"
             },
-            "C:\\Users\\santo\\github\\icarus-sistema\\icarus.projetos\\projeto.service\\projeto.service.csproj": {
-              "projectPath": "C:\\Users\\santo\\github\\icarus-sistema\\icarus.projetos\\projeto.service\\projeto.service.csproj"
+            "/home/oem/github/icarus/icarus.projetos/projeto.service/projeto.service.csproj": {
+              "projectPath": "/home/oem/github/icarus/icarus.projetos/projeto.service/projeto.service.csproj"
             }
           }
         }
@@ -4883,6 +4882,10 @@
           "BenchmarkDotNet": {
             "target": "Package",
             "version": "[0.13.6, )"
+          },
+          "Dapper": {
+            "target": "Package",
+            "version": "[2.0.143, )"
           },
           "Microsoft.EntityFrameworkCore.Sqlite": {
             "target": "Package",
@@ -4909,7 +4912,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.109/RuntimeIdentifierGraph.json"
       }
     }
   }

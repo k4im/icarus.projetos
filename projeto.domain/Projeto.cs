@@ -5,7 +5,10 @@ namespace projeto.domain
         protected Projeto()
         { }
 
-        public Projeto(string nome, StatusProjeto status, DateTime dataInicio, DateTime dataEntrega, int produtoUtilizado, int quantidadeUtilizado, string descricao, double valor)
+        public Projeto(string nome, string status, DateTime dataInicio,
+        DateTime dataEntrega,
+        int produtoUtilizado,
+        int quantidadeUtilizado, string descricao, double valor)
         {
             Nome = verificarNome(nome);
             Status = status;
@@ -26,7 +29,7 @@ namespace projeto.domain
 
         [Required(ErrorMessage = "Campo obrigatório")]
         [DataType("NVARCHAR(25)")]
-        public StatusProjeto Status { get; private set; }
+        public string Status { get; private set; }
 
         [Required(ErrorMessage = "Campo obrigatório")]
         [DataType("DATE")]
@@ -77,9 +80,9 @@ namespace projeto.domain
             return nome;
         }
 
-        public void AtualizarStatus(StatusProjeto model)
-        {
-            if (this.Status.Status != model.Status) this.Status.AtualizacaoDoStatus(model.Status);
-        }
+        // public void AtualizarStatus(StatusProjeto model)
+        // {
+        //     if (this.Status.Status != model.Status) this.Status.AtualizacaoDoStatus(model.Status);
+        // }
     }
 }

@@ -3,7 +3,7 @@ namespace projeto.infra.Data
     public class DataContext : DbContext
     {
         public DataContext() : base(new DbContextOptionsBuilder().UseSqlite("Data Source=teste.db;").Options)
-        { 
+        {
             Database.EnsureCreated();
         }
 
@@ -18,12 +18,12 @@ namespace projeto.infra.Data
                 .IsConcurrencyToken();
 
 
-            modelBuilder.Entity<Projeto>(builder =>
-            {
-                builder.OwnsOne<StatusProjeto>(projeto => projeto.Status)
-                .Property(status => status.Status)
-                .HasColumnName("Status");
-            });
+            // modelBuilder.Entity<Projeto>(builder =>
+            // {
+            //     builder.OwnsOne<StatusProjeto>(projeto => projeto.Status)
+            //     .Property(status => status.Status)
+            //     .HasColumnName("Status");
+            // });
         }
 
         public DbSet<Projeto> Projetos { get; set; }

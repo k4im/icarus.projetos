@@ -9,6 +9,7 @@
       "projeto.benchmarks/1.0.0": {
         "dependencies": {
           "BenchmarkDotNet": "0.13.6",
+          "Dapper": "2.0.143",
           "Microsoft.EntityFrameworkCore.Sqlite": "7.0.9",
           "Moq": "4.18.4",
           "projeto.domain": "1.0.0",
@@ -89,17 +90,17 @@
           }
         }
       },
-      "Dapper/2.0.123": {
+      "Dapper/2.0.143": {
         "runtime": {
           "lib/net5.0/Dapper.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.0.123.33578"
+            "fileVersion": "2.0.143.55328"
           }
         }
       },
       "Dapper.Contrib/2.0.78": {
         "dependencies": {
-          "Dapper": "2.0.123"
+          "Dapper": "2.0.143"
         },
         "runtime": {
           "lib/net5.0/Dapper.Contrib.dll": {
@@ -1107,7 +1108,7 @@
         "dependencies": {
           "AutoMapper": "12.0.1",
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
-          "Dapper": "2.0.123",
+          "Dapper": "2.0.143",
           "Dapper.Contrib": "2.0.78",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "7.0.5",
           "Microsoft.AspNetCore.OpenApi": "7.0.3",
@@ -1178,12 +1179,12 @@
       "path": "commandlineparser/2.9.1",
       "hashPath": "commandlineparser.2.9.1.nupkg.sha512"
     },
-    "Dapper/2.0.123": {
+    "Dapper/2.0.143": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-RDFF4rBLLmbpi6pwkY7q/M6UXHRJEOerplDGE5jwEkP/JGJnBauAClYavNKJPW1yOTWRPIyfj4is3EaJxQXILQ==",
-      "path": "dapper/2.0.123",
-      "hashPath": "dapper.2.0.123.nupkg.sha512"
+      "sha512": "sha512-Vh0U+Fins3IpS7APUlrzga3+1mswWngB5fZ0xj4w+FQR5JhJzA5uHV5rSepkahvmshNZUA0YcHtae9vFQpiVTw==",
+      "path": "dapper/2.0.143",
+      "hashPath": "dapper.2.0.143.nupkg.sha512"
     },
     "Dapper.Contrib/2.0.78": {
       "type": "package",

@@ -1,0 +1,316 @@
+// Validating benchmarks:
+// ***** BenchmarkRunner: Start   *****
+// ***** Found 3 benchmark(s) in total *****
+// ***** Building 1 exe(s) in Parallel: Start   *****
+// start dotnet  restore /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 /p:Deterministic=true /p:Optimize=true in /home/oem/github/icarus/icarus.projetos/Tests/projeto.benchmarks/bin/release/net7.0/21f4f469-b393-47b7-bfb0-8ea5e5d564c5
+// command took 2.54 sec and exited with 0
+// start dotnet  build -c Release --no-restore /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 /p:Deterministic=true /p:Optimize=true in /home/oem/github/icarus/icarus.projetos/Tests/projeto.benchmarks/bin/release/net7.0/21f4f469-b393-47b7-bfb0-8ea5e5d564c5
+// command took 10.32 sec and exited with 0
+// ***** Done, took 00:00:13 (13.09 sec)   *****
+// Found 3 benchmarks:
+//   BenchmarkRepository.BuscarProdutosPaginados: ShortRun(IterationCount=3, LaunchCount=1, WarmupCount=3)
+//   BenchmarkRepository.BuscarProdutosPaginadosSql: ShortRun(IterationCount=3, LaunchCount=1, WarmupCount=3)
+//   BenchmarkRepository.BuscarProdutosPaginadosSqlDapper: ShortRun(IterationCount=3, LaunchCount=1, WarmupCount=3)
+
+// **************************
+// Benchmark: BenchmarkRepository.BuscarProdutosPaginados: ShortRun(IterationCount=3, LaunchCount=1, WarmupCount=3)
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet 21f4f469-b393-47b7-bfb0-8ea5e5d564c5.dll --anonymousPipes 122 129 --benchmarkName projeto.benchmarks.Benchmarks.BenchmarkRepository.BuscarProdutosPaginados --job ShortRun --benchmarkId 0 in /home/oem/github/icarus/icarus.projetos/Tests/projeto.benchmarks/bin/release/net7.0/21f4f469-b393-47b7-bfb0-8ea5e5d564c5/bin/Release/net7.0
+Failed to set up high priority. Make sure you have the right permissions. Message: Permission denied
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.13.6
+// Runtime=.NET 7.0.9 (7.0.923.32301), X64 RyuJIT AVX
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX,PCLMUL,POPCNT VectorSize=128
+// Job: ShortRun(IterationCount=3, LaunchCount=1, WarmupCount=3)
+
+OverheadJitting  1: 1 op, 552202.00 ns, 552.2020 us/op
+WorkloadJitting  1: 1 op, 1513142977.00 ns, 1.5131 s/op
+
+OverheadJitting  2: 1 op, 794.00 ns, 794.0000 ns/op
+WorkloadJitting  2: 1 op, 43422844.00 ns, 43.4228 ms/op
+
+WorkloadPilot    1: 2 op, 74354213.00 ns, 37.1771 ms/op
+WorkloadPilot    2: 3 op, 3819960.00 ns, 1.2733 ms/op
+WorkloadPilot    3: 4 op, 3373974.00 ns, 843.4935 us/op
+WorkloadPilot    4: 5 op, 4696704.00 ns, 939.3408 us/op
+WorkloadPilot    5: 6 op, 6440977.00 ns, 1.0735 ms/op
+WorkloadPilot    6: 7 op, 6836533.00 ns, 976.6476 us/op
+WorkloadPilot    7: 8 op, 7161668.00 ns, 895.2085 us/op
+WorkloadPilot    8: 9 op, 7874227.00 ns, 874.9141 us/op
+WorkloadPilot    9: 10 op, 8478563.00 ns, 847.8563 us/op
+WorkloadPilot   10: 11 op, 10066863.00 ns, 915.1694 us/op
+WorkloadPilot   11: 12 op, 9713145.00 ns, 809.4288 us/op
+WorkloadPilot   12: 13 op, 10156227.00 ns, 781.2482 us/op
+WorkloadPilot   13: 14 op, 11104295.00 ns, 793.1639 us/op
+WorkloadPilot   14: 15 op, 13966112.00 ns, 931.0741 us/op
+WorkloadPilot   15: 16 op, 31088044.00 ns, 1.9430 ms/op
+WorkloadPilot   16: 32 op, 47997922.00 ns, 1.4999 ms/op
+WorkloadPilot   17: 64 op, 84209920.00 ns, 1.3158 ms/op
+WorkloadPilot   18: 128 op, 154091574.00 ns, 1.2038 ms/op
+WorkloadPilot   19: 256 op, 238558571.00 ns, 931.8694 us/op
+WorkloadPilot   20: 512 op, 380727436.00 ns, 743.6083 us/op
+WorkloadPilot   21: 1024 op, 497428904.00 ns, 485.7704 us/op
+WorkloadPilot   22: 2048 op, 1002495765.00 ns, 489.4999 us/op
+
+WorkloadWarmup   1: 2048 op, 992078217.00 ns, 484.4132 us/op
+WorkloadWarmup   2: 2048 op, 990876885.00 ns, 483.8266 us/op
+WorkloadWarmup   3: 2048 op, 1000289378.00 ns, 488.4225 us/op
+
+// BeforeActualRun
+WorkloadActual   1: 2048 op, 993187140.00 ns, 484.9547 us/op
+WorkloadActual   2: 2048 op, 991713550.00 ns, 484.2351 us/op
+WorkloadActual   3: 2048 op, 987735829.00 ns, 482.2929 us/op
+
+// AfterActualRun
+WorkloadResult   1: 2048 op, 993187140.00 ns, 484.9547 us/op
+WorkloadResult   2: 2048 op, 991713550.00 ns, 484.2351 us/op
+WorkloadResult   3: 2048 op, 987735829.00 ns, 482.2929 us/op
+// GC:  108 0 0 170345248 2048
+// Threading:  0 0 2048
+
+// AfterAll
+// Benchmark Process 13823 has exited with code 0.
+
+Mean = 483.828 μs, StdErr = 0.795 μs (0.16%), N = 3, StdDev = 1.377 μs
+Min = 482.293 μs, Q1 = 483.264 μs, Median = 484.235 μs, Q3 = 484.595 μs, Max = 484.955 μs
+IQR = 1.331 μs, LowerFence = 481.268 μs, UpperFence = 486.591 μs
+ConfidenceInterval = [458.708 μs; 508.947 μs] (CI 99.9%), Margin = 25.120 μs (5.19% of Mean)
+Skewness = -0.27, Kurtosis = 0.67, MValue = 2
+
+// ** Remained 2 (66.7%) benchmark(s) to run. Estimated finish 2023-08-03 12:19 (0h 0m from now) **
+// **************************
+// Benchmark: BenchmarkRepository.BuscarProdutosPaginadosSql: ShortRun(IterationCount=3, LaunchCount=1, WarmupCount=3)
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet 21f4f469-b393-47b7-bfb0-8ea5e5d564c5.dll --anonymousPipes 130 131 --benchmarkName projeto.benchmarks.Benchmarks.BenchmarkRepository.BuscarProdutosPaginadosSql --job ShortRun --benchmarkId 1 in /home/oem/github/icarus/icarus.projetos/Tests/projeto.benchmarks/bin/release/net7.0/21f4f469-b393-47b7-bfb0-8ea5e5d564c5/bin/Release/net7.0
+Failed to set up high priority. Make sure you have the right permissions. Message: Permission denied
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.13.6
+// Runtime=.NET 7.0.9 (7.0.923.32301), X64 RyuJIT AVX
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX,PCLMUL,POPCNT VectorSize=128
+// Job: ShortRun(IterationCount=3, LaunchCount=1, WarmupCount=3)
+
+OverheadJitting  1: 1 op, 569872.00 ns, 569.8720 us/op
+WorkloadJitting  1: 1 op, 1444960550.00 ns, 1.4450 s/op
+
+OverheadJitting  2: 1 op, 450.00 ns, 450.0000 ns/op
+WorkloadJitting  2: 1 op, 29452581.00 ns, 29.4526 ms/op
+
+OverheadJitting  3: 16 op, 1331607.00 ns, 83.2254 us/op
+WorkloadJitting  3: 16 op, 104359701.00 ns, 6.5225 ms/op
+
+WorkloadPilot    1: 16 op, 20925865.00 ns, 1.3079 ms/op
+WorkloadPilot    2: 32 op, 40774610.00 ns, 1.2742 ms/op
+WorkloadPilot    3: 64 op, 82449408.00 ns, 1.2883 ms/op
+WorkloadPilot    4: 128 op, 266351641.00 ns, 2.0809 ms/op
+WorkloadPilot    5: 256 op, 363570191.00 ns, 1.4202 ms/op
+WorkloadPilot    6: 512 op, 545058998.00 ns, 1.0646 ms/op
+
+OverheadWarmup   1: 512 op, 22694.00 ns, 44.3242 ns/op
+OverheadWarmup   2: 512 op, 3953.00 ns, 7.7207 ns/op
+OverheadWarmup   3: 512 op, 3887.00 ns, 7.5918 ns/op
+OverheadWarmup   4: 512 op, 4167.00 ns, 8.1387 ns/op
+OverheadWarmup   5: 512 op, 3807.00 ns, 7.4355 ns/op
+OverheadWarmup   6: 512 op, 3834.00 ns, 7.4883 ns/op
+OverheadWarmup   7: 512 op, 4053.00 ns, 7.9160 ns/op
+OverheadWarmup   8: 512 op, 3824.00 ns, 7.4688 ns/op
+
+OverheadActual   1: 512 op, 4669.00 ns, 9.1191 ns/op
+OverheadActual   2: 512 op, 3942.00 ns, 7.6992 ns/op
+OverheadActual   3: 512 op, 3939.00 ns, 7.6934 ns/op
+OverheadActual   4: 512 op, 4164.00 ns, 8.1328 ns/op
+OverheadActual   5: 512 op, 3744.00 ns, 7.3125 ns/op
+OverheadActual   6: 512 op, 4577.00 ns, 8.9395 ns/op
+OverheadActual   7: 512 op, 4995.00 ns, 9.7559 ns/op
+OverheadActual   8: 512 op, 5110.00 ns, 9.9805 ns/op
+OverheadActual   9: 512 op, 5262.00 ns, 10.2773 ns/op
+OverheadActual  10: 512 op, 5057.00 ns, 9.8770 ns/op
+OverheadActual  11: 512 op, 4803.00 ns, 9.3809 ns/op
+OverheadActual  12: 512 op, 4918.00 ns, 9.6055 ns/op
+OverheadActual  13: 512 op, 4209.00 ns, 8.2207 ns/op
+OverheadActual  14: 512 op, 3984.00 ns, 7.7813 ns/op
+OverheadActual  15: 512 op, 3984.00 ns, 7.7813 ns/op
+OverheadActual  16: 512 op, 3914.00 ns, 7.6445 ns/op
+OverheadActual  17: 512 op, 5136.00 ns, 10.0312 ns/op
+OverheadActual  18: 512 op, 3756.00 ns, 7.3359 ns/op
+OverheadActual  19: 512 op, 11129.00 ns, 21.7363 ns/op
+OverheadActual  20: 512 op, 4147.00 ns, 8.0996 ns/op
+
+WorkloadWarmup   1: 512 op, 421526226.00 ns, 823.2934 us/op
+WorkloadWarmup   2: 512 op, 372485808.00 ns, 727.5113 us/op
+WorkloadWarmup   3: 512 op, 370623730.00 ns, 723.8745 us/op
+
+// BeforeActualRun
+WorkloadActual   1: 512 op, 371073944.00 ns, 724.7538 us/op
+WorkloadActual   2: 512 op, 371083424.00 ns, 724.7723 us/op
+WorkloadActual   3: 512 op, 394080099.00 ns, 769.6877 us/op
+
+// AfterActualRun
+WorkloadResult   1: 512 op, 371069551.00 ns, 724.7452 us/op
+WorkloadResult   2: 512 op, 371079031.00 ns, 724.7637 us/op
+WorkloadResult   3: 512 op, 394075706.00 ns, 769.6791 us/op
+// GC:  34 0 0 54249104 512
+// Threading:  0 0 512
+
+// AfterAll
+// Benchmark Process 13842 has exited with code 0.
+
+Mean = 739.729 μs, StdErr = 14.975 μs (2.02%), N = 3, StdDev = 25.937 μs
+Min = 724.745 μs, Q1 = 724.754 μs, Median = 724.764 μs, Q3 = 747.221 μs, Max = 769.679 μs
+IQR = 22.467 μs, LowerFence = 691.054 μs, UpperFence = 780.922 μs
+ConfidenceInterval = [266.537 μs; 1,212.921 μs] (CI 99.9%), Margin = 473.192 μs (63.97% of Mean)
+Skewness = 0.38, Kurtosis = 0.67, MValue = 2
+
+// ** Remained 1 (33.3%) benchmark(s) to run. Estimated finish 2023-08-03 12:19 (0h 0m from now) **
+// **************************
+// Benchmark: BenchmarkRepository.BuscarProdutosPaginadosSqlDapper: ShortRun(IterationCount=3, LaunchCount=1, WarmupCount=3)
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet 21f4f469-b393-47b7-bfb0-8ea5e5d564c5.dll --anonymousPipes 130 131 --benchmarkName projeto.benchmarks.Benchmarks.BenchmarkRepository.BuscarProdutosPaginadosSqlDapper --job ShortRun --benchmarkId 2 in /home/oem/github/icarus/icarus.projetos/Tests/projeto.benchmarks/bin/release/net7.0/21f4f469-b393-47b7-bfb0-8ea5e5d564c5/bin/Release/net7.0
+Failed to set up high priority. Make sure you have the right permissions. Message: Permission denied
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.13.6
+// Runtime=.NET 7.0.9 (7.0.923.32301), X64 RyuJIT AVX
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX,PCLMUL,POPCNT VectorSize=128
+// Job: ShortRun(IterationCount=3, LaunchCount=1, WarmupCount=3)
+
+OverheadJitting  1: 1 op, 719017.00 ns, 719.0170 us/op
+WorkloadJitting  1: 1 op, 135390497.00 ns, 135.3905 ms/op
+
+WorkloadPilot    1: 2 op, 731540.00 ns, 365.7700 us/op
+WorkloadPilot    2: 3 op, 406204.00 ns, 135.4013 us/op
+WorkloadPilot    3: 4 op, 549805.00 ns, 137.4512 us/op
+WorkloadPilot    4: 5 op, 573007.00 ns, 114.6014 us/op
+WorkloadPilot    5: 6 op, 591569.00 ns, 98.5948 us/op
+WorkloadPilot    6: 7 op, 704570.00 ns, 100.6529 us/op
+WorkloadPilot    7: 8 op, 777253.00 ns, 97.1566 us/op
+WorkloadPilot    8: 9 op, 832126.00 ns, 92.4584 us/op
+WorkloadPilot    9: 10 op, 945754.00 ns, 94.5754 us/op
+WorkloadPilot   10: 11 op, 1326031.00 ns, 120.5483 us/op
+WorkloadPilot   11: 12 op, 1092807.00 ns, 91.0673 us/op
+WorkloadPilot   12: 13 op, 1163469.00 ns, 89.4976 us/op
+WorkloadPilot   13: 14 op, 1238571.00 ns, 88.4694 us/op
+WorkloadPilot   14: 15 op, 1309838.00 ns, 87.3225 us/op
+WorkloadPilot   15: 16 op, 1487670.00 ns, 92.9794 us/op
+WorkloadPilot   16: 32 op, 2882930.00 ns, 90.0916 us/op
+WorkloadPilot   17: 64 op, 5635655.00 ns, 88.0571 us/op
+WorkloadPilot   18: 128 op, 12103383.00 ns, 94.5577 us/op
+WorkloadPilot   19: 256 op, 22963797.00 ns, 89.7023 us/op
+WorkloadPilot   20: 512 op, 44519137.00 ns, 86.9514 us/op
+WorkloadPilot   21: 1024 op, 91144513.00 ns, 89.0083 us/op
+WorkloadPilot   22: 2048 op, 127795248.00 ns, 62.4000 us/op
+WorkloadPilot   23: 4096 op, 248333881.00 ns, 60.6284 us/op
+WorkloadPilot   24: 8192 op, 525116108.00 ns, 64.1011 us/op
+
+WorkloadWarmup   1: 8192 op, 488507014.00 ns, 59.6322 us/op
+WorkloadWarmup   2: 8192 op, 486690513.00 ns, 59.4105 us/op
+WorkloadWarmup   3: 8192 op, 496188227.00 ns, 60.5699 us/op
+
+// BeforeActualRun
+WorkloadActual   1: 8192 op, 492491865.00 ns, 60.1186 us/op
+WorkloadActual   2: 8192 op, 487114937.00 ns, 59.4623 us/op
+WorkloadActual   3: 8192 op, 491486609.00 ns, 59.9959 us/op
+
+// AfterActualRun
+WorkloadResult   1: 8192 op, 492491865.00 ns, 60.1186 us/op
+WorkloadResult   2: 8192 op, 487114937.00 ns, 59.4623 us/op
+WorkloadResult   3: 8192 op, 491486609.00 ns, 59.9959 us/op
+// GC:  28 0 0 45155240 8192
+// Threading:  0 0 8192
+
+// AfterAll
+// Benchmark Process 13860 has exited with code 0.
+
+Mean = 59.859 μs, StdErr = 0.201 μs (0.34%), N = 3, StdDev = 0.349 μs
+Min = 59.462 μs, Q1 = 59.729 μs, Median = 59.996 μs, Q3 = 60.057 μs, Max = 60.119 μs
+IQR = 0.328 μs, LowerFence = 59.237 μs, UpperFence = 60.550 μs
+ConfidenceInterval = [53.493 μs; 66.225 μs] (CI 99.9%), Margin = 6.366 μs (10.64% of Mean)
+Skewness = -0.33, Kurtosis = 0.67, MValue = 2
+
+// ** Remained 0 (0.0%) benchmark(s) to run. Estimated finish 2023-08-03 12:19 (0h 0m from now) **
+// ***** BenchmarkRunner: Finish  *****
+
+// * Export *
+  BenchmarkDotNet.Artifacts/results/projeto.benchmarks.Benchmarks.BenchmarkRepository-report.csv
+  BenchmarkDotNet.Artifacts/results/projeto.benchmarks.Benchmarks.BenchmarkRepository-report-github.md
+  BenchmarkDotNet.Artifacts/results/projeto.benchmarks.Benchmarks.BenchmarkRepository-report.html
+
+// * Detailed results *
+BenchmarkRepository.BuscarProdutosPaginados: ShortRun(IterationCount=3, LaunchCount=1, WarmupCount=3)
+Runtime = .NET 7.0.9 (7.0.923.32301), X64 RyuJIT AVX; GC = Concurrent Workstation
+Mean = 483.828 μs, StdErr = 0.795 μs (0.16%), N = 3, StdDev = 1.377 μs
+Min = 482.293 μs, Q1 = 483.264 μs, Median = 484.235 μs, Q3 = 484.595 μs, Max = 484.955 μs
+IQR = 1.331 μs, LowerFence = 481.268 μs, UpperFence = 486.591 μs
+ConfidenceInterval = [458.708 μs; 508.947 μs] (CI 99.9%), Margin = 25.120 μs (5.19% of Mean)
+Skewness = -0.27, Kurtosis = 0.67, MValue = 2
+-------------------- Histogram --------------------
+[481.040 μs ; 486.208 μs) | @@@
+---------------------------------------------------
+
+BenchmarkRepository.BuscarProdutosPaginadosSql: ShortRun(IterationCount=3, LaunchCount=1, WarmupCount=3)
+Runtime = .NET 7.0.9 (7.0.923.32301), X64 RyuJIT AVX; GC = Concurrent Workstation
+Mean = 739.729 μs, StdErr = 14.975 μs (2.02%), N = 3, StdDev = 25.937 μs
+Min = 724.745 μs, Q1 = 724.754 μs, Median = 724.764 μs, Q3 = 747.221 μs, Max = 769.679 μs
+IQR = 22.467 μs, LowerFence = 691.054 μs, UpperFence = 780.922 μs
+ConfidenceInterval = [266.537 μs; 1,212.921 μs] (CI 99.9%), Margin = 473.192 μs (63.97% of Mean)
+Skewness = 0.38, Kurtosis = 0.67, MValue = 2
+-------------------- Histogram --------------------
+[723.608 μs ; 770.816 μs) | @@@
+---------------------------------------------------
+
+BenchmarkRepository.BuscarProdutosPaginadosSqlDapper: ShortRun(IterationCount=3, LaunchCount=1, WarmupCount=3)
+Runtime = .NET 7.0.9 (7.0.923.32301), X64 RyuJIT AVX; GC = Concurrent Workstation
+Mean = 59.859 μs, StdErr = 0.201 μs (0.34%), N = 3, StdDev = 0.349 μs
+Min = 59.462 μs, Q1 = 59.729 μs, Median = 59.996 μs, Q3 = 60.057 μs, Max = 60.119 μs
+IQR = 0.328 μs, LowerFence = 59.237 μs, UpperFence = 60.550 μs
+ConfidenceInterval = [53.493 μs; 66.225 μs] (CI 99.9%), Margin = 6.366 μs (10.64% of Mean)
+Skewness = -0.33, Kurtosis = 0.67, MValue = 2
+-------------------- Histogram --------------------
+[59.457 μs ; 60.436 μs) | @@@
+---------------------------------------------------
+
+// * Summary *
+
+BenchmarkDotNet v0.13.6, Linux Mint 21.1 (Vera)
+Intel Core i3-3240 CPU 3.40GHz (Ivy Bridge), 1 CPU, 4 logical and 2 physical cores
+.NET SDK 7.0.109
+  [Host]   : .NET 7.0.9 (7.0.923.32301), X64 RyuJIT AVX
+  ShortRun : .NET 7.0.9 (7.0.923.32301), X64 RyuJIT AVX
+
+Job=ShortRun  IterationCount=3  LaunchCount=1  
+WarmupCount=3  
+
+|                           Method |      Mean |      Error |    StdDev | Rank |    Gen0 | Allocated |
+|--------------------------------- |----------:|-----------:|----------:|-----:|--------:|----------:|
+|          BuscarProdutosPaginados | 483.83 μs |  25.120 μs |  1.377 μs |    2 | 52.7344 |  81.23 KB |
+|       BuscarProdutosPaginadosSql | 739.73 μs | 473.192 μs | 25.937 μs |    3 | 66.4063 | 103.47 KB |
+| BuscarProdutosPaginadosSqlDapper |  59.86 μs |   6.366 μs |  0.349 μs |    1 |  3.4180 |   5.38 KB |
+
+// * Legends *
+  Mean      : Arithmetic mean of all measurements
+  Error     : Half of 99.9% confidence interval
+  StdDev    : Standard deviation of all measurements
+  Rank      : Relative position of current benchmark mean among all benchmarks (Arabic style)
+  Gen0      : GC Generation 0 collects per 1000 operations
+  Allocated : Allocated memory per single operation (managed only, inclusive, 1KB = 1024B)
+  1 μs      : 1 Microsecond (0.000001 sec)
+
+// * Diagnostic Output - MemoryDiagnoser *
+
+
+// ***** BenchmarkRunner: End *****
+Run time: 00:00:23 (23.13 sec), executed benchmarks: 3
+
+Global total time: 00:00:36 (36.47 sec), executed benchmarks: 3
+// * Artifacts cleanup *
+Artifacts cleanup is finished

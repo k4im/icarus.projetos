@@ -1,3 +1,4 @@
+using Dapper;
 using Microsoft.Data.Sqlite;
 using projeto.infra.Helpers;
 
@@ -25,7 +26,7 @@ public class RepoProjetos : IRepoProjetos
             using (var db = new DataContext())
             {
                 var projeto = await db.Projetos.FirstOrDefaultAsync(x => x.Id == id);
-                projeto.AtualizarStatus(model);
+                // projeto.AtualizarStatus(model);
                 await db.SaveChangesAsync();
                 return true;
             }
@@ -55,16 +56,18 @@ public class RepoProjetos : IRepoProjetos
 
     public async Task<Response<Projeto>> BuscarProdutos(int pagina, float resultadoPorPagina)
     {
-        using (var db = new DataContext())
+        using (var connection = new SqliteConnection("Data Source=teste.db;"))
         {
-            var total = await db.Projetos.FromSql($"SELECT * FROM Projetos").CountAsync();
-            var projetosPaginados = await db.Projetos.FromSql($"SELECT * FROM Projetos LIMIT {resultadoPorPagina} OFFSET {(pagina -1) * resultadoPorPagina}").ToListAsync();
-            return new Response<Projeto>(projetosPaginados, 1, total);
+            var total = await connection.ExecuteScalarAsync<int>($"SELECT COUNT(*) FROM Projetos");
+            var projetosPaginados = await connection
+                .QueryAsync<Projeto>($"SELECT * FROM Projetos LIMIT {resultadoPorPagina} OFFSET {(pagina - 1) * resultadoPorPagina}");
+            return new Response<Projeto>(projetosPaginados.ToList(), pagina, total);
         }
     }
 
     public async Task<bool> CriarProjeto(Projeto model)
-    {        try
+    {
+        try
         {
             using (var db = new DataContext())
             {

@@ -28,3 +28,5 @@
 /home/oem/github/icarus/icarus.projetos/projeto.infra/obj/Release/net7.0/refint/projeto.infra.dll
 /home/oem/github/icarus/icarus.projetos/projeto.infra/obj/Release/net7.0/projeto.infra.pdb
 /home/oem/github/icarus/icarus.projetos/projeto.infra/obj/Release/net7.0/ref/projeto.infra.dll
+/home/oem/github/icarus/icarus.projetos/projeto.infra/bin/Release/net7.0/projeto.infra.runtimeconfig.json
+/home/oem/github/icarus/icarus.projetos/projeto.infra/obj/Release/net7.0/projeto.infra.genruntimeconfig.cache
