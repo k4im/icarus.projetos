@@ -1,10 +1,5 @@
-using Dapper;
-using Microsoft.Data.Sqlite;
-using projeto.infra.Helpers;
 
 namespace projeto.infra.Repository;
-
-
 public class RepoProjetos : IRepoProjetos
 {
     //Delegates e Eventos a serem disparados
@@ -51,7 +46,7 @@ public class RepoProjetos : IRepoProjetos
 
     public async Task<Response<Projeto>> BuscarProdutos(int pagina, float resultadoPorPagina)
     {
-        var queryPaginado = $"SELECT * FROM Projetos LIMIT @resultado OFFSET @pagina";
+        var queryPaginado = "SELECT * FROM Projetos LIMIT @resultado OFFSET @pagina";
         var queryTotal = "SELECT COUNT(*) FROM Projetos";
 
         using var connection = new SqliteConnection("Data Source=teste.db;");
@@ -66,20 +61,13 @@ public class RepoProjetos : IRepoProjetos
         try
         {
             using var db = new DataContext();
-            // if (await db.ProdutosEmEstoque.FirstOrDefaultAsync(x => x.Id == model.ProdutoUtilizado) == null)
-            // {
-            //     throw new Exception($"Enterrompido criação do projeto pois produto com [id] - [{model.ProdutoUtilizado}] não existe!");
-            // }
-            for (int i = 0; i < 1000; i++)
-                db.Projetos.AddRange(FakeProjeto.factoryListaProjetos());
+            if (await db.ProdutosEmEstoque.FirstOrDefaultAsync(x => x.Id == model.ProdutoUtilizado) == null)
+            {
+                throw new Exception($"Enterrompido criação do projeto pois produto com [id] - [{model.ProdutoUtilizado}] não existe!");
+            }
+            db.Projetos.Add(model);
             await db.SaveChangesAsync();
             aocriarProjeto(model);
-            return true;
-
-        }
-        catch (ArgumentException)
-        {
-            //Retorna true devido ao problema de adição em massa de dados
             return true;
         }
         catch (DbUpdateConcurrencyException)
@@ -99,11 +87,9 @@ public class RepoProjetos : IRepoProjetos
         try
         {
             using var db = new DataContext();
-            var item = await BuscarPorId(id);
-            db.Projetos.Remove(item);
-            await db.SaveChangesAsync();
+            await db.Projetos.Where(x => x.Id == id)
+            .ExecuteDeleteAsync();
             return true;
-
         }
         catch (DbUpdateConcurrencyException)
         {

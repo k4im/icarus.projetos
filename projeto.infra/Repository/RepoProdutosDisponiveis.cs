@@ -6,12 +6,10 @@ namespace projeto.infra.Repository
         {
             try
             {
-                using (var db = new DataContext())
-                {
-                    db.ProdutosEmEstoque.Add(model);
-                    await db.SaveChangesAsync();
-                    return true;
-                };
+                using var db = new DataContext();
+                db.ProdutosEmEstoque.AddRange(model);
+                await db.SaveChangesAsync();
+                return true;
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -33,15 +31,12 @@ namespace projeto.infra.Repository
         {
             try
             {
-                using (var db = new DataContext())
-                {
-                    var produto = await db.ProdutosEmEstoque.FirstOrDefaultAsync(x => x.Id == id);
-                    produto.Nome = model.Nome;
-                    produto.Quantidade = model.Quantidade;
-                    await db.SaveChangesAsync();
-                    return true;
-                };
-
+                using var db = new DataContext();
+                await db.ProdutosEmEstoque.Where(x => x.Id == id)
+                .ExecuteUpdateAsync(setter =>
+                    setter.SetProperty(p => p.Nome, model.Nome)
+                    .SetProperty(p => p.Quantidade, model.Quantidade));
+                return true;
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -57,24 +52,18 @@ namespace projeto.infra.Repository
 
         public async Task<List<ProdutosDisponiveis>> buscarTodosProdutos()
         {
-            using (var db = new DataContext())
-            {
-                return await db.ProdutosEmEstoque.ToListAsync();
-            };
+            using var db = new DataContext();
+            return await db.ProdutosEmEstoque.ToListAsync();
         }
 
         public async Task<bool> removerProdutos(int id)
         {
             try
             {
-                using (var db = new DataContext())
-                {
-                    var item = await db.ProdutosEmEstoque.FirstOrDefaultAsync(x => x.Id == id);
-                    db.ProdutosEmEstoque.Remove(item);
-                    await db.SaveChangesAsync();
-                    return true;
-                };
-
+                using var db = new DataContext();
+                await db.ProdutosEmEstoque.Where(x => x.Id == id)
+                .ExecuteDeleteAsync();
+                return true;
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -90,12 +79,10 @@ namespace projeto.infra.Repository
 
         public static async Task atualizarTabelaProdutosDisponiveis(Projeto model)
         {
-            using (var db = new DataContext())
-            {
-                var produto = await db.ProdutosEmEstoque.FirstOrDefaultAsync(x => x.Id == model.ProdutoUtilizado);
-                produto.Quantidade -= model.QuantidadeUtilizado;
-                await db.SaveChangesAsync();
-            }
+            using var db = new DataContext();
+            var produto = await db.ProdutosEmEstoque.FirstOrDefaultAsync(x => x.Id == model.ProdutoUtilizado);
+            produto.Quantidade -= model.QuantidadeUtilizado;
+            await db.SaveChangesAsync();
         }
     }
 }
