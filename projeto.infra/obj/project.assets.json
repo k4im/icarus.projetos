@@ -1556,19 +1556,19 @@
     ]
   },
   "packageFolders": {
-    "/home/k4im/.nuget/packages/": {}
+    "/home/oem/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/mnt/c/Users/santo/github/icarus-sistema/icarus.projetos/projeto.infra/projeto.infra.csproj",
+      "projectUniqueName": "/home/oem/github/icarus/icarus.projetos/projeto.infra/projeto.infra.csproj",
       "projectName": "projeto.infra",
-      "projectPath": "/mnt/c/Users/santo/github/icarus-sistema/icarus.projetos/projeto.infra/projeto.infra.csproj",
-      "packagesPath": "/home/k4im/.nuget/packages/",
-      "outputPath": "/mnt/c/Users/santo/github/icarus-sistema/icarus.projetos/projeto.infra/obj/",
+      "projectPath": "/home/oem/github/icarus/icarus.projetos/projeto.infra/projeto.infra.csproj",
+      "packagesPath": "/home/oem/.nuget/packages/",
+      "outputPath": "/home/oem/github/icarus/icarus.projetos/projeto.infra/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/k4im/.nuget/NuGet/NuGet.Config"
+        "/home/oem/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -1580,8 +1580,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "/mnt/c/Users/santo/github/icarus-sistema/icarus.projetos/projeto.domain/projeto.domain.csproj": {
-              "projectPath": "/mnt/c/Users/santo/github/icarus-sistema/icarus.projetos/projeto.domain/projeto.domain.csproj"
+            "/home/oem/github/icarus/icarus.projetos/projeto.domain/projeto.domain.csproj": {
+              "projectPath": "/home/oem/github/icarus/icarus.projetos/projeto.domain/projeto.domain.csproj"
             }
           }
         }
