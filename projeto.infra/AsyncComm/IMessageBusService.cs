@@ -1,7 +1,6 @@
-namespace projeto.infra.AsyncComm
+namespace projeto.infra.AsyncComm;
+
+public interface IMessageBusService
 {
-    public interface IMessageBusService
-    {
-        void enviarProjeto(Projeto evento);
-    }
+    void EnviarProjeto(Projeto evento);
 }

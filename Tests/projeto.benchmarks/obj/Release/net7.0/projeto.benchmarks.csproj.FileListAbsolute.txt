@@ -169,7 +169,6 @@
 /home/oem/github/icarus/icarus.projetos/Tests/projeto.benchmarks/bin/Release/net7.0/Castle.Core.dll
 /home/oem/github/icarus/icarus.projetos/Tests/projeto.benchmarks/bin/Release/net7.0/CommandLine.dll
 /home/oem/github/icarus/icarus.projetos/Tests/projeto.benchmarks/bin/Release/net7.0/Dapper.dll
-/home/oem/github/icarus/icarus.projetos/Tests/projeto.benchmarks/bin/Release/net7.0/Dapper.Contrib.dll
 /home/oem/github/icarus/icarus.projetos/Tests/projeto.benchmarks/bin/Release/net7.0/Gee.External.Capstone.dll
 /home/oem/github/icarus/icarus.projetos/Tests/projeto.benchmarks/bin/Release/net7.0/Iced.dll
 /home/oem/github/icarus/icarus.projetos/Tests/projeto.benchmarks/bin/Release/net7.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll

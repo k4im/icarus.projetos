@@ -9,6 +9,7 @@
       "projeto.benchmarks/1.0.0": {
         "dependencies": {
           "BenchmarkDotNet": "0.13.6",
+          "Dapper": "2.0.143",
           "Microsoft.EntityFrameworkCore.Sqlite": "7.0.9",
           "Moq": "4.18.4",
           "projeto.domain": "1.0.0",
@@ -89,22 +90,11 @@
           }
         }
       },
-      "Dapper/2.0.123": {
+      "Dapper/2.0.143": {
         "runtime": {
           "lib/net5.0/Dapper.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.0.123.33578"
-          }
-        }
-      },
-      "Dapper.Contrib/2.0.78": {
-        "dependencies": {
-          "Dapper": "2.0.123"
-        },
-        "runtime": {
-          "lib/net5.0/Dapper.Contrib.dll": {
-            "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.0.78.45418"
+            "fileVersion": "2.0.143.55328"
           }
         }
       },
@@ -1090,6 +1080,7 @@
       },
       "projeto.infra/1.0.0": {
         "dependencies": {
+          "Dapper": "2.0.143",
           "Microsoft.EntityFrameworkCore": "7.0.9",
           "Microsoft.EntityFrameworkCore.InMemory": "7.0.9",
           "Microsoft.EntityFrameworkCore.Relational": "7.0.9",
@@ -1107,8 +1098,6 @@
         "dependencies": {
           "AutoMapper": "12.0.1",
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
-          "Dapper": "2.0.123",
-          "Dapper.Contrib": "2.0.78",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "7.0.5",
           "Microsoft.AspNetCore.OpenApi": "7.0.3",
           "Moq.EntityFrameworkCore": "7.0.0.2",
@@ -1178,19 +1167,12 @@
       "path": "commandlineparser/2.9.1",
       "hashPath": "commandlineparser.2.9.1.nupkg.sha512"
     },
-    "Dapper/2.0.123": {
+    "Dapper/2.0.143": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-RDFF4rBLLmbpi6pwkY7q/M6UXHRJEOerplDGE5jwEkP/JGJnBauAClYavNKJPW1yOTWRPIyfj4is3EaJxQXILQ==",
-      "path": "dapper/2.0.123",
-      "hashPath": "dapper.2.0.123.nupkg.sha512"
-    },
-    "Dapper.Contrib/2.0.78": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-sUfDVIf8LlHNiz3MfUFodeyRiemfN1JFkPxYjCxFWlwNPg1iQ49mB+0E89TkywWs4X8fiRWOVDQgtH5FtzK5Kw==",
-      "path": "dapper.contrib/2.0.78",
-      "hashPath": "dapper.contrib.2.0.78.nupkg.sha512"
+      "sha512": "sha512-Vh0U+Fins3IpS7APUlrzga3+1mswWngB5fZ0xj4w+FQR5JhJzA5uHV5rSepkahvmshNZUA0YcHtae9vFQpiVTw==",
+      "path": "dapper/2.0.143",
+      "hashPath": "dapper.2.0.143.nupkg.sha512"
     },
     "Gee.External.Capstone/2.3.0": {
       "type": "package",

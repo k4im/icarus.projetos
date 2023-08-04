@@ -1,31 +1,28 @@
+
 namespace projeto.infra.Repository;
-
-
 public class RepoProjetos : IRepoProjetos
 {
     //Delegates e Eventos a serem disparados
     public delegate void aoCriarProjetoEventHandler(Projeto model);
-    public event aoCriarProjetoEventHandler aocriarProjeto;
-    IMessageBusService _messageBroker;
-
+    public event aoCriarProjetoEventHandler AocriarProjeto;
+    readonly IMessageBusService _messageBroker;
+    public string conn = "Data Source=teste.db;";
     public RepoProjetos(IMessageBusService messageBroker)
     {
         _messageBroker = messageBroker;
-        aocriarProjeto += async (Projeto model) => { await RepoProdutosDisponiveis.atualizarTabelaProdutosDisponiveis(model); };
-        aocriarProjeto += messageBroker.enviarProjeto;
+        AocriarProjeto += async (Projeto model) => { await RepoProdutosDisponiveis.AtualizarTabelaProdutosDisponiveis(model); };
+        AocriarProjeto += messageBroker.EnviarProjeto;
     }
 
-    public async Task<bool> AtualizarStatus(StatusProjeto model, int? id)
+    public async Task<bool> AtualizarStatus(string model, int? id)
     {
         try
         {
-            using (var db = new DataContext())
-            {
-                var projeto = await db.Projetos.FirstOrDefaultAsync(x => x.Id == id);
-                projeto.AtualizarStatus(model);
-                await db.SaveChangesAsync();
-                return true;
-            }
+            using var db = new DataContext();
+            var projeto = await db.Projetos.FirstOrDefaultAsync(x => x.Id == id);
+            projeto.AtualizarStatus(model);
+            await db.SaveChangesAsync();
+            return true;
 
         }
         catch (DbUpdateConcurrencyException)
@@ -42,47 +39,43 @@ public class RepoProjetos : IRepoProjetos
 
     public async Task<Projeto> BuscarPorId(int? id)
     {
-        using (var db = new DataContext())
+        using var connection = new SqliteConnection(conn);
+        try
         {
-            var item = await db.Projetos.FirstOrDefaultAsync(x => x.Id == id);
-            return item;
+            var query = "SELECT * FROM Projetos WHERE Id LIKE @busca";
+            var result = await connection.QueryFirstAsync<Projeto>(query, new { busca = id });
+            return result;
         }
-
+        catch (Exception)
+        {
+            return null;
+        }
     }
 
-    public async Task<Response<Projeto>> BuscarProdutos(int pagina, float resultadoPorPagina)
+    public async Task<Response<ProjetoPaginadoDTO>> BuscarProdutos(int pagina, float resultadoPorPagina)
     {
-        using (var db = new DataContext())
-        {
-            var ResultadoPorPagina = resultadoPorPagina;
-            var projetos = await db.Projetos.ToListAsync();
-            var TotalDePaginas = Math.Ceiling(projetos.Count() / ResultadoPorPagina);
-            var projetosPaginados = projetos.Skip((pagina - 1) * (int)ResultadoPorPagina).Take((int)ResultadoPorPagina).ToList();
+        var queryPaginado = "SELECT Id, Nome, Status, DataInicio, DataEntrega FROM Projetos LIMIT @resultado OFFSET @pagina";
+        var queryTotal = "SELECT COUNT(*) FROM Projetos";
 
-            return new Response<Projeto>(projetosPaginados, pagina, (int)TotalDePaginas);
-        }
+        using var connection = new SqliteConnection(conn);
+        var total = Math.Ceiling(await connection.ExecuteScalarAsync<int>(queryTotal) / resultadoPorPagina);
+        var projetosPaginados = await connection
+            .QueryAsync<ProjetoPaginadoDTO>(queryPaginado, new { resultado = resultadoPorPagina, pagina = (pagina - 1) * resultadoPorPagina });
+        return new Response<ProjetoPaginadoDTO>(projetosPaginados.ToList(), pagina, (int)total);
     }
 
     public async Task<bool> CriarProjeto(Projeto model)
     {
         try
         {
-            using (var db = new DataContext())
+            using var db = new DataContext();
+            if (await db.ProdutosEmEstoque.FirstOrDefaultAsync(x => x.Id == model.ProdutoUtilizado) == null)
             {
-                if (await db.ProdutosEmEstoque.FirstOrDefaultAsync(x => x.Id == model.ProdutoUtilizado) == null)
-                {
-                    throw new Exception($"Enterrompido criação do projeto pois produto com [id] - [{model.ProdutoUtilizado}] não existe!");
-                }
-                db.Projetos.Add(model);
-                await db.SaveChangesAsync();
-                aocriarProjeto(model);
-                return true;
+                throw new Exception($"Enterrompido criação do projeto pois produto com [id] - [{model.ProdutoUtilizado}] não existe!");
             }
-
-        }
-        catch (ArgumentException)
-        {
-            //Retorna true devido ao problema de adição em massa de dados
+            db.Projetos.Add(model);
+            await db.SaveChangesAsync();
+            AocriarProjeto(model);
             return true;
         }
         catch (DbUpdateConcurrencyException)
@@ -101,14 +94,10 @@ public class RepoProjetos : IRepoProjetos
     {
         try
         {
-            using (var db = new DataContext())
-            {
-                var item = await BuscarPorId(id);
-                db.Projetos.Remove(item);
-                await db.SaveChangesAsync();
-                return true;
-            }
-
+            using var db = new DataContext();
+            await db.Projetos.Where(x => x.Id == id)
+            .ExecuteDeleteAsync();
+            return true;
         }
         catch (DbUpdateConcurrencyException)
         {

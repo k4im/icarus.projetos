@@ -3,16 +3,18 @@
 BenchmarkDotNet v0.13.6, Linux Mint 21.1 (Vera)
 Intel Core i3-3240 CPU 3.40GHz (Ivy Bridge), 1 CPU, 4 logical and 2 physical cores
 .NET SDK 7.0.109
-  [Host]   : .NET 7.0.9 (7.0.923.32301), X64 RyuJIT AVX
-  ShortRun : .NET 7.0.9 (7.0.923.32301), X64 RyuJIT AVX
+  [Host]  : .NET 7.0.9 (7.0.923.32301), X64 RyuJIT AVX
+  LongRun : .NET 7.0.9 (7.0.923.32301), X64 RyuJIT AVX
 
-Job=ShortRun  IterationCount=3  LaunchCount=1  
-WarmupCount=3  
+Job=LongRun  IterationCount=100  LaunchCount=3  
+WarmupCount=15  
 
 ```
-|                     Method | numerosDeInteracao |       Mean |     Error |   StdDev | Rank |     Gen0 | Allocated |
-|--------------------------- |------------------- |-----------:|----------:|---------:|-----:|---------:|----------:|
-|    **buscarProdutosPaginados** |               **1000** | **1,960.9 μs** | **163.11 μs** |  **8.94 μs** |    **3** | **205.0781** | **316.53 KB** |
-| buscarProdutosPaginadosSql |               1000 |   121.5 μs |   9.82 μs |  0.54 μs |    2 |  10.7422 |  16.51 KB |
-|    **buscarProdutosPaginados** |               **2000** | **3,332.4 μs** | **692.43 μs** | **37.95 μs** |    **4** | **410.1563** | **629.43 KB** |
-| buscarProdutosPaginadosSql |               2000 |   118.8 μs |  25.10 μs |  1.38 μs |    1 |  10.7422 |  16.51 KB |
+|                           Method | interation |      Mean |    Error |   StdDev |    Median | Rank |    Gen0 | Allocated |
+|--------------------------------- |----------- |----------:|---------:|---------:|----------:|-----:|--------:|----------:|
+|          **BuscarProdutosPaginados** |       **1000** | **442.37 μs** | **1.181 μs** | **5.854 μs** | **441.06 μs** |    **3** | **52.7344** |  **81.23 KB** |
+|       BuscarProdutosPaginadosSql |       1000 | 585.17 μs | 1.702 μs | 8.514 μs | 583.53 μs |    4 | 64.4531 |  99.89 KB |
+| BuscarProdutosPaginadosSqlDapper |       1000 |  54.75 μs | 0.100 μs | 0.499 μs |  54.76 μs |    1 |  3.1128 |   4.82 KB |
+|          **BuscarProdutosPaginados** |       **2000** | **438.47 μs** | **0.871 μs** | **4.408 μs** | **437.74 μs** |    **3** | **52.7344** |  **81.23 KB** |
+|       BuscarProdutosPaginadosSql |       2000 | 587.20 μs | 1.157 μs | 5.703 μs | 587.47 μs |    4 | 64.4531 |  99.89 KB |
+| BuscarProdutosPaginadosSqlDapper |       2000 |  57.84 μs | 0.574 μs | 2.871 μs |  57.05 μs |    2 |  3.1128 |   4.82 KB |

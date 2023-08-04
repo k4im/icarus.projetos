@@ -1,24 +1,24 @@
-namespace projeto.service.Extensions
-{
-    public static class ServicesColletionExtensions
-    {
+namespace projeto.service.Extensions;
 
-        public static IServiceCollection AddSwaggerConfiguration(this IServiceCollection services)
+public static class ServicesColletionExtensions
+{
+
+    public static IServiceCollection AddSwaggerConfiguration(this IServiceCollection services)
+    {
+        services.AddSwaggerGen(option =>
         {
-            services.AddSwaggerGen(option =>
+            option.SwaggerDoc("v1", new OpenApiInfo { Title = "Api para projetos", Version = "v1" });
+            option.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
             {
-                option.SwaggerDoc("v1", new OpenApiInfo { Title = "Api para projetos", Version = "v1" });
-                option.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
-                {
-                    In = ParameterLocation.Header,
-                    Description = "Adicione o token para logar",
-                    Name = "Authorization",
-                    Type = SecuritySchemeType.Http,
-                    BearerFormat = "JWT",
-                    Scheme = "Bearer"
-                });
-                option.AddSecurityRequirement(new OpenApiSecurityRequirement
-                {
+                In = ParameterLocation.Header,
+                Description = "Adicione o token para logar",
+                Name = "Authorization",
+                Type = SecuritySchemeType.Http,
+                BearerFormat = "JWT",
+                Scheme = "Bearer"
+            });
+            option.AddSecurityRequirement(new OpenApiSecurityRequirement
+            {
                     {
                         new OpenApiSecurityScheme
                         {
@@ -30,47 +30,46 @@ namespace projeto.service.Extensions
                         },
                         new string[]{}
                     }
-                });
-                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
-                option.IncludeXmlComments(xmlPath, includeControllerXmlComments: true);
             });
-            services.AddSwaggerExamplesFromAssemblies(Assembly.GetEntryAssembly());
-            return services;
-        }
+            var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+            var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+            option.IncludeXmlComments(xmlPath, includeControllerXmlComments: true);
+        });
+        services.AddSwaggerExamplesFromAssemblies(Assembly.GetEntryAssembly());
+        return services;
+    }
 
-        public static IServiceCollection AddJwtToken(this IServiceCollection services, IConfiguration config)
-        {
-            services.AddAuthentication(opt =>
-                {
-                    opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                    opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-                }
-            ).AddJwtBearer(opt =>
+    public static IServiceCollection AddJwtToken(this IServiceCollection services, IConfiguration config)
+    {
+        services.AddAuthentication(opt =>
             {
-                opt.TokenValidationParameters = new TokenValidationParameters
-                {
-                    ValidateIssuer = true,
-                    ValidateAudience = false,
-                    ValidateLifetime = true,
-                    ValidateIssuerSigningKey = true,
-
-                    ValidIssuer = config["Jwt:Issuer"],
-                    ValidAudience = config["Jwt:Audience"],
-                    IssuerSigningKey = new SymmetricSecurityKey
-                    (Encoding.UTF8.GetBytes(config["Jwt:SecretKey"]))
-                };
-            });
-            return services;
-        }
-
-        public static IServiceCollection AddDependencies(this IServiceCollection services)
+                opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }
+        ).AddJwtBearer(opt =>
         {
-            services.AddScoped<IRepoProjetos, RepoProjetos>();
-            services.AddScoped<IRepoProdutosDisponiveis, RepoProdutosDisponiveis>();
-            services.AddScoped<IMessageBusService, MessageBusService>();
-            services.AddScoped<IMessageConsumer, MessageConsumer>();
-            return services;
-        }
+            opt.TokenValidationParameters = new TokenValidationParameters
+            {
+                ValidateIssuer = true,
+                ValidateAudience = false,
+                ValidateLifetime = true,
+                ValidateIssuerSigningKey = true,
+
+                ValidIssuer = config["Jwt:Issuer"],
+                ValidAudience = config["Jwt:Audience"],
+                IssuerSigningKey = new SymmetricSecurityKey
+                (Encoding.UTF8.GetBytes(config["Jwt:SecretKey"]))
+            };
+        });
+        return services;
+    }
+
+    public static IServiceCollection AddDependencies(this IServiceCollection services)
+    {
+        services.AddScoped<IRepoProjetos, RepoProjetos>();
+        services.AddScoped<IRepoProdutosDisponiveis, RepoProdutosDisponiveis>();
+        services.AddScoped<IMessageBusService, MessageBusService>();
+        services.AddScoped<IMessageConsumer, MessageConsumer>();
+        return services;
     }
 }
