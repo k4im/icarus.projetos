@@ -3,8 +3,8 @@ namespace projeto.infra.AsyncComm;
 public class MessageBusService : MessageBusServiceExtension, IMessageBusService
 {
     private readonly IConfiguration _config;
-    private IConnection _connection;
-    private IModel _channel;
+    private readonly IConnection _connection;
+    private readonly IModel _channel;
 
     public MessageBusService(IConfiguration config)
     {
@@ -36,12 +36,12 @@ public class MessageBusService : MessageBusServiceExtension, IMessageBusService
     }
 
     // Metodo de publicação de um novo projeto contendo todos os dados do projeto
-    public void enviarProjeto(Projeto evento)
-        => enviar(serializarObjeto(evento), routingKey);
+    public void EnviarProjeto(Projeto evento)
+        => Enviar(SerializarObjeto(evento), routingKey);
 
 
     // Metodo privado de envio da mensagem
-    private void enviar(string evento, string routingKeys)
+    private void Enviar(string evento, string routingKeys)
     {
         if (_connection.IsOpen)
         {
@@ -65,9 +65,9 @@ public class MessageBusService : MessageBusServiceExtension, IMessageBusService
         Console.WriteLine("--> RabbitMQ foi derrubado");
     }
 
-    string serializarObjeto(Projeto evento)
+    string SerializarObjeto(Projeto evento)
     {
-        var projetoModel = new ProjetoDTO { ProdutoUtilizado = evento.ProdutoUtilizado, QuantidadeUtilizado = evento.QuantidadeUtilizado };
+        var projetoModel = new ProjetoMsgDTO { ProdutoUtilizado = evento.ProdutoUtilizado, QuantidadeUtilizado = evento.QuantidadeUtilizado };
         return JsonConvert.SerializeObject(projetoModel);
     }
 }

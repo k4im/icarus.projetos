@@ -1,6 +1,6 @@
 namespace projeto.domain;
 
-public class ProjetoDTO
+public class ProjetoMsgDTO
 {
     public int ProdutoUtilizado { get; set; }
     public int QuantidadeUtilizado { get; set; }

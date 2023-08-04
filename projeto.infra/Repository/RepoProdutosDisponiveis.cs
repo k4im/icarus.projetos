@@ -2,6 +2,8 @@ namespace projeto.infra.Repository;
 
 public class RepoProdutosDisponiveis : IRepoProdutosDisponiveis
 {
+    public string conn = "Data Source=teste.db;";
+
     public async Task<bool> adicionarProdutos(ProdutosDisponiveis model)
     {
         try
@@ -52,8 +54,17 @@ public class RepoProdutosDisponiveis : IRepoProdutosDisponiveis
 
     public async Task<List<ProdutosDisponiveis>> buscarTodosProdutos()
     {
-        using var db = new DataContext();
-        return await db.ProdutosEmEstoque.ToListAsync();
+        using var connection = new SqliteConnection(conn);
+        var query = "SELECT * FROM ProdutosDispoinveis";
+        try
+        {
+            var produtos = await connection.QueryAsync<ProdutosDisponiveis>(query);
+            return produtos.ToList();
+        }
+        catch (Exception)
+        {
+            return null;
+        }
     }
 
     public async Task<bool> removerProdutos(int id)
@@ -77,7 +88,7 @@ public class RepoProdutosDisponiveis : IRepoProdutosDisponiveis
         }
     }
 
-    public static async Task atualizarTabelaProdutosDisponiveis(Projeto model)
+    public static async Task AtualizarTabelaProdutosDisponiveis(Projeto model)
     {
         using var db = new DataContext();
         var produto = await db.ProdutosEmEstoque.FirstOrDefaultAsync(x => x.Id == model.ProdutoUtilizado);

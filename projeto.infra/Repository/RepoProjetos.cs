@@ -4,14 +4,14 @@ public class RepoProjetos : IRepoProjetos
 {
     //Delegates e Eventos a serem disparados
     public delegate void aoCriarProjetoEventHandler(Projeto model);
-    public event aoCriarProjetoEventHandler aocriarProjeto;
-    IMessageBusService _messageBroker;
-
+    public event aoCriarProjetoEventHandler AocriarProjeto;
+    readonly IMessageBusService _messageBroker;
+    public string conn = "Data Source=teste.db;";
     public RepoProjetos(IMessageBusService messageBroker)
     {
         _messageBroker = messageBroker;
-        aocriarProjeto += async (Projeto model) => { await RepoProdutosDisponiveis.atualizarTabelaProdutosDisponiveis(model); };
-        aocriarProjeto += messageBroker.enviarProjeto;
+        AocriarProjeto += async (Projeto model) => { await RepoProdutosDisponiveis.AtualizarTabelaProdutosDisponiveis(model); };
+        AocriarProjeto += messageBroker.EnviarProjeto;
     }
 
     public async Task<bool> AtualizarStatus(string model, int? id)
@@ -39,7 +39,7 @@ public class RepoProjetos : IRepoProjetos
 
     public async Task<Projeto> BuscarPorId(int? id)
     {
-        using var connection = new SqliteConnection("Data Source=teste.db;");
+        using var connection = new SqliteConnection(conn);
         try
         {
             var query = "SELECT * FROM Projetos WHERE Id LIKE @busca";
@@ -57,7 +57,7 @@ public class RepoProjetos : IRepoProjetos
         var queryPaginado = "SELECT Id, Nome, Status, DataInicio, DataEntrega FROM Projetos LIMIT @resultado OFFSET @pagina";
         var queryTotal = "SELECT COUNT(*) FROM Projetos";
 
-        using var connection = new SqliteConnection("Data Source=teste.db;");
+        using var connection = new SqliteConnection(conn);
         var total = Math.Ceiling(await connection.ExecuteScalarAsync<int>(queryTotal) / resultadoPorPagina);
         var projetosPaginados = await connection
             .QueryAsync<ProjetoPaginadoDTO>(queryPaginado, new { resultado = resultadoPorPagina, pagina = (pagina - 1) * resultadoPorPagina });
@@ -75,7 +75,7 @@ public class RepoProjetos : IRepoProjetos
             }
             db.Projetos.Add(model);
             await db.SaveChangesAsync();
-            aocriarProjeto(model);
+            AocriarProjeto(model);
             return true;
         }
         catch (DbUpdateConcurrencyException)
