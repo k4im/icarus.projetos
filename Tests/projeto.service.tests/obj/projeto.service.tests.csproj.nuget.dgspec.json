@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/oem/github/icarus/icarus.projetos/Tests/projeto.service.tests/projeto.service.tests.csproj": {}
+    "/mnt/c/Users/santo/github/icarus-sistema/icarus.projetos/Tests/projeto.service.tests/projeto.service.tests.csproj": {}
   },
   "projects": {
-    "/home/oem/github/icarus/icarus.projetos/Tests/projeto.service.tests/projeto.service.tests.csproj": {
+    "/mnt/c/Users/santo/github/icarus-sistema/icarus.projetos/Tests/projeto.service.tests/projeto.service.tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/oem/github/icarus/icarus.projetos/Tests/projeto.service.tests/projeto.service.tests.csproj",
+        "projectUniqueName": "/mnt/c/Users/santo/github/icarus-sistema/icarus.projetos/Tests/projeto.service.tests/projeto.service.tests.csproj",
         "projectName": "projeto.service.tests",
-        "projectPath": "/home/oem/github/icarus/icarus.projetos/Tests/projeto.service.tests/projeto.service.tests.csproj",
-        "packagesPath": "/home/oem/.nuget/packages/",
-        "outputPath": "/home/oem/github/icarus/icarus.projetos/Tests/projeto.service.tests/obj/",
+        "projectPath": "/mnt/c/Users/santo/github/icarus-sistema/icarus.projetos/Tests/projeto.service.tests/projeto.service.tests.csproj",
+        "packagesPath": "/home/k4im/.nuget/packages/",
+        "outputPath": "/mnt/c/Users/santo/github/icarus-sistema/icarus.projetos/Tests/projeto.service.tests/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/oem/.nuget/NuGet/NuGet.Config"
+          "/home/k4im/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -26,14 +26,14 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "/home/oem/github/icarus/icarus.projetos/projeto.domain/projeto.domain.csproj": {
-                "projectPath": "/home/oem/github/icarus/icarus.projetos/projeto.domain/projeto.domain.csproj"
+              "/mnt/c/Users/santo/github/icarus-sistema/icarus.projetos/projeto.domain/projeto.domain.csproj": {
+                "projectPath": "/mnt/c/Users/santo/github/icarus-sistema/icarus.projetos/projeto.domain/projeto.domain.csproj"
               },
-              "/home/oem/github/icarus/icarus.projetos/projeto.infra/projeto.infra.csproj": {
-                "projectPath": "/home/oem/github/icarus/icarus.projetos/projeto.infra/projeto.infra.csproj"
+              "/mnt/c/Users/santo/github/icarus-sistema/icarus.projetos/projeto.infra/projeto.infra.csproj": {
+                "projectPath": "/mnt/c/Users/santo/github/icarus-sistema/icarus.projetos/projeto.infra/projeto.infra.csproj"
               },
-              "/home/oem/github/icarus/icarus.projetos/projeto.service/projeto.service.csproj": {
-                "projectPath": "/home/oem/github/icarus/icarus.projetos/projeto.service/projeto.service.csproj"
+              "/mnt/c/Users/santo/github/icarus-sistema/icarus.projetos/projeto.service/projeto.service.csproj": {
+                "projectPath": "/mnt/c/Users/santo/github/icarus-sistema/icarus.projetos/projeto.service/projeto.service.csproj"
               }
             }
           }
@@ -121,17 +121,17 @@
         }
       }
     },
-    "/home/oem/github/icarus/icarus.projetos/projeto.domain/projeto.domain.csproj": {
+    "/mnt/c/Users/santo/github/icarus-sistema/icarus.projetos/projeto.domain/projeto.domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/oem/github/icarus/icarus.projetos/projeto.domain/projeto.domain.csproj",
+        "projectUniqueName": "/mnt/c/Users/santo/github/icarus-sistema/icarus.projetos/projeto.domain/projeto.domain.csproj",
         "projectName": "projeto.domain",
-        "projectPath": "/home/oem/github/icarus/icarus.projetos/projeto.domain/projeto.domain.csproj",
-        "packagesPath": "/home/oem/.nuget/packages/",
-        "outputPath": "/home/oem/github/icarus/icarus.projetos/projeto.domain/obj/",
+        "projectPath": "/mnt/c/Users/santo/github/icarus-sistema/icarus.projetos/projeto.domain/projeto.domain.csproj",
+        "packagesPath": "/home/k4im/.nuget/packages/",
+        "outputPath": "/mnt/c/Users/santo/github/icarus-sistema/icarus.projetos/projeto.domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/oem/.nuget/NuGet/NuGet.Config"
+          "/home/k4im/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -174,17 +174,17 @@
         }
       }
     },
-    "/home/oem/github/icarus/icarus.projetos/projeto.infra/projeto.infra.csproj": {
+    "/mnt/c/Users/santo/github/icarus-sistema/icarus.projetos/projeto.infra/projeto.infra.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/oem/github/icarus/icarus.projetos/projeto.infra/projeto.infra.csproj",
+        "projectUniqueName": "/mnt/c/Users/santo/github/icarus-sistema/icarus.projetos/projeto.infra/projeto.infra.csproj",
         "projectName": "projeto.infra",
-        "projectPath": "/home/oem/github/icarus/icarus.projetos/projeto.infra/projeto.infra.csproj",
-        "packagesPath": "/home/oem/.nuget/packages/",
-        "outputPath": "/home/oem/github/icarus/icarus.projetos/projeto.infra/obj/",
+        "projectPath": "/mnt/c/Users/santo/github/icarus-sistema/icarus.projetos/projeto.infra/projeto.infra.csproj",
+        "packagesPath": "/home/k4im/.nuget/packages/",
+        "outputPath": "/mnt/c/Users/santo/github/icarus-sistema/icarus.projetos/projeto.infra/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/oem/.nuget/NuGet/NuGet.Config"
+          "/home/k4im/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -196,8 +196,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "/home/oem/github/icarus/icarus.projetos/projeto.domain/projeto.domain.csproj": {
-                "projectPath": "/home/oem/github/icarus/icarus.projetos/projeto.domain/projeto.domain.csproj"
+              "/mnt/c/Users/santo/github/icarus-sistema/icarus.projetos/projeto.domain/projeto.domain.csproj": {
+                "projectPath": "/mnt/c/Users/santo/github/icarus-sistema/icarus.projetos/projeto.domain/projeto.domain.csproj"
               }
             }
           }
@@ -271,17 +271,17 @@
         }
       }
     },
-    "/home/oem/github/icarus/icarus.projetos/projeto.service/projeto.service.csproj": {
+    "/mnt/c/Users/santo/github/icarus-sistema/icarus.projetos/projeto.service/projeto.service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/oem/github/icarus/icarus.projetos/projeto.service/projeto.service.csproj",
+        "projectUniqueName": "/mnt/c/Users/santo/github/icarus-sistema/icarus.projetos/projeto.service/projeto.service.csproj",
         "projectName": "projeto.service",
-        "projectPath": "/home/oem/github/icarus/icarus.projetos/projeto.service/projeto.service.csproj",
-        "packagesPath": "/home/oem/.nuget/packages/",
-        "outputPath": "/home/oem/github/icarus/icarus.projetos/projeto.service/obj/",
+        "projectPath": "/mnt/c/Users/santo/github/icarus-sistema/icarus.projetos/projeto.service/projeto.service.csproj",
+        "packagesPath": "/home/k4im/.nuget/packages/",
+        "outputPath": "/mnt/c/Users/santo/github/icarus-sistema/icarus.projetos/projeto.service/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/oem/.nuget/NuGet/NuGet.Config"
+          "/home/k4im/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -293,11 +293,11 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "/home/oem/github/icarus/icarus.projetos/projeto.domain/projeto.domain.csproj": {
-                "projectPath": "/home/oem/github/icarus/icarus.projetos/projeto.domain/projeto.domain.csproj"
+              "/mnt/c/Users/santo/github/icarus-sistema/icarus.projetos/projeto.domain/projeto.domain.csproj": {
+                "projectPath": "/mnt/c/Users/santo/github/icarus-sistema/icarus.projetos/projeto.domain/projeto.domain.csproj"
               },
-              "/home/oem/github/icarus/icarus.projetos/projeto.infra/projeto.infra.csproj": {
-                "projectPath": "/home/oem/github/icarus/icarus.projetos/projeto.infra/projeto.infra.csproj"
+              "/mnt/c/Users/santo/github/icarus-sistema/icarus.projetos/projeto.infra/projeto.infra.csproj": {
+                "projectPath": "/mnt/c/Users/santo/github/icarus-sistema/icarus.projetos/projeto.infra/projeto.infra.csproj"
               }
             }
           }

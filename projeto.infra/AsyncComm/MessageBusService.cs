@@ -31,7 +31,7 @@ public class MessageBusService : MessageBusServiceExtension, IMessageBusService
         }
         catch (Exception e)
         {
-            Console.WriteLine($"--> Não foi possivel se conectar com o Message Bus: {e.Message}");
+            Console.WriteLine($"--> Não foi possivel se conectar com o TA BINMessage Bus: {e.Message}");
         }
     }
 
