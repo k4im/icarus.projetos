@@ -1,14 +1,14 @@
 namespace projeto.infra.AsyncComm;
-
 public class MessageBusService : MessageBusServiceExtension, IMessageBusService
 {
-    private readonly IConfiguration _config;
-    private readonly IConnection _connection;
-    private readonly IModel _channel;
-
-    public MessageBusService(IConfiguration config)
+    readonly IConfiguration _config;
+    readonly IConnection _connection;
+    readonly IModel _channel;
+    readonly HttpContent _content;
+    public MessageBusService(IConfiguration config, HttpContent content)
     {
         _config = config;
+        _content = content;
 
         // Definindo a ConnectionFactory, passando o hostname, user, pwd, port
         var factory = new ConnectionFactory()
@@ -18,15 +18,13 @@ public class MessageBusService : MessageBusServiceExtension, IMessageBusService
             Password = _config["RabbitMQPwd"],
             Port = int.Parse(_config["RabbitPort"])
         };
-
         try
         {
             //Criando a conexão ao broker
             _connection = factory.CreateConnection();
-
             // Criando o modelo da conexão
             _channel = _connection.CreateModel();
-            criarFilas(_channel);
+            CriarFilas(_channel);
             _connection.ConnectionShutdown += RabbitMQFailed;
         }
         catch (Exception e)
@@ -38,7 +36,6 @@ public class MessageBusService : MessageBusServiceExtension, IMessageBusService
     // Metodo de publicação de um novo projeto contendo todos os dados do projeto
     public void EnviarProjeto(Projeto evento)
         => Enviar(SerializarObjeto(evento), routingKey);
-
 
     // Metodo privado de envio da mensagem
     private void Enviar(string evento, string routingKeys)
@@ -61,13 +58,11 @@ public class MessageBusService : MessageBusServiceExtension, IMessageBusService
     }
     // "Logger" caso de algum erro 
     void RabbitMQFailed(object sender, ShutdownEventArgs e)
-    {
-        Console.WriteLine("--> RabbitMQ foi derrubado");
-    }
-
+        => Console.WriteLine("--> RabbitMQ foi derrubado");
     string SerializarObjeto(Projeto evento)
     {
-        var projetoModel = new ProjetoMsgDTO { ProdutoUtilizado = evento.ProdutoUtilizado, QuantidadeUtilizado = evento.QuantidadeUtilizado };
+        var correlationId = _content.Headers.GetValues("X-CorrelationID").FirstOrDefault();
+        var projetoModel = new Envelope<Projeto>(evento, correlationId);
         return JsonConvert.SerializeObject(projetoModel);
     }
 }

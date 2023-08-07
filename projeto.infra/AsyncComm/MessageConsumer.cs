@@ -1,6 +1,4 @@
 namespace projeto.infra.AsyncComm;
-
-
 public class MessageConsumer : MessageConsumerExtension, IMessageConsumer
 {
     private readonly IConfiguration _config;
@@ -23,7 +21,7 @@ public class MessageConsumer : MessageConsumerExtension, IMessageConsumer
         {
             _connection = factory.CreateConnection();
             _channel = _connection.CreateModel();
-            criarFilas(_channel);
+            CriarFilas(_channel);
             _connection.ConnectionShutdown += RabbitMQFailed;
         }
         catch (Exception e)
@@ -32,12 +30,12 @@ public class MessageConsumer : MessageConsumerExtension, IMessageConsumer
         }
     }
 
-    public void verificarFila()
-        => consumirFila(_channel);
+    public void VerificarFila()
+        => ConsumirFila(_channel);
 
-    void consumirFila(IModel channel)
+    void ConsumirFila(IModel channel)
     {
-        var filaComMensagens = verificarFilaComMensagens();
+        var filaComMensagens = VerificarFilaComMensagens();
         // Definindo um consumidor
         var consumer = new EventingBasicConsumer(channel);
 
@@ -58,7 +56,7 @@ public class MessageConsumer : MessageConsumerExtension, IMessageConsumer
                     // Estará realizando a operação de adicição dos projetos no banco de dados
                     for (int i = 0; i <= channel.MessageCount(filaComMensagens); i++)
                     {
-                        await logicaDeFilas(produto, filaComMensagens);
+                        await LogicaDeFilas(produto, filaComMensagens);
                     }
                     Console.WriteLine($"--> Consumido mensagem vindo da fila [{filaComMensagens}]");
                     Console.WriteLine(message);
@@ -80,14 +78,14 @@ public class MessageConsumer : MessageConsumerExtension, IMessageConsumer
         }
         Console.WriteLine("Fila se encontra vazia");
     }
-    string verificarFilaComMensagens()
+    string VerificarFilaComMensagens()
     {
         if (_channel.MessageCount(filaConsumerDisponiveis) != 0) return filaConsumerDisponiveis;
         if (_channel.MessageCount(filaConsumerAtualizados) != 0) return filaConsumerAtualizados;
         if (_channel.MessageCount(filaConsumerDeletados) != 0) return filaConsumerDeletados;
         return "vazia";
     }
-    async Task logicaDeFilas(ProdutosDisponiveis model, string fila)
+    async Task LogicaDeFilas(ProdutosDisponiveis model, string fila)
     {
         switch (fila)
         {

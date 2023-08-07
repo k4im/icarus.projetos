@@ -3,7 +3,7 @@ namespace projeto.infra.AsyncComm.Extensions;
 
 public class MessageConsumerExtension : Base
 {
-    public void criarFilas(IModel channel)
+    public void CriarFilas(IModel channel)
     {
 
         // Declarando a fila para eventos que foram adicionados
