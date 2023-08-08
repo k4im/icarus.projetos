@@ -17,7 +17,9 @@ public class DataContext : DbContext
         modelBuilder.Entity<Projeto>()
             .HasOne(projeto => projeto.ProdutoUtilizado)
             .WithMany(projeto => projeto.Projetos)
-            .HasForeignKey(projeto => projeto.ProdutoUtilizadoId);
+            .HasForeignKey(projeto => projeto.ProdutoUtilizadoId)
+            .OnDelete(DeleteBehavior.NoAction)
+            .IsRequired(true);
 
         modelBuilder.Entity<ProdutosDisponiveis>()
             .HasMany(produto => produto.Projetos);
