@@ -90,13 +90,13 @@ public class MessageConsumer : MessageConsumerExtension, IMessageConsumer
         switch (fila)
         {
             case "produtos.disponiveis":
-                await _repo.adicionarProdutos(model);
+                await _repo.AdicionarProdutos(model);
                 break;
             case "produtos.disponiveis.atualizados":
-                await _repo.atualizarProdutos(model.Id, model);
+                await _repo.AtualizarProdutos(model.Id, model);
                 break;
             case "produtos.disponiveis.deletados":
-                await _repo.removerProdutos(model.Id);
+                await _repo.RemoverProdutos(model.Id);
                 break;
             default:
                 break;

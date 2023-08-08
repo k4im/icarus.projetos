@@ -2,10 +2,11 @@ namespace projeto.infra.Repository;
 
 public interface IRepoProdutosDisponiveis
 {
-    Task<List<ProdutosDisponiveis>> buscarTodosProdutos();
+    Task<Response<ProdutosDisponiveis>> BuscarTodosProdutos();
+    Task<ProdutosDisponiveis> BuscarPorId(int id);
 
-    Task<bool> removerProdutos(int id);
-    Task<bool> adicionarProdutos(ProdutosDisponiveis model);
+    Task<bool> RemoverProdutos(int id);
+    Task<bool> AdicionarProdutos(ProdutosDisponiveis model);
 
-    Task<bool> atualizarProdutos(int id, ProdutosDisponiveis model);
+    Task<bool> AtualizarProdutos(int id, ProdutosDisponiveis model);
 }

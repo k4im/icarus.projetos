@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "4bLaDi8dU2eiPCNQ3sx18FUU/a0EG6VO10y0I0uyBXc0+itLHSAC0Rd8lgCz4ujv2bBZy7jpos4lXNzHXoChPw==",
+  "dgSpecHash": "49RTcFvZozDQoFNWElpbMH3MgIvyqKf4lbI4pGhmnBMHy6zVzf6polRLT6QntCWMsK0w6XNs8rECFYOfC6UI2A==",
   "success": true,
   "projectFilePath": "/home/oem/github/icarus/icarus.projetos/projeto.infra/projeto.infra.csproj",
   "expectedPackageFiles": [
+    "/home/oem/.nuget/packages/automapper/12.0.1/automapper.12.0.1.nupkg.sha512",
     "/home/oem/.nuget/packages/dapper/2.0.143/dapper.2.0.143.nupkg.sha512",
     "/home/oem/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
+    "/home/oem/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/home/oem/.nuget/packages/microsoft.data.sqlite.core/7.0.9/microsoft.data.sqlite.core.7.0.9.nupkg.sha512",
     "/home/oem/.nuget/packages/microsoft.entityframeworkcore/7.0.9/microsoft.entityframeworkcore.7.0.9.nupkg.sha512",
     "/home/oem/.nuget/packages/microsoft.entityframeworkcore.abstractions/7.0.9/microsoft.entityframeworkcore.abstractions.7.0.9.nupkg.sha512",

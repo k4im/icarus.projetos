@@ -4,7 +4,7 @@ public class RepoProdutosDisponiveis : IRepoProdutosDisponiveis
 {
     public string conn = "Data Source=teste.db;";
 
-    public async Task<bool> adicionarProdutos(ProdutosDisponiveis model)
+    public async Task<bool> AdicionarProdutos(ProdutosDisponiveis model)
     {
         try
         {
@@ -29,7 +29,7 @@ public class RepoProdutosDisponiveis : IRepoProdutosDisponiveis
         }
     }
 
-    public async Task<bool> atualizarProdutos(int id, ProdutosDisponiveis model)
+    public async Task<bool> AtualizarProdutos(int id, ProdutosDisponiveis model)
     {
         try
         {
@@ -52,14 +52,14 @@ public class RepoProdutosDisponiveis : IRepoProdutosDisponiveis
         }
     }
 
-    public async Task<List<ProdutosDisponiveis>> buscarTodosProdutos()
+    public async Task<Response<ProdutosDisponiveis>> BuscarTodosProdutos()
     {
         using var connection = new SqliteConnection(conn);
         var query = "SELECT * FROM ProdutosDispoinveis";
         try
         {
             var produtos = await connection.QueryAsync<ProdutosDisponiveis>(query);
-            return produtos.ToList();
+            return new Response<ProdutosDisponiveis>(produtos.ToList(), 1, 2);
         }
         catch (Exception)
         {
@@ -67,7 +67,7 @@ public class RepoProdutosDisponiveis : IRepoProdutosDisponiveis
         }
     }
 
-    public async Task<bool> removerProdutos(int id)
+    public async Task<bool> RemoverProdutos(int id)
     {
         try
         {
@@ -91,8 +91,23 @@ public class RepoProdutosDisponiveis : IRepoProdutosDisponiveis
     public static async Task AtualizarTabelaProdutosDisponiveis(Projeto model)
     {
         using var db = new DataContext();
-        var produto = await db.ProdutosEmEstoque.FirstOrDefaultAsync(x => x.Id == model.ProdutoUtilizado);
+        var produto = await db.ProdutosEmEstoque.AsNoTracking().FirstOrDefaultAsync(x => x.Id == model.ProdutoUtilizadoId);
         produto.Quantidade -= model.QuantidadeUtilizado;
         await db.SaveChangesAsync();
+    }
+
+    public async Task<ProdutosDisponiveis> BuscarPorId(int id)
+    {
+        try
+        {
+            using var connc = new SqliteConnection(conn);
+            var resultado = await connc.QueryFirstOrDefaultAsync<ProdutosDisponiveis>("SELECT * FROM Produtos WHERE Id LIKE @busca",
+                new { busca = id });
+            return resultado;
+        }
+        catch (Exception)
+        {
+            return null;
+        }
     }
 }

@@ -1798,6 +1798,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
+          "AutoMapper": "12.0.1",
           "Dapper": "2.0.143",
           "Microsoft.EntityFrameworkCore": "7.0.9",
           "Microsoft.EntityFrameworkCore.InMemory": "7.0.9",

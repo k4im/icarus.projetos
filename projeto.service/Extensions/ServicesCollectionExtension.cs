@@ -70,6 +70,7 @@ public static class ServicesColletionExtensions
         services.AddScoped<IRepoProdutosDisponiveis, RepoProdutosDisponiveis>();
         services.AddScoped<IMessageBusService, MessageBusService>();
         services.AddScoped<IMessageConsumer, MessageConsumer>();
+        services.AddAutoMapper(typeof(ProfileMapper));
         return services;
     }
 }

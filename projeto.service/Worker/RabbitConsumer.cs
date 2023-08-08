@@ -15,7 +15,7 @@ public class RabbitConsumer : BackgroundService
                 try
                 {
                     IMessageConsumer consumer = scope.ServiceProvider.GetService<IMessageConsumer>();
-                    consumer.verificarFila();
+                    consumer.VerificarFila();
                 }
                 catch (Exception e)
                 {

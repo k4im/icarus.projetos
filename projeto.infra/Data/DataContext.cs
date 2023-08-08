@@ -13,6 +13,14 @@ public class DataContext : DbContext
         modelBuilder.Entity<Projeto>()
             .Property(projeto => projeto.RowVersion)
             .IsConcurrencyToken();
+
+        modelBuilder.Entity<Projeto>()
+            .HasOne(projeto => projeto.ProdutoUtilizado)
+            .WithMany(projeto => projeto.Projetos)
+            .HasForeignKey(projeto => projeto.ProdutoUtilizadoId);
+
+        modelBuilder.Entity<ProdutosDisponiveis>()
+            .HasMany(produto => produto.Projetos);
     }
 
     public DbSet<Projeto> Projetos { get; set; }

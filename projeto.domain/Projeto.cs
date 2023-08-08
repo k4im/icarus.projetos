@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace projeto.domain;
 
 public class Projeto
@@ -7,14 +9,14 @@ public class Projeto
 
     public Projeto(string nome, string status, DateTime dataInicio,
     DateTime dataEntrega,
-    int produtoUtilizado,
+    int produtoUtilizadoId,
     int quantidadeUtilizado, string descricao, double valor)
     {
         Nome = VerificarNome(nome);
         Status = status;
         DataInicio = dataInicio;
         DataEntrega = dataEntrega;
-        ProdutoUtilizado = produtoUtilizado;
+        ProdutoUtilizadoId = produtoUtilizadoId;
         QuantidadeUtilizado = VerificarQuantidade(quantidadeUtilizado);
         Descricao = VerificarDescricao(descricao);
         Valor = VerificarValor(valor);
@@ -41,7 +43,14 @@ public class Projeto
 
     [Required(ErrorMessage = "Campo obrigatório")]
     [DataType("NVARCHAR(150)")]
-    public int ProdutoUtilizado { get; private set; }
+    [ForeignKey("ProdutoutilizadoId")]
+    public ProdutosDisponiveis ProdutoUtilizado { get; private set; }
+
+    [Required(ErrorMessage = "Campo obrigatório")]
+    [DataType("NVARCHAR(150)")]
+    public int ProdutoUtilizadoId { get; private set; }
+
+
     [Required(ErrorMessage = "Campo obrigatório")]
     public int QuantidadeUtilizado { get; private set; }
 

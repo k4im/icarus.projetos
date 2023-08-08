@@ -69,10 +69,6 @@ public class RepoProjetos : IRepoProjetos
         try
         {
             using var db = new DataContext();
-            if (await db.ProdutosEmEstoque.FirstOrDefaultAsync(x => x.Id == model.ProdutoUtilizado) == null)
-            {
-                throw new Exception($"Enterrompido criação do projeto pois produto com [id] - [{model.ProdutoUtilizado}] não existe!");
-            }
             db.Projetos.Add(model);
             await db.SaveChangesAsync();
             AocriarProjeto(model);

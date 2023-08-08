@@ -1,3 +1,5 @@
+using AutoMapper;
+
 namespace projeto.service.Controllers;
 
 [ApiController]
@@ -5,9 +7,11 @@ namespace projeto.service.Controllers;
 public class ProjetoController : ControllerBase
 {
     readonly IRepoProjetos _repo;
-    public ProjetoController(IRepoProjetos repo)
+    readonly IMapper _mapper;
+    public ProjetoController(IRepoProjetos repo, IMapper mapper)
     {
         _repo = repo;
+        _mapper = mapper;
     }
 
 
@@ -19,7 +23,6 @@ public class ProjetoController : ControllerBase
     // [Authorize(Roles = "ADMIN,ATENDENTE")]
     public async Task<IActionResult> GetAllProjects(int pagina = 1, float resultadoPorPagina = 5)
     {
-        var currentUser = HttpContext.User.FindFirstValue(ClaimTypes.Name);
         var projetos = await _repo.BuscarProdutos(pagina, resultadoPorPagina);
         if (projetos == null) return StatusCode(404);
         return Ok(projetos);
@@ -34,7 +37,6 @@ public class ProjetoController : ControllerBase
     // [Authorize(Roles = "ADMIN,ATENDENTE")]
     public async Task<IActionResult> GetById(int? id)
     {
-        var currentUser = HttpContext.User.FindFirstValue(ClaimTypes.Name);
         var item = await _repo.BuscarPorId(id);
         if (item == null) return StatusCode(404);
         return Ok(item);
@@ -63,13 +65,13 @@ public class ProjetoController : ControllerBase
     /// <response code="201"> Informa que tudo ocorreu como esperado</response>
     [HttpPost("Create")]
     // [Authorize(Roles = "ADMIN,ATENDENTE")]
-    public async Task<IActionResult> adicionarProjeto(Projeto model)
+    public async Task<IActionResult> adicionarProjeto(ProjetoDTO model)
     {
-        var currentUser = HttpContext.User.FindFirstValue(ClaimTypes.Name);
         if (!ModelState.IsValid) return StatusCode(400, ModelState);
         try
         {
-            var result = await _repo.CriarProjeto(model);
+            var projeto = _mapper.Map<ProjetoDTO, Projeto>(model);
+            var result = await _repo.CriarProjeto(projeto);
             return StatusCode(201);
         }
         catch (Exception e)
@@ -88,7 +90,6 @@ public class ProjetoController : ControllerBase
     // [Authorize(Roles = "ADMIN")]
     public async Task<IActionResult> atualizarStatusProjeto(string model, int? id)
     {
-        var currentUser = HttpContext.User.FindFirstValue(ClaimTypes.Name);
         if (!ModelState.IsValid) return BadRequest(ModelState);
         if (id == null) return StatusCode(404);
         try
@@ -112,7 +113,6 @@ public class ProjetoController : ControllerBase
     // [Authorize(Roles = "ADMIN")]
     public async Task<IActionResult> removerProjeto(int? id)
     {
-        var currentUser = HttpContext.User.FindFirstValue(ClaimTypes.Name);
         if (id == null) return StatusCode(404);
         try
         {

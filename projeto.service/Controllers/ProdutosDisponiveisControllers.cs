@@ -14,7 +14,7 @@ public class ProdutosDisponiveisControllers : ControllerBase
     [HttpGet("produtos_em_estoque")]
     public async Task<ActionResult<List<ProdutosDisponiveis>>> mostrarProdutos()
     {
-        var produtos = await _repo.buscarTodosProdutos();
+        var produtos = await _repo.BuscarTodosProdutos();
         return Ok(produtos);
     }
 }
