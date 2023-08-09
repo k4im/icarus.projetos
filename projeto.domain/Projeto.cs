@@ -43,11 +43,11 @@ public class Projeto
 
     [Required(ErrorMessage = "Campo obrigatório")]
     [DataType("NVARCHAR(150)")]
-    [ForeignKey("ProdutoutilizadoId")]
     public ProdutosDisponiveis ProdutoUtilizado { get; private set; }
 
     [Required(ErrorMessage = "Campo obrigatório")]
     [DataType("NVARCHAR(150)")]
+    // [ForeignKey("Produtoutilizado")]
     public int ProdutoUtilizadoId { get; private set; }
 
 

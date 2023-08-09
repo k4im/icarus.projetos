@@ -2,11 +2,20 @@ namespace projeto.infra.Data;
 
 public class DataContext : DbContext
 {
-    public DataContext() : base(new DbContextOptionsBuilder().UseSqlite("Data Source=teste.db;").Options)
+    public DataContext()
     {
-        Database.EnsureCreated();
     }
 
+    public DataContext(DbContextOptions options) : base(options)
+    {
+    }
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        if (!optionsBuilder.IsConfigured)
+        {
+            optionsBuilder.UseSqlite("Data Source=api-projetos.db;");
+        }
+    }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         // Fluent API for specifying concurrency token
@@ -22,7 +31,11 @@ public class DataContext : DbContext
             .IsRequired(true);
 
         modelBuilder.Entity<ProdutosDisponiveis>()
-            .HasMany(produto => produto.Projetos);
+            .HasMany(produto => produto.Projetos)
+            .WithOne(projeto => projeto.ProdutoUtilizado)
+            .HasForeignKey(f => f.ProdutoUtilizadoId)
+            .OnDelete(DeleteBehavior.NoAction)
+            .IsRequired(true);
     }
 
     public DbSet<Projeto> Projetos { get; set; }

@@ -2,12 +2,31 @@ namespace projeto.domain;
 
 public class ProjetoDTO
 {
-    public string Nome { get; set; }
-    public string Status { get; set; }
-    public DateTime DataInicio { get; set; }
-    public DateTime DataEntrega { get; set; }
-    public int ProdutoUtilizadoId { get; set; }
-    public int QuantidadeUtilizado { get; private set; }
-    public string Descricao { get; private set; }
-    public double Valor { get; private set; }
+    public ProjetoDTO(string nome,
+    string status,
+    DateTime dataInicio,
+    DateTime dataEntrega,
+    int produtoUtilizadoId,
+    int quantidadeUtilizado,
+    string descricao,
+    double valor)
+    {
+        Nome = nome;
+        Status = status;
+        DataInicio = dataInicio;
+        DataEntrega = dataEntrega;
+        ProdutoUtilizadoId = produtoUtilizadoId;
+        QuantidadeUtilizado = quantidadeUtilizado;
+        Descricao = descricao;
+        Valor = valor;
+    }
+
+    public string Nome { get; }
+    public string Status { get; }
+    public DateTime DataInicio { get; }
+    public DateTime DataEntrega { get; }
+    public int ProdutoUtilizadoId { get; }
+    public int QuantidadeUtilizado { get; }
+    public string Descricao { get; }
+    public double Valor { get; }
 }

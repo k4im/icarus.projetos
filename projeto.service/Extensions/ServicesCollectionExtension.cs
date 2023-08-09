@@ -1,5 +1,4 @@
 namespace projeto.service.Extensions;
-
 public static class ServicesColletionExtensions
 {
 
@@ -68,9 +67,11 @@ public static class ServicesColletionExtensions
     {
         services.AddScoped<IRepoProjetos, RepoProjetos>();
         services.AddScoped<IRepoProdutosDisponiveis, RepoProdutosDisponiveis>();
+        services.AddHttpContextAccessor();
+        services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         services.AddScoped<IMessageBusService, MessageBusService>();
         services.AddScoped<IMessageConsumer, MessageConsumer>();
-        services.AddAutoMapper(typeof(ProfileMapper));
+        services.AddAutoMapper(typeof(Program).Assembly);
         return services;
     }
 }

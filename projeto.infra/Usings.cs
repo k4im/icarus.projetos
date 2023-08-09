@@ -12,3 +12,4 @@ global using RabbitMQ.Client.Events;
 global using Dapper;
 global using Microsoft.Data.Sqlite;
 global using projeto.infra.Helpers;
+global using AutoMapper;

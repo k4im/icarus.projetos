@@ -6,7 +6,7 @@ public class RepoProjetos : IRepoProjetos
     public delegate void aoCriarProjetoEventHandler(Projeto model);
     public event aoCriarProjetoEventHandler AocriarProjeto;
     readonly IMessageBusService _messageBroker;
-    public string conn = "Data Source=teste.db;";
+    public string conn = "Data Source=api-projetos.db;";
     public RepoProjetos(IMessageBusService messageBroker)
     {
         _messageBroker = messageBroker;

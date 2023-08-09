@@ -2,7 +2,8 @@ namespace projeto.infra.Repository;
 
 public class RepoProdutosDisponiveis : IRepoProdutosDisponiveis
 {
-    public string conn = "Data Source=teste.db;";
+    public string conn = "Data Source=api-projetos.db;";
+    public static string conn2 = "Data Source=api-projetos.db;";
 
     public async Task<bool> AdicionarProdutos(ProdutosDisponiveis model)
     {
@@ -96,12 +97,13 @@ public class RepoProdutosDisponiveis : IRepoProdutosDisponiveis
         await db.SaveChangesAsync();
     }
 
-    public async Task<ProdutosDisponiveis> BuscarPorId(int id)
+    public static async Task<ProdutosDisponiveis> BuscarPorId(int id)
     {
+        var query = "SELECT * FROM Produtos WHERE Id LIKE @busca";
         try
         {
-            using var connc = new SqliteConnection(conn);
-            var resultado = await connc.QueryFirstOrDefaultAsync<ProdutosDisponiveis>("SELECT * FROM Produtos WHERE Id LIKE @busca",
+            using var connc = new SqliteConnection(conn2);
+            var resultado = await connc.QueryFirstOrDefaultAsync<ProdutosDisponiveis>(query,
                 new { busca = id });
             return resultado;
         }

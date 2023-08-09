@@ -4,11 +4,9 @@ public class MessageBusService : MessageBusServiceExtension, IMessageBusService
     readonly IConfiguration _config;
     readonly IConnection _connection;
     readonly IModel _channel;
-    readonly HttpContent _content;
-    public MessageBusService(IConfiguration config, HttpContent content)
+    public MessageBusService(IConfiguration config)
     {
         _config = config;
-        _content = content;
 
         // Definindo a ConnectionFactory, passando o hostname, user, pwd, port
         var factory = new ConnectionFactory()
@@ -61,8 +59,7 @@ public class MessageBusService : MessageBusServiceExtension, IMessageBusService
         => Console.WriteLine("--> RabbitMQ foi derrubado");
     string SerializarObjeto(Projeto evento)
     {
-        var correlationId = _content.Headers.GetValues("X-CorrelationID").FirstOrDefault();
-        var projetoModel = new Envelope<Projeto>(evento, correlationId);
+        var projetoModel = new Envelope<Projeto>(evento, "123");
         return JsonConvert.SerializeObject(projetoModel);
     }
 }
