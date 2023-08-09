@@ -36,7 +36,7 @@ jobs:
       
       - name: xUnitTests
         run: dotnet test --no-build --verbosity normal
-        working-directory: /Tests/projeto.service.tests
+        working-directory: ./Tests/projeto.service.tests
   
   build:
 
@@ -50,7 +50,7 @@ jobs:
           dotnet-version: 7.0.x
       - name: Build API 
         run: dotnet build --no-restore
-        working-directory: /projeto.service
+        working-directory: ./projeto.service
 
   docker:
   
