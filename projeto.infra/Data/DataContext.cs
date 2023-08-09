@@ -1,14 +1,12 @@
 namespace projeto.infra.Data;
-
 public class DataContext : DbContext
 {
     public DataContext()
-    {
-    }
+    { }
 
     public DataContext(DbContextOptions options) : base(options)
-    {
-    }
+    { }
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         if (!optionsBuilder.IsConfigured)

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gfPdladRZ/YPLmp+pMb46IqtOtiClPcUkpD4rnJlR5vpwxSnFgmfwKee3+aaZT9hjqQgNg2gxNghSSo3jPYnqQ==",
+  "dgSpecHash": "QL4qMjm87Ay2rP2Bfpyr2Q6k6wYJcFo0ZBgtCdNJYwgMbr4ee8V3sGFk3CdrTz348dKU6DKfttYvzpN9N/atIA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\santo\\github\\icarus-sistema\\icarus.projetos\\projeto.service\\projeto.service.csproj",
+  "projectFilePath": "c:\\Users\\santo\\github\\icarus-sistema\\icarus.projetos\\projeto.service\\projeto.service.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\santo\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\santo\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

@@ -4,7 +4,8 @@ public class MessageBusService : MessageBusServiceExtension, IMessageBusService
     readonly IConfiguration _config;
     readonly IConnection _connection;
     readonly IModel _channel;
-    public MessageBusService(IConfiguration config)
+    readonly IHttpContextAccessor _context;
+    public MessageBusService(IConfiguration config, IHttpContextAccessor context)
     {
         _config = config;
 
@@ -29,6 +30,7 @@ public class MessageBusService : MessageBusServiceExtension, IMessageBusService
         {
             Console.WriteLine($"--> Não foi possivel se conectar com o TA BINMessage Bus: {e.Message}");
         }
+        _context = context;
     }
 
     // Metodo de publicação de um novo projeto contendo todos os dados do projeto
@@ -59,7 +61,8 @@ public class MessageBusService : MessageBusServiceExtension, IMessageBusService
         => Console.WriteLine("--> RabbitMQ foi derrubado");
     string SerializarObjeto(Projeto evento)
     {
-        var projetoModel = new Envelope<Projeto>(evento, "123");
+        var correlationID = _context.HttpContext.Request.Headers["X-CorrelationID"];
+        var projetoModel = new Envelope<Projeto>(evento, correlationID);
         return JsonConvert.SerializeObject(projetoModel);
     }
 }

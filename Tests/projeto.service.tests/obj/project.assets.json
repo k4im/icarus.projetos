@@ -3590,7 +3590,10 @@
         },
         "runtime": {
           "bin/placeholder/projeto.infra.dll": {}
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       },
       "projeto.service/1.0.0": {
         "type": "project",
