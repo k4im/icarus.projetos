@@ -62,8 +62,7 @@ public class RepoProjetos : IRepoProjetos
                 p.ProdutoUtilizado = c;
                 return p;
             },
-            param: new { @busca = id },
-            splitOn: "ProdutoUtilizadoId");
+            param: new { @busca = id });
             return result.FirstOrDefault();
         }
         catch (Exception)
