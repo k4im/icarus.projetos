@@ -1,4 +1,4 @@
-namespace projeto.domain;
+namespace projeto.domain.Entity;
 
 public class ProdutosDisponiveis
 {

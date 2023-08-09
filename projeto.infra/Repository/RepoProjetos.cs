@@ -37,7 +37,7 @@ public class RepoProjetos : IRepoProjetos
         }
     }
 
-    public async Task<Projeto> BuscarPorId(int? id)
+    public async Task<ProjetoBuscaIdDTO> BuscarPorId(int? id)
     {
         using var connection = new SqliteConnection(conn);
         try
@@ -56,7 +56,7 @@ public class RepoProjetos : IRepoProjetos
                 Projetos.Id 
             LIKE 
                 @busca";
-            var result = await connection.QueryAsync<Projeto, ProdutosDisponiveis, Projeto>(query,
+            var result = await connection.QueryAsync<ProjetoBuscaIdDTO, ProdutoEmEstoqueDTO, ProjetoBuscaIdDTO>(query,
             map: (p, c) =>
             {
                 p.ProdutoUtilizado = c;

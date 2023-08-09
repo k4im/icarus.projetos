@@ -5,5 +5,5 @@ public interface IRepoProjetos
     Task<bool> CriarProjeto(Projeto model);
     Task<bool> AtualizarStatus(string model, int? id);
     Task<bool> DeletarProjeto(int? id);
-    Task<Projeto> BuscarPorId(int? id);
+    Task<ProjetoBuscaIdDTO> BuscarPorId(int? id);
 }

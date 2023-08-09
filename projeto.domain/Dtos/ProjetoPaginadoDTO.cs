@@ -1,4 +1,4 @@
-namespace projeto.domain;
+namespace projeto.domain.Dtos;
 
 public class ProjetoPaginadoDTO
 {

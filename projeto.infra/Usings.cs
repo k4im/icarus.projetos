@@ -1,5 +1,7 @@
 ﻿global using projeto.infra.AsyncComm.Extensions;
 global using projeto.domain;
+global using projeto.domain.Entity;
+global using projeto.domain.Dtos;
 global using projeto.infra.Data;
 global using Microsoft.EntityFrameworkCore;
 global using projeto.infra.AsyncComm;
@@ -11,5 +13,3 @@ global using Newtonsoft.Json;
 global using RabbitMQ.Client.Events;
 global using Dapper;
 global using Microsoft.Data.Sqlite;
-global using projeto.infra.Helpers;
-global using AutoMapper;

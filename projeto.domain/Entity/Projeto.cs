@@ -1,7 +1,4 @@
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace projeto.domain;
-
+namespace projeto.domain.Entity;
 public class Projeto
 {
     protected Projeto()
