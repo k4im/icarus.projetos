@@ -17,7 +17,7 @@
             <response code="200"> Retorna o projeto</response>
             <response code="404"> Não existe um projeto com este ID</response>
         </member>
-        <member name="M:projeto.service.Controllers.ProjetoController.adicionarProjeto(projeto.domain.Projeto)">
+        <member name="M:projeto.service.Controllers.ProjetoController.adicionarProjeto(projeto.domain.Dtos.ProjetoDTO)">
              <summary>
              Ira adicionar um novo projeto ao banco de dados, também estará realizando o envio do projeto para o service BUS
              </summary>

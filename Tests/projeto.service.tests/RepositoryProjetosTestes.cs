@@ -7,7 +7,7 @@ public class RepositoryProjetosTestes
     public async void Deve_retornar_lista_de_projetos()
     {
         //Arrange
-        var resposta = new Response<Projeto>(FakeProjeto.FactoryListaProjetos(), 1, 1);
+        var resposta = new Response<ProjetoPaginadoDTO>(FakeProjetoPaginado.FactoryListaProjetos(), 1, 1);
         mockRepo.Setup(repo => repo.BuscarProdutos(1, 5).Result)
         .Returns(resposta);
         //Act
@@ -21,7 +21,7 @@ public class RepositoryProjetosTestes
     public async void Deve_retonar_projeto()
     {
         // Arrange
-        var resposta = FakeProjeto.FactoryProjeto();
+        var resposta = FakeProjetoBuscaId.FactoryProjeto();
         mockRepo.Setup(repo => repo.BuscarPorId(1).Result)
         .Returns(resposta);
 
