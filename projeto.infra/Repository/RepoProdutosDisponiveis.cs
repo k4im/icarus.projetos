@@ -56,7 +56,7 @@ public class RepoProdutosDisponiveis : IRepoProdutosDisponiveis
     public async Task<Response<ProdutosDisponiveis>> BuscarTodosProdutos()
     {
         using var connection = new SqliteConnection(conn);
-        var query = "SELECT * FROM ProdutosDispoinveis";
+        var query = "SELECT * FROM ProdutosEmEstoque";
         try
         {
             var produtos = await connection.QueryAsync<ProdutosDisponiveis>(query);
@@ -97,13 +97,13 @@ public class RepoProdutosDisponiveis : IRepoProdutosDisponiveis
         await db.SaveChangesAsync();
     }
 
-    public static async Task<ProdutosDisponiveis> BuscarPorId(int id)
+    public static ProdutosDisponiveis BuscarPorId(int id)
     {
         var query = "SELECT * FROM Produtos WHERE Id LIKE @busca";
         try
         {
             using var connc = new SqliteConnection(conn2);
-            var resultado = await connc.QueryFirstOrDefaultAsync<ProdutosDisponiveis>(query,
+            var resultado = connc.QueryFirstOrDefault<ProdutosDisponiveis>(query,
                 new { busca = id });
             return resultado;
         }
