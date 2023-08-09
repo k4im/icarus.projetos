@@ -43,7 +43,7 @@ public class Projeto
 
     [Required(ErrorMessage = "Campo obrigatório")]
     [DataType("NVARCHAR(150)")]
-    public ProdutosDisponiveis ProdutoUtilizado { get; private set; }
+    public ProdutosDisponiveis ProdutoUtilizado { get; set; }
 
     [Required(ErrorMessage = "Campo obrigatório")]
     [DataType("NVARCHAR(150)")]

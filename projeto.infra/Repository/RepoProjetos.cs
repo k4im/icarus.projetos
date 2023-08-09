@@ -42,9 +42,29 @@ public class RepoProjetos : IRepoProjetos
         using var connection = new SqliteConnection(conn);
         try
         {
-            var query = "SELECT * FROM Projetos WHERE Id LIKE @busca";
-            var result = await connection.QueryFirstAsync<Projeto>(query, new { busca = id });
-            return result;
+            var query = @"
+            SELECT 
+                Projetos.*,
+                ProdutosEmEstoque.*
+            FROM 
+                Projetos 
+            INNER JOIN 
+                ProdutosEmEstoque
+            ON 
+                Projetos.ProdutoUtilizadoId = ProdutosEmEstoque.Id
+            WHERE 
+                Projetos.Id 
+            LIKE 
+                @busca";
+            var result = await connection.QueryAsync<Projeto, ProdutosDisponiveis, Projeto>(query,
+            map: (p, c) =>
+            {
+                p.ProdutoUtilizado = c;
+                return p;
+            },
+            param: new { @busca = id },
+            splitOn: "ProdutoUtilizadoId");
+            return result.FirstOrDefault();
         }
         catch (Exception)
         {
