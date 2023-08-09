@@ -35,7 +35,7 @@ jobs:
           dotnet-version: 7.0.x
       
       - name: xUnitTests
-        run: dotnet test --no-build --verbosity normal
+        run: dotnet test
         working-directory: ./Tests/projeto.service.tests
   
   build:
