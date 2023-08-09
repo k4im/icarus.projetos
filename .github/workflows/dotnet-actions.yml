@@ -28,6 +28,8 @@ jobs:
       runs-on: ubuntu-latest
 
       steps:
+      - uses: actions/checkout@v3
+
       - name: Test
         run: dotnet test --no-build --verbosity normal
         working-directory: /Tests/projeto.service.tests
@@ -37,6 +39,8 @@ jobs:
       runs-on: ubuntu-latest
 
       steps:
+      - uses: actions/checkout@v3
+
       - name: Build API 
         run: dotnet build --no-restore
         working-directory: /projeto.service
@@ -46,6 +50,8 @@ jobs:
       runs-on: ubuntu-latest
 
       steps:
+      - uses: actions/checkout@v3
+      
       - name: Login to Docker Hub
         uses: docker/login-action@v2
         with:
