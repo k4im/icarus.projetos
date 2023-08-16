@@ -60,7 +60,7 @@ public class RepoProdutosDisponiveis : IRepoProdutosDisponiveis
         try
         {
             var produtos = await connection.QueryAsync<ProdutosDisponiveis>(query);
-            return new Response<ProdutosDisponiveis>(produtos.ToList(), 1, 2);
+            return new Response<ProdutosDisponiveis>(produtos.ToList(), 1, 2, 2);
         }
         catch (Exception)
         {
