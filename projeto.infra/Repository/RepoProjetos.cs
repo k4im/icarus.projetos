@@ -77,10 +77,11 @@ public class RepoProjetos : IRepoProjetos
         var queryTotal = "SELECT COUNT(*) FROM Projetos";
 
         using var connection = new SqliteConnection(conn);
-        var total = Math.Ceiling(await connection.ExecuteScalarAsync<int>(queryTotal) / resultadoPorPagina);
+        var totalItems = await connection.ExecuteScalarAsync<int>(queryTotal);
+        var total = Math.Ceiling(totalItems / resultadoPorPagina);
         var projetosPaginados = await connection
             .QueryAsync<ProjetoPaginadoDTO>(queryPaginado, new { resultado = resultadoPorPagina, pagina = (pagina - 1) * resultadoPorPagina });
-        return new Response<ProjetoPaginadoDTO>(projetosPaginados.ToList(), pagina, (int)total);
+        return new Response<ProjetoPaginadoDTO>(projetosPaginados.ToList(), pagina, (int)total, totalItems);
     }
 
     public async Task<bool> CriarProjeto(Projeto model)
