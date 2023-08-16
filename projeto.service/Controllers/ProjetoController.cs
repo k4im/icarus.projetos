@@ -3,7 +3,7 @@ using AutoMapper;
 namespace projeto.service.Controllers;
 
 [ApiController]
-[Route("api/[controller]")]
+[Route("api/")]
 public class ProjetoController : ControllerBase
 {
     readonly IRepoProjetos _repo;

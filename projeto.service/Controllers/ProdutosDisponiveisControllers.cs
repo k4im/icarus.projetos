@@ -1,7 +1,7 @@
 namespace projeto.service.Controllers;
 
 [ApiController]
-[Route("api/[controller]")]
+[Route("api/")]
 public class ProdutosDisponiveisControllers : ControllerBase
 {
     readonly IRepoProdutosDisponiveis _repo;
