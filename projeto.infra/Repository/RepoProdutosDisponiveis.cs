@@ -53,14 +53,14 @@ public class RepoProdutosDisponiveis : IRepoProdutosDisponiveis
         }
     }
 
-    public async Task<Response<ProdutosDisponiveis>> BuscarTodosProdutos()
+    public async Task<List<ProdutoEmEstoqueDTO>> BuscarTodosProdutos()
     {
         using var connection = new SqliteConnection(conn);
         var query = "SELECT * FROM ProdutosEmEstoque";
         try
         {
-            var produtos = await connection.QueryAsync<ProdutosDisponiveis>(query);
-            return new Response<ProdutosDisponiveis>(produtos.ToList(), 1, 2, 2);
+            var produtos = await connection.QueryAsync<ProdutoEmEstoqueDTO>(query);
+            return produtos.ToList();
         }
         catch (Exception)
         {

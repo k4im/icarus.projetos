@@ -7,7 +7,7 @@ public class RepositoryProjetosTestes
     public async void Deve_retornar_lista_de_projetos()
     {
         //Arrange
-        var resposta = new Response<ProjetoPaginadoDTO>(FakeProjetoPaginado.FactoryListaProjetos(), 1, 1);
+        var resposta = new Response<ProjetoPaginadoDTO>(FakeProjetoPaginado.FactoryListaProjetos(), 1, 1, 1);
         mockRepo.Setup(repo => repo.BuscarProdutos(1, 5).Result)
         .Returns(resposta);
         //Act
