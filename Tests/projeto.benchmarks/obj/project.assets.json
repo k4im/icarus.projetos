@@ -4800,38 +4800,40 @@
     ]
   },
   "packageFolders": {
-    "/home/joao/.nuget/packages/": {}
+    "C:\\Users\\santo\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/joao/github/icarus.projetos/Tests/projeto.benchmarks/projeto.benchmarks.csproj",
+      "projectUniqueName": "c:\\Users\\santo\\github\\icarus-sistema\\icarus.projetos\\Tests\\projeto.benchmarks\\projeto.benchmarks.csproj",
       "projectName": "projeto.benchmarks",
-      "projectPath": "/home/joao/github/icarus.projetos/Tests/projeto.benchmarks/projeto.benchmarks.csproj",
-      "packagesPath": "/home/joao/.nuget/packages/",
-      "outputPath": "/home/joao/github/icarus.projetos/Tests/projeto.benchmarks/obj/",
+      "projectPath": "c:\\Users\\santo\\github\\icarus-sistema\\icarus.projetos\\Tests\\projeto.benchmarks\\projeto.benchmarks.csproj",
+      "packagesPath": "C:\\Users\\santo\\.nuget\\packages\\",
+      "outputPath": "c:\\Users\\santo\\github\\icarus-sistema\\icarus.projetos\\Tests\\projeto.benchmarks\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/joao/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\santo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "/home/joao/github/icarus.projetos/projeto.domain/projeto.domain.csproj": {
-              "projectPath": "/home/joao/github/icarus.projetos/projeto.domain/projeto.domain.csproj"
+            "c:\\Users\\santo\\github\\icarus-sistema\\icarus.projetos\\projeto.domain\\projeto.domain.csproj": {
+              "projectPath": "c:\\Users\\santo\\github\\icarus-sistema\\icarus.projetos\\projeto.domain\\projeto.domain.csproj"
             },
-            "/home/joao/github/icarus.projetos/projeto.infra/projeto.infra.csproj": {
-              "projectPath": "/home/joao/github/icarus.projetos/projeto.infra/projeto.infra.csproj"
+            "c:\\Users\\santo\\github\\icarus-sistema\\icarus.projetos\\projeto.infra\\projeto.infra.csproj": {
+              "projectPath": "c:\\Users\\santo\\github\\icarus-sistema\\icarus.projetos\\projeto.infra\\projeto.infra.csproj"
             },
-            "/home/joao/github/icarus.projetos/projeto.service/projeto.service.csproj": {
-              "projectPath": "/home/joao/github/icarus.projetos/projeto.service/projeto.service.csproj"
+            "c:\\Users\\santo\\github\\icarus-sistema\\icarus.projetos\\projeto.service\\projeto.service.csproj": {
+              "projectPath": "c:\\Users\\santo\\github\\icarus-sistema\\icarus.projetos\\projeto.service\\projeto.service.csproj"
             }
           }
         }
@@ -4879,7 +4881,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.110/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
       }
     }
   }

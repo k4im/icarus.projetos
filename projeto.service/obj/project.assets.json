@@ -3532,19 +3532,19 @@
     ]
   },
   "packageFolders": {
-    "/home/joao/.nuget/packages/": {}
+    "/home/k4im/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/joao/github/icarus.projetos/projeto.service/projeto.service.csproj",
+      "projectUniqueName": "/mnt/c/Users/santo/github/icarus-sistema/icarus.projetos/projeto.service/projeto.service.csproj",
       "projectName": "projeto.service",
-      "projectPath": "/home/joao/github/icarus.projetos/projeto.service/projeto.service.csproj",
-      "packagesPath": "/home/joao/.nuget/packages/",
-      "outputPath": "/home/joao/github/icarus.projetos/projeto.service/obj/",
+      "projectPath": "/mnt/c/Users/santo/github/icarus-sistema/icarus.projetos/projeto.service/projeto.service.csproj",
+      "packagesPath": "/home/k4im/.nuget/packages/",
+      "outputPath": "/mnt/c/Users/santo/github/icarus-sistema/icarus.projetos/projeto.service/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/joao/.nuget/NuGet/NuGet.Config"
+        "/home/k4im/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -3556,11 +3556,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "/home/joao/github/icarus.projetos/projeto.domain/projeto.domain.csproj": {
-              "projectPath": "/home/joao/github/icarus.projetos/projeto.domain/projeto.domain.csproj"
+            "/mnt/c/Users/santo/github/icarus-sistema/icarus.projetos/projeto.domain/projeto.domain.csproj": {
+              "projectPath": "/mnt/c/Users/santo/github/icarus-sistema/icarus.projetos/projeto.domain/projeto.domain.csproj"
             },
-            "/home/joao/github/icarus.projetos/projeto.infra/projeto.infra.csproj": {
-              "projectPath": "/home/joao/github/icarus.projetos/projeto.infra/projeto.infra.csproj"
+            "/mnt/c/Users/santo/github/icarus-sistema/icarus.projetos/projeto.infra/projeto.infra.csproj": {
+              "projectPath": "/mnt/c/Users/santo/github/icarus-sistema/icarus.projetos/projeto.infra/projeto.infra.csproj"
             }
           }
         }
