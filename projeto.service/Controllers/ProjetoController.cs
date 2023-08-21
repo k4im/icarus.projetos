@@ -88,7 +88,7 @@ public class ProjetoController : ControllerBase
     /// <response code="404"> Informa que não foi possivel encontrar um produto com este ID</response>
     [HttpPut("update/{id}")]
     // [Authorize(Roles = "ADMIN")]
-    public async Task<IActionResult> atualizarStatusProjeto(string model, int? id)
+    public async Task<IActionResult> atualizarStatusProjeto([FromBody]string model, int? id)
     {
         if (!ModelState.IsValid) return BadRequest(ModelState);
         if (id == null) return StatusCode(404);
