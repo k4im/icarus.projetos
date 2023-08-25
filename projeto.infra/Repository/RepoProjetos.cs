@@ -126,4 +126,38 @@ public class RepoProjetos : IRepoProjetos
             return false;
         }
     }
+
+    public async Task<Response<ProjetoPaginadoDTO>> BuscarProdutosFiltrados(int pagina, float resultadoPorPagina, string filtro)
+    {
+        var queryPaginado = @"
+        SELECT 
+            Id, 
+            Nome, 
+            Status, 
+            DataInicio, 
+            DataEntrega, 
+            Valor 
+        FROM 
+            Projetos 
+        WHERE
+            Status 
+        LIKE
+            @filter
+        OR
+            Nome
+        LIKE
+            @filter            
+        LIMIT 
+            @resultado 
+        OFFSET 
+            @pagina";
+        var queryTotal = "SELECT COUNT(*) FROM Projetos WHERE Status LIKE @filter OR Nome LIKE @filter";
+
+        using var connection = new SqliteConnection(conn);
+        var totalItems = await connection.ExecuteScalarAsync<int>(queryTotal, new {filter = filtro});
+        var total = Math.Ceiling(totalItems / resultadoPorPagina);
+        var projetosPaginados = await connection
+            .QueryAsync<ProjetoPaginadoDTO>(queryPaginado, new { resultado = resultadoPorPagina, pagina = (pagina - 1) * resultadoPorPagina, filter = filtro });
+        return new Response<ProjetoPaginadoDTO>(projetosPaginados.ToList(), pagina, (int)total, totalItems);
+    }
 }

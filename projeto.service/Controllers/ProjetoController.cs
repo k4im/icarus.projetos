@@ -29,6 +29,19 @@ public class ProjetoController : ControllerBase
     }
 
     /// <summary>
+    /// Estará realizando a paginação e retornando uma lista completamente paginada de todos os projetos no banco de dados
+    /// </summary>
+    /// <response code="200">Retorna a lista com todos os projetos paginados</response>
+    [HttpGet("pesquisar/{pagina?}/{resultadoPorPagina?}")]
+    // [Authorize(Roles = "ADMIN,ATENDENTE")]
+    public async Task<IActionResult> BuscarProjetosFiltro([FromQuery]string filtro, int pagina = 1, float resultadoPorPagina = 5)
+    {
+        var projetos = await _repo.BuscarProdutosFiltrados(pagina, resultadoPorPagina, filtro);
+        if (projetos == null) return StatusCode(404);
+        return Ok(projetos);
+    }
+
+    /// <summary>
     /// Estará realizando a operação de busca de um projeto a partir de um ID
     /// </summary>
     /// <response code="200"> Retorna o projeto</response>
