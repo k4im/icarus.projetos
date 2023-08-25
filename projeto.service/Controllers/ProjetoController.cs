@@ -24,7 +24,7 @@ public class ProjetoController : ControllerBase
     public async Task<IActionResult> GetAllProjects(int pagina = 1, float resultadoPorPagina = 5)
     {
         var projetos = await _repo.BuscarProdutos(pagina, resultadoPorPagina);
-        if (projetos == null) return StatusCode(404);
+        if (!projetos.Data.Any()) return StatusCode(404);
         return Ok(projetos);
     }
 
@@ -37,7 +37,7 @@ public class ProjetoController : ControllerBase
     public async Task<IActionResult> BuscarProjetosFiltro([FromQuery]string filtro, int pagina = 1, float resultadoPorPagina = 5)
     {
         var projetos = await _repo.BuscarProdutosFiltrados(pagina, resultadoPorPagina, filtro);
-        if (projetos == null) return StatusCode(404);
+        if (!projetos.Data.Any()) return StatusCode(404);
         return Ok(projetos);
     }
 
