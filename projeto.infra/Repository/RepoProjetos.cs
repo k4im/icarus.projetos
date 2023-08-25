@@ -11,7 +11,7 @@ public class RepoProjetos : IRepoProjetos
     {
         _messageBroker = messageBroker;
         AocriarProjeto += async (Projeto model) => { await RepoProdutosDisponiveis.AtualizarTabelaProdutosDisponiveis(model); };
-        AocriarProjeto += messageBroker.EnviarProjeto;
+        AocriarProjeto += _messageBroker.EnviarProjeto;
     }
 
     public async Task<bool> AtualizarStatus(string model, int? id)
@@ -143,10 +143,14 @@ public class RepoProjetos : IRepoProjetos
             Status 
         LIKE
             @filter
+        COLLATE
+            NOACCENTS   
         OR
             Nome
         LIKE
-            @filter            
+            @filter
+        COLLATE
+            NOACCENTS          
         LIMIT 
             @resultado 
         OFFSET 

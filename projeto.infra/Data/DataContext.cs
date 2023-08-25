@@ -17,6 +17,7 @@ public class DataContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         // Fluent API for specifying concurrency token
+        modelBuilder.UseCollation("SQL_LATIN1_GENERAL_CP1_CI_AI");
         modelBuilder.Entity<Projeto>()
             .HasIndex(p => new {p.Status, p.Nome}, "X-Consultas-Indexes");
         
