@@ -1,4 +1,7 @@
+using System.Runtime.CompilerServices;
+
 namespace projeto.domain.Entity;
+
 public class Projeto
 {
     protected Projeto()

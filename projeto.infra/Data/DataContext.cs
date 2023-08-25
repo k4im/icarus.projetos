@@ -18,6 +18,9 @@ public class DataContext : DbContext
     {
         // Fluent API for specifying concurrency token
         modelBuilder.Entity<Projeto>()
+            .HasIndex(p => new {p.Status, p.Nome}, "X-Consultas-Indexes");
+        
+        modelBuilder.Entity<Projeto>()
             .Property(projeto => projeto.RowVersion)
             .IsConcurrencyToken();
 
