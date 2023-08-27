@@ -18,7 +18,7 @@ public class Projeto
         DataEntrega = dataEntrega;
         ProdutoUtilizadoId = produtoUtilizadoId;
         QuantidadeUtilizado = VerificarQuantidade(quantidadeUtilizado);
-        Descricao = VerificarDescricao(descricao);
+        Descricao = descricao;
         Valor = VerificarValor(valor);
     }
 
@@ -47,7 +47,6 @@ public class Projeto
 
     [Required(ErrorMessage = "Campo obrigatório")]
     [DataType("NVARCHAR(150)")]
-    // [ForeignKey("Produtoutilizado")]
     public int ProdutoUtilizadoId { get; private set; }
 
 
@@ -75,17 +74,10 @@ public class Projeto
         if (valor < 0) throw new Exception("O valor não pode ser negativo!");
         return valor;
     }
-
-    string VerificarDescricao(string desc)
-    {
-        if (string.IsNullOrEmpty(desc)) throw new Exception("Campo não pode ser nulo");
-        if (!Regex.IsMatch(desc, @"^[a-zA-Z ]+$", RegexOptions.Compiled)) throw new Exception("A descrição não pode conter caracteres especiais");
-        return desc;
-    }
     string VerificarNome(string nome)
     {
         if (string.IsNullOrEmpty(nome)) throw new Exception("Campo não pode ser nulo");
-        if (!Regex.IsMatch(nome, @"^[a-zA-Z ]+$", RegexOptions.Compiled)) throw new Exception("O nome não pode conter caracteres especiais");
+        if (!Regex.IsMatch(nome, @"^[a-zA-Zà-úÀ-Ú0-9 ]+$", RegexOptions.Compiled)) throw new Exception("O nome não pode conter caracteres especiais");
         return nome;
     }
 

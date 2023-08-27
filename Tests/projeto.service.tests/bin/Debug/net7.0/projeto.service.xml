@@ -10,6 +10,12 @@
             </summary>
             <response code="200">Retorna a lista com todos os projetos paginados</response>
         </member>
+        <member name="M:projeto.service.Controllers.ProjetoController.BuscarProjetosFiltro(System.String,System.Int32,System.Single)">
+            <summary>
+            Estará realizando a paginação e retornando uma lista completamente paginada de todos os projetos no banco de dados
+            </summary>
+            <response code="200">Retorna a lista com todos os projetos paginados</response>
+        </member>
         <member name="M:projeto.service.Controllers.ProjetoController.GetById(System.Nullable{System.Int32})">
             <summary>
             Estará realizando a operação de busca de um projeto a partir de um ID

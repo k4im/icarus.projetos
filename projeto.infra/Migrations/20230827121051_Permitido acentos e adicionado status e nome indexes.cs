@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace projeto.infra.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialMigrationWithRelationships : Migration
+    public partial class Permitidoacentoseadicionadostatusenomeindexes : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -52,9 +52,19 @@ namespace projeto.infra.Migrations
                 });
 
             migrationBuilder.CreateIndex(
+                name: "IX_Projetos_Nome",
+                table: "Projetos",
+                column: "Nome");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Projetos_ProdutoUtilizadoId",
                 table: "Projetos",
                 column: "ProdutoUtilizadoId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Projetos_Status",
+                table: "Projetos",
+                column: "Status");
         }
 
         /// <inheritdoc />

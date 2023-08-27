@@ -75,9 +75,11 @@ namespace projeto.infra.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("Nome");
+
                     b.HasIndex("ProdutoUtilizadoId");
 
-                    b.HasIndex(new[] { "Status", "Nome" }, "X-Consultas-Indexes");
+                    b.HasIndex("Status");
 
                     b.ToTable("Projetos");
                 });

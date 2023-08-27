@@ -11,8 +11,8 @@ using projeto.infra.Data;
 namespace projeto.infra.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230825182012_AdicionadoCollation")]
-    partial class AdicionadoCollation
+    [Migration("20230827121051_Permitido acentos e adicionado status e nome indexes")]
+    partial class Permitidoacentoseadicionadostatusenomeindexes
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -78,9 +78,11 @@ namespace projeto.infra.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("Nome");
+
                     b.HasIndex("ProdutoUtilizadoId");
 
-                    b.HasIndex(new[] { "Status", "Nome" }, "X-Consultas-Indexes");
+                    b.HasIndex("Status");
 
                     b.ToTable("Projetos");
                 });

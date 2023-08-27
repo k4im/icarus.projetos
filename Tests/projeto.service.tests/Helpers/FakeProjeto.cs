@@ -6,7 +6,7 @@ namespace projeto.service.tests.Helpers
             => new Projeto("Projeto FAKE", "status", DateTime.UtcNow, DateTime.UtcNow.AddHours(1), 1, 5, "asd", 155.5);
 
         public static Projeto FactoryProjetoNameError()
-            => new Projeto("Projeto F@KE", "status", DateTime.UtcNow, DateTime.UtcNow.AddHours(1), 1, 5, "asd", 155.5);
+            => new Projeto("Projeto 1", "status", DateTime.UtcNow, DateTime.UtcNow.AddHours(1), 1, 5, "asd", 155.5);
         public static Projeto FactoryProjetoDescError()
             => new Projeto("Projeto FAKE", "status", DateTime.UtcNow, DateTime.UtcNow.AddHours(1), 1, 5, "descric@ão", 155.5);
         public static Projeto FactoryProjetoDescErrorNull()

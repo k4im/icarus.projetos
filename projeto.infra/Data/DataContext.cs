@@ -18,9 +18,13 @@ public class DataContext : DbContext
     {
         // Fluent API for specifying concurrency token
         modelBuilder.UseCollation("SQL_LATIN1_GENERAL_CP1_CI_AI");
+
         modelBuilder.Entity<Projeto>()
-            .HasIndex(p => new {p.Status, p.Nome}, "X-Consultas-Indexes");
-        
+            .HasIndex(p => p.Nome);
+
+        modelBuilder.Entity<Projeto>()
+            .HasIndex(p => p.Status);
+
         modelBuilder.Entity<Projeto>()
             .Property(projeto => projeto.RowVersion)
             .IsConcurrencyToken();
