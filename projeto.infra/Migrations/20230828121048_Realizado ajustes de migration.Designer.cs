@@ -11,8 +11,8 @@ using projeto.infra.Data;
 namespace projeto.infra.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230827121051_Permitido acentos e adicionado status e nome indexes")]
-    partial class Permitidoacentoseadicionadostatusenomeindexes
+    [Migration("20230828121048_Realizado ajustes de migration")]
+    partial class Realizadoajustesdemigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

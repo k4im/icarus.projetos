@@ -92,8 +92,12 @@ public class RepoProdutosDisponiveis : IRepoProdutosDisponiveis
     public static async Task AtualizarTabelaProdutosDisponiveis(Projeto model)
     {
         using var db = new DataContext();
-        var produto = await db.ProdutosEmEstoque.AsNoTracking().FirstOrDefaultAsync(x => x.Id == model.ProdutoUtilizadoId);
+        var produto = await db.ProdutosEmEstoque.FirstOrDefaultAsync(x => x.Id == model.ProdutoUtilizadoId);
         produto.Quantidade -= model.QuantidadeUtilizado;
+        if(produto.Quantidade <= 0) {
+            db.Remove(produto);
+            
+        }
         await db.SaveChangesAsync();
     }
 

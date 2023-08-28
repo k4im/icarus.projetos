@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace projeto.infra.Migrations
 {
     /// <inheritdoc />
-    public partial class Permitidoacentoseadicionadostatusenomeindexes : Migration
+    public partial class Realizadoajustesdemigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
