@@ -12,8 +12,8 @@ public class MessageBusService : MessageBusServiceExtension, IMessageBusService
         var factory = new ConnectionFactory()
         {
             HostName = _config["RabbitMQ"],
-            UserName = _config["RabbitMQUser"],
-            Password = _config["RabbitMQPwd"],
+            UserName = Environment.GetEnvironmentVariable("Rabbit_MQ_User"),
+            Password = Environment.GetEnvironmentVariable("Rabbit_MQ_Pwd"),
             Port = int.Parse(_config["RabbitPort"])
         };
         try
@@ -57,7 +57,7 @@ public class MessageBusService : MessageBusServiceExtension, IMessageBusService
     // "Logger" caso de algum erro 
     void RabbitMQFailed(object sender, ShutdownEventArgs e)
         => Console.WriteLine("--> RabbitMQ foi derrubado");
-    string SerializarObjeto(Projeto evento)
+    static string SerializarObjeto(Projeto evento)
     {
         var projetoModel = new Envelope<Projeto>(evento, "correlationID");
         return JsonConvert.SerializeObject(projetoModel);

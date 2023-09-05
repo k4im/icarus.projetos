@@ -10,8 +10,16 @@ public class DataContext : DbContext
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         if (!optionsBuilder.IsConfigured)
-        {
-            optionsBuilder.UseSqlite("Data Source=api-projetos.db;");
+        {   
+            var DbConnection = Environment.GetEnvironmentVariable("DB_CONNECTION");
+            if(DbConnection != "") {
+                var ServerVersion = new MySqlServerVersion(new Version(8,0,31));
+                optionsBuilder.UseMySql(DbConnection, ServerVersion);
+                Database.EnsureCreated();
+            }
+            else {
+                optionsBuilder.UseSqlite("Data Source=api-projetos.db;");
+            }
         }
     }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
