@@ -1,9 +1,11 @@
+using MySqlConnector;
+
 namespace projeto.infra.Repository;
 
 public class RepoProdutosDisponiveis : IRepoProdutosDisponiveis
 {
-    public string conn = "Data Source=api-projetos.db;";
-    public static string conn2 = "Data Source=api-projetos.db;";
+    public string conn = Environment.GetEnvironmentVariable("DB_CONNECTION");
+    public static string conn2 = Environment.GetEnvironmentVariable("DB_CONNECTION");
 
     public async Task<bool> AdicionarProdutos(ProdutosDisponiveis model)
     {
@@ -55,7 +57,7 @@ public class RepoProdutosDisponiveis : IRepoProdutosDisponiveis
 
     public async Task<List<ProdutoEmEstoqueDTO>> BuscarTodosProdutos()
     {
-        using var connection = new SqliteConnection(conn);
+        using var connection = new MySqlConnection(conn);
         var query = "SELECT * FROM ProdutosEmEstoque";
         try
         {
@@ -106,7 +108,7 @@ public class RepoProdutosDisponiveis : IRepoProdutosDisponiveis
         var query = "SELECT * FROM Produtos WHERE Id LIKE @busca";
         try
         {
-            using var connc = new SqliteConnection(conn2);
+            using var connc = new MySqlConnection(conn2);
             var resultado = connc.QueryFirstOrDefault<ProdutosDisponiveis>(query,
                 new { busca = id });
             return resultado;

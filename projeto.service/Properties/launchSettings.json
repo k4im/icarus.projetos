@@ -6,20 +6,7 @@
       "launchUrl": "swagger",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "DB_CONNECTION": "",
-        "RABBIT_MQ_USER": "",
-        "RABBIT_MQ_PWD": ""
-      },
-      "dotnetRunMessages": true,
-      "applicationUrl": "http://localhost:5086"
-    },
-    "https": {
-      "commandName": "Project",
-      "launchBrowser": true,
-      "launchUrl": "swagger",
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development",
-        "DB_CONNECTION": "",
+        "DB_CONNECTION": "Server=localhost; Uid=icarus-root; Password=Xaes@$1412; Database=IC_Projetos; Port=3306",
         "RABBIT_MQ_USER": "",
         "RABBIT_MQ_PWD": ""
       },
@@ -32,7 +19,10 @@
       "launchUrl": "https://localhost:5086/swagger",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "ASPNETCORE_URLS": "http://localhost:5086"
+        "ASPNETCORE_URLS": "http://localhost:5086",
+        "DB_CONNECTION": "Server=localhost; Uid=icarus-root; Password=Xaes@$1412; Database=IC_Projetos; Port=3306",
+        "RABBIT_MQ_USER": "",
+        "RABBIT_MQ_PWD": ""
       },
       "distributionName": ""
     }

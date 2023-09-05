@@ -12,14 +12,10 @@ public class DataContext : DbContext
         if (!optionsBuilder.IsConfigured)
         {   
             var DbConnection = Environment.GetEnvironmentVariable("DB_CONNECTION");
-            if(DbConnection != "") {
-                var ServerVersion = new MySqlServerVersion(new Version(8,0,31));
-                optionsBuilder.UseMySql(DbConnection, ServerVersion);
-                Database.EnsureCreated();
-            }
-            else {
-                optionsBuilder.UseSqlite("Data Source=api-projetos.db;");
-            }
+            var ServerVersion = new MySqlServerVersion(new Version(8,0,31));
+            optionsBuilder.UseMySql(DbConnection, ServerVersion);
+            Database.EnsureCreated();
+            
         }
     }
     protected override void OnModelCreating(ModelBuilder modelBuilder)

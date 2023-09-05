@@ -10,9 +10,15 @@
             </summary>
             <response code="200">Retorna a lista com todos os projetos paginados</response>
         </member>
-        <member name="M:projeto.service.Controllers.ProjetoController.BuscarProjetosFiltro(System.String,System.Int32,System.Single)">
+        <member name="M:projeto.service.Controllers.ProjetoController.BuscarProjetosFiltroNome(System.String,System.Int32,System.Single)">
             <summary>
-            Estará realizando a paginação e retornando uma lista completamente paginada de todos os projetos no banco de dados
+            Estará realizando a busca de projetos partindo de um nome especifico
+            </summary>
+            <response code="200">Retorna a lista com todos os projetos paginados</response>
+        </member>
+        <member name="M:projeto.service.Controllers.ProjetoController.BuscarProjetosStatus(System.String,System.Int32,System.Single)">
+            <summary>
+            Estará realizando a busca de projetos partindo de um status especifico
             </summary>
             <response code="200">Retorna a lista com todos os projetos paginados</response>
         </member>

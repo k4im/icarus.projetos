@@ -1,4 +1,6 @@
 
+using MySqlConnector;
+
 namespace projeto.infra.Repository;
 public class RepoProjetos : IRepoProjetos
 {
@@ -6,7 +8,7 @@ public class RepoProjetos : IRepoProjetos
     public delegate void aoCriarProjetoEventHandler(Projeto model);
     public event aoCriarProjetoEventHandler AocriarProjeto;
     readonly IMessageBusService _messageBroker;
-    public string conn = "Data Source=api-projetos.db;";
+    public string conn = Environment.GetEnvironmentVariable("DB_CONNECTION");
     public RepoProjetos(IMessageBusService messageBroker)
     {
         _messageBroker = messageBroker;
@@ -39,7 +41,7 @@ public class RepoProjetos : IRepoProjetos
 
     public async Task<ProjetoBuscaIdDTO> BuscarPorId(int? id)
     {
-        using var connection = new SqliteConnection(conn);
+        using var connection = new MySqlConnection(conn);
         try
         {
             var query = @"
@@ -76,7 +78,7 @@ public class RepoProjetos : IRepoProjetos
         var queryPaginado = "SELECT Id, Nome, Status, DataInicio, DataEntrega, Valor FROM Projetos LIMIT @resultado OFFSET @pagina";
         var queryTotal = "SELECT COUNT(*) FROM Projetos";
 
-        using var connection = new SqliteConnection(conn);
+        using var connection = new MySqlConnection(conn);
         var totalItems = await connection.ExecuteScalarAsync<int>(queryTotal);
         var total = Math.Ceiling(totalItems / resultadoPorPagina);
         var projetosPaginados = await connection
@@ -151,7 +153,7 @@ public class RepoProjetos : IRepoProjetos
             @pagina";
         var queryTotal = "SELECT COUNT(*) FROM Projetos WHERE Status LIKE @filter OR Nome LIKE @filter";
 
-        using var connection = new SqliteConnection(conn);
+        using var connection = new MySqlConnection(conn);
         var totalItems = await connection.ExecuteScalarAsync<int>(queryTotal, new {filter = filtro});
         var total = Math.Ceiling(totalItems / resultadoPorPagina);
         var projetosPaginados = await connection
