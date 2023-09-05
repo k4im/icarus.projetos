@@ -7,8 +7,8 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
         "DB_CONNECTION": "",
-        "Rabbit_MQ_User": "",
-        "Rabbit_MQ_Pwd": ""
+        "RABBIT_MQ_USER": "",
+        "RABBIT_MQ_PWD": ""
       },
       "dotnetRunMessages": true,
       "applicationUrl": "http://localhost:5086"
@@ -20,8 +20,8 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
         "DB_CONNECTION": "",
-        "Rabbit_MQ_User": "",
-        "Rabbit_MQ_Pwd": ""
+        "RABBIT_MQ_USER": "",
+        "RABBIT_MQ_PWD": ""
       },
       "dotnetRunMessages": true,
       "applicationUrl": "http://localhost:5086"
