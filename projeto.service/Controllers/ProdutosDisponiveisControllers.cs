@@ -12,7 +12,7 @@ public class ProdutosDisponiveisControllers : ControllerBase
     }
 
     [HttpGet("produtosEmEstoque")]
-    public async Task<ActionResult<List<ProdutosDisponiveis>>> mostrarProdutos()
+    public async Task<ActionResult<List<ProdutosDisponiveis>>> MostrarProdutos()
     {
         var produtos = await _repo.BuscarTodosProdutos();
         return Ok(produtos);
