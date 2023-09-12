@@ -12,8 +12,8 @@ public class MessageBusService : MessageBusServiceExtension, IMessageBusService
         var factory = new ConnectionFactory()
         {
             HostName = _config["RabbitMQ"],
-            UserName = Environment.GetEnvironmentVariable("Rabbit_MQ_User"),
-            Password = Environment.GetEnvironmentVariable("Rabbit_MQ_Pwd"),
+            UserName = Environment.GetEnvironmentVariable("Rabbit_MQ_USER"),
+            Password = Environment.GetEnvironmentVariable("Rabbit_MQ_PWD"),
             Port = int.Parse(_config["RabbitPort"])
         };
         try
