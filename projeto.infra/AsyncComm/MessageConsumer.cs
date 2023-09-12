@@ -14,8 +14,8 @@ public class MessageConsumer : MessageConsumerExtension, IMessageConsumer
         {
             HostName = _config["RabbitMQ"],
             Port = int.Parse(_config["RabbitPort"]),
-            UserName = Environment.GetEnvironmentVariable("Rabbit_MQ_USER"),
-            Password = Environment.GetEnvironmentVariable("Rabbit_MQ_PWD"),
+            UserName = Environment.GetEnvironmentVariable("RABBIT_MQ_USER"),
+            Password = Environment.GetEnvironmentVariable("RABBIT_MQ_PWD"),
         };
         try
         {
