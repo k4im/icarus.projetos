@@ -59,7 +59,7 @@ public class MessageBusService : MessageBusServiceExtension, IMessageBusService
         => Console.WriteLine("--> RabbitMQ foi derrubado");
     static string SerializarObjeto(Projeto evento)
     {
-        var projetoModel = new Envelope<Projeto>(evento, "correlationID");
+        var projetoModel = new EnvelopeDTO(evento.ProdutoUtilizadoId, evento.QuantidadeUtilizado, "TesteCorrelation");
         return JsonConvert.SerializeObject(projetoModel);
     }
 }
