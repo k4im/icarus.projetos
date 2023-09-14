@@ -50,7 +50,7 @@ public class ProjetoController : ControllerBase
     // [Authorize(Roles = "ADMIN,ATENDENTE")]
     public async Task<IActionResult> BuscarProjetosStatus([FromQuery]string filtro, int pagina = 1, float resultadoPorPagina = 5)
     {
-        var projetos = await _repo.BuscarProdutosFiltrados(pagina, resultadoPorPagina, filtro);
+        var projetos = await _repo.FiltrarPorStatus(pagina, resultadoPorPagina, filtro);
         if (!projetos.Data.Any()) return StatusCode(404);
         return Ok(projetos);
     }

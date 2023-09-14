@@ -3582,6 +3582,7 @@
           "Microsoft.EntityFrameworkCore.Sqlite": "7.0.9",
           "Microsoft.Extensions.Configuration": "7.0.0",
           "Newtonsoft.Json": "13.0.3",
+          "Pomelo.EntityFrameworkCore.MySql": "7.0.0",
           "RabbitMQ.Client": "6.5.0",
           "projeto.domain": "1.0.0"
         },
@@ -3602,7 +3603,6 @@
           "Microsoft.AspNetCore.OpenApi": "7.0.3",
           "Moq.EntityFrameworkCore": "7.0.0.2",
           "Newtonsoft.Json": "13.0.3",
-          "Pomelo.EntityFrameworkCore.MySql": "7.0.0",
           "Serilog": "3.0.1",
           "Serilog.AspNetCore": "2.1.1",
           "Serilog.Extensions.Hosting": "2.0.0",
@@ -10775,40 +10775,38 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\santo\\.nuget\\packages\\": {}
+    "/home/joao/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\santo\\github\\icarus-sistema\\icarus.projetos\\Tests\\projeto.service.tests\\projeto.service.tests.csproj",
+      "projectUniqueName": "/home/joao/github/icarus.projetos/Tests/projeto.service.tests/projeto.service.tests.csproj",
       "projectName": "projeto.service.tests",
-      "projectPath": "C:\\Users\\santo\\github\\icarus-sistema\\icarus.projetos\\Tests\\projeto.service.tests\\projeto.service.tests.csproj",
-      "packagesPath": "C:\\Users\\santo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\santo\\github\\icarus-sistema\\icarus.projetos\\Tests\\projeto.service.tests\\obj\\",
+      "projectPath": "/home/joao/github/icarus.projetos/Tests/projeto.service.tests/projeto.service.tests.csproj",
+      "packagesPath": "/home/joao/.nuget/packages/",
+      "outputPath": "/home/joao/github/icarus.projetos/Tests/projeto.service.tests/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\santo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/home/joao/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\santo\\github\\icarus-sistema\\icarus.projetos\\projeto.domain\\projeto.domain.csproj": {
-              "projectPath": "C:\\Users\\santo\\github\\icarus-sistema\\icarus.projetos\\projeto.domain\\projeto.domain.csproj"
+            "/home/joao/github/icarus.projetos/projeto.domain/projeto.domain.csproj": {
+              "projectPath": "/home/joao/github/icarus.projetos/projeto.domain/projeto.domain.csproj"
             },
-            "C:\\Users\\santo\\github\\icarus-sistema\\icarus.projetos\\projeto.infra\\projeto.infra.csproj": {
-              "projectPath": "C:\\Users\\santo\\github\\icarus-sistema\\icarus.projetos\\projeto.infra\\projeto.infra.csproj"
+            "/home/joao/github/icarus.projetos/projeto.infra/projeto.infra.csproj": {
+              "projectPath": "/home/joao/github/icarus.projetos/projeto.infra/projeto.infra.csproj"
             },
-            "C:\\Users\\santo\\github\\icarus-sistema\\icarus.projetos\\projeto.service\\projeto.service.csproj": {
-              "projectPath": "C:\\Users\\santo\\github\\icarus-sistema\\icarus.projetos\\projeto.service\\projeto.service.csproj"
+            "/home/joao/github/icarus.projetos/projeto.service/projeto.service.csproj": {
+              "projectPath": "/home/joao/github/icarus.projetos/projeto.service/projeto.service.csproj"
             }
           }
         }
@@ -10892,7 +10890,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.111/RuntimeIdentifierGraph.json"
       }
     }
   }

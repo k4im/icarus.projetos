@@ -144,9 +144,7 @@ public class RepoProjetos : IRepoProjetos
         WHERE
             Nome
         LIKE
-            @filter
-        COLLATE
-            NOACCENTS          
+            @filter         
         LIMIT 
             @resultado 
         OFFSET 
@@ -176,16 +174,14 @@ public class RepoProjetos : IRepoProjetos
         WHERE
             Status 
         LIKE
-            @filter
-        COLLATE
-            NOACCENTS   
+            @filter   
         LIMIT 
             @resultado 
         OFFSET 
             @pagina";
         var queryTotal = "SELECT COUNT(*) FROM Projetos WHERE Status LIKE @filter OR Nome LIKE @filter";
 
-        using var connection = new SqliteConnection(conn);
+        using var connection = new MySqlConnection(conn);
         var totalItems = await connection.ExecuteScalarAsync<int>(queryTotal, new {filter = filtro});
         var total = Math.Ceiling(totalItems / resultadoPorPagina);
         var projetosPaginados = await connection

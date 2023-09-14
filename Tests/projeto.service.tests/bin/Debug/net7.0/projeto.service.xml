@@ -10,9 +10,15 @@
             </summary>
             <response code="200">Retorna a lista com todos os projetos paginados</response>
         </member>
-        <member name="M:projeto.service.Controllers.ProjetoController.BuscarProjetosFiltro(System.String,System.Int32,System.Single)">
+        <member name="M:projeto.service.Controllers.ProjetoController.BuscarProjetosFiltroNome(System.String,System.Int32,System.Single)">
             <summary>
-            Estará realizando a paginação e retornando uma lista completamente paginada de todos os projetos no banco de dados
+            Estará realizando a busca de projetos partindo de um nome especifico
+            </summary>
+            <response code="200">Retorna a lista com todos os projetos paginados</response>
+        </member>
+        <member name="M:projeto.service.Controllers.ProjetoController.BuscarProjetosStatus(System.String,System.Int32,System.Single)">
+            <summary>
+            Estará realizando a busca de projetos partindo de um status especifico
             </summary>
             <response code="200">Retorna a lista com todos os projetos paginados</response>
         </member>
@@ -23,7 +29,7 @@
             <response code="200"> Retorna o projeto</response>
             <response code="404"> Não existe um projeto com este ID</response>
         </member>
-        <member name="M:projeto.service.Controllers.ProjetoController.adicionarProjeto(projeto.domain.Dtos.ProjetoDTO)">
+        <member name="M:projeto.service.Controllers.ProjetoController.AdicionarProjeto(projeto.domain.Dtos.ProjetoDTO)">
              <summary>
              Ira adicionar um novo projeto ao banco de dados, também estará realizando o envio do projeto para o service BUS
              </summary>
@@ -46,7 +52,7 @@
              </remarks>
              <response code="201"> Informa que tudo ocorreu como esperado</response>
         </member>
-        <member name="M:projeto.service.Controllers.ProjetoController.atualizarStatusProjeto(System.String,System.Nullable{System.Int32})">
+        <member name="M:projeto.service.Controllers.ProjetoController.AtualizarStatusProjeto(System.String,System.Nullable{System.Int32})">
             <summary>
             Estará realizando a atualização exclusivamente do status do projeto
             </summary>
@@ -54,7 +60,7 @@
             <response code="409"> Informa que houve um erro de conflito</response>
             <response code="404"> Informa que não foi possivel encontrar um produto com este ID</response>
         </member>
-        <member name="M:projeto.service.Controllers.ProjetoController.removerProjeto(System.Nullable{System.Int32})">
+        <member name="M:projeto.service.Controllers.ProjetoController.RemoverProjeto(System.Nullable{System.Int32})">
             <summary>
             Estará realizando a operação de remoção do projeto do banco de dados
             </summary>
