@@ -32,7 +32,7 @@ public class ProjetoController : ControllerBase
     /// Estará realizando a busca de projetos partindo de um nome especifico
     /// </summary>
     /// <response code="200">Retorna a lista com todos os projetos paginados</response>
-    [HttpGet("pesquisar/{pagina?}/{resultadoPorPagina?}")]
+    [HttpGet("pesquisar/nome/{pagina?}/{resultadoPorPagina?}")]
     // [Authorize(Roles = "ADMIN,ATENDENTE")]
     public async Task<IActionResult> BuscarProjetosFiltroNome([FromQuery]string filtro, int pagina = 1, float resultadoPorPagina = 5)
     {
