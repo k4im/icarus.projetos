@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Authorization;
+
 namespace projeto.service.Controllers;
 
 [ApiController]
@@ -12,6 +14,7 @@ public class ProdutosDisponiveisControllers : ControllerBase
     }
 
     [HttpGet("produtosEmEstoque")]
+    [Authorize(Roles = "ADMIN")]
     public async Task<ActionResult<List<ProdutosDisponiveis>>> MostrarProdutos()
     {
         var produtos = await _repo.BuscarTodosProdutos();

@@ -1,4 +1,5 @@
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 
 namespace projeto.service.Controllers;
 
@@ -20,7 +21,7 @@ public class ProjetoController : ControllerBase
     /// </summary>
     /// <response code="200">Retorna a lista com todos os projetos paginados</response>
     [HttpGet("projetos/{pagina?}/{resultadoPorPagina?}")]
-    // [Authorize(Roles = "ADMIN,ATENDENTE")]
+    [Authorize(Roles = "ADMIN,ATENDENTE")]
     public async Task<IActionResult> GetAllProjects(int pagina = 1, float resultadoPorPagina = 5)
     {
         var projetos = await _repo.BuscarProdutos(pagina, resultadoPorPagina);
@@ -33,7 +34,7 @@ public class ProjetoController : ControllerBase
     /// </summary>
     /// <response code="200">Retorna a lista com todos os projetos paginados</response>
     [HttpGet("pesquisar/nome/{pagina?}/{resultadoPorPagina?}")]
-    // [Authorize(Roles = "ADMIN,ATENDENTE")]
+    [Authorize(Roles = "ADMIN,ATENDENTE")]
     public async Task<IActionResult> BuscarProjetosFiltroNome([FromQuery]string filtro, int pagina = 1, float resultadoPorPagina = 5)
     {
         var projetos = await _repo.BuscarProdutosFiltrados(pagina, resultadoPorPagina, filtro);
@@ -47,7 +48,7 @@ public class ProjetoController : ControllerBase
     /// </summary>
     /// <response code="200">Retorna a lista com todos os projetos paginados</response>
     [HttpGet("pesquisar/status/{pagina?}/{resultadoPorPagina?}")]
-    // [Authorize(Roles = "ADMIN,ATENDENTE")]
+    [Authorize(Roles = "ADMIN,ATENDENTE")]
     public async Task<IActionResult> BuscarProjetosStatus([FromQuery]string filtro, int pagina = 1, float resultadoPorPagina = 5)
     {
         var projetos = await _repo.FiltrarPorStatus(pagina, resultadoPorPagina, filtro);
@@ -62,7 +63,7 @@ public class ProjetoController : ControllerBase
     /// <response code="200"> Retorna o projeto</response>
     /// <response code="404"> Não existe um projeto com este ID</response>
     [HttpGet("projeto/{id?}")]
-    // [Authorize(Roles = "ADMIN,ATENDENTE")]
+    [Authorize(Roles = "ADMIN,ATENDENTE")]
     public async Task<IActionResult> GetById(int? id)
     {
         var item = await _repo.BuscarPorId(id);
@@ -92,7 +93,7 @@ public class ProjetoController : ControllerBase
     /// </remarks>
     /// <response code="201"> Informa que tudo ocorreu como esperado</response>
     [HttpPost("Create")]
-    // [Authorize(Roles = "ADMIN,ATENDENTE")]
+    [Authorize(Roles = "ADMIN,ATENDENTE")]
     public async Task<IActionResult> AdicionarProjeto(ProjetoDTO model)
     {
         if (!ModelState.IsValid) return StatusCode(400, ModelState);
@@ -115,7 +116,7 @@ public class ProjetoController : ControllerBase
     /// <response code="409"> Informa que houve um erro de conflito</response>
     /// <response code="404"> Informa que não foi possivel encontrar um produto com este ID</response>
     [HttpPut("update/{id}")]
-    // [Authorize(Roles = "ADMIN")]
+    [Authorize(Roles = "ADMIN")]
     public async Task<IActionResult> AtualizarStatusProjeto(string model, int? id)
     {
         if (!ModelState.IsValid) return BadRequest(ModelState);
@@ -138,7 +139,7 @@ public class ProjetoController : ControllerBase
     /// <response code="409"> Informa que houve um erro de conflito</response>
     /// <response code="404"> Informa que não foi possivel encontrar um produto com este ID</response>
     [HttpDelete("delete/{id}")]
-    // [Authorize(Roles = "ADMIN")]
+    [Authorize(Roles = "ADMIN")]
     public async Task<IActionResult> RemoverProjeto(int? id)
     {
         if (id == null) return StatusCode(404);
