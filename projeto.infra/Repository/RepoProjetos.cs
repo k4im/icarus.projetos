@@ -1,4 +1,3 @@
-
 using MySqlConnector;
 
 namespace projeto.infra.Repository;
@@ -155,7 +154,7 @@ public class RepoProjetos : IRepoProjetos
         var totalItems = await connection.ExecuteScalarAsync<int>(queryTotal, new {filter = filtro});
         var total = Math.Ceiling(totalItems / resultadoPorPagina);
         var projetosPaginados = await connection
-            .QueryAsync<ProjetoPaginadoDTO>(queryPaginado, new { resultado = resultadoPorPagina, pagina = (pagina - 1) * resultadoPorPagina, filter = filtro });
+            .QueryAsync<ProjetoPaginadoDTO>(queryPaginado, new { resultado = resultadoPorPagina, pagina = (pagina - 1) * resultadoPorPagina, filter = $"%{filtro}%" });
         return new Response<ProjetoPaginadoDTO>(projetosPaginados.ToList(), pagina, (int)total, totalItems);
     }
 

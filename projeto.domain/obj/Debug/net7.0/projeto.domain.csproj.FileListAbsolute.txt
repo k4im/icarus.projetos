@@ -58,3 +58,15 @@ c:/Users/santo/github/icarus-sistema/icarus.projetos/projeto.domain/obj/Debug/ne
 /home/joao/github/icarus.projetos/projeto.domain/obj/Debug/net7.0/refint/projeto.domain.dll
 /home/joao/github/icarus.projetos/projeto.domain/obj/Debug/net7.0/projeto.domain.pdb
 /home/joao/github/icarus.projetos/projeto.domain/obj/Debug/net7.0/ref/projeto.domain.dll
+/home/k4im/github/icarus/backend/icarus.projetos/projeto.domain/bin/Debug/net7.0/projeto.domain.deps.json
+/home/k4im/github/icarus/backend/icarus.projetos/projeto.domain/bin/Debug/net7.0/projeto.domain.dll
+/home/k4im/github/icarus/backend/icarus.projetos/projeto.domain/bin/Debug/net7.0/projeto.domain.pdb
+/home/k4im/github/icarus/backend/icarus.projetos/projeto.domain/obj/Debug/net7.0/projeto.domain.csproj.AssemblyReference.cache
+/home/k4im/github/icarus/backend/icarus.projetos/projeto.domain/obj/Debug/net7.0/projeto.domain.GeneratedMSBuildEditorConfig.editorconfig
+/home/k4im/github/icarus/backend/icarus.projetos/projeto.domain/obj/Debug/net7.0/projeto.domain.AssemblyInfoInputs.cache
+/home/k4im/github/icarus/backend/icarus.projetos/projeto.domain/obj/Debug/net7.0/projeto.domain.AssemblyInfo.cs
+/home/k4im/github/icarus/backend/icarus.projetos/projeto.domain/obj/Debug/net7.0/projeto.domain.csproj.CoreCompileInputs.cache
+/home/k4im/github/icarus/backend/icarus.projetos/projeto.domain/obj/Debug/net7.0/projeto.domain.dll
+/home/k4im/github/icarus/backend/icarus.projetos/projeto.domain/obj/Debug/net7.0/refint/projeto.domain.dll
+/home/k4im/github/icarus/backend/icarus.projetos/projeto.domain/obj/Debug/net7.0/projeto.domain.pdb
+/home/k4im/github/icarus/backend/icarus.projetos/projeto.domain/obj/Debug/net7.0/ref/projeto.domain.dll

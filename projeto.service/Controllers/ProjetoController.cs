@@ -93,7 +93,7 @@ public class ProjetoController : ControllerBase
     /// </remarks>
     /// <response code="201"> Informa que tudo ocorreu como esperado</response>
     [HttpPost("Create")]
-    [Authorize(Roles = "ADMIN,ATENDENTE")]
+    // [Authorize(Roles = "ADMIN,ATENDENTE")]
     public async Task<IActionResult> AdicionarProjeto(ProjetoDTO model)
     {
         if (!ModelState.IsValid) return StatusCode(400, ModelState);
