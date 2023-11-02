@@ -81,7 +81,7 @@ Está trata-se da api utilizada para processos de projetos dos usuarios no proje
 
 | Parametro | Tipo     | Descrição                |
 | :-------- | :------- | :------------------------- |
-| `Id` | `int` | Parametro para selecionar produto. |
+| `Id` | `int` | Parametro para selecionar projeto. |
 
 
 
@@ -108,7 +108,7 @@ Está trata-se da api utilizada para processos de projetos dos usuarios no proje
 
 | Parametro | Tipo     | Descrição                |
 | :-------- | :------- | :------------------------- |
-| `Id` | `int` | Parametro para selecionar produto. |
+| `Id` | `int` | Parametro para selecionar projeto. |
 
 
 #### Deletar projeto.
@@ -123,7 +123,7 @@ Está trata-se da api utilizada para processos de projetos dos usuarios no proje
 
 | Parametro | Tipo     | Descrição                |
 | :-------- | :------- | :------------------------- |
-| `Id` | `int` | Parametro para selecionar produto. |
+| `Id` | `int` | Parametro para selecionar projeto. |
 
 
 
