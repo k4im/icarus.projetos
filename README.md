@@ -8,7 +8,7 @@ Está trata-se da api utilizada para processos de projetos dos usuarios no proje
 
 
 
-## Endpoint para autenticação
+## Endpoint da API
 
 #### Realiza get em todos os projetos.
 
