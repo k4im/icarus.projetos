@@ -48,7 +48,7 @@ Está trata-se da api utilizada para processos de projetos dos usuarios no proje
 
 | Parametro Query | Tipo     | Descrição                |
 | :-------- | :------- | :------------------------- |
-| `filtro` | `string` | Parametro para pesquisar por status. |
+| `filtro` | `string` | Parametro para pesquisar por nome. |
 
 
 #### Filtrar projetos por nome.
