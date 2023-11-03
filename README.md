@@ -18,7 +18,7 @@ Está trata-se da api utilizada para processos de projetos dos usuarios no proje
 
 | Header | Tipo     | Descrição                |
 | :-------- | :------- | :------------------------- |
-| `Authorization` | `string` | **Autenticação**. Jwt token |
+| `Authorization` | `Authorization` | **Autenticação**. Jwt token |
 
 | Parametro | Tipo     | Descrição                |
 | :-------- | :------- | :------------------------- |
@@ -45,6 +45,11 @@ Está trata-se da api utilizada para processos de projetos dos usuarios no proje
 | Parametro | Tipo     | Descrição                |
 | :-------- | :------- | :------------------------- |
 | `Resultado` | `int` | Parametro para mudança quantidade de resultados por pagina. |
+
+| Parametro Query | Tipo     | Descrição                |
+| :-------- | :------- | :------------------------- |
+| `filtro` | `string` | Parametro para pesquisar por status. |
+
 
 #### Filtrar projetos por nome.
 
