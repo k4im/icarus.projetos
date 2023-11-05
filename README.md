@@ -131,6 +131,28 @@ Está trata-se da api utilizada para processos de projetos dos usuarios no proje
 | `Id` | `int` | Parametro para selecionar projeto. |
 
 
+## Environment Variables
+
+Realizei uma verificação referente as variaveis de ambiente configuraveis.
+
+
+`ASPNETCORE_ENVIRONMENT`
+
+`DB_CONNECTION`
+
+`RABBIT_MQ_USER`
+
+`RABBIT_MQ_PWD`
+
+#### DB_CONNECTION
+* Variavel responsavel por estar realizando a configuração de conexão com o banco de dados. A mesma pode ser configuravel através dos arquivos de configurações assim como repassando por argumentos na execução docker.
+
+#### RABBIT_MQ_USER
+* Variavel responsavel por estar repassando a configuração o usuario de acesso ao RabbitMQ.
+
+#### RABBIT_MQ_PWD 
+* Variavel responsavel por estar realizando a autenticação do usuario.
+
 
 ## Deployment dotnet
 
@@ -160,3 +182,5 @@ Para rodar este projeto utilizando docker realize os seguintes comandos:
 ```bash
   docker run --name=container_projeto -p 5112:5112 k4im/projeto:v0.1
 ```
+
+
