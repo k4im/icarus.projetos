@@ -14,8 +14,6 @@ builder.Services.AddSwaggerConfiguration();
 /*Realizado injeção de dependencia dos dados necessários*/
 builder.Services.AddDependencies();
 
-/*Adicionado o worker no backend*/
-builder.Services.AddHostedService<RabbitConsumer>();
 
 /*Configurações referentes ao Json Web Token*/
 builder.Services.AddJwtToken(builder.Configuration);

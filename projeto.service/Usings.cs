@@ -11,5 +11,4 @@ global using projeto.domain.Dtos;
 global using projeto.infra.AsyncComm;
 global using projeto.infra.Repository;
 global using projeto.service.Extensions;
-global using projeto.service.Worker;
 global using Microsoft.Extensions.Configuration;

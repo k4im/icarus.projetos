@@ -70,7 +70,6 @@ public static class ServicesColletionExtensions
         services.AddHttpContextAccessor();
         services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         services.AddScoped<IMessageBusService, MessageBusService>();
-        services.AddScoped<IMessageConsumer, MessageConsumer>();
         services.AddAutoMapper(typeof(Program).Assembly);
         return services;
     }
