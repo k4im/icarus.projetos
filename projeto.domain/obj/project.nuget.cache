@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "AuC8XHcFpj3g1pDDzSrWkKOnF+XnukP+iCx5dlRYqARB5zYuKPA/bL4R81R4180LNStQXYQhHGMX5QAPNKYyUg==",
+  "dgSpecHash": "9Dd3R5j3mycFfsZTCwmQ7Q+3/+g3qqgJZL1ePDkVGgWGT9f0P+NDK3/BIq3GHoF1ybhF3xpWAv8eSUaRo2JtBA==",
   "success": true,
-  "projectFilePath": "/home/k4im/github/icarus/backend/icarus.projetos/projeto.domain/projeto.domain.csproj",
+  "projectFilePath": "/home/joao/github/icarus/icarus.projetos/projeto.domain/projeto.domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
