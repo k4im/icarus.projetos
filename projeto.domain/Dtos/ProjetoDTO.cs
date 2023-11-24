@@ -1,6 +1,6 @@
 namespace projeto.domain.Dtos;
 
-public class ProjetoDTO
+public record ProjetoDTO
 {
     public ProjetoDTO(string nome,
     string status,

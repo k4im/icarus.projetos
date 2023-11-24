@@ -1,6 +1,6 @@
 namespace projeto.domain.Dtos;
 
-public class ProjetoPaginadoDTO
+public record ProjetoPaginadoDTO
 {
     public int Id { get; set; }
     public string Nome { get; set; }
