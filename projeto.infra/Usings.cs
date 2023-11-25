@@ -13,3 +13,5 @@ global using Newtonsoft.Json;
 global using RabbitMQ.Client.Events;
 global using Dapper;
 global using Microsoft.Data.Sqlite;
+global using MySqlConnector;
+global using projeto.infra.Adapters.Database;

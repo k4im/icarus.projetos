@@ -1,5 +1,3 @@
-using MySqlConnector;
-
 namespace projeto.infra.Repository;
 public class RepoProjetos : IRepoProjetos
 {
@@ -7,19 +5,20 @@ public class RepoProjetos : IRepoProjetos
     public delegate void aoCriarProjetoEventHandler(Projeto model);
     public event aoCriarProjetoEventHandler AocriarProjeto;
     readonly IMessageBusService _messageBroker;
-    public string conn = Environment.GetEnvironmentVariable("DB_CONNECTION");
-    public RepoProjetos(IMessageBusService messageBroker)
+    readonly IDataBaseConnection _dataConnection;
+    public RepoProjetos(IMessageBusService messageBroker, IDataBaseConnection dataConnection = null)
     {
         _messageBroker = messageBroker;
         AocriarProjeto += async (Projeto model) => { await RepoProdutosDisponiveis.AtualizarTabelaProdutosDisponiveis(model); };
         AocriarProjeto += _messageBroker.EnviarProjeto;
+        _dataConnection = dataConnection;
     }
 
     public async Task<bool> AtualizarStatus(string model, int? id)
     {
         try
         {
-            using var db = new DataContext();
+            using var db = _dataConnection.ConnectionEntityFrameWork();
             var projeto = await db.Projetos.FirstOrDefaultAsync(x => x.Id == id);
             projeto.AtualizarStatus(model);
             await db.SaveChangesAsync();
@@ -40,7 +39,7 @@ public class RepoProjetos : IRepoProjetos
 
     public async Task<ProjetoBuscaIdDTO> BuscarPorId(int? id)
     {
-        using var connection = new MySqlConnection(conn);
+        using var connection = _dataConnection.ConnectionForDapper();
         try
         {
             var query = @"
@@ -77,7 +76,7 @@ public class RepoProjetos : IRepoProjetos
         var queryPaginado = "SELECT Id, Nome, Status, DataInicio, DataEntrega, Valor FROM Projetos LIMIT @resultado OFFSET @pagina";
         var queryTotal = "SELECT COUNT(*) FROM Projetos";
 
-        using var connection = new MySqlConnection(conn);
+        using var connection = _dataConnection.ConnectionForDapper();
         var totalItems = await connection.ExecuteScalarAsync<int>(queryTotal);
         var total = Math.Ceiling(totalItems / resultadoPorPagina);
         var projetosPaginados = await connection
@@ -89,7 +88,7 @@ public class RepoProjetos : IRepoProjetos
     {
         try
         {
-            using var db = new DataContext();
+            using var db = _dataConnection.ConnectionEntityFrameWork();
             db.Projetos.Add(model);
             await db.SaveChangesAsync();
             AocriarProjeto(model);
@@ -111,7 +110,7 @@ public class RepoProjetos : IRepoProjetos
     {
         try
         {
-            using var db = new DataContext();
+            using var db = _dataConnection.ConnectionEntityFrameWork();
             await db.Projetos.Where(x => x.Id == id)
             .ExecuteDeleteAsync();
             return true;
@@ -150,7 +149,7 @@ public class RepoProjetos : IRepoProjetos
             @pagina";
         var queryTotal = "SELECT COUNT(*) FROM Projetos WHERE Status LIKE @filter OR Nome LIKE @filter";
 
-        using var connection = new MySqlConnection(conn);
+        using var connection = _dataConnection.ConnectionForDapper();
         var totalItems = await connection.ExecuteScalarAsync<int>(queryTotal, new {filter = filtro});
         var total = Math.Ceiling(totalItems / resultadoPorPagina);
         var projetosPaginados = await connection
@@ -180,7 +179,7 @@ public class RepoProjetos : IRepoProjetos
             @pagina";
         var queryTotal = "SELECT COUNT(*) FROM Projetos WHERE Status LIKE @filter OR Nome LIKE @filter";
 
-        using var connection = new MySqlConnection(conn);
+        using var connection = _dataConnection.ConnectionForDapper();
         var totalItems = await connection.ExecuteScalarAsync<int>(queryTotal, new {filter = filtro});
         var total = Math.Ceiling(totalItems / resultadoPorPagina);
         var projetosPaginados = await connection

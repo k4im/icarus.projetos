@@ -1,7 +1,7 @@
 
 namespace projeto.infra.AsyncComm.Extensions;
 
-public class MessageBusServiceExtension : Base
+public abstract class MessageBusServiceExtension : Base
 {
     public void CriarFilas(IModel channel)
     {
