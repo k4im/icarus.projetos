@@ -1,3 +1,5 @@
+using MySqlConnector;
+
 namespace projeto.service.Extensions;
 public static class ServicesColletionExtensions
 {
