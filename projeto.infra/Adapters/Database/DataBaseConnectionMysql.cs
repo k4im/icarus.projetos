@@ -1,10 +1,10 @@
 
 namespace projeto.infra.Adapters.Database;
-public class DataBaseConnection : IDataBaseConnection
+public class DataBaseConnectionMysql : IDataBaseConnection<MySqlConnection>
 {
     IConfiguration _config;
 
-    public DataBaseConnection(IConfiguration config)
+    public DataBaseConnectionMysql(IConfiguration config)
         => _config = config;
 
     public DataContext ConnectionEntityFrameWork()

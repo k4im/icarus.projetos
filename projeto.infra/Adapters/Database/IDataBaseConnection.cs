@@ -1,8 +1,8 @@
 namespace projeto.infra.Adapters.Database;
 
-public interface IDataBaseConnection
+public interface IDataBaseConnection<T>
 {
     DataContext ConnectionEntityFrameWork();
-    MySqlConnection ConnectionForDapper();
+    T ConnectionForDapper();
     
 }

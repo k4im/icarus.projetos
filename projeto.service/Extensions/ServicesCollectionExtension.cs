@@ -72,7 +72,7 @@ public static class ServicesColletionExtensions
         services.AddHttpContextAccessor();
         services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         services.AddScoped<IMessageBusService, MessageBusService>();
-        services.AddTransient<IDataBaseConnection, DataBaseConnection>();
+        services.AddTransient<IDataBaseConnection<MySqlConnection>, DataBaseConnectionMysql>();
         services.AddAutoMapper(typeof(Program).Assembly);
         return services;
     }
