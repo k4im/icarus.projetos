@@ -1,3 +1,5 @@
+using projeto.infra.Adapters.Database.DatabaseAdapter;
+
 namespace projeto.infra.Repository;
 public class RepoProjetos : IRepoProjetos
 {
@@ -5,23 +7,20 @@ public class RepoProjetos : IRepoProjetos
     public delegate void aoCriarProjetoEventHandler(Projeto model);
     public event aoCriarProjetoEventHandler AocriarProjeto;
     readonly IMessageBusService _messageBroker;
-    readonly IDataBaseConnection _dataConnection;
-    public RepoProjetos(IMessageBusService messageBroker, IDataBaseConnection dataConnection = null)
+    readonly IDatabaseAdapterProjeto _dataConnection;
+    public RepoProjetos(IMessageBusService messageBroker, IDatabaseAdapterProjeto dataConnection)
     {
         _messageBroker = messageBroker;
+        _dataConnection = dataConnection;
         AocriarProjeto += async (Projeto model) => { await RepoProdutosDisponiveis.AtualizarTabelaProdutosDisponiveis(model); };
         AocriarProjeto += _messageBroker.EnviarProjeto;
-        _dataConnection = dataConnection;
     }
 
-    public async Task<bool> AtualizarStatus(string model, int? id)
+    public async Task<bool> AtualizarStatus(string model, int id)
     {
         try
         {
-            using var db = _dataConnection.ConnectionEntityFrameWork();
-            var projeto = await db.Projetos.FirstOrDefaultAsync(x => x.Id == id);
-            projeto.AtualizarStatus(model);
-            await db.SaveChangesAsync();
+            await _dataConnection.AtualizarStatusEmBanco(model, id);
             return true;
 
         }
@@ -37,9 +36,8 @@ public class RepoProjetos : IRepoProjetos
         }
     }
 
-    public async Task<ProjetoBuscaIdDTO> BuscarPorId(int? id)
+    public async Task<ProjetoBuscaIdDTO> BuscarPorId(int id)
     {
-        using var connection = _dataConnection.ConnectionForDapper();
         try
         {
             var query = @"
@@ -56,14 +54,7 @@ public class RepoProjetos : IRepoProjetos
                 Projetos.Id 
             LIKE 
                 @busca";
-            var result = await connection.QueryAsync<ProjetoBuscaIdDTO, ProdutoEmEstoqueDTO, ProjetoBuscaIdDTO>(query,
-            map: (p, c) =>
-            {
-                p.ProdutoUtilizado = c;
-                return p;
-            },
-            param: new { @busca = id });
-            return result.FirstOrDefault();
+            return await _dataConnection.BuscarDadosDoBancoPeloId(id, query);
         }
         catch (Exception)
         {
@@ -75,22 +66,16 @@ public class RepoProjetos : IRepoProjetos
     {
         var queryPaginado = "SELECT Id, Nome, Status, DataInicio, DataEntrega, Valor FROM Projetos LIMIT @resultado OFFSET @pagina";
         var queryTotal = "SELECT COUNT(*) FROM Projetos";
-
-        using var connection = _dataConnection.ConnectionForDapper();
-        var totalItems = await connection.ExecuteScalarAsync<int>(queryTotal);
-        var total = Math.Ceiling(totalItems / resultadoPorPagina);
-        var projetosPaginados = await connection
-            .QueryAsync<ProjetoPaginadoDTO>(queryPaginado, new { resultado = resultadoPorPagina, pagina = (pagina - 1) * resultadoPorPagina });
-        return new Response<ProjetoPaginadoDTO>(projetosPaginados.ToList(), pagina, (int)total, totalItems);
+        return await _dataConnection.PaginarProjetosDoBancoDapper(
+            queryPaginado, queryTotal, 
+            pagina, resultadoPorPagina);
     }
 
     public async Task<bool> CriarProjeto(Projeto model)
     {
         try
         {
-            using var db = _dataConnection.ConnectionEntityFrameWork();
-            db.Projetos.Add(model);
-            await db.SaveChangesAsync();
+            await _dataConnection.SalvarProjetoEmBancoEntityFrameWork(model);
             AocriarProjeto(model);
             return true;
         }
@@ -106,13 +91,11 @@ public class RepoProjetos : IRepoProjetos
         }
     }
 
-    public async Task<bool> DeletarProjeto(int? id)
+    public async Task<bool> DeletarProjeto(int id)
     {
         try
         {
-            using var db = _dataConnection.ConnectionEntityFrameWork();
-            await db.Projetos.Where(x => x.Id == id)
-            .ExecuteDeleteAsync();
+            await _dataConnection.DeletarProjetoDoBancoEntityFrameWork(id);
             return true;
         }
         catch (DbUpdateConcurrencyException)
@@ -148,13 +131,11 @@ public class RepoProjetos : IRepoProjetos
         OFFSET 
             @pagina";
         var queryTotal = "SELECT COUNT(*) FROM Projetos WHERE Status LIKE @filter OR Nome LIKE @filter";
+        return await _dataConnection.FiltrarDadosPaginadosDoBancoDapper(
+        queryPaginado, filtro, 
+        queryTotal, pagina, 
+        resultadoPorPagina);
 
-        using var connection = _dataConnection.ConnectionForDapper();
-        var totalItems = await connection.ExecuteScalarAsync<int>(queryTotal, new {filter = filtro});
-        var total = Math.Ceiling(totalItems / resultadoPorPagina);
-        var projetosPaginados = await connection
-            .QueryAsync<ProjetoPaginadoDTO>(queryPaginado, new { resultado = resultadoPorPagina, pagina = (pagina - 1) * resultadoPorPagina, filter = $"%{filtro}%" });
-        return new Response<ProjetoPaginadoDTO>(projetosPaginados.ToList(), pagina, (int)total, totalItems);
     }
 
     public async Task<Response<ProjetoPaginadoDTO>> FiltrarPorStatus(int pagina, float resultadoPorPagina, string filtro)
@@ -178,12 +159,10 @@ public class RepoProjetos : IRepoProjetos
         OFFSET 
             @pagina";
         var queryTotal = "SELECT COUNT(*) FROM Projetos WHERE Status LIKE @filter OR Nome LIKE @filter";
+        return await _dataConnection.FiltrarDadosPaginadosDoBancoDapper(
+        queryPaginado, 
+        filtro, queryTotal, 
+        pagina, resultadoPorPagina);
 
-        using var connection = _dataConnection.ConnectionForDapper();
-        var totalItems = await connection.ExecuteScalarAsync<int>(queryTotal, new {filter = filtro});
-        var total = Math.Ceiling(totalItems / resultadoPorPagina);
-        var projetosPaginados = await connection
-            .QueryAsync<ProjetoPaginadoDTO>(queryPaginado, new { resultado = resultadoPorPagina, pagina = (pagina - 1) * resultadoPorPagina, filter = filtro });
-        return new Response<ProjetoPaginadoDTO>(projetosPaginados.ToList(), pagina, (int)total, totalItems);
     }
 }
