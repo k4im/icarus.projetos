@@ -12,4 +12,4 @@ global using projeto.infra.AsyncComm;
 global using projeto.infra.Repository;
 global using projeto.service.Extensions;
 global using Microsoft.Extensions.Configuration;
-global using projeto.infra.Adapters.Database;
+global using projeto.infra.Adapters.DatabasePort;

@@ -1,11 +1,11 @@
 
-namespace projeto.infra.Adapters.Database.DatabaseAdapter;
+namespace projeto.infra.Adapters.DatabaseAdapter;
 
 public class DatabaseAdapterProjeto :  IDatabaseAdapterProjeto
 {
-    IDataBaseConnection<MySqlConnection> _dataConnection;
+    IDataBaseConnection _dataConnection;
 
-    public DatabaseAdapterProjeto(IDataBaseConnection<MySqlConnection> dataConnection)
+    public DatabaseAdapterProjeto(IDataBaseConnection dataConnection)
         => _dataConnection = dataConnection;
 
     public async Task AtualizarStatusEmBanco(string status, int id)

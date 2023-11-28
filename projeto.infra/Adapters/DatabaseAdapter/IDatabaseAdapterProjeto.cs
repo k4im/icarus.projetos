@@ -1,4 +1,4 @@
-namespace projeto.infra.Adapters.Database.DatabaseAdapter;
+namespace projeto.infra.Adapters.DatabaseAdapter;
 public interface IDatabaseAdapterProjeto
 {
     Task<Response<ProjetoPaginadoDTO>> PaginarProjetosDoBancoDapper(
