@@ -14,3 +14,4 @@ global using Microsoft.Data.Sqlite;
 global using MySqlConnector;
 global using projeto.infra.Adapters.DatabasePort;
 global using System.Data.Common;
+global using projeto.infra.Adapters.DatabaseAdapter;

@@ -1,5 +1,3 @@
-using projeto.infra.Adapters.Database.DatabaseAdapter;
-
 namespace projeto.infra.Repository;
 public class RepoProjetos : IRepoProjetos
 {
