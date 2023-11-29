@@ -62,7 +62,20 @@ public class RepoProjetos : IRepoProjetos
 
     public async Task<Response<ProjetoPaginadoDTO>> BuscarProdutos(int pagina, float resultadoPorPagina)
     {
-        var queryPaginado = "SELECT Id, Nome, Status, DataInicio, DataEntrega, Valor FROM Projetos LIMIT @resultado OFFSET @pagina";
+        var queryPaginado = @"
+        SELECT 
+            Id, 
+            Nome, 
+            Status, 
+            DataInicio, 
+            DataEntrega, 
+            Valor 
+        FROM 
+            Projetos 
+        LIMIT 
+            @resultado 
+        OFFSET 
+            @pagina";
         var queryTotal = "SELECT COUNT(*) FROM Projetos";
         return await _dataConnection.PaginarProjetosDoBancoDapper(
             queryPaginado, queryTotal, 
