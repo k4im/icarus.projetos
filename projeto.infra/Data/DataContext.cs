@@ -14,6 +14,7 @@ public class DataContext : DbContext
             var DbConnection = Environment.GetEnvironmentVariable("DB_CONNECTION");
             var ServerVersion = new MySqlServerVersion(new Version(8,0,31));
             optionsBuilder.UseMySql(DbConnection, ServerVersion);            
+            // optionsBuilder.UseSqlite("Data Source=api-projetos.db");            
         }
     }
     protected override void OnModelCreating(ModelBuilder modelBuilder)

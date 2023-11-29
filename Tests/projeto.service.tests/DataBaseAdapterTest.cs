@@ -23,7 +23,7 @@ public class DataBaseAdapterTest
             5 
         OFFSET 
             1";
-        var queryTotal = "SELECT COUNT(*) FROM Projetos";
+        var queryTotal = "SELECT count(*) FROM Projetos";
 
         //Act 
         var result = await Adapter.PaginarProjetosDoBancoDapper(queryPaginado, queryTotal, 1, 5);
