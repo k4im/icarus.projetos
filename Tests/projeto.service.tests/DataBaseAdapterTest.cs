@@ -1,7 +1,3 @@
-using projeto.infra.Adapters.DatabaseAdapter;
-using projeto.infra.Adapters.DatabasePort;
-using Xunit.Sdk;
-
 namespace projeto.service.tests;
 public class DataBaseAdapterTest
 {

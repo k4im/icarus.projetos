@@ -7,4 +7,6 @@ global using projeto.infra.Data;
 global using projeto.infra.Repository;
 global using projeto.service.tests.Helpers;
 global using Moq;
-global using projeto.service.Controllers;
+global using projeto.infra.Adapters.DatabaseAdapter;
+global using projeto.infra.Adapters.DatabasePort;
+global using Xunit.Sdk;

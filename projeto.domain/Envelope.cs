@@ -1,5 +1,4 @@
 namespace projeto.domain;
-
 public class Envelope<T>
 {
     public Envelope(T message, string correlationId)
