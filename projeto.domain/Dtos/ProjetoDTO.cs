@@ -1,11 +1,11 @@
 namespace projeto.domain.Dtos;
-public record ProjetoDTO(
-    string Nome,
-    string Status,
-    DateTime DataInicio,
-    DateTime DataEntrega,
-    int ProdutoUtilizadoId,
-    int QuantidadeUtilizado,
-    string Descricao,
-    double Valor
-);
+public record ProjetoDTO {       
+    public string Nome {get;}
+    public string Status {get;}
+    public DateTime DataInicio {get;}
+    public DateTime DataEntrega {get;}
+    public int ProdutoUtilizadoId {get;}
+    public int QuantidadeUtilizado {get;}
+    public string Descricao {get;}
+    public double Valor {get; }
+}
