@@ -117,10 +117,9 @@ public class ProjetoController : ControllerBase
     /// <response code="404"> Informa que não foi possivel encontrar um produto com este ID</response>
     [HttpPut("update/{id}")]
     [Authorize(Roles = "ADMIN")]
-    public async Task<IActionResult> AtualizarStatusProjeto(string model, int id)
+    public async Task<IActionResult> AtualizarStatusProjeto(Projeto model, int id)
     {
         if (!ModelState.IsValid) return BadRequest(ModelState);
-        if (id == null) return StatusCode(404);
         try
         {
             await _repo.AtualizarStatus(model, id);
@@ -142,7 +141,6 @@ public class ProjetoController : ControllerBase
     [Authorize(Roles = "ADMIN")]
     public async Task<IActionResult> RemoverProjeto(int id)
     {
-        if (id == null) return StatusCode(404);
         try
         {
             await _repo.DeletarProjeto(id);

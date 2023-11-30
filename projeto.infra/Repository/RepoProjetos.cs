@@ -14,7 +14,7 @@ public class RepoProjetos : IRepoProjetos
         AocriarProjeto += _messageBroker.EnviarProjeto;
     }
 
-    public async Task<bool> AtualizarStatus(string model, int id)
+    public async Task<bool> AtualizarStatus(Projeto model, int id)
     {
         try
         {

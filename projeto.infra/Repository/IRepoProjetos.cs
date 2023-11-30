@@ -9,7 +9,7 @@ public interface IRepoProjetos
     float resultadoPorPagina, 
     string filtro);
     Task<bool> CriarProjeto(Projeto model);
-    Task<bool> AtualizarStatus(string model, int id);
+    Task<bool> AtualizarStatus(Projeto model, int id);
     Task<bool> DeletarProjeto(int id);
     Task<ProjetoBuscaIdDTO> BuscarPorId(int id);
 }

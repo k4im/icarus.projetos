@@ -8,11 +8,11 @@ public class DatabaseAdapterProjeto :  IDatabaseAdapterProjeto
     public DatabaseAdapterProjeto(IDataBaseConnection dataConnection)
         => _dataConnection = dataConnection;
 
-    public async Task AtualizarStatusEmBanco(string status, int id)
+    public async Task AtualizarStatusEmBanco(Projeto model, int id)
     {
         using var db = _dataConnection.ConnectionEntityFrameWork();
         var projeto = await db.Projetos.FirstOrDefaultAsync(x => x.Id == id);
-        projeto.AtualizarStatus(status);
+        projeto.AtualizarObjeto(model);
         await db.SaveChangesAsync();
     }
 

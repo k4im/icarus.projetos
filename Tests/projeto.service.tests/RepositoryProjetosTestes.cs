@@ -22,12 +22,12 @@ public class RepositoryProjetosTestes
     [Fact]
     public async void Deve_retornar_true_ao_atualizar_projeto()
     {
-        //Arrange
-        mockRepo.Setup(repo => repo.AtualizarStatus("projetoStatus", 1).Result)
+        var projeto = FakeProjeto.FactoryProjeto();
+        mockRepo.Setup(repo => repo.AtualizarStatus(projeto, 1).Result)
         .Returns(true);
 
         //Act
-        var result = await mockRepo.Object.AtualizarStatus("projetoStatus", 1);
+        var result = await mockRepo.Object.AtualizarStatus(projeto, 1);
 
         //Assert
         Assert.True(result);
@@ -66,11 +66,12 @@ public class RepositoryProjetosTestes
     public async void Deve_retornar_false_ao_atualizar_projeto()
     {
         //Arrange
-        mockRepo.Setup(repo => repo.AtualizarStatus("Teste", 1).Result)
+        var projeto = FakeProjeto.FactoryProjeto();
+        mockRepo.Setup(repo => repo.AtualizarStatus(projeto, 1).Result)
         .Returns(false);
 
         //Act
-        var result = await mockRepo.Object.AtualizarStatus("Teste", 1);
+        var result = await mockRepo.Object.AtualizarStatus(projeto, 1);
 
         //Assert
         Assert.False(result);
