@@ -1,5 +1,5 @@
 namespace projeto.databaseAdapters;
-public class DatabaseAdapter : IDatabaseAdapter
+public class DatabaseAdapter: IDatabaseAdapter
 {
     IDataBaseConnection _dataConnection;
     public DatabaseAdapter()
@@ -13,11 +13,11 @@ public class DatabaseAdapter : IDatabaseAdapter
     public async Task AtualizarBancoDeDadosDeProdutos(Projeto model)
     {
         using var db = _dataConnection.ConnectionEntityFrameWork();
-        var produto = await db.ProdutosEmEstoque.FirstOrDefaultAsync(x => x.Id == model.ProdutoUtilizadoId);
-        produto.Quantidade -= model.QuantidadeUtilizado;
+        var produto = await db.ProdutosEmEstoque
+        .FirstOrDefaultAsync(x => x.Id == model.ProdutoUtilizadoId);
+        produto!.Quantidade -= model.QuantidadeUtilizado;
         if(produto.Quantidade <= 0) {
-            db.Remove(produto);
-            
+            db.Remove(produto);    
         }
         await db.SaveChangesAsync();
     }
@@ -27,7 +27,7 @@ public class DatabaseAdapter : IDatabaseAdapter
     {
         using var db = _dataConnection.ConnectionEntityFrameWork();
         var projeto = await db.Projetos.FirstOrDefaultAsync(x => x.Id == id);
-        projeto.AtualizarObjeto(model);
+        projeto!.AtualizarObjeto(model);
         await db.SaveChangesAsync();
     }
 
@@ -56,6 +56,7 @@ public class DatabaseAdapter : IDatabaseAdapter
         }        
         catch (Exception ex) 
         {
+            Console.WriteLine($"Não foi possivel estar realizando a ação no Adapter: {ex.Message}");
             return false;
         }
     }
@@ -100,6 +101,7 @@ public class DatabaseAdapter : IDatabaseAdapter
             return true;
         }
         catch(Exception ex) {
+            Console.WriteLine($"Não foi possivel estar realizando a ação no Adapter: {ex.Message}");
             return false;
         }
         
