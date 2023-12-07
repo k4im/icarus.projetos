@@ -1,0 +1,15 @@
+/home/joao/github/icarus/icarus.projetos/Ports/projeto.databasePort/bin/release/net7.0/projeto.databasePort.deps.json
+/home/joao/github/icarus/icarus.projetos/Ports/projeto.databasePort/bin/release/net7.0/projeto.databasePort.dll
+/home/joao/github/icarus/icarus.projetos/Ports/projeto.databasePort/bin/release/net7.0/projeto.databasePort.pdb
+/home/joao/github/icarus/icarus.projetos/Ports/projeto.databasePort/bin/release/net7.0/projeto.domain.dll
+/home/joao/github/icarus/icarus.projetos/Ports/projeto.databasePort/bin/release/net7.0/projeto.domain.pdb
+/home/joao/github/icarus/icarus.projetos/Ports/projeto.databasePort/obj/release/net7.0/projeto.databasePort.csproj.AssemblyReference.cache
+/home/joao/github/icarus/icarus.projetos/Ports/projeto.databasePort/obj/release/net7.0/projeto.databasePort.GeneratedMSBuildEditorConfig.editorconfig
+/home/joao/github/icarus/icarus.projetos/Ports/projeto.databasePort/obj/release/net7.0/projeto.databasePort.AssemblyInfoInputs.cache
+/home/joao/github/icarus/icarus.projetos/Ports/projeto.databasePort/obj/release/net7.0/projeto.databasePort.AssemblyInfo.cs
+/home/joao/github/icarus/icarus.projetos/Ports/projeto.databasePort/obj/release/net7.0/projeto.databasePort.csproj.CoreCompileInputs.cache
+/home/joao/github/icarus/icarus.projetos/Ports/projeto.databasePort/obj/release/net7.0/projeto.databasePort.csproj.CopyComplete
+/home/joao/github/icarus/icarus.projetos/Ports/projeto.databasePort/obj/release/net7.0/projeto.databasePort.dll
+/home/joao/github/icarus/icarus.projetos/Ports/projeto.databasePort/obj/release/net7.0/refint/projeto.databasePort.dll
+/home/joao/github/icarus/icarus.projetos/Ports/projeto.databasePort/obj/release/net7.0/projeto.databasePort.pdb
+/home/joao/github/icarus/icarus.projetos/Ports/projeto.databasePort/obj/release/net7.0/ref/projeto.databasePort.dll
