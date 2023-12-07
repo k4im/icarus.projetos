@@ -13,9 +13,20 @@ USER appuser
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 ARG configuration=Release
 WORKDIR /src
-COPY ["projeto.service/projeto.service.csproj", "projeto.service/"]
-COPY ["projeto.domain/projeto.domain.csproj", "projeto.domain/"]
-COPY ["projeto.infra/projeto.infra.csproj", "projeto.infra/"]
+
+# Copiando os Portas de acesso
+COPY ["Ports/projeto.databasePort/projeto.databasePort.csproj", "projeto.databasePort/"]
+COPY ["Ports/projeto.servicebusPort/projeto.servicebusPort.csproj", "projeto.servicebusPort/"]
+
+# Copiando os adaptadores
+COPY ["Adapters/projeto.databaseAdapters/projeto.databaseAdapters.csproj", "projeto.databaseAdapters/"]
+COPY ["Adapters/projeto.servicebusAdapters/projeto.servicebusAdapters.csproj", "projeto.servicebusAdapters/"]
+
+# Copiando arquivos do core da aplicação
+COPY ["src/projeto.service/projeto.service.csproj", "projeto.service/"]
+COPY ["src/projeto.domain/projeto.domain.csproj", "projeto.domain/"]
+COPY ["src/projeto.infra/projeto.infra.csproj", "projeto.infra/"]
+
 RUN dotnet restore "projeto.service/projeto.service.csproj"
 COPY . .
 WORKDIR "/src/projeto.service"

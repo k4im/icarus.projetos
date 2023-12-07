@@ -1,0 +1,13 @@
+﻿global using projeto.infra.AsyncComm.Extensions;
+global using projeto.domain;
+global using projeto.domain.Entity;
+global using projeto.domain.Dtos;
+global using Microsoft.EntityFrameworkCore;
+global using projeto.infra.AsyncComm;
+global using Microsoft.Extensions.Configuration;
+global using RabbitMQ.Client;
+global using System.Text;
+global using Newtonsoft.Json;
+global using Dapper;
+global using MySqlConnector;
+global using projeto.databaseAdapters;
