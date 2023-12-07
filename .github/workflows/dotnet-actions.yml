@@ -36,7 +36,6 @@ jobs:
       
       - name: xUnitTests
         run: dotnet test
-        working-directory: ./Tests/projeto.service.tests
   
   build:
 
