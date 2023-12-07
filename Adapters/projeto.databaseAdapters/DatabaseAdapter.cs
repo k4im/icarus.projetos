@@ -5,6 +5,10 @@ public class DatabaseAdapter : IDatabaseAdapter
     public DatabaseAdapter()
         => _dataConnection = new DataBaseConnectionMysql();
 
+    public DatabaseAdapter(IDataBaseConnection dataConnection)
+    {
+        _dataConnection = dataConnection;
+    }
 
     public async Task AtualizarBancoDeDadosDeProdutos(Projeto model)
     {

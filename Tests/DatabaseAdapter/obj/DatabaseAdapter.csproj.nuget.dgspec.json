@@ -1,0 +1,284 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/joao/github/icarus/icarus.projetos/Tests/DatabaseAdapter/DatabaseAdapter.csproj": {}
+  },
+  "projects": {
+    "/home/joao/github/icarus/icarus.projetos/Adapters/projeto.databaseAdapters/projeto.databaseAdapters.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/joao/github/icarus/icarus.projetos/Adapters/projeto.databaseAdapters/projeto.databaseAdapters.csproj",
+        "projectName": "projeto.databaseAdapters",
+        "projectPath": "/home/joao/github/icarus/icarus.projetos/Adapters/projeto.databaseAdapters/projeto.databaseAdapters.csproj",
+        "packagesPath": "/home/joao/.nuget/packages/",
+        "outputPath": "/home/joao/github/icarus/icarus.projetos/Adapters/projeto.databaseAdapters/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/joao/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "/home/joao/github/icarus/icarus.projetos/Ports/projeto.databasePort/projeto.databasePort.csproj": {
+                "projectPath": "/home/joao/github/icarus/icarus.projetos/Ports/projeto.databasePort/projeto.databasePort.csproj"
+              },
+              "/home/joao/github/icarus/icarus.projetos/src/projeto.domain/projeto.domain.csproj": {
+                "projectPath": "/home/joao/github/icarus/icarus.projetos/src/projeto.domain/projeto.domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.1.24, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.9, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[8.2.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.113/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/joao/github/icarus/icarus.projetos/Ports/projeto.databasePort/projeto.databasePort.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/joao/github/icarus/icarus.projetos/Ports/projeto.databasePort/projeto.databasePort.csproj",
+        "projectName": "projeto.databasePort",
+        "projectPath": "/home/joao/github/icarus/icarus.projetos/Ports/projeto.databasePort/projeto.databasePort.csproj",
+        "packagesPath": "/home/joao/.nuget/packages/",
+        "outputPath": "/home/joao/github/icarus/icarus.projetos/Ports/projeto.databasePort/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/joao/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "/home/joao/github/icarus/icarus.projetos/src/projeto.domain/projeto.domain.csproj": {
+                "projectPath": "/home/joao/github/icarus/icarus.projetos/src/projeto.domain/projeto.domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.113/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/joao/github/icarus/icarus.projetos/Tests/DatabaseAdapter/DatabaseAdapter.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/joao/github/icarus/icarus.projetos/Tests/DatabaseAdapter/DatabaseAdapter.csproj",
+        "projectName": "DatabaseAdapter",
+        "projectPath": "/home/joao/github/icarus/icarus.projetos/Tests/DatabaseAdapter/DatabaseAdapter.csproj",
+        "packagesPath": "/home/joao/.nuget/packages/",
+        "outputPath": "/home/joao/github/icarus/icarus.projetos/Tests/DatabaseAdapter/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/joao/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "/home/joao/github/icarus/icarus.projetos/Adapters/projeto.databaseAdapters/projeto.databaseAdapters.csproj": {
+                "projectPath": "/home/joao/github/icarus/icarus.projetos/Adapters/projeto.databaseAdapters/projeto.databaseAdapters.csproj"
+              },
+              "/home/joao/github/icarus/icarus.projetos/Ports/projeto.databasePort/projeto.databasePort.csproj": {
+                "projectPath": "/home/joao/github/icarus/icarus.projetos/Ports/projeto.databasePort/projeto.databasePort.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.3.2, )"
+            },
+            "coverlet.collector": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.2, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.2, )"
+            },
+            "xunit.runner.visualstudio": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.4.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.113/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/joao/github/icarus/icarus.projetos/src/projeto.domain/projeto.domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/joao/github/icarus/icarus.projetos/src/projeto.domain/projeto.domain.csproj",
+        "projectName": "projeto.domain",
+        "projectPath": "/home/joao/github/icarus/icarus.projetos/src/projeto.domain/projeto.domain.csproj",
+        "packagesPath": "/home/joao/.nuget/packages/",
+        "outputPath": "/home/joao/github/icarus/icarus.projetos/src/projeto.domain/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/joao/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.113/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

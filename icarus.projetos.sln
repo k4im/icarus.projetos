@@ -23,6 +23,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "projeto.databaseAdapters", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "projeto.servicebusAdapter", "Adapters\projeto.servicebusAdapter\projeto.servicebusAdapter.csproj", "{029B3B7E-A9D7-405F-9CA1-15EE90FF40B5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{51758D1A-A688-40F5-89C7-DAF7DB0D3488}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseAdapter", "Tests\DatabaseAdapter\DatabaseAdapter.csproj", "{72A1AB7A-28B7-4326-8711-F1CF57D33EA5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -60,6 +64,10 @@ Global
 		{029B3B7E-A9D7-405F-9CA1-15EE90FF40B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{029B3B7E-A9D7-405F-9CA1-15EE90FF40B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{029B3B7E-A9D7-405F-9CA1-15EE90FF40B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72A1AB7A-28B7-4326-8711-F1CF57D33EA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72A1AB7A-28B7-4326-8711-F1CF57D33EA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72A1AB7A-28B7-4326-8711-F1CF57D33EA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72A1AB7A-28B7-4326-8711-F1CF57D33EA5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{9E9AADA6-76F4-4955-93CB-EF0D6FFF09B6} = {06FC9427-0EA8-4B9A-BCF1-12C833A72AD9}
@@ -69,5 +77,6 @@ Global
 		{0D5025C1-40FF-451C-8B72-3AB4B0DBD134} = {E58A1D68-9980-4A97-B3BE-7A90883440DB}
 		{1B56B5E1-5E39-4F0B-AEB7-B9DA6D0830A2} = {3153204F-27D5-4E2A-A308-275D6F6ED8B1}
 		{029B3B7E-A9D7-405F-9CA1-15EE90FF40B5} = {3153204F-27D5-4E2A-A308-275D6F6ED8B1}
+		{72A1AB7A-28B7-4326-8711-F1CF57D33EA5} = {51758D1A-A688-40F5-89C7-DAF7DB0D3488}
 	EndGlobalSection
 EndGlobal
