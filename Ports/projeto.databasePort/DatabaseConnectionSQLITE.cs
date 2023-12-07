@@ -1,8 +1,6 @@
-using System.Data.Common;
 using Microsoft.Data.Sqlite;
-using projeto.databasePort.Data;
 
-namespace projeto.databaseAdapters;
+namespace projeto.databasePort;
 public class DatabaseConnectionSQLITE : IDataBaseConnection
 {
     public DataContext ConnectionEntityFrameWork()

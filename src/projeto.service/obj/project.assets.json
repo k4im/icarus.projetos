@@ -1793,7 +1793,6 @@
         "dependencies": {
           "Dapper": "2.1.24",
           "Microsoft.EntityFrameworkCore": "7.0.9",
-          "Microsoft.EntityFrameworkCore.Sqlite": "7.0.0",
           "MySql.Data": "8.2.0",
           "projeto.databasePort": "1.0.0",
           "projeto.domain": "1.0.0"
@@ -1809,6 +1808,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
+          "Microsoft.EntityFrameworkCore.Sqlite": "7.0.0",
           "Pomelo.EntityFrameworkCore.MySql": "7.0.0",
           "projeto.domain": "1.0.0"
         },

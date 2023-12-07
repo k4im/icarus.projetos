@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "6r68DIEG4NYrYbWeRg6h81oMSLLkrtzKIvlzYwnB3DJEowURPkV+b4TV1tm11G+q/gCylRPnaGGJUUnULRMZdw==",
+  "dgSpecHash": "BpnxvrDM0Rv0v5W+lx4pW2EQjUFlo9j0ro35sXcVlOPrFOSA2zQKaVbpJ+ax1LvKvNaQTfcmlv6jMaeEr4KNJg==",
   "success": true,
   "projectFilePath": "/home/joao/github/icarus/icarus.projetos/Tests/DatabaseAdapterTest/DatabaseAdapterTest.csproj",
   "expectedPackageFiles": [
