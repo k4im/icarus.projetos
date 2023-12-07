@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "/home/joao/github/icarus/icarus.projetos/Tests/DatabaseAdapterTest/DatabaseAdapter.csproj": {}
+    "/home/joao/github/icarus/icarus.projetos/Tests/DatabaseAdapterTest/DatabaseAdapterTest.csproj": {}
   },
   "projects": {
     "/home/joao/github/icarus/icarus.projetos/Adapters/projeto.databaseAdapters/projeto.databaseAdapters.csproj": {
@@ -145,12 +145,12 @@
         }
       }
     },
-    "/home/joao/github/icarus/icarus.projetos/Tests/DatabaseAdapterTest/DatabaseAdapter.csproj": {
+    "/home/joao/github/icarus/icarus.projetos/Tests/DatabaseAdapterTest/DatabaseAdapterTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/joao/github/icarus/icarus.projetos/Tests/DatabaseAdapterTest/DatabaseAdapter.csproj",
-        "projectName": "DatabaseAdapter",
-        "projectPath": "/home/joao/github/icarus/icarus.projetos/Tests/DatabaseAdapterTest/DatabaseAdapter.csproj",
+        "projectUniqueName": "/home/joao/github/icarus/icarus.projetos/Tests/DatabaseAdapterTest/DatabaseAdapterTest.csproj",
+        "projectName": "DatabaseAdapterTest",
+        "projectPath": "/home/joao/github/icarus/icarus.projetos/Tests/DatabaseAdapterTest/DatabaseAdapterTest.csproj",
         "packagesPath": "/home/joao/.nuget/packages/",
         "outputPath": "/home/joao/github/icarus/icarus.projetos/Tests/DatabaseAdapterTest/obj/",
         "projectStyle": "PackageReference",

@@ -8355,11 +8355,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/joao/github/icarus/icarus.projetos/Tests/DatabaseAdapter/DatabaseAdapter.csproj",
-      "projectName": "DatabaseAdapter",
-      "projectPath": "/home/joao/github/icarus/icarus.projetos/Tests/DatabaseAdapter/DatabaseAdapter.csproj",
+      "projectUniqueName": "/home/joao/github/icarus/icarus.projetos/Tests/DatabaseAdapterTest/DatabaseAdapterTest.csproj",
+      "projectName": "DatabaseAdapterTest",
+      "projectPath": "/home/joao/github/icarus/icarus.projetos/Tests/DatabaseAdapterTest/DatabaseAdapterTest.csproj",
       "packagesPath": "/home/joao/.nuget/packages/",
-      "outputPath": "/home/joao/github/icarus/icarus.projetos/Tests/DatabaseAdapter/obj/",
+      "outputPath": "/home/joao/github/icarus/icarus.projetos/Tests/DatabaseAdapterTest/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/joao/.nuget/NuGet/NuGet.Config"

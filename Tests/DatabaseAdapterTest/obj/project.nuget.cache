@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MoTnQjGOs94OAQz5atpI9LWecqt0vPdXKok01m3jeIc/hO2Cpt6FmNm5pzzMUdr2NUQCS9Xs5d4wPkgMvhAI9w==",
+  "dgSpecHash": "6r68DIEG4NYrYbWeRg6h81oMSLLkrtzKIvlzYwnB3DJEowURPkV+b4TV1tm11G+q/gCylRPnaGGJUUnULRMZdw==",
   "success": true,
-  "projectFilePath": "/home/joao/github/icarus/icarus.projetos/Tests/DatabaseAdapter/DatabaseAdapter.csproj",
+  "projectFilePath": "/home/joao/github/icarus/icarus.projetos/Tests/DatabaseAdapterTest/DatabaseAdapterTest.csproj",
   "expectedPackageFiles": [
     "/home/joao/.nuget/packages/bouncycastle.cryptography/2.2.1/bouncycastle.cryptography.2.2.1.nupkg.sha512",
     "/home/joao/.nuget/packages/coverlet.collector/3.1.2/coverlet.collector.3.1.2.nupkg.sha512",
