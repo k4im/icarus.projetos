@@ -10,14 +10,13 @@
         "dependencies": {
           "AutoMapper": "12.0.1",
           "Microsoft.EntityFrameworkCore.Tools": "7.0.9",
-          "Microsoft.EntityFrameworkCore.InMemory": "7.0.9",
           "Microsoft.EntityFrameworkCore.Relational": "7.0.9",
           "Microsoft.Extensions.Configuration": "7.0.0",
           "Newtonsoft.Json": "13.0.3",
           "Pomelo.EntityFrameworkCore.MySql": "7.0.0",
-          "RabbitMQ.Client": "6.5.0",
           "projeto.databaseAdapters": "1.0.0",
-          "projeto.domain": "1.0.0"
+          "projeto.domain": "1.0.0",
+          "projeto.servicebusAdapter": "1.0.0"
         },
         "runtime": {
           "projeto.infra.dll": {}
@@ -424,7 +423,7 @@
           }
         }
       },
-      "RabbitMQ.Client/6.5.0": {
+      "RabbitMQ.Client/6.8.0": {
         "dependencies": {
           "System.Memory": "4.5.5",
           "System.Threading.Channels": "7.0.0"
@@ -432,7 +431,7 @@
         "runtime": {
           "lib/netstandard2.0/RabbitMQ.Client.dll": {
             "assemblyVersion": "6.0.0.0",
-            "fileVersion": "6.5.0.0"
+            "fileVersion": "6.8.0.0"
           }
         }
       },
@@ -782,6 +781,7 @@
       },
       "projeto.databasePort/1.0.0": {
         "dependencies": {
+          "Microsoft.EntityFrameworkCore.InMemory": "7.0.9",
           "Microsoft.EntityFrameworkCore.Sqlite": "7.0.0",
           "Pomelo.EntityFrameworkCore.MySql": "7.0.0",
           "projeto.domain": "1.0.0"
@@ -793,6 +793,25 @@
       "projeto.domain/1.0.0": {
         "runtime": {
           "projeto.domain.dll": {}
+        }
+      },
+      "projeto.servicebusAdapter/1.0.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3",
+          "RabbitMQ.Client": "6.8.0",
+          "projeto.domain": "1.0.0",
+          "projeto.servicebusPort": "1.0.0"
+        },
+        "runtime": {
+          "projeto.servicebusAdapter.dll": {}
+        }
+      },
+      "projeto.servicebusPort/1.0.0": {
+        "dependencies": {
+          "RabbitMQ.Client": "6.8.0"
+        },
+        "runtime": {
+          "projeto.servicebusPort.dll": {}
         }
       }
     }
@@ -1069,12 +1088,12 @@
       "path": "pomelo.entityframeworkcore.mysql/7.0.0",
       "hashPath": "pomelo.entityframeworkcore.mysql.7.0.0.nupkg.sha512"
     },
-    "RabbitMQ.Client/6.5.0": {
+    "RabbitMQ.Client/6.8.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-9hY5HiWPtCla1/l0WmXmLnqoX7iKE3neBQUWnetIJrRpOvTbO//XQfQDh++xgHCshL40Kv/6bR0HDkmJz46twg==",
-      "path": "rabbitmq.client/6.5.0",
-      "hashPath": "rabbitmq.client.6.5.0.nupkg.sha512"
+      "sha512": "sha512-eO4W73DUQMbgw5wcnf+6gj8fyQQlRZG2XYsIext0ajDDdggqJGvMmR8JvywHpInEOzC8q0bEdDWU+oLJ7ccyxw==",
+      "path": "rabbitmq.client/6.8.0",
+      "hashPath": "rabbitmq.client.6.8.0.nupkg.sha512"
     },
     "SQLitePCLRaw.bundle_e_sqlite3/2.1.2": {
       "type": "package",
@@ -1297,6 +1316,16 @@
       "sha512": ""
     },
     "projeto.domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "projeto.servicebusAdapter/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "projeto.servicebusPort/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

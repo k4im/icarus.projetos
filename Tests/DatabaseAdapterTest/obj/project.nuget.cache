@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "BpnxvrDM0Rv0v5W+lx4pW2EQjUFlo9j0ro35sXcVlOPrFOSA2zQKaVbpJ+ax1LvKvNaQTfcmlv6jMaeEr4KNJg==",
+  "dgSpecHash": "+jzLoh/O5Vm9h/uiEmCM0+fAvlXxDdJYuR5c4GytVl3qHQT36KCwCzk1VUbBJWuSvAjbVC48RmuweOuqB5t8FQ==",
   "success": true,
   "projectFilePath": "/home/joao/github/icarus/icarus.projetos/Tests/DatabaseAdapterTest/DatabaseAdapterTest.csproj",
   "expectedPackageFiles": [
@@ -17,6 +17,7 @@
     "/home/joao/.nuget/packages/microsoft.entityframeworkcore/7.0.9/microsoft.entityframeworkcore.7.0.9.nupkg.sha512",
     "/home/joao/.nuget/packages/microsoft.entityframeworkcore.abstractions/7.0.9/microsoft.entityframeworkcore.abstractions.7.0.9.nupkg.sha512",
     "/home/joao/.nuget/packages/microsoft.entityframeworkcore.analyzers/7.0.9/microsoft.entityframeworkcore.analyzers.7.0.9.nupkg.sha512",
+    "/home/joao/.nuget/packages/microsoft.entityframeworkcore.inmemory/7.0.9/microsoft.entityframeworkcore.inmemory.7.0.9.nupkg.sha512",
     "/home/joao/.nuget/packages/microsoft.entityframeworkcore.relational/7.0.2/microsoft.entityframeworkcore.relational.7.0.2.nupkg.sha512",
     "/home/joao/.nuget/packages/microsoft.entityframeworkcore.sqlite/7.0.0/microsoft.entityframeworkcore.sqlite.7.0.0.nupkg.sha512",
     "/home/joao/.nuget/packages/microsoft.entityframeworkcore.sqlite.core/7.0.0/microsoft.entityframeworkcore.sqlite.core.7.0.0.nupkg.sha512",

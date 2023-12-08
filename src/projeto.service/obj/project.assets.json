@@ -965,7 +965,7 @@
           }
         }
       },
-      "RabbitMQ.Client/6.5.0": {
+      "RabbitMQ.Client/6.8.0": {
         "type": "package",
         "dependencies": {
           "System.Memory": "4.5.5",
@@ -1808,6 +1808,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
+          "Microsoft.EntityFrameworkCore.InMemory": "7.0.9",
           "Microsoft.EntityFrameworkCore.Sqlite": "7.0.0",
           "Pomelo.EntityFrameworkCore.MySql": "7.0.0",
           "projeto.domain": "1.0.0"
@@ -1834,20 +1835,48 @@
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "AutoMapper": "12.0.1",
-          "Microsoft.EntityFrameworkCore.InMemory": "7.0.9",
           "Microsoft.EntityFrameworkCore.Relational": "7.0.9",
           "Microsoft.Extensions.Configuration": "7.0.0",
           "Newtonsoft.Json": "13.0.3",
           "Pomelo.EntityFrameworkCore.MySql": "7.0.0",
-          "RabbitMQ.Client": "6.5.0",
           "projeto.databaseAdapters": "1.0.0",
-          "projeto.domain": "1.0.0"
+          "projeto.domain": "1.0.0",
+          "projeto.servicebusAdapter": "1.0.0"
         },
         "compile": {
           "bin/placeholder/projeto.infra.dll": {}
         },
         "runtime": {
           "bin/placeholder/projeto.infra.dll": {}
+        }
+      },
+      "projeto.servicebusAdapter/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3",
+          "RabbitMQ.Client": "6.8.0",
+          "projeto.domain": "1.0.0",
+          "projeto.servicebusPort": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/projeto.servicebusAdapter.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/projeto.servicebusAdapter.dll": {}
+        }
+      },
+      "projeto.servicebusPort/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "RabbitMQ.Client": "6.8.0"
+        },
+        "compile": {
+          "bin/placeholder/projeto.servicebusPort.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/projeto.servicebusPort.dll": {}
         }
       }
     }
@@ -3318,19 +3347,20 @@
         "pomelo.entityframeworkcore.mysql.nuspec"
       ]
     },
-    "RabbitMQ.Client/6.5.0": {
-      "sha512": "9hY5HiWPtCla1/l0WmXmLnqoX7iKE3neBQUWnetIJrRpOvTbO//XQfQDh++xgHCshL40Kv/6bR0HDkmJz46twg==",
+    "RabbitMQ.Client/6.8.0": {
+      "sha512": "eO4W73DUQMbgw5wcnf+6gj8fyQQlRZG2XYsIext0ajDDdggqJGvMmR8JvywHpInEOzC8q0bEdDWU+oLJ7ccyxw==",
       "type": "package",
-      "path": "rabbitmq.client/6.5.0",
+      "path": "rabbitmq.client/6.8.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "README.md",
         "icon.png",
-        "lib/net461/RabbitMQ.Client.dll",
-        "lib/net461/RabbitMQ.Client.xml",
+        "lib/net462/RabbitMQ.Client.dll",
+        "lib/net462/RabbitMQ.Client.xml",
         "lib/netstandard2.0/RabbitMQ.Client.dll",
         "lib/netstandard2.0/RabbitMQ.Client.xml",
-        "rabbitmq.client.6.5.0.nupkg.sha512",
+        "rabbitmq.client.6.8.0.nupkg.sha512",
         "rabbitmq.client.nuspec"
       ]
     },
@@ -4898,6 +4928,16 @@
       "type": "project",
       "path": "../projeto.infra/projeto.infra.csproj",
       "msbuildProject": "../projeto.infra/projeto.infra.csproj"
+    },
+    "projeto.servicebusAdapter/1.0.0": {
+      "type": "project",
+      "path": "../../Adapters/projeto.servicebusAdapter/projeto.servicebusAdapter.csproj",
+      "msbuildProject": "../../Adapters/projeto.servicebusAdapter/projeto.servicebusAdapter.csproj"
+    },
+    "projeto.servicebusPort/1.0.0": {
+      "type": "project",
+      "path": "../../Ports/projeto.servicebusPort/projeto.servicebusPort.csproj",
+      "msbuildProject": "../../Ports/projeto.servicebusPort/projeto.servicebusPort.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -4918,7 +4958,8 @@
       "System.IdentityModel.Tokens.Jwt >= 6.30.1",
       "projeto.databasePort >= 1.0.0",
       "projeto.domain >= 1.0.0",
-      "projeto.infra >= 1.0.0"
+      "projeto.infra >= 1.0.0",
+      "projeto.servicebusAdapter >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -4946,6 +4987,9 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
+            "/home/joao/github/icarus/icarus.projetos/Adapters/projeto.servicebusAdapter/projeto.servicebusAdapter.csproj": {
+              "projectPath": "/home/joao/github/icarus/icarus.projetos/Adapters/projeto.servicebusAdapter/projeto.servicebusAdapter.csproj"
+            },
             "/home/joao/github/icarus/icarus.projetos/Ports/projeto.databasePort/projeto.databasePort.csproj": {
               "projectPath": "/home/joao/github/icarus/icarus.projetos/Ports/projeto.databasePort/projeto.databasePort.csproj"
             },

@@ -57,6 +57,16 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
+      "projeto.domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/projeto.domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/projeto.domain.dll": {}
+        }
+      },
       "projeto.servicebusPort/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
@@ -172,6 +182,11 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "projeto.domain/1.0.0": {
+      "type": "project",
+      "path": "../../src/projeto.domain/projeto.domain.csproj",
+      "msbuildProject": "../../src/projeto.domain/projeto.domain.csproj"
+    },
     "projeto.servicebusPort/1.0.0": {
       "type": "project",
       "path": "../../Ports/projeto.servicebusPort/projeto.servicebusPort.csproj",
@@ -182,6 +197,7 @@
     "net7.0": [
       "Newtonsoft.Json >= 13.0.3",
       "RabbitMQ.Client >= 6.8.0",
+      "projeto.domain >= 1.0.0",
       "projeto.servicebusPort >= 1.0.0"
     ]
   },
@@ -212,6 +228,9 @@
           "projectReferences": {
             "/home/joao/github/icarus/icarus.projetos/Ports/projeto.servicebusPort/projeto.servicebusPort.csproj": {
               "projectPath": "/home/joao/github/icarus/icarus.projetos/Ports/projeto.servicebusPort/projeto.servicebusPort.csproj"
+            },
+            "/home/joao/github/icarus/icarus.projetos/src/projeto.domain/projeto.domain.csproj": {
+              "projectPath": "/home/joao/github/icarus/icarus.projetos/src/projeto.domain/projeto.domain.csproj"
             }
           }
         }

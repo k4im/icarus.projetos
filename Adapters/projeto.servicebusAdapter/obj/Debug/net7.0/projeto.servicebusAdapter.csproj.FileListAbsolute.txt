@@ -1,0 +1,17 @@
+/home/joao/github/icarus/icarus.projetos/Adapters/projeto.servicebusAdapter/bin/Debug/net7.0/projeto.servicebusAdapter.deps.json
+/home/joao/github/icarus/icarus.projetos/Adapters/projeto.servicebusAdapter/bin/Debug/net7.0/projeto.servicebusAdapter.dll
+/home/joao/github/icarus/icarus.projetos/Adapters/projeto.servicebusAdapter/bin/Debug/net7.0/projeto.servicebusAdapter.pdb
+/home/joao/github/icarus/icarus.projetos/Adapters/projeto.servicebusAdapter/bin/Debug/net7.0/projeto.domain.dll
+/home/joao/github/icarus/icarus.projetos/Adapters/projeto.servicebusAdapter/bin/Debug/net7.0/projeto.servicebusPort.dll
+/home/joao/github/icarus/icarus.projetos/Adapters/projeto.servicebusAdapter/bin/Debug/net7.0/projeto.servicebusPort.pdb
+/home/joao/github/icarus/icarus.projetos/Adapters/projeto.servicebusAdapter/bin/Debug/net7.0/projeto.domain.pdb
+/home/joao/github/icarus/icarus.projetos/Adapters/projeto.servicebusAdapter/obj/Debug/net7.0/projeto.servicebusAdapter.csproj.AssemblyReference.cache
+/home/joao/github/icarus/icarus.projetos/Adapters/projeto.servicebusAdapter/obj/Debug/net7.0/projeto.servicebusAdapter.GeneratedMSBuildEditorConfig.editorconfig
+/home/joao/github/icarus/icarus.projetos/Adapters/projeto.servicebusAdapter/obj/Debug/net7.0/projeto.servicebusAdapter.AssemblyInfoInputs.cache
+/home/joao/github/icarus/icarus.projetos/Adapters/projeto.servicebusAdapter/obj/Debug/net7.0/projeto.servicebusAdapter.AssemblyInfo.cs
+/home/joao/github/icarus/icarus.projetos/Adapters/projeto.servicebusAdapter/obj/Debug/net7.0/projeto.servicebusAdapter.csproj.CoreCompileInputs.cache
+/home/joao/github/icarus/icarus.projetos/Adapters/projeto.servicebusAdapter/obj/Debug/net7.0/projeto.servicebusAdapter.csproj.CopyComplete
+/home/joao/github/icarus/icarus.projetos/Adapters/projeto.servicebusAdapter/obj/Debug/net7.0/projeto.servicebusAdapter.dll
+/home/joao/github/icarus/icarus.projetos/Adapters/projeto.servicebusAdapter/obj/Debug/net7.0/refint/projeto.servicebusAdapter.dll
+/home/joao/github/icarus/icarus.projetos/Adapters/projeto.servicebusAdapter/obj/Debug/net7.0/projeto.servicebusAdapter.pdb
+/home/joao/github/icarus/icarus.projetos/Adapters/projeto.servicebusAdapter/obj/Debug/net7.0/ref/projeto.servicebusAdapter.dll

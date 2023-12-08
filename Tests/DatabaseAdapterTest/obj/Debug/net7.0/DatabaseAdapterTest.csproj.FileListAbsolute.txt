@@ -170,3 +170,4 @@
 /home/joao/github/icarus/icarus.projetos/Tests/DatabaseAdapterTest/obj/Debug/net7.0/DatabaseAdapterTest.pdb
 /home/joao/github/icarus/icarus.projetos/Tests/DatabaseAdapterTest/obj/Debug/net7.0/DatabaseAdapterTest.genruntimeconfig.cache
 /home/joao/github/icarus/icarus.projetos/Tests/DatabaseAdapterTest/obj/Debug/net7.0/ref/DatabaseAdapterTest.dll
+/home/joao/github/icarus/icarus.projetos/Tests/DatabaseAdapterTest/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.InMemory.dll

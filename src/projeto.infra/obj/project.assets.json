@@ -637,6 +637,23 @@
           }
         }
       },
+      "RabbitMQ.Client/6.8.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Memory": "4.5.5",
+          "System.Threading.Channels": "7.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/RabbitMQ.Client.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/RabbitMQ.Client.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "SQLitePCLRaw.bundle_e_sqlite3/2.1.2": {
         "type": "package",
         "dependencies": {
@@ -882,7 +899,7 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "System.Memory/4.5.3": {
+      "System.Memory/4.5.5": {
         "type": "package",
         "compile": {
           "ref/netcoreapp2.1/_._": {}
@@ -1117,6 +1134,22 @@
           "buildTransitive/net6.0/System.Text.Json.targets": {}
         }
       },
+      "System.Threading.Channels/7.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/System.Threading.Channels.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/System.Threading.Channels.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        }
+      },
       "System.Threading.Tasks/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -1211,6 +1244,35 @@
         },
         "runtime": {
           "bin/placeholder/projeto.domain.dll": {}
+        }
+      },
+      "projeto.servicebusAdapter/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3",
+          "RabbitMQ.Client": "6.8.0",
+          "projeto.domain": "1.0.0",
+          "projeto.servicebusPort": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/projeto.servicebusAdapter.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/projeto.servicebusAdapter.dll": {}
+        }
+      },
+      "projeto.servicebusPort/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "RabbitMQ.Client": "6.8.0"
+        },
+        "compile": {
+          "bin/placeholder/projeto.servicebusPort.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/projeto.servicebusPort.dll": {}
         }
       }
     }
@@ -2127,6 +2189,23 @@
         "pomelo.entityframeworkcore.mysql.nuspec"
       ]
     },
+    "RabbitMQ.Client/6.8.0": {
+      "sha512": "eO4W73DUQMbgw5wcnf+6gj8fyQQlRZG2XYsIext0ajDDdggqJGvMmR8JvywHpInEOzC8q0bEdDWU+oLJ7ccyxw==",
+      "type": "package",
+      "path": "rabbitmq.client/6.8.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "icon.png",
+        "lib/net462/RabbitMQ.Client.dll",
+        "lib/net462/RabbitMQ.Client.xml",
+        "lib/netstandard2.0/RabbitMQ.Client.dll",
+        "lib/netstandard2.0/RabbitMQ.Client.xml",
+        "rabbitmq.client.6.8.0.nupkg.sha512",
+        "rabbitmq.client.nuspec"
+      ]
+    },
     "SQLitePCLRaw.bundle_e_sqlite3/2.1.2": {
       "sha512": "ilkvNhrTersLmIVAcDwwPqfhUFCg19Z1GVMvCSi3xk6Akq94f4qadLORQCq/T8+9JgMiPs+F/NECw5uauviaNw==",
       "type": "package",
@@ -2461,22 +2540,24 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "System.Memory/4.5.3": {
-      "sha512": "3oDzvc/zzetpTKWMShs1AADwZjQ/36HnsufHRPcOjyRAAMLDlu2iD33MBI2opxnezcVUtXyqDXXjoFMOU9c7SA==",
+    "System.Memory/4.5.5": {
+      "sha512": "XIWiDvKPXaTveaB7HVganDlOCRoj03l+jrwNvcge/t8vhGYKvqV+dMv6G4SAX2NoNmN0wZfVPTAlFwZcZvVOUw==",
       "type": "package",
-      "path": "system.memory/4.5.3",
+      "path": "system.memory/4.5.5",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.Memory.dll",
+        "lib/net461/System.Memory.xml",
         "lib/netcoreapp2.1/_._",
         "lib/netstandard1.1/System.Memory.dll",
         "lib/netstandard1.1/System.Memory.xml",
         "lib/netstandard2.0/System.Memory.dll",
         "lib/netstandard2.0/System.Memory.xml",
         "ref/netcoreapp2.1/_._",
-        "system.memory.4.5.3.nupkg.sha512",
+        "system.memory.4.5.5.nupkg.sha512",
         "system.memory.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
@@ -3155,6 +3236,35 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "System.Threading.Channels/7.0.0": {
+      "sha512": "qmeeYNROMsONF6ndEZcIQ+VxR4Q/TX/7uIVLJqtwIWL7dDWeh0l1UIqgo4wYyjG//5lUNhwkLDSFl+pAWO6oiA==",
+      "type": "package",
+      "path": "system.threading.channels/7.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.Threading.Channels.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/System.Threading.Channels.targets",
+        "lib/net462/System.Threading.Channels.dll",
+        "lib/net462/System.Threading.Channels.xml",
+        "lib/net6.0/System.Threading.Channels.dll",
+        "lib/net6.0/System.Threading.Channels.xml",
+        "lib/net7.0/System.Threading.Channels.dll",
+        "lib/net7.0/System.Threading.Channels.xml",
+        "lib/netstandard2.0/System.Threading.Channels.dll",
+        "lib/netstandard2.0/System.Threading.Channels.xml",
+        "lib/netstandard2.1/System.Threading.Channels.dll",
+        "lib/netstandard2.1/System.Threading.Channels.xml",
+        "system.threading.channels.7.0.0.nupkg.sha512",
+        "system.threading.channels.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
     "System.Threading.Tasks/4.3.0": {
       "sha512": "LbSxKEdOUhVe8BezB/9uOGGppt+nZf6e1VFyw6v3DN6lqitm0OSn2uXMOdtP0M3W4iMcqcivm2J6UgqiwwnXiA==",
       "type": "package",
@@ -3313,6 +3423,16 @@
       "type": "project",
       "path": "../projeto.domain/projeto.domain.csproj",
       "msbuildProject": "../projeto.domain/projeto.domain.csproj"
+    },
+    "projeto.servicebusAdapter/1.0.0": {
+      "type": "project",
+      "path": "../../Adapters/projeto.servicebusAdapter/projeto.servicebusAdapter.csproj",
+      "msbuildProject": "../../Adapters/projeto.servicebusAdapter/projeto.servicebusAdapter.csproj"
+    },
+    "projeto.servicebusPort/1.0.0": {
+      "type": "project",
+      "path": "../../Ports/projeto.servicebusPort/projeto.servicebusPort.csproj",
+      "msbuildProject": "../../Ports/projeto.servicebusPort/projeto.servicebusPort.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -3324,7 +3444,8 @@
       "Newtonsoft.Json >= 13.0.3",
       "Pomelo.EntityFrameworkCore.MySql >= 7.0.0",
       "projeto.databaseAdapters >= 1.0.0",
-      "projeto.domain >= 1.0.0"
+      "projeto.domain >= 1.0.0",
+      "projeto.servicebusAdapter >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -3354,6 +3475,9 @@
           "projectReferences": {
             "/home/joao/github/icarus/icarus.projetos/Adapters/projeto.databaseAdapters/projeto.databaseAdapters.csproj": {
               "projectPath": "/home/joao/github/icarus/icarus.projetos/Adapters/projeto.databaseAdapters/projeto.databaseAdapters.csproj"
+            },
+            "/home/joao/github/icarus/icarus.projetos/Adapters/projeto.servicebusAdapter/projeto.servicebusAdapter.csproj": {
+              "projectPath": "/home/joao/github/icarus/icarus.projetos/Adapters/projeto.servicebusAdapter/projeto.servicebusAdapter.csproj"
             },
             "/home/joao/github/icarus/icarus.projetos/src/projeto.domain/projeto.domain.csproj": {
               "projectPath": "/home/joao/github/icarus/icarus.projetos/src/projeto.domain/projeto.domain.csproj"

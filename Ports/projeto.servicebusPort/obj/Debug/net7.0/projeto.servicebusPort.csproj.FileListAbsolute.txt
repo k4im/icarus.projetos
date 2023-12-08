@@ -1,0 +1,12 @@
+/home/joao/github/icarus/icarus.projetos/Ports/projeto.servicebusPort/bin/Debug/net7.0/projeto.servicebusPort.deps.json
+/home/joao/github/icarus/icarus.projetos/Ports/projeto.servicebusPort/bin/Debug/net7.0/projeto.servicebusPort.dll
+/home/joao/github/icarus/icarus.projetos/Ports/projeto.servicebusPort/bin/Debug/net7.0/projeto.servicebusPort.pdb
+/home/joao/github/icarus/icarus.projetos/Ports/projeto.servicebusPort/obj/Debug/net7.0/projeto.servicebusPort.csproj.AssemblyReference.cache
+/home/joao/github/icarus/icarus.projetos/Ports/projeto.servicebusPort/obj/Debug/net7.0/projeto.servicebusPort.GeneratedMSBuildEditorConfig.editorconfig
+/home/joao/github/icarus/icarus.projetos/Ports/projeto.servicebusPort/obj/Debug/net7.0/projeto.servicebusPort.AssemblyInfoInputs.cache
+/home/joao/github/icarus/icarus.projetos/Ports/projeto.servicebusPort/obj/Debug/net7.0/projeto.servicebusPort.AssemblyInfo.cs
+/home/joao/github/icarus/icarus.projetos/Ports/projeto.servicebusPort/obj/Debug/net7.0/projeto.servicebusPort.csproj.CoreCompileInputs.cache
+/home/joao/github/icarus/icarus.projetos/Ports/projeto.servicebusPort/obj/Debug/net7.0/projeto.servicebusPort.dll
+/home/joao/github/icarus/icarus.projetos/Ports/projeto.servicebusPort/obj/Debug/net7.0/refint/projeto.servicebusPort.dll
+/home/joao/github/icarus/icarus.projetos/Ports/projeto.servicebusPort/obj/Debug/net7.0/projeto.servicebusPort.pdb
+/home/joao/github/icarus/icarus.projetos/Ports/projeto.servicebusPort/obj/Debug/net7.0/ref/projeto.servicebusPort.dll

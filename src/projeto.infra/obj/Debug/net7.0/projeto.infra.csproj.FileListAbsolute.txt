@@ -136,3 +136,7 @@ C:/Users/santo/github/icarus-sistema/icarus.projetos/projeto.infra/obj/Debug/net
 /home/joao/github/icarus/icarus.projetos/src/projeto.infra/obj/Debug/net7.0/projeto.infra.pdb
 /home/joao/github/icarus/icarus.projetos/src/projeto.infra/obj/Debug/net7.0/projeto.infra.genruntimeconfig.cache
 /home/joao/github/icarus/icarus.projetos/src/projeto.infra/obj/Debug/net7.0/ref/projeto.infra.dll
+/home/joao/github/icarus/icarus.projetos/src/projeto.infra/bin/Debug/net7.0/projeto.servicebusAdapter.dll
+/home/joao/github/icarus/icarus.projetos/src/projeto.infra/bin/Debug/net7.0/projeto.servicebusPort.dll
+/home/joao/github/icarus/icarus.projetos/src/projeto.infra/bin/Debug/net7.0/projeto.servicebusAdapter.pdb
+/home/joao/github/icarus/icarus.projetos/src/projeto.infra/bin/Debug/net7.0/projeto.servicebusPort.pdb

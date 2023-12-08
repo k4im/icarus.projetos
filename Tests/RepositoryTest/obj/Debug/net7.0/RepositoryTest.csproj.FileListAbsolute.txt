@@ -181,3 +181,7 @@
 /home/joao/github/icarus/icarus.projetos/Tests/RepositoryTest/obj/Debug/net7.0/RepositoryTest.pdb
 /home/joao/github/icarus/icarus.projetos/Tests/RepositoryTest/obj/Debug/net7.0/RepositoryTest.genruntimeconfig.cache
 /home/joao/github/icarus/icarus.projetos/Tests/RepositoryTest/obj/Debug/net7.0/ref/RepositoryTest.dll
+/home/joao/github/icarus/icarus.projetos/Tests/RepositoryTest/bin/Debug/net7.0/projeto.servicebusAdapter.dll
+/home/joao/github/icarus/icarus.projetos/Tests/RepositoryTest/bin/Debug/net7.0/projeto.servicebusPort.dll
+/home/joao/github/icarus/icarus.projetos/Tests/RepositoryTest/bin/Debug/net7.0/projeto.servicebusAdapter.pdb
+/home/joao/github/icarus/icarus.projetos/Tests/RepositoryTest/bin/Debug/net7.0/projeto.servicebusPort.pdb
