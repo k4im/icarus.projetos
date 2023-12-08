@@ -33,5 +33,6 @@
     <ProjectReference Include="..\projeto.domain\projeto.domain.csproj" />
     <ProjectReference Include="..\projeto.infra\projeto.infra.csproj" />
     <ProjectReference Include="..\..\Ports\projeto.databasePort\projeto.databasePort.csproj" />
+    <ProjectReference Include="..\..\Adapters\projeto.servicebusAdapter\projeto.servicebusAdapter.csproj" />
   </ItemGroup>
 </Project>

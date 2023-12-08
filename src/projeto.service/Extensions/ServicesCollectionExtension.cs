@@ -1,5 +1,6 @@
 using MySqlConnector;
 using projeto.databaseAdapters;
+using projeto.servicebusAdapter;
 
 namespace projeto.service.Extensions;
 public static class ServicesColletionExtensions
@@ -71,7 +72,7 @@ public static class ServicesColletionExtensions
         services.AddScoped<IRepoProjetos, RepoProjetos>();
         services.AddHttpContextAccessor();
         services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-        services.AddScoped<IMessageBusService, MessageBusService>();
+        services.AddScoped<IServiceBusAdapter, ServiceBusAdapter>();
         services.AddTransient<IDatabaseAdapter, DatabaseAdapter>();
         services.AddAutoMapper(typeof(Program).Assembly);
         return services;

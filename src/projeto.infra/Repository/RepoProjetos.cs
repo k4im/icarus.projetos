@@ -1,17 +1,19 @@
+using projeto.servicebusAdapter;
+
 namespace projeto.infra.Repository;
 public class RepoProjetos : IRepoProjetos
 {
     //Delegates e Eventos a serem disparados
     public delegate void aoCriarProjetoEventHandler(Projeto model);
     public event aoCriarProjetoEventHandler AocriarProjeto;
-    readonly IMessageBusService _messageBroker;
+    readonly IServiceBusAdapter _ServiceBus;
     readonly IDatabaseAdapter _dataConnection;
-    public RepoProjetos(IMessageBusService messageBroker, DatabaseAdapter dataConnection)
+    public RepoProjetos(IServiceBusAdapter serviceBus, DatabaseAdapter dataConnection)
     {
-        _messageBroker = messageBroker;
+        _ServiceBus = serviceBus;
         _dataConnection = dataConnection;
         AocriarProjeto += async (Projeto model) => { await _dataConnection.AtualizarBancoDeDadosDeProdutos(model); };
-        AocriarProjeto += _messageBroker.EnviarProjeto;
+        AocriarProjeto += _ServiceBus.EnviarEnvelope;
     }
 
     public async Task<bool> AtualizarStatus(Projeto model, int id)

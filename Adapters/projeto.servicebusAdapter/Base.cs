@@ -1,6 +1,7 @@
-namespace projeto.infra.AsyncComm.Extensions;
+using RabbitMQ.Client;
 
-public class Base
+namespace projeto.servicebusAdapter;
+public abstract class Base
 {
     /* Dados utilizados pelo publicador*/
     public string exchange = "projeto.adicionado/api.projetos";
@@ -17,4 +18,24 @@ public class Base
     public string routingKeyConsumerDeletado = "produtos.disponiveis.produto.deletado";
 
 
+    public void CriarFilas(IModel channel)
+    {
+        // Definindo a fila no RabbitMQ
+        channel.QueueDeclare(queue: filaNome, durable: true,
+            exclusive: false,
+            autoDelete: false);
+
+        // Definindo o Exchange no RabbitMQ
+        channel.ExchangeDeclare(exchange: exchange,
+        type: ExchangeType.Topic,
+        durable: true,
+        autoDelete: false);
+
+        // Linkando a fila ao exchange
+        channel.QueueBind(queue: filaNome,
+            exchange: exchange,
+            routingKey: routingKey);
+
+
+    }
 }

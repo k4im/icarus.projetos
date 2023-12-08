@@ -6,4 +6,14 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="RabbitMQ.Client" Version="6.8.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Ports\projeto.servicebusPort\projeto.servicebusPort.csproj" />
+    <ProjectReference Include="..\..\src\projeto.domain\projeto.domain.csproj" />
+  </ItemGroup>
+
 </Project>
