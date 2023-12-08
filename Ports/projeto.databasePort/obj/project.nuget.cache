@@ -1,13 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "gWTrewXRR1xkwhptYxlh+i40jHrTGxn6FRPS+UnG68DNvV9P5iNXy+0+viZM4Z22NJ0Pz1DWPA/ZyElSeV1y7Q==",
+  "dgSpecHash": "uGEgOVbjSqYNUbfbXq2h5o1UHTOF8Syp1JaOvVjh3i2RhvSq8O5EiQgkVuanB1rO35pGEw0ay5Of4+ry5RdUsQ==",
   "success": true,
   "projectFilePath": "/home/joao/github/icarus/icarus.projetos/Ports/projeto.databasePort/projeto.databasePort.csproj",
   "expectedPackageFiles": [
     "/home/joao/.nuget/packages/microsoft.data.sqlite.core/7.0.0/microsoft.data.sqlite.core.7.0.0.nupkg.sha512",
-    "/home/joao/.nuget/packages/microsoft.entityframeworkcore/7.0.2/microsoft.entityframeworkcore.7.0.2.nupkg.sha512",
-    "/home/joao/.nuget/packages/microsoft.entityframeworkcore.abstractions/7.0.2/microsoft.entityframeworkcore.abstractions.7.0.2.nupkg.sha512",
-    "/home/joao/.nuget/packages/microsoft.entityframeworkcore.analyzers/7.0.2/microsoft.entityframeworkcore.analyzers.7.0.2.nupkg.sha512",
+    "/home/joao/.nuget/packages/microsoft.entityframeworkcore/7.0.9/microsoft.entityframeworkcore.7.0.9.nupkg.sha512",
+    "/home/joao/.nuget/packages/microsoft.entityframeworkcore.abstractions/7.0.9/microsoft.entityframeworkcore.abstractions.7.0.9.nupkg.sha512",
+    "/home/joao/.nuget/packages/microsoft.entityframeworkcore.analyzers/7.0.9/microsoft.entityframeworkcore.analyzers.7.0.9.nupkg.sha512",
+    "/home/joao/.nuget/packages/microsoft.entityframeworkcore.inmemory/7.0.9/microsoft.entityframeworkcore.inmemory.7.0.9.nupkg.sha512",
     "/home/joao/.nuget/packages/microsoft.entityframeworkcore.relational/7.0.2/microsoft.entityframeworkcore.relational.7.0.2.nupkg.sha512",
     "/home/joao/.nuget/packages/microsoft.entityframeworkcore.sqlite/7.0.0/microsoft.entityframeworkcore.sqlite.7.0.0.nupkg.sha512",
     "/home/joao/.nuget/packages/microsoft.entityframeworkcore.sqlite.core/7.0.0/microsoft.entityframeworkcore.sqlite.core.7.0.0.nupkg.sha512",

@@ -157,3 +157,4 @@
 /home/joao/github/icarus/icarus.projetos/Benchmark/obj/Release/net7.0/Benchmark.pdb
 /home/joao/github/icarus/icarus.projetos/Benchmark/obj/Release/net7.0/Benchmark.genruntimeconfig.cache
 /home/joao/github/icarus/icarus.projetos/Benchmark/obj/Release/net7.0/ref/Benchmark.dll
+/home/joao/github/icarus/icarus.projetos/Benchmark/bin/Release/net7.0/Microsoft.EntityFrameworkCore.InMemory.dll

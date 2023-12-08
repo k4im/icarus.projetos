@@ -1834,7 +1834,6 @@
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "AutoMapper": "12.0.1",
-          "Microsoft.EntityFrameworkCore": "7.0.9",
           "Microsoft.EntityFrameworkCore.InMemory": "7.0.9",
           "Microsoft.EntityFrameworkCore.Relational": "7.0.9",
           "Microsoft.Extensions.Configuration": "7.0.0",
