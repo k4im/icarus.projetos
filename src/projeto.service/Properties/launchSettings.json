@@ -10,7 +10,8 @@
         "DB_CONNECTION": "Server=localhost;Uid=root;Password=Xaes@$1412;Database=IC_Projetos;Port=3306",
         "RABBIT_MQ_USER": "root",
         "RABBIT_MQ_PWD": "Wg17*tse86",
-        "RABBIT_MQ_HOST" : "rabbitmq"
+        "RABBIT_MQ_HOST" : "rabbitmq",
+        "RABBIT_MQ_PORT" : "5672",
       },
       "dotnetRunMessages": true,
       "applicationUrl": "http://localhost:5086"
@@ -26,7 +27,8 @@
         "DB_CONNECTION": "Server=localhost;Uid=root;Password=Xaes@$1412;Database=IC_Projetos;Port=3306",
         "RABBIT_MQ_USER": "root",
         "RABBIT_MQ_PWD": "Wg17*tse86",
-        "RABBIT_MQ_HOST" : "rabbitmq"
+        "RABBIT_MQ_HOST" : "rabbitmq",
+        "RABBIT_MQ_PORT" : "5672",
       },
       "distributionName": ""
     }
