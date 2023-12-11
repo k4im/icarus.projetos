@@ -1,7 +1,3 @@
-using MySqlConnector;
-using projeto.databaseAdapters;
-using projeto.servicebusAdapter;
-
 namespace projeto.service.Extensions;
 public static class ServicesColletionExtensions
 {
