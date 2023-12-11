@@ -1,0 +1,15 @@
+/home/joao/github/icarus/icarus.projetos/Adapters/projeto.brasilapiAdapter/bin/Debug/net7.0/projeto.brasilapiAdapter.deps.json
+/home/joao/github/icarus/icarus.projetos/Adapters/projeto.brasilapiAdapter/bin/Debug/net7.0/projeto.brasilapiAdapter.dll
+/home/joao/github/icarus/icarus.projetos/Adapters/projeto.brasilapiAdapter/bin/Debug/net7.0/projeto.brasilapiAdapter.pdb
+/home/joao/github/icarus/icarus.projetos/Adapters/projeto.brasilapiAdapter/bin/Debug/net7.0/projeto.domain.dll
+/home/joao/github/icarus/icarus.projetos/Adapters/projeto.brasilapiAdapter/bin/Debug/net7.0/projeto.domain.pdb
+/home/joao/github/icarus/icarus.projetos/Adapters/projeto.brasilapiAdapter/obj/Debug/net7.0/projeto.brasilapiAdapter.csproj.AssemblyReference.cache
+/home/joao/github/icarus/icarus.projetos/Adapters/projeto.brasilapiAdapter/obj/Debug/net7.0/projeto.brasilapiAdapter.GeneratedMSBuildEditorConfig.editorconfig
+/home/joao/github/icarus/icarus.projetos/Adapters/projeto.brasilapiAdapter/obj/Debug/net7.0/projeto.brasilapiAdapter.AssemblyInfoInputs.cache
+/home/joao/github/icarus/icarus.projetos/Adapters/projeto.brasilapiAdapter/obj/Debug/net7.0/projeto.brasilapiAdapter.AssemblyInfo.cs
+/home/joao/github/icarus/icarus.projetos/Adapters/projeto.brasilapiAdapter/obj/Debug/net7.0/projeto.brasilapiAdapter.csproj.CoreCompileInputs.cache
+/home/joao/github/icarus/icarus.projetos/Adapters/projeto.brasilapiAdapter/obj/Debug/net7.0/projeto.brasilapiAdapter.csproj.CopyComplete
+/home/joao/github/icarus/icarus.projetos/Adapters/projeto.brasilapiAdapter/obj/Debug/net7.0/projeto.brasilapiAdapter.dll
+/home/joao/github/icarus/icarus.projetos/Adapters/projeto.brasilapiAdapter/obj/Debug/net7.0/refint/projeto.brasilapiAdapter.dll
+/home/joao/github/icarus/icarus.projetos/Adapters/projeto.brasilapiAdapter/obj/Debug/net7.0/projeto.brasilapiAdapter.pdb
+/home/joao/github/icarus/icarus.projetos/Adapters/projeto.brasilapiAdapter/obj/Debug/net7.0/ref/projeto.brasilapiAdapter.dll

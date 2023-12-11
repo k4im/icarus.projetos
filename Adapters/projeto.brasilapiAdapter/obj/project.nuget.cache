@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "oBhRYbofQpKI0td2dev+EG4soaR5/K/6T5wHsC9dgA+V7CFC3ZUfbK0/hsgaH/QocVVIlf3cBtSudB1UarG1xA==",
+  "success": true,
+  "projectFilePath": "/home/joao/github/icarus/icarus.projetos/Adapters/projeto.brasilapiAdapter/projeto.brasilapiAdapter.csproj",
+  "expectedPackageFiles": [
+    "/home/joao/.nuget/packages/microsoft.extensions.configuration/8.0.0/microsoft.extensions.configuration.8.0.0.nupkg.sha512",
+    "/home/joao/.nuget/packages/microsoft.extensions.configuration.abstractions/8.0.0/microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512",
+    "/home/joao/.nuget/packages/microsoft.extensions.primitives/8.0.0/microsoft.extensions.primitives.8.0.0.nupkg.sha512",
+    "/home/joao/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

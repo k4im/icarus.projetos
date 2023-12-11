@@ -19,4 +19,10 @@ public static class ValidadorDeInput
         if(valor < 0) return true;
         return false;
     }
+
+    public static bool ValidarTamanhoDoCPF (string valor) {
+        if (!Regex.IsMatch(valor, @"^[0-9 ]+$", RegexOptions.Compiled)) return true;
+        if (valor.Length > 11 || valor.Length < 11) return true;
+        return false;
+    }
 }
