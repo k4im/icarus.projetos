@@ -133,8 +133,6 @@ Está trata-se da api utilizada para processos de projetos dos usuarios no proje
 
 ## Environment Variables
 
-Realizei uma verificação referente as variaveis de ambiente configuraveis.
-
 
 `ASPNETCORE_ENVIRONMENT`
 
@@ -143,6 +141,8 @@ Realizei uma verificação referente as variaveis de ambiente configuraveis.
 `RABBIT_MQ_USER`
 
 `RABBIT_MQ_PWD`
+
+`RABBIT_MQ_HOST`
 
 #### DB_CONNECTION
 * Variavel responsavel por estar realizando a configuração de conexão com o banco de dados. A mesma pode ser configuravel através dos arquivos de configurações assim como repassando por argumentos na execução docker.
@@ -153,8 +153,11 @@ Realizei uma verificação referente as variaveis de ambiente configuraveis.
 #### RABBIT_MQ_PWD 
 * Variavel responsavel por estar realizando a autenticação do usuario.
 
+#### RABBIT_MQ_HOST 
+* Variavel responsavel por estar identificando o host do rabbitmq.
 
-## Deployment dotnet
+
+## Rodar projeto localmente
 
 Para rodar este projeto utilizando dotnet realize os seguintes comandos:
 
