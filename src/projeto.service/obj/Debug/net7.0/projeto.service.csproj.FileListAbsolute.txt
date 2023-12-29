@@ -989,7 +989,6 @@ c:/Users/santo/github/icarus-sistema/icarus.projetos/projeto.service/obj/Debug/n
 /home/joao/github/icarus/icarus.projetos/src/projeto.service/bin/Debug/net7.0/runtimes/linux-musl-arm/native/libe_sqlite3.so
 /home/joao/github/icarus/icarus.projetos/src/projeto.service/bin/Debug/net7.0/runtimes/linux-musl-arm64/native/libe_sqlite3.so
 /home/joao/github/icarus/icarus.projetos/src/projeto.service/bin/Debug/net7.0/runtimes/linux-musl-x64/native/libe_sqlite3.so
-/home/joao/github/icarus/icarus.projetos/src/projeto.service/bin/Debug/net7.0/runtimes/linux-ppc64le/native/libe_sqlite3.so
 /home/joao/github/icarus/icarus.projetos/src/projeto.service/bin/Debug/net7.0/runtimes/linux-s390x/native/libe_sqlite3.so
 /home/joao/github/icarus/icarus.projetos/src/projeto.service/bin/Debug/net7.0/runtimes/linux-x64/native/libe_sqlite3.so
 /home/joao/github/icarus/icarus.projetos/src/projeto.service/bin/Debug/net7.0/runtimes/linux-x86/native/libe_sqlite3.so
@@ -1028,3 +1027,7 @@ c:/Users/santo/github/icarus-sistema/icarus.projetos/projeto.service/obj/Debug/n
 /home/joao/github/icarus/icarus.projetos/src/projeto.service/obj/Debug/net7.0/projeto.service.pdb
 /home/joao/github/icarus/icarus.projetos/src/projeto.service/obj/Debug/net7.0/projeto.service.genruntimeconfig.cache
 /home/joao/github/icarus/icarus.projetos/src/projeto.service/obj/Debug/net7.0/ref/projeto.service.dll
+/home/joao/github/icarus/icarus.projetos/src/projeto.service/bin/Debug/net7.0/projeto.servicebusAdapter.dll
+/home/joao/github/icarus/icarus.projetos/src/projeto.service/bin/Debug/net7.0/projeto.servicebusPort.dll
+/home/joao/github/icarus/icarus.projetos/src/projeto.service/bin/Debug/net7.0/projeto.servicebusAdapter.pdb
+/home/joao/github/icarus/icarus.projetos/src/projeto.service/bin/Debug/net7.0/projeto.servicebusPort.pdb

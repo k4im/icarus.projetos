@@ -1,5 +1,3 @@
-using projeto.brasilapiAdapter;
-
 namespace projeto.domain.ValueObject;
 public class Endereco
 {
@@ -15,17 +13,6 @@ public class Endereco
         .Replace(".", "")
         .Replace("-", "");
 
-        var adapter = new CepAdapter();
-        var result = await adapter.BuscarEndereco(cepLimpo);
-        
-        if(result != null) {
-            this.Cep = result.Cep;
-            this.Estado = result.State;
-            this.Cidade = result.City;
-            this.Rua = result.Street;
-            this.Bairro = result.Neighborhood;
-            return cepLimpo;
-        }
         if (!Regex.IsMatch(cep, @"^[0-9 ]+$", RegexOptions.Compiled))
             throw new Exception("O cep precisa conter apenas numeros");
         return cepLimpo;
