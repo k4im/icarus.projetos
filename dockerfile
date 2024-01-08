@@ -21,6 +21,7 @@ COPY ["Ports/projeto.servicebusPort/projeto.servicebusPort.csproj", "Ports/proje
 # Copiando os adaptadores
 COPY ["Adapters/projeto.databaseAdapters/projeto.databaseAdapters.csproj", "Adapters/projeto.databaseAdapters/"]
 COPY ["Adapters/projeto.servicebusAdapter/projeto.servicebusAdapter.csproj", "Adapters/projeto.servicebusAdapter/"]
+COPY ["Adapters/projeto.brasilapiAdapter/projeto.brasilapiAdapter.csproj", "Adapters/projeto.brasilapiAdapter/"]
 
 # Copiando arquivos do core da aplicação
 COPY ["src/projeto.service/projeto.service.csproj", "src/projeto.service/"]
