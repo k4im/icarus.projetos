@@ -1,4 +1,3 @@
-using System.Runtime.CompilerServices;
 using projeto.domain.Validators;
 
 namespace projeto.domain.Entity;
@@ -41,10 +40,6 @@ public class Projeto
     [Required(ErrorMessage = "Campo obrigatório")]
     [DataType("DATE")]
     public DateTime DataEntrega { get; private set; }
-
-    [Required(ErrorMessage = "Campo obrigatório")]
-    [DataType("NVARCHAR(150)")]
-    public ProdutosDisponiveis ProdutoUtilizado { get; set; }
 
     [Required(ErrorMessage = "Campo obrigatório")]
     [DataType("NVARCHAR(150)")]

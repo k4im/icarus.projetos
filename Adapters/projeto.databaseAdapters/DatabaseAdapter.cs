@@ -10,18 +10,6 @@ public class DatabaseAdapter: IDatabaseAdapter
         _dataConnection = dataConnection;
     }
 
-    public async Task AtualizarBancoDeDadosDeProdutos(Projeto model)
-    {
-        using var db = _dataConnection.ConnectionEntityFrameWork();
-        var produto = await db.ProdutosEmEstoque
-        .FirstOrDefaultAsync(x => x.Id == model.ProdutoUtilizadoId);
-        produto!.Quantidade -= model.QuantidadeUtilizado;
-        if(produto.Quantidade <= 0) {
-            db.Remove(produto);    
-        }
-        await db.SaveChangesAsync();
-    }
-
 
     public async Task AtualizarStatusEmBanco(Projeto model, int id)
     {

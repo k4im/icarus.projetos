@@ -61,28 +61,4 @@ public class DataBaseAdapterTest
         Assert.NotNull(result);
     }
 
-    [Fact]
-    public void Deve_buscar_dados_pelo_id()
-    {
-        // Given
-        var query = @"
-            SELECT 
-                Projetos.*,
-                ProdutosEmEstoque.*
-            FROM 
-                Projetos 
-            INNER JOIN 
-                ProdutosEmEstoque
-            ON 
-                Projetos.ProdutoUtilizadoId = ProdutosEmEstoque.Id
-            WHERE 
-                Projetos.Id 
-            LIKE 
-                @busca";
-        // When
-         var result = this.Adapter.BuscarDadosDoBancoPeloId(1, query);
-        
-        // Then
-        Assert.NotNull(result);
-    }
 }

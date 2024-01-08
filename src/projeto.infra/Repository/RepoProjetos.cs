@@ -12,8 +12,8 @@ public class RepoProjetos : IRepoProjetos
     {
         _ServiceBus = serviceBus;
         _dataConnection = dataConnection;
-        AocriarProjeto += async (Projeto model) => { await _dataConnection.AtualizarBancoDeDadosDeProdutos(model); };
-        AocriarProjeto += _ServiceBus.EnviarEnvelope;
+        // AocriarProjeto += async (Projeto model) => { await _dataConnection.AtualizarBancoDeDadosDeProdutos(model); };
+        // AocriarProjeto += _ServiceBus.EnviarEnvelope;
     }
 
     public async Task<bool> AtualizarStatus(Projeto model, int id)

@@ -1,5 +1,4 @@
 
-
 namespace projeto.databasePort.Data;
 public class DataContext : DbContext
 {
@@ -33,22 +32,7 @@ public class DataContext : DbContext
         modelBuilder.Entity<Projeto>()
             .Property(projeto => projeto.RowVersion)
             .IsConcurrencyToken();
-
-        modelBuilder.Entity<Projeto>()
-            .HasOne(projeto => projeto.ProdutoUtilizado)
-            .WithMany(projeto => projeto.Projetos)
-            .HasForeignKey(projeto => projeto.ProdutoUtilizadoId)
-            .OnDelete(DeleteBehavior.NoAction)
-            .IsRequired(true);
-
-        modelBuilder.Entity<ProdutosDisponiveis>()
-            .HasMany(produto => produto.Projetos)
-            .WithOne(projeto => projeto.ProdutoUtilizado)
-            .HasForeignKey(f => f.ProdutoUtilizadoId)
-            .OnDelete(DeleteBehavior.NoAction)
-            .IsRequired(true);
     }
 
     public DbSet<Projeto> Projetos { get; set; }
-    public DbSet<ProdutosDisponiveis> ProdutosEmEstoque { get; set; }
 }

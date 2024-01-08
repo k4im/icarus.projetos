@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "xIUACWzClUNhyxtqh0JwIstpzXSOp5x4E2yvOaSPabRwylyzDAEQc2U5OUXlBnyQ6k/hAYpf+mACsaMhJVlU1g==",
+  "dgSpecHash": "kE2i0ups18TBl565sJg+AE/rMW9pGsS1IsY8kP6+4e7CybCnZUC0vlKq3XtqqtbInBBvgX0uGm4Ooy95a2VQwQ==",
   "success": true,
   "projectFilePath": "/home/joao/github/icarus/icarus.projetos/Tests/RepositoryTest/RepositoryTest.csproj",
   "expectedPackageFiles": [

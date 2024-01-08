@@ -20,6 +20,4 @@ public interface IDatabaseAdapter
     Task<ProjetoBuscaIdDTO> BuscarDadosDoBancoPeloId(int id, string query);
 
     Task AtualizarStatusEmBanco(Projeto model, int id);
-
-    Task AtualizarBancoDeDadosDeProdutos(Projeto model);
 }

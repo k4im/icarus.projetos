@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "eRr3st8VLMERJkkUWl59IiZAHpZEsNrJyGfHBVLAx3KfZuzzP3jmo4EkOeamFgYUoLANPrAb+YGenpzQoBKs8w==",
+  "dgSpecHash": "V5lC9Oof+ZCx7uT4446vCU8dd5h66paedNmPlvl1WZBXY4J15nUKYFli92Vzpku/7tbxe/vBpnoXr38VGH6TRw==",
   "success": true,
   "projectFilePath": "/home/joao/github/icarus/icarus.projetos/Tests/ValidatorsTests/ValidatorsTests.csproj",
   "expectedPackageFiles": [
