@@ -36,8 +36,6 @@ public class Telefone
     public Guid TipoTelefoneId { get; set; }
     public Guid PessoaId { get; set; }
 
-
-
     string ValidarTelefone(string telefone) {
         var numeroLimpo = telefone.Trim().Replace("-", "");
         if (!Regex.IsMatch(numeroLimpo, @"^[0-9 ]+$", RegexOptions.Compiled))
