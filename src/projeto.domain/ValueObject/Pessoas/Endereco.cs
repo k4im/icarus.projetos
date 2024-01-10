@@ -1,4 +1,4 @@
-namespace projeto.domain.ValueObject;
+namespace projeto.domain.ValueObject.Pessoas;
 public class Endereco
 {
     public Endereco(
