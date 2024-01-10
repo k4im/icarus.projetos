@@ -13,6 +13,9 @@ public class Pessoa
     [DataType("VARCHAR(15)")]
     public string Matricula { get; set; }
 
+    [DataType("VARCHAR(250)")]
+    public string Email { get; set; }
+
     public int Codigo { get; set; }
 
     public DateTime DataInclusao { get; set; }
@@ -20,10 +23,7 @@ public class Pessoa
     public bool Inativo { get; set; }
 
     public bool Estrangeiro { get; set; }
-
-    [DataType("VARCHAR(250)")]
-    public string Email { get; set; }
-
+ 
     public bool Cliente { get; set; }
 
     public bool Colaborador { get; set; }
@@ -32,72 +32,55 @@ public class Pessoa
 
     public DateTime DataNascimento { get; set; }
 
-      [DataType("VARCHAR(120)")]
+    [DataType("VARCHAR(100)")]
     public string Pai { get; set; }
 
-    [DataType("VARCHAR(120)")]
+    [DataType("VARCHAR(100)")]
     public string Mae { get; set; }
 
-    public Guid SexoId { get; set; }
-
-    [DataType("VARCHAR(120)")]
+    [DataType("VARCHAR(80)")]
     public string Rg { get; set; }
 
-    [DataType("VARCHAR(120)")]
+    [DataType("VARCHAR(80)")]
     public string Emissor { get; set; }
 
-    [DataType("VARCHAR(120)")]
-    public string UFEmessior { get; set; }
+    public DateTime DataRg { get; set; }
 
-    [DataType("VARCHAR(120)")]
-    public string DataRg { get; set; }
-
-    [DataType("VARCHAR(120)")]
+    [DataType("VARCHAR(20)")]
     public string Cpf { get; set; }
 
-    [DataType("VARCHAR(120)")]
+    [DataType("VARCHAR(20)")]
     public string Ctps { get; set; }
 
-    [DataType("VARCHAR(120)")]
-    public string DataCtps { get; set; }
+    public DateTime DataCtps { get; set; }
 
-    [DataType("VARCHAR(120)")]
+    [DataType("VARCHAR(11)")]
     public string Nrpis { get; set; }
 
-    [DataType("VARCHAR(120)")]
-    public string DataPis { get; set; }
+    public DateTime DataPis { get; set; }
 
-    [DataType("VARCHAR(120)")]
+    [DataType("VARCHAR(100)")]
     public string RegProfNumero { get; set; }
-
-    [DataType("VARCHAR(120)")]
-    public string Conselho { get; set; }
-
-    [DataType("VARCHAR(120)")]
-    public string UFConselho { get; set; }
 
     [DataType("VARCHAR(120)")]
     public string RegProfSerie { get; set; }
 
-    [DataType("VARCHAR(120)")]
-    public string Profissao { get; set; }
+    [DataType("INT(999)")]
+    public int NumeroDeDependentes { get; set; }
 
-    [DataType("VARCHAR(120)")]
-    public string Dependentes  { get; set; }
-
-    [DataType("VARCHAR(120)")]
+    [DataType("VARCHAR(50)")]
     public string RazaoSocial { get; set; }
 
-    [DataType("VARCHAR(120)")]
+    [DataType("VARCHAR(50)")]
     public string Cnpj { get; set; }
 
-    [DataType("VARCHAR(120)")]
+    [DataType("VARCHAR(50)")]
     public string InscricaoEstadual { get; set; }
 
-    [DataType("VARCHAR(120)")]
+    [DataType("VARCHAR(50)")]
     public string InscricaoMunicipal { get; set; }
 
-    [DataType("VARCHAR(120)")]
+    [DataType("VARCHAR")]
     public string ObjetoSocial { get; set; }
 
     [DataType("VARCHAR(120)")]
@@ -106,10 +89,12 @@ public class Pessoa
 
     //Chaves estrangeiras
     public Guid PaisId { get; set; }
-
     public Guid EstadoId { get; set; }
-
     public Guid MunicipioId { get; set; }
-
     public Guid EstadoCivilId { get; set; }
-}
+    public Guid SexoId { get; set; }
+    public Guid UFEmessiorId { get; set; }
+    public Guid ConselhoId { get; set; }
+    public Guid UFConselhoId { get; set; }
+    public Guid ProfissaoId { get; set; }
+}  
