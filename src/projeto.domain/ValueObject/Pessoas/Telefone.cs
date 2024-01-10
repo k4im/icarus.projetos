@@ -27,10 +27,10 @@ public class Telefone
     [DataType("VARCHAR(15)")]
     public string Numero {get; set; }
     [DataType("VARCHAR")]
+    public string Observacoes { get; set; }
+    [DataType("VARCHAR")]
     public string Ramal { get; set; }
     public bool TelefonePrincipal { get; set; }
-    [DataType("VARCHAR")]
-    public string Observacoes { get; set; }
     
     // Chaves estrangeiras 
     public Guid TipoTelefoneId { get; set; }
