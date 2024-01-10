@@ -1,4 +1,4 @@
-namespace projeto.domain.Entity.Pessoas;
+namespace projeto.domain.ValueObject.Pessoas;
 public class TipoTelefones
 {
     public TipoTelefones(
