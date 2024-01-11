@@ -74,6 +74,23 @@ public class DataContext : IdentityDbContext
         .HasForeignKey(end => end.TipoEnderecoId)
         .HasPrincipalKey(key => key.Id);
 
+        modelBuilder.Entity<Endereco>()
+        .HasOne<Pais>(endPais => endPais.Pais)
+        .WithMany(paisEnderecos => paisEnderecos.Enderecos)
+        .HasForeignKey(endPaisId => endPaisId.PaisId)
+        .HasPrincipalKey(key => key.Id);
+
+        modelBuilder.Entity<Endereco>()
+        .HasOne<Estado>(endEstado => endEstado.Estado)
+        .WithMany(endEstadoId => endEstadoId.Enderecos)
+        .HasForeignKey(endEstadoId => endEstadoId.EstadoId)
+        .HasPrincipalKey(key => key.Id);
+
+        modelBuilder.Entity<Endereco>()
+        .HasOne<Municipio>(endMunicipio => endMunicipio.Municipio)
+        .WithMany(endMunicipioId => endMunicipioId.Enderecos)
+        .HasForeignKey(endMunicipioId => endMunicipioId.MunicipioId)
+        .HasPrincipalKey(key => key.Id);
     }
     // Tabelas relacionada a pessoas
     public DbSet<Usuario> Usuarios { get; set; }

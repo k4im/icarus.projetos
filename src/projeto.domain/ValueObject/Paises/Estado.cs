@@ -1,3 +1,5 @@
+using projeto.domain.ValueObject.Pessoas;
+
 namespace projeto.domain.ValueObject.Paises;
 public class Estado
 {   
@@ -15,4 +17,5 @@ public class Estado
     public Pais Pais { get; set; }
     public Guid PaisId { get; set; }
     public ICollection<Pessoa> Pessoas { get; set; }
+    public ICollection<Endereco> Enderecos { get; set; }
 }

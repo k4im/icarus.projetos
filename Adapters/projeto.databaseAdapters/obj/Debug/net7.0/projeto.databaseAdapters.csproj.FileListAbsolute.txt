@@ -1,8 +1,3 @@
-/home/joao/github/icarus/icarus.projetos/Adapters/projeto.databaseAdapters/obj/Debug/net7.0/projeto.databaseAdapters.csproj.AssemblyReference.cache
-/home/joao/github/icarus/icarus.projetos/Adapters/projeto.databaseAdapters/obj/Debug/net7.0/projeto.databaseAdapters.GeneratedMSBuildEditorConfig.editorconfig
-/home/joao/github/icarus/icarus.projetos/Adapters/projeto.databaseAdapters/obj/Debug/net7.0/projeto.databaseAdapters.AssemblyInfoInputs.cache
-/home/joao/github/icarus/icarus.projetos/Adapters/projeto.databaseAdapters/obj/Debug/net7.0/projeto.databaseAdapters.AssemblyInfo.cs
-/home/joao/github/icarus/icarus.projetos/Adapters/projeto.databaseAdapters/obj/Debug/net7.0/projeto.databaseAdapters.csproj.CoreCompileInputs.cache
 /home/joao/github/icarus/icarus.projetos/Adapters/projeto.databaseAdapters/bin/Debug/net7.0/projeto.databaseAdapters.deps.json
 /home/joao/github/icarus/icarus.projetos/Adapters/projeto.databaseAdapters/bin/Debug/net7.0/projeto.databaseAdapters.dll
 /home/joao/github/icarus/icarus.projetos/Adapters/projeto.databaseAdapters/bin/Debug/net7.0/projeto.databaseAdapters.pdb
@@ -10,6 +5,11 @@
 /home/joao/github/icarus/icarus.projetos/Adapters/projeto.databaseAdapters/bin/Debug/net7.0/projeto.domain.dll
 /home/joao/github/icarus/icarus.projetos/Adapters/projeto.databaseAdapters/bin/Debug/net7.0/projeto.databasePort.pdb
 /home/joao/github/icarus/icarus.projetos/Adapters/projeto.databaseAdapters/bin/Debug/net7.0/projeto.domain.pdb
+/home/joao/github/icarus/icarus.projetos/Adapters/projeto.databaseAdapters/obj/Debug/net7.0/projeto.databaseAdapters.csproj.AssemblyReference.cache
+/home/joao/github/icarus/icarus.projetos/Adapters/projeto.databaseAdapters/obj/Debug/net7.0/projeto.databaseAdapters.GeneratedMSBuildEditorConfig.editorconfig
+/home/joao/github/icarus/icarus.projetos/Adapters/projeto.databaseAdapters/obj/Debug/net7.0/projeto.databaseAdapters.AssemblyInfoInputs.cache
+/home/joao/github/icarus/icarus.projetos/Adapters/projeto.databaseAdapters/obj/Debug/net7.0/projeto.databaseAdapters.AssemblyInfo.cs
+/home/joao/github/icarus/icarus.projetos/Adapters/projeto.databaseAdapters/obj/Debug/net7.0/projeto.databaseAdapters.csproj.CoreCompileInputs.cache
 /home/joao/github/icarus/icarus.projetos/Adapters/projeto.databaseAdapters/obj/Debug/net7.0/projeto.databaseAdapters.csproj.CopyComplete
 /home/joao/github/icarus/icarus.projetos/Adapters/projeto.databaseAdapters/obj/Debug/net7.0/projeto.databaseAdapters.dll
 /home/joao/github/icarus/icarus.projetos/Adapters/projeto.databaseAdapters/obj/Debug/net7.0/refint/projeto.databaseAdapters.dll

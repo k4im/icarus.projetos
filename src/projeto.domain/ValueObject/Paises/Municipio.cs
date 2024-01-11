@@ -1,3 +1,5 @@
+using projeto.domain.ValueObject.Pessoas;
+
 namespace projeto.domain.ValueObject.Paises;
 public class Municipio
 {
@@ -12,8 +14,16 @@ public class Municipio
     public string CodigoIbge { get; set; }
 
     //Chaves estrangeiras
+    public Pais Pais { get; set; }
     public Guid PaisId { get; set; }
+    
+    public Estado Estado { get; set; }
     public Guid EstadoId { get; set; }
+    
+    public Municipio MunicipioObj { get; set; }
+    public Guid MunicipioId { get; set; }
+    
     public ICollection<Pessoa> Pessoas { get; set; }
+    public ICollection<Endereco> Enderecos { get; set; }
 
 }

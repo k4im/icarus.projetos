@@ -1,4 +1,5 @@
 using projeto.domain.Entity.Pessoas;
+using projeto.domain.ValueObject.Pessoas;
 
 namespace projeto.domain.ValueObject.Paises;
 public class Pais
@@ -14,5 +15,6 @@ public class Pais
     public string Sigla { get; set; }
 
     // Id De referencia
+    public ICollection<Endereco> Enderecos { get; set; }
     public ICollection<Pessoa> Pessoas { get; set; }
 }
