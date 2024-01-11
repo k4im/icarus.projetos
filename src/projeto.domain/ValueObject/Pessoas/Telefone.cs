@@ -33,7 +33,9 @@ public class Telefone
     public bool TelefonePrincipal { get; set; }
     
     // Chaves estrangeiras 
+    public TipoTelefones TipoTelefone { get; set; }
     public Guid TipoTelefoneId { get; set; }
+    public Pessoa Pessoa { get; set; }
     public Guid PessoaId { get; set; }
 
     string ValidarTelefone(string telefone) {

@@ -1,3 +1,5 @@
+using projeto.domain.Entity.Pessoas;
+
 namespace projeto.domain.ValueObject.Paises;
 public class Pais
 {   [Key]
@@ -10,4 +12,7 @@ public class Pais
 
     [DataType("VARCHAR(3)")]
     public string Sigla { get; set; }
+
+    // Id De referencia
+    public ICollection<Pessoa> Pessoas { get; set; }
 }

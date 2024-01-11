@@ -6,5 +6,8 @@ public class Profissao
     
     [DataType("VARCHAR(80)")]
     public string Nome { get; set; }
+    public Conselho Conselho { get; set; }
     public Guid ConselhoId { get; set; }
+
+    public ICollection<Pessoa> Pessoas { get; set; }
 }

@@ -14,6 +14,7 @@ public class TipoTelefones
     
     [DataType("VARCHAR(80)")]
     public string DescricaoTelefone { get; set; }
+    public ICollection<Telefone> PessoaTelefone { get; set; }
     public Guid PessoaTelefonesId { get; set; }
 
     public string ValidarDescricaco(string descricao) {

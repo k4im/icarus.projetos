@@ -3,10 +3,10 @@ public class TipoDeEndereco
 {
     public TipoDeEndereco(
         string descricaoEndereco, 
-        Guid pessoaEnderecosId)
+        Guid enderecoId)
     {
         DescricaoEndereco = this.ValidarDescricaco(descricaoEndereco);
-        PessoaEnderecosId = pessoaEnderecosId;
+        EnderecoId = enderecoId;
     }
 
     [Key]
@@ -14,7 +14,9 @@ public class TipoDeEndereco
     
     [DataType("VARCHAR(80)")]
     public string DescricaoEndereco { get; set; }
-    public Guid PessoaEnderecosId { get; set; }
+    
+    public ICollection<Endereco> Endereco { get; set; }
+    public Guid EnderecoId { get; set; }
 
     public string ValidarDescricaco(string descricao) {
         var descricaoValidada = ValidadorDeInput.ValidarDescricao(descricao);

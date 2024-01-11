@@ -1,3 +1,5 @@
+using projeto.domain.ValueObject.Paises;
+
 namespace projeto.domain.ValueObject.Pessoas;
 public class Endereco
 {
@@ -19,9 +21,9 @@ public class Endereco
         Complemento = complemento;
         Bairro = bairro;
         CaixaPostal = caixaPostal;
-        Pais = pais;
-        Estado = estado;
-        Municipio = municipio;
+        PaisId = pais;
+        EstadoId = estado;
+        MunicipioId = municipio;
         Cep = ValidarCep(cep);
         EnderecoPrincipal = enderecoPrincipal;
         Observacoes = observacoes;
@@ -43,10 +45,19 @@ public class Endereco
     public string Observacoes { get; set; }
     
     // Chaves estrangeiras
+    public TipoDeEndereco TipoEndereco { get; set; }
     public Guid TipoEnderecoId { get; set; }
-    public Guid Pais { get; set; }
-    public Guid Estado { get; set; }
-    public Guid Municipio { get; set; }
+    
+    public Pais Pais { get; set; }
+    public Guid PaisId { get; set; }
+    
+    public Estado Estado { get; set; }
+    public Guid EstadoId { get; set; }
+    
+    public Municipio Municipio { get; set; }
+    public Guid MunicipioId { get; set; }
+    
+    public Pessoa Pessoa { get; set; }
     public Guid PessoaId { get; set; }
     
     string ValidarCep(string cep) {

@@ -1,3 +1,6 @@
+using projeto.domain.ValueObject.Paises;
+using projeto.domain.ValueObject.Pessoas;
+
 namespace projeto.domain.Entity.Pessoas;
 public class Pessoa
 {
@@ -88,13 +91,28 @@ public class Pessoa
 
 
     //Chaves estrangeiras
+    public Pais Pais { get; set; }
     public Guid PaisId { get; set; }
+    
+    public Estado Estado { get; set; }
     public Guid EstadoId { get; set; }
+    
+    public Municipio Municipio { get; set; }
     public Guid MunicipioId { get; set; }
+    
+    public EstadoCivil EstadoCivil { get; set; }
     public Guid EstadoCivilId { get; set; }
+    
+    public Sexo Sexo { get; set; }
     public Guid SexoId { get; set; }
+    
     public Guid UFEmessiorId { get; set; }
+    
+    public Conselho Conselho { get; set; }
     public Guid ConselhoId { get; set; }
+    
     public Guid UFConselhoId { get; set; }
+    
+    public Profissao Profissao { get; set; }
     public Guid ProfissaoId { get; set; }
 }  

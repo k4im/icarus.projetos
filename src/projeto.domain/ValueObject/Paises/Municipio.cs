@@ -14,4 +14,6 @@ public class Municipio
     //Chaves estrangeiras
     public Guid PaisId { get; set; }
     public Guid EstadoId { get; set; }
+    public ICollection<Pessoa> Pessoas { get; set; }
+
 }

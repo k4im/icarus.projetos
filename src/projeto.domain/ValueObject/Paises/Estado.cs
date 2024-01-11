@@ -12,6 +12,7 @@ public class Estado
     public string Sigla { get; set; }
     
     //Chave estrangeira
+    public Pais Pais { get; set; }
     public Guid PaisId { get; set; }
-
+    public ICollection<Pessoa> Pessoas { get; set; }
 }
