@@ -137,8 +137,8 @@ public class DataContext : IdentityDbContext
         .HasPrincipalKey(key => key.Id);
     }
     // Tabelas relacionada a pessoas
-    public DbSet<Usuario> Usuarios { get; set; }
     public DbSet<Pessoa> Pessoas { get; set; }
+    public DbSet<Usuario> Usuarios { get; set; }
     public DbSet<Endereco> Enderecos { get; set; }
     public DbSet<Telefone> Telefones { get; set; }
     public DbSet<TipoTelefones> TipoTelefones { get; set; }
