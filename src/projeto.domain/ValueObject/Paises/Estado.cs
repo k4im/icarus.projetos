@@ -18,4 +18,5 @@ public class Estado
     public Guid PaisId { get; set; }
     public ICollection<Pessoa> Pessoas { get; set; }
     public ICollection<Endereco> Enderecos { get; set; }
+    public ICollection<Municipio> Municipios { get; set; }
 }

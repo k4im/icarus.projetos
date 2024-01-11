@@ -15,6 +15,8 @@ public class Pais
     public string Sigla { get; set; }
 
     // Id De referencia
-    public ICollection<Endereco> Enderecos { get; set; }
-    public ICollection<Pessoa> Pessoas { get; set; }
+    public ICollection<Endereco>? Enderecos { get; set; }
+    public ICollection<Estado>? Estados { get; set; }
+    public ICollection<Municipio>? Municipios { get; set; }
+    public ICollection<Pessoa>? Pessoas { get; set; }
 }
