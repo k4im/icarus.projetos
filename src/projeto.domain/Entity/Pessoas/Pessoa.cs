@@ -23,7 +23,7 @@ public class Pessoa
 
     public DateTime DataInclusao { get; set; }
 
-    public bool Inativo { get; set; }
+    public bool Inativo { get; set; } = false;
 
     public bool Estrangeiro { get; set; }
  
